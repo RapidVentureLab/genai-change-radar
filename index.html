@@ -1,107 +1,127 @@
 <!doctype html>
-<html lang="en" data-neutrals="warm">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="A vendor-neutral radar for meaningful changes in enterprise GenAI architecture, product and production.">
+  <meta name="description" content="GenAI Change Radar by Rapid Venture Lab — a vendor-neutral view of meaningful enterprise AI architecture changes.">
   <title>GenAI Change Radar | Rapid Venture Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap">
-  <link rel="stylesheet" href="styles.css?v=5">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#top" aria-label="Rapid Venture Lab home">
-      <img class="brand-lockup" src="assets/rvl-lockup-horizontal.svg" alt="Rapid Venture Lab">
-      <span class="product-name">GenAI Change Radar</span>
-    </a>
-    <nav class="nav-links" aria-label="Page sections">
-      <a href="#overview">Overview</a><a href="#architecture">Architecture</a><a href="#timeline">Timeline</a>
-    </nav>
-    <span class="data-date" id="updatedAt">Loading data…</span>
+  <header class="masthead" id="top">
+    <div class="masthead-inner">
+      <a class="brand" href="#top" aria-label="Rapid Venture Lab, GenAI Change Radar">
+        <img src="assets/rvl-lockup-horizontal.svg" alt="Rapid Venture Lab" class="brand-lockup">
+        <span class="product-name">GenAI Change Radar</span>
+      </a>
+      <nav class="main-nav" aria-label="Primary navigation">
+        <a href="#latest">Latest</a>
+        <a href="#archive">Archive</a>
+        <a href="#architecture">Architecture</a>
+      </nav>
+      <span class="issue-date" id="updatedAt">Loading…</span>
+    </div>
   </header>
 
-  <main class="rvl-page-shell" id="top">
-    <header class="page-header">
-      <div>
-        <p class="overline">ENTERPRISE AI · CHANGE INTELLIGENCE</p>
-        <h1>See where GenAI is changing, not just what launched.</h1>
-        <p class="page-lede">A vendor-neutral decision surface for solution architects, AI/product leaders and builders. Meaningful changes are mapped to the AI stack, cloud primitives, impact, and a simple before → after.</p>
-      </div>
-      <div class="header-note">
-        <span class="source-chip source-chip-primary"><span class="pip pulse"></span> LIVE RADAR</span>
-        <strong>First derivative view</strong>
-        <p>Track direction and velocity, then connect the change to architecture and operating decisions.</p>
-      </div>
-    </header>
-
-    <section class="bento anim-stagger" id="overview" aria-label="Change overview">
-      <article class="tile tile-green tile-hero span-6 rows-2 latest-tile">
-        <div class="tile-label">LATEST SIGNAL <span class="pip pip-white"></span></div>
-        <span class="impact-chip" id="signalImpact">Loading</span>
-        <h2 class="verdict-title" id="signalTitle">Loading latest change…</h2>
-        <p class="tile-body-light" id="signalSummary">The latest meaningful development will appear here.</p>
-        <div class="before-after compact">
-          <div><span>BEFORE</span><p id="signalBefore">—</p></div><div class="ba-arrow">→</div><div><span>AFTER</span><p id="signalAfter">—</p></div>
+  <main class="page-shell">
+    <section class="edition-header" aria-labelledby="page-title">
+      <div class="edition-line"><span>ENTERPRISE AI</span><span>ARCHITECTURE · PRODUCT · OPERATIONS</span></div>
+      <div class="edition-grid">
+        <div class="edition-main">
+          <p class="ed-kicker">CHANGE INTELLIGENCE</p>
+          <h1 id="page-title">See where GenAI is changing, not just what launched.</h1>
+          <p class="edition-deck">A vendor-neutral reading surface for solution architects, AI/product leaders and builders. Each change is translated into architecture, operating impact, and what becomes possible next.</p>
         </div>
-        <div class="tile-foot light"><a class="btn btn-light btn-dir" id="signalLink" href="#timeline">Open source</a><button class="btn btn-ghost-light" data-scroll="timeline">Explore in timeline</button></div>
-      </article>
+        <aside class="edition-note">
+          <span class="ed-meta">FIRST DERIVATIVE</span>
+          <strong>Direction before hype.</strong>
+          <p>Track meaningful movement in models, agents, knowledge, workflows and production systems.</p>
+        </aside>
+      </div>
+    </section>
 
-      <button class="tile metric-tile span-3" data-action="all-updates">
-        <div class="tile-label">Meaningful changes</div><div class="metric-value" id="metricTotal">–</div><div class="metric-label">curated signals in the radar</div><div class="tile-foot"><span>Open timeline</span><span>→</span></div>
-      </button>
-      <button class="tile metric-tile span-3" data-action="recent-updates">
-        <div class="tile-label">Last 30 days</div><div class="metric-value" id="metric30d">–</div><div class="metric-label">meaningful change events</div><div class="tile-foot"><span>View recent</span><span>→</span></div>
-      </button>
-      <button class="tile metric-tile span-3" id="fastLayerTile" data-action="fast-layer">
-        <div class="tile-label">Most active layer</div><div class="metric-value metric-text" id="metricLayer">–</div><div class="metric-label">current dataset concentration</div><div class="tile-foot"><span>Filter layer</span><span>→</span></div>
-      </button>
-      <button class="tile metric-tile span-3" id="topPrimitiveTile" data-action="top-primitive">
-        <div class="tile-label">Most-touched primitive</div><div class="metric-value metric-text" id="metricPrimitive">–</div><div class="metric-label">cloud architecture lens</div><div class="tile-foot"><span>Filter primitive</span><span>→</span></div>
-      </button>
-
-      <article class="tile span-6 rows-2">
-        <div class="tile-label">CHANGE CONCENTRATION · AI LAYERS</div>
-        <h3 class="tile-title">Where meaningful change is accumulating</h3>
-        <p class="tile-body">Click a layer to jump to matching updates.</p>
-        <div id="layerBars" class="minibars"></div>
-      </article>
-
-      <article class="tile span-6 rows-2">
-        <div class="tile-label">INFRASTRUCTURE LENS · CLOUD PRIMITIVES</div>
-        <h3 class="tile-title">What the changes touch underneath</h3>
-        <p class="tile-body">Compute, networking, storage and security are applied across every AI layer.</p>
-        <div id="primitiveBars" class="minibars"></div>
-      </article>
-
-      <article class="tile tile-soft span-12 baseline-tile">
-        <div><div class="tile-label">RATE OF CHANGE</div><h3 class="tile-title">The baseline is still forming.</h3><p class="tile-body">As the archive grows, this surface will compare recent periods instead of treating raw counts as velocity.</p></div>
-        <div class="baseline-stat"><span>30D / PRIOR 30D</span><strong id="velocityStatus">Building baseline</strong></div>
+    <section class="latest-section" id="latest" aria-labelledby="latest-label">
+      <div class="section-rule"><span class="ed-kicker" id="latest-label">LATEST SIGNAL</span><span class="section-number">01</span></div>
+      <article class="lead-story">
+        <aside class="story-meta">
+          <span class="ed-meta" id="leadDate">—</span>
+          <span class="ed-meta" id="leadLayer">—</span>
+          <span class="ed-status ed-status-accent" id="leadImpact">—</span>
+        </aside>
+        <div class="story-main">
+          <h2 id="leadTitle">Loading latest signal…</h2>
+          <p class="story-deck" id="leadWhy">—</p>
+          <div class="story-block">
+            <h3>What changed</h3>
+            <p id="leadChanged">—</p>
+          </div>
+          <div class="before-after" aria-label="Before and after comparison">
+            <div><span class="ed-meta">BEFORE</span><p id="leadBefore">—</p></div>
+            <div><span class="ed-meta">AFTER</span><p id="leadAfter">—</p></div>
+          </div>
+          <div class="story-block">
+            <h3>What to learn</h3>
+            <p id="leadLearn">—</p>
+          </div>
+        </div>
+        <aside class="story-rail">
+          <span class="ed-meta">CLOUD PRIMITIVES</span>
+          <div class="primitive-list" id="leadPrimitives"></div>
+          <div class="rail-source"><span class="ed-meta">SOURCE</span><a id="leadSource" class="ed-link" href="#">Open source ↗</a></div>
+        </aside>
       </article>
     </section>
 
-    <section class="section-block" id="architecture">
-      <div class="section-heading"><div><p class="overline">ONE MENTAL MODEL</p><h2>AI layers × cloud primitives</h2><p>Click any cell to filter the timeline by that architectural intersection.</p></div><button class="btn btn-outline" data-action="clear-filters">Clear filters</button></div>
-      <article class="tile tile-flush architecture-tile"><div class="architecture-grid" id="architectureMap"></div></article>
+    <section class="issue-index" aria-label="Radar index">
+      <button class="index-cell" data-action="all"><span class="ed-meta">MEANINGFUL CHANGES</span><strong id="metricTotal">—</strong><small>all tracked signals</small></button>
+      <button class="index-cell" data-action="recent"><span class="ed-meta">LAST 30 DAYS</span><strong id="metric30d">—</strong><small>recent signals</small></button>
+      <button class="index-cell" id="fastLayerTile" data-action="layer"><span class="ed-meta">MOST ACTIVE LAYER</span><strong class="text-value" id="metricLayer">—</strong><small>current concentration</small></button>
+      <button class="index-cell" id="topPrimitiveTile" data-action="primitive"><span class="ed-meta">MOST-TOUCHED PRIMITIVE</span><strong class="text-value" id="metricPrimitive">—</strong><small>infrastructure lens</small></button>
     </section>
 
-    <section class="section-block" id="timeline">
-      <div class="section-heading"><div><p class="overline">CHANGE HISTORY</p><h2>Timeline</h2><p>Open an update for what changed, before → after, why it matters, what to learn, and sources.</p></div><span class="result-count" id="resultCount">0 updates</span></div>
+    <section class="archive-section" id="archive" aria-labelledby="archive-title">
+      <div class="section-rule"><div><span class="ed-kicker">ARCHIVE</span><h2 id="archive-title">Meaningful changes</h2></div><span class="result-count" id="resultCount" aria-live="polite">0 updates</span></div>
 
-      <article class="tile filter-tile">
-        <div class="field grow"><label class="field-label" for="searchInput">Search</label><input class="input" id="searchInput" type="search" placeholder="agents, RAG, evals, security…"></div>
-        <div class="field"><label class="field-label" for="layerFilter">AI layer</label><select class="select" id="layerFilter"><option value="">All layers</option></select></div>
-        <div class="field"><label class="field-label" for="impactFilter">Impact</label><select class="select" id="impactFilter"><option value="">All impact levels</option></select></div>
-        <div class="field"><label class="field-label" for="primitiveFilter">Cloud primitive</label><select class="select" id="primitiveFilter"><option value="">All primitives</option></select></div>
-        <button class="btn btn-primary" id="clearFilters" type="button">Clear</button>
-      </article>
+      <form class="filter-form" id="filterForm">
+        <div class="filter-field search-field">
+          <label for="searchInput">Search</label>
+          <input class="ed-control" id="searchInput" type="search" placeholder="agents, RAG, evals, security…">
+        </div>
+        <div class="filter-field">
+          <label for="layerFilter">AI layer</label>
+          <select class="ed-control" id="layerFilter"><option value="">All layers</option></select>
+        </div>
+        <div class="filter-field">
+          <label for="impactFilter">Impact</label>
+          <select class="ed-control" id="impactFilter"><option value="">All impact levels</option></select>
+        </div>
+        <div class="filter-field">
+          <label for="primitiveFilter">Cloud primitive</label>
+          <select class="ed-control" id="primitiveFilter"><option value="">All primitives</option></select>
+        </div>
+        <div class="filter-actions">
+          <button class="ed-btn" type="submit">Search</button>
+          <button class="ed-btn ed-btn-secondary" id="resetFilters" type="button">Reset</button>
+        </div>
+      </form>
 
-      <div id="timelineList" class="timeline-list" aria-live="polite"></div>
+      <div class="archive-list" id="timelineList"></div>
+    </section>
+
+    <section class="architecture-section" id="architecture" aria-labelledby="architecture-title">
+      <div class="section-rule"><div><span class="ed-kicker">ONE MENTAL MODEL</span><h2 id="architecture-title">AI layers × cloud primitives</h2></div><p>Click any cell to filter the archive by that intersection.</p></div>
+      <div class="architecture-scroll"><div class="architecture-grid" id="architectureMap"></div></div>
     </section>
   </main>
 
-  <footer class="footer"><span>GenAI Change Radar · Rapid Venture Lab</span><span class="legal">Public sources only · Impact labels are editorial assessments, not vendor claims.</span></footer>
-  <script src="app.js?v=4" defer></script>
+  <footer class="site-footer">
+    <span>GenAI Change Radar · Rapid Venture Lab</span>
+    <span>Public sources only · Impact labels are editorial assessments, not vendor claims.</span>
+  </footer>
+
+  <script src="app.js?v=6" defer></script>
 </body>
 </html>
