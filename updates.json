@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 2,
-  "updatedAt": "2026-09-18T15:45:00+02:00",
+  "schemaVersion": 3,
+  "updatedAt": "2026-09-18T16:20:00+02:00",
   "mentalModel": {
     "layers": [
       {
@@ -64,38 +64,38 @@
   "trajectories": [
     {
       "layer": "Data & Knowledge",
-      "description": "How AI gets the right information at the right time.",
-      "past": "Small context windows and bespoke retrieval pipelines.",
-      "now": "Long context, retrieval, connected sources and richer memory are used together.",
-      "direction": "Permission-aware context with provenance, freshness and memory that can be reused across models and agents."
+      "description": "Getting the right information into the system.",
+      "now": "Long context, retrieval, connected company data, citations, and memory are increasingly combined.",
+      "direction": "Permission-aware organizational context that stays fresh and can be reused across models and agents.",
+      "constraint": "Freshness, provenance, permissions, data quality, and cost."
     },
     {
       "layer": "Model",
-      "description": "The raw intelligence and modality layer.",
-      "past": "Mostly text generation and short prompt-response interactions.",
-      "now": "Multimodal models, explicit reasoning, tool use and a wider open versus closed model choice.",
-      "direction": "Cheaper adaptive reasoning with model routing by task, cost, latency and risk rather than one model for everything."
+      "description": "Raw reasoning and multimodal capability.",
+      "now": "Frontier models reason longer, operate computers, work across modalities, and improve rapidly on professional tasks.",
+      "direction": "Broader, more general capability with adaptive reasoning and model routing by task, cost, latency, and risk.",
+      "constraint": "Alignment, inference cost, reliability, misuse risk, and knowing when capability is actually trustworthy."
     },
     {
       "layer": "Agent & Infrastructure",
-      "description": "The system that lets models act over time.",
-      "past": "Prompt chains and hard-coded tool calls.",
-      "now": "Agent runtimes, computer use, MCP, state, tracing and early agent interoperability.",
-      "direction": "Long-running software actors with identity, bounded permissions, recovery, verification and interoperable tools."
+      "description": "Turning model capability into sustained action.",
+      "now": "Managed runtimes, tools, MCP, subagents, computer use, state, and tracing support longer tasks.",
+      "direction": "Persistent software actors that can work for hours or days, recover from failure, coordinate, and operate across systems.",
+      "constraint": "Long-horizon reliability, identity, bounded permissions, verification, and recovery."
     },
     {
       "layer": "Application & Workflow",
-      "description": "Where AI meets users and business processes.",
-      "past": "Standalone chatbots and copilots beside existing work.",
-      "now": "AI is increasingly embedded inside workflow steps and task execution.",
-      "direction": "Processes are redesigned around AI execution, with people handling judgment, approvals and exceptions."
+      "description": "Where AI changes how work is actually done.",
+      "now": "The pattern is moving from assistance beside the workflow to agents executing meaningful parts of the workflow.",
+      "direction": "AI-native processes where machines execute routine and analytical work while people handle goals, judgment, approvals, and exceptions.",
+      "constraint": "Workflow redesign, adoption, accountability, process ownership, and proving business value."
     },
     {
       "layer": "Production & Business",
-      "description": "How AI systems are controlled and justified in production.",
-      "past": "Prompt testing, manual review and pilot metrics.",
-      "now": "Evals, traces, policy controls, approval gates, cost monitoring and operational evidence.",
-      "direction": "Risk-based verification and measurable AI operations where reliability, cost and business value are managed continuously."
+      "description": "Making AI controllable, measurable, and economically useful.",
+      "now": "Evals, traces, trajectory monitoring, governance, approval gates, and cost controls are becoming core production architecture.",
+      "direction": "Continuous risk-based control where capability, alignment, reliability, cost, and business value are measured together.",
+      "constraint": "Scalable alignment and oversight as models become more capable and autonomous."
     }
   ],
   "updates": [
@@ -531,6 +531,290 @@
           "url": "https://www.microsoft.com/en-us/research/publication/diagnosing-with-insights-structured-analysis-of-agent-failures-via-behavioral-abstractions/"
         }
       ]
+    },
+    {
+      "id": "2026-04-24-gemini-agent-platform",
+      "date": "2026-04-24",
+      "layer": "Agent & Infrastructure",
+      "kind": "milestone",
+      "changeType": "enterprise agent platform",
+      "impact": "Packaging / distribution",
+      "title": "Enterprise agent building, governance, and scale became a single platform concern",
+      "whatChanged": "Google Cloud Next 2026 introduced an end-to-end enterprise agent platform spanning agent building, governance, and scale.",
+      "whyCare": "Agent infrastructure is becoming a first-class cloud platform category rather than a collection of disconnected components.",
+      "before": "Teams stitched together models, tools, orchestration, identity, and governance across separate services.",
+      "after": "Cloud platforms increasingly package those concerns into integrated agent platforms.",
+      "learn": "Compare integrated agent platforms on portability, observability, governance, cost, and ecosystem fit.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Google Cloud Next 2026 recap",
+          "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/google-cloud-next-26-recap/"
+        }
+      ]
+    },
+    {
+      "id": "2026-05-19-gemini-spark",
+      "date": "2026-05-19",
+      "layer": "Application & Workflow",
+      "kind": "milestone",
+      "changeType": "embedded agent workflow",
+      "impact": "Step-change",
+      "title": "Persistent agents moved deeper into everyday workplace software",
+      "whatChanged": "Google announced Gemini Spark as a persistent personal AI agent designed to act across Workspace applications under user direction.",
+      "whyCare": "It shows the application layer moving from a chat tool beside work toward a persistent actor inside the software people already use.",
+      "before": "AI mainly helped inside isolated prompts or single application features.",
+      "after": "A persistent agent can coordinate work across multiple everyday applications.",
+      "learn": "Workflow architecture needs clear delegation, approvals, context boundaries, and user control.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Google Workspace updates 2026",
+          "url": "https://blog.google/products-and-platforms/products/workspace/workspace-updates/"
+        }
+      ]
+    },
+    {
+      "id": "2026-06-09-fable5",
+      "date": "2026-06-09",
+      "layer": "Model",
+      "kind": "milestone",
+      "changeType": "long-horizon model capability",
+      "impact": "Step-change",
+      "title": "Claude Fable 5 raised the bar for long, complex knowledge and coding work",
+      "whatChanged": "Anthropic released Fable 5 with stronger performance on longer and more complex tasks across coding, knowledge work, vision, and research.",
+      "whyCare": "Long-horizon model capability is becoming a core differentiator, not only benchmark accuracy on short tasks.",
+      "before": "Hard tasks often required users to break work into many smaller supervised steps.",
+      "after": "Stronger models can sustain larger projects and longer reasoning chains before handing control back.",
+      "learn": "Evaluate models on the duration and complexity of work they can complete reliably, not only benchmark scores.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic - Claude Fable 5",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
+        }
+      ]
+    },
+    {
+      "id": "2026-07-20-long-horizon-safety",
+      "date": "2026-07-20",
+      "layer": "Production & Business",
+      "kind": "milestone",
+      "changeType": "long-horizon safety",
+      "impact": "Step-change",
+      "title": "Long-running models forced safety evaluation to move from actions to trajectories",
+      "whatChanged": "OpenAI reported novel failures during limited internal use of a long-running model and responded with new evaluations, long-horizon alignment work, trajectory monitoring, and more user control.",
+      "whyCare": "Once systems persist and act over time, checking isolated outputs is not enough.",
+      "before": "Safety and evaluation could focus mainly on individual model responses or bounded tasks.",
+      "after": "Production control increasingly needs to evaluate sequences of actions and intervene across a whole trajectory.",
+      "learn": "Learn trajectory-level monitoring, long-horizon evals, approval boundaries, and recovery.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - Safety and alignment in an era of long-horizon models",
+          "url": "https://openai.com/index/safety-alignment-long-horizon-models/"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-01-workflow-execution",
+      "date": "2026-09-01",
+      "layer": "Application & Workflow",
+      "kind": "signal",
+      "changeType": "operating model",
+      "impact": "Step-change",
+      "title": "Enterprise AI is moving from assistance toward execution inside real workflows",
+      "whatChanged": "Published enterprise examples increasingly show agents connected to tools and company context for onboarding, account management, developer work, and other multi-step processes.",
+      "whyCare": "The important application shift is not a better chatbot. It is delegation of substantive parts of a business process.",
+      "before": "AI mostly assisted people with drafting, search, and isolated tasks beside the workflow.",
+      "after": "Leading teams increasingly connect agents to context and tools and make successful workflows repeatable.",
+      "learn": "Start workflow design with task boundaries, data, tools, approvals, failure handling, and measurable outcome.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - AI-native company workflows",
+          "url": "https://openai.com/index/ai-native-company-workflows/"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-03-gpt6-astra",
+      "date": "2026-09-03",
+      "layer": "Model",
+      "kind": "milestone",
+      "changeType": "frontier capability",
+      "impact": "Step-change",
+      "title": "Frontier models pushed further into computer use, science, cyber, and professional work",
+      "whatChanged": "A new frontier generation improved across computer use, browsing, software engineering, cybersecurity, science, and professional work.",
+      "whyCare": "Frontier capability is increasingly crossing from answering questions into operating software and carrying out complex professional tasks.",
+      "before": "Models were less reliable across long, tool-using professional work and advanced computer use.",
+      "after": "A frontier model can handle a broader set of complex tasks and operate software more effectively.",
+      "learn": "As capability broadens, architecture must pair models with stronger controls, routing, monitoring, and risk assessment.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - GPT-6 Astra",
+          "url": "https://openai.com/index/gpt-6-astra/"
+        },
+        {
+          "name": "OpenAI - GPT-6 Astra safety overview",
+          "url": "https://openai.com/index/safety-overview-gpt-6-astra/"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-06-automated-research",
+      "date": "2026-09-06",
+      "layer": "Agent & Infrastructure",
+      "kind": "milestone",
+      "changeType": "automated research",
+      "impact": "Step-change",
+      "title": "Automated research moved from aspiration to an internal working milestone",
+      "whatChanged": "OpenAI said coding agents were accelerating internal research and that it had reached its goal of an automated research intern working under human supervision.",
+      "whyCare": "Automating parts of AI research itself is a directional signal toward agents that improve the speed of capability and alignment research.",
+      "before": "AI systems mainly assisted researchers on bounded tasks.",
+      "after": "Research agents can take on larger experiment and implementation loops under supervision.",
+      "learn": "Watch research automation because it can accelerate both model progress and the need for alignment and governance.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - Research acceleration",
+          "url": "https://openai.com/index/research-acceleration-view-inside-openai/"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-10-data-agent",
+      "date": "2026-09-10",
+      "layer": "Data & Knowledge",
+      "kind": "milestone",
+      "changeType": "connected business data",
+      "impact": "Packaging / distribution",
+      "title": "Business data, analysis, dashboards, and action are converging into one agent workflow",
+      "whatChanged": "A business data agent combined connected company data, investigation, analysis, and interactive dashboards in one workflow.",
+      "whyCare": "It packages retrieval, business context, analysis, and reporting into a simpler experience for non-specialists.",
+      "before": "Business users often waited for analysts or moved manually between BI tools, SQL, spreadsheets, and reports.",
+      "after": "A conversational agent can investigate connected business data and create shareable analysis directly.",
+      "learn": "The architectural issues move to data permissions, metric definitions, provenance, freshness, and auditability.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - Now everyone can put data to work",
+          "url": "https://openai.com/index/put-data-to-work/"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-10-financial-services",
+      "date": "2026-09-10",
+      "layer": "Application & Workflow",
+      "kind": "milestone",
+      "changeType": "vertical workflow product",
+      "impact": "Packaging / distribution",
+      "title": "Vertical AI products are combining trusted data, reasoning, and templates into complete workflows",
+      "whatChanged": "A financial-services AI product combined premium data, reasoning, citations, and firm templates for research, models, and client materials.",
+      "whyCare": "It shows the application layer becoming more domain-specific and workflow-complete rather than offering a generic assistant alone.",
+      "before": "Teams assembled generic AI, data subscriptions, templates, and controls separately.",
+      "after": "A vertical product can package trusted data, domain workflows, output formats, and governance together.",
+      "learn": "Expect more industry-specific AI products where data rights, workflow design, and governance matter as much as the model.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - ChatGPT for Financial Services",
+          "url": "https://openai.com/index/introducing-chatgpt-financial-services/"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-16-work-expansion",
+      "date": "2026-09-16",
+      "layer": "Application & Workflow",
+      "kind": "signal",
+      "changeType": "work redesign",
+      "impact": "Incremental",
+      "title": "AI use is beginning to expand the set of tasks people regularly perform",
+      "whatChanged": "Economic research reported that some AI-assisted tasks outside a worker's usual occupation become recurring parts of their workflow.",
+      "whyCare": "This is an early sign that AI may change job scope and task boundaries, not only make existing tasks faster.",
+      "before": "AI adoption was often measured as faster execution of the same tasks.",
+      "after": "Some workers are adding new recurring tasks to their role because AI lowers the expertise or effort barrier.",
+      "learn": "Measure workflow change, task expansion, and role redesign alongside simple time savings.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - How workers are unlocking new ways of working",
+          "url": "https://openai.com/index/unlocking-new-ways-of-working/"
+        }
+      ]
     }
-  ]
+  ],
+  "overallDirection": {
+    "title": "From assistants to agents and automated knowledge work",
+    "summary": "The broad direction is toward systems that reason longer, use tools, act across software, and take on larger portions of real work. Model capability still matters, but the architectural bottleneck is moving toward reliable autonomy and integration.",
+    "destination": "Increasingly general AI systems that can perform broad cognitive work, research, and operations under human direction. This is a direction of travel, not a guaranteed end state.",
+    "constraint": "Alignment, monitoring, permissions, security, reliability, and preserving meaningful human control as systems become more autonomous.",
+    "sources": [
+      {
+        "name": "OpenAI on AGI in steps",
+        "url": "https://openai.com/safety/how-we-think-about-safety-alignment/"
+      },
+      {
+        "name": "Automated research intern milestone",
+        "url": "https://openai.com/index/research-acceleration-view-inside-openai/"
+      },
+      {
+        "name": "Anthropic frontier safety roadmap",
+        "url": "https://www.anthropic.com/responsible-scaling-policy/roadmap"
+      }
+    ]
+  }
 }
