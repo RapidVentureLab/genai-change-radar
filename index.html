@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Newsreader:opsz,wght@6..72,300..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 <header class="masthead" id="top">
@@ -19,9 +19,7 @@
       <img src="assets/rvl-lockup-horizontal.svg" alt="Rapid Venture Lab" class="brand-lockup">
       <span class="product-name">GenAI Change Radar</span>
     </a>
-    <nav class="nav" aria-label="Primary">
-      <a href="#today">Today</a><a href="#direction">Direction</a><a href="#progress">Progress</a><a href="#archive">Archive</a><a href="#model">Model</a>
-    </nav>
+    <nav class="nav" aria-label="Primary"><a href="#direction">Orient</a><a href="#progress">Understand</a><a href="#today">Update</a><a href="#model">Reference</a></nav>
   </div>
   <div class="live-line">
     <span class="live-dot" aria-hidden="true"></span><strong>Updated daily</strong><span id="updatedAt">Loading</span><span class="sep">·</span><span id="liveCount">Building archive</span>
@@ -35,66 +33,43 @@
     <p class="intro-deck">Use it to see what changed, where it belongs in the stack, what is moving fastest, and where the technology appears to be heading.</p>
   </section>
 
-  <section class="front-page" id="today">
-    <article class="lead-panel panel">
-      <div class="panel-head"><span class="section-tag">LATEST</span><span class="new-badge">NEW</span></div>
-      <div class="lead-meta"><span id="leadDate"></span><span id="leadLayer"></span><span id="leadImpact" class="impact-tag"></span></div>
-      <h2 id="leadTitle">Loading latest signal</h2>
-      <p class="lead-deck" id="leadWhy"></p>
-      <div class="lead-compare"><div><b>Before</b><p id="leadBefore"></p></div><div><b>After</b><p id="leadAfter"></p></div></div>
-      <a id="leadSource" class="story-link" href="#archive">Open source</a>
-    </article>
-
-    <aside class="direction-panel panel panel-accent">
-      <div class="panel-head"><span class="section-tag">DIRECTION NOW</span><span class="direction-arrow">↗</span></div>
-      <h2 id="overallDirectionTitle">From assistants to agents and automated knowledge work</h2>
-      <p id="overallDirectionSummary"></p>
-      <div class="direction-callout"><b>Destination if the trend continues</b><p id="overallDestination"></p></div>
-      <div class="direction-callout"><b>Main constraint</b><p id="overallConstraint"></p></div>
-      <div class="source-row" id="overallSources"></div>
-    </aside>
-
-    <aside class="today-panel panel">
-      <div class="panel-head"><span class="section-tag">2026 SO FAR</span><span id="yearLeaderLabel"></span></div>
-      <div id="yearLeader" class="year-leader"></div>
-      <div class="today-layer-list" id="todayLayerList"></div>
-    </aside>
-  </section>
-
-  <section class="direction-section" id="direction">
-    <header class="section-header"><div><p class="kicker">DIRECTION</p><h2>Where each layer is heading</h2></div><p>Compact view of current position, direction, main constraint, velocity, and the breakthroughs that moved the layer.</p></header>
-    <div class="direction-table-wrap">
-      <table class="direction-table">
-        <thead><tr><th>Layer</th><th>Where we are now</th><th>Where it is heading</th><th>Main constraint</th><th>Velocity</th><th>Breakthroughs</th></tr></thead>
-        <tbody id="directionBody"></tbody>
-      </table>
+  <section class="direction-section orient-section" id="direction">
+    <header class="section-header"><div><p class="kicker">ORIENT</p><h2>Where the GenAI stack is heading</h2></div><p>Start here. See the current position, direction, constraint and relative velocity of each architectural layer.</p></header>
+    <div class="orientation-lead panel panel-accent">
+      <div><span class="section-tag">OVERALL DIRECTION HYPOTHESIS</span><h2 id="overallDirectionTitle"></h2><p id="overallDirectionSummary"></p></div>
+      <div class="orientation-side"><div><b>Destination if the trend continues</b><p id="overallDestination"></p></div><div><b>Main constraint</b><p id="overallConstraint"></p></div><div class="source-row" id="overallSources"></div></div>
     </div>
-    <p class="method-note">Velocity is a relative proxy from the curated archive. It weights impact and recency. It is not a market-growth statistic.</p>
+    <div class="direction-table-wrap"><table class="direction-table"><thead><tr><th>Layer</th><th>Where we are now</th><th>Direction hypothesis</th><th>Main constraint</th><th>Velocity</th><th>Breakthroughs</th></tr></thead><tbody id="directionBody"></tbody></table></div>
+    <p class="method-note">Direction is an editorial hypothesis. Velocity is a relative proxy from the curated archive, not a market-growth statistic.</p>
   </section>
 
   <section class="progress-section" id="progress">
-    <header class="section-header"><div><p class="kicker">PROGRESS OVER TIME</p><h2>What moved most in each year</h2></div><p>The heatmap is based only on milestones and signals selected for this archive. Darker cells mean more impact-weighted movement in that layer and year.</p></header>
-    <div class="heatmap-card panel">
-      <div class="heatmap-scroll"><div id="heatmap" class="heatmap"></div></div>
-      <div id="yearSummary" class="year-summary"></div>
-    </div>
+    <header class="section-header"><div><p class="kicker">UNDERSTAND</p><h2>How the architecture got here</h2></div><p>Switch between AI layers and cloud primitives. This is a curated historical map, not a complete statistical history of GenAI.</p></header>
+    <div class="view-tabs" role="group" aria-label="Heatmap view"><button class="view-tab active" data-heat-view="layers">AI layers</button><button class="view-tab" data-heat-view="cloud">Cloud primitives</button></div>
+    <div class="heatmap-card panel"><div class="heatmap-scroll"><div id="heatmap" class="heatmap"></div></div><div id="yearSummary" class="year-summary"></div></div>
+    <p class="method-note">Darker cells mean more impact-weighted milestones in this archive. They do not prove that the category objectively progressed most across the whole industry.</p>
+  </section>
+
+  <section class="front-page update-section" id="today">
+    <article class="lead-panel panel">
+      <div class="panel-head"><span class="section-tag">UPDATE · LATEST</span><span class="new-badge">NEW</span></div>
+      <div class="lead-meta"><span id="leadDate"></span><span id="leadLayer"></span><span id="leadImpact" class="impact-tag"></span></div>
+      <h2 id="leadTitle">Loading latest signal</h2><p class="lead-deck" id="leadWhy"></p>
+      <div class="lead-compare"><div><b>Before</b><p id="leadBefore"></p></div><div><b>After</b><p id="leadAfter"></p></div></div>
+      <div class="lead-apply"><b>Architecture implication</b><p id="leadImplication"></p><div id="leadTradeoffs" class="tradeoff-row"></div></div>
+      <a id="leadSource" class="story-link" href="#archive">Open source</a>
+    </article>
+    <aside class="today-panel panel"><div class="panel-head"><span class="section-tag">2026 SO FAR</span><span id="yearLeaderLabel"></span></div><div id="yearLeader" class="year-leader"></div><div class="today-layer-list" id="todayLayerList"></div></aside>
   </section>
 
   <section class="archive-section" id="archive">
-    <header class="section-header"><div><p class="kicker">ARCHIVE</p><h2>Breakthroughs and current signals</h2></div><span id="resultCount" class="result-count">0 items</span></header>
-    <form class="filters panel" id="filterForm">
-      <label><span>Search</span><input id="searchInput" type="search" placeholder="reasoning, agents, workflow, alignment"></label>
-      <label><span>Year</span><select id="yearFilter"><option value="">All years</option></select></label>
-      <label><span>AI layer</span><select id="layerFilter"><option value="">All layers</option></select></label>
-      <label><span>Impact</span><select id="impactFilter"><option value="">All impact levels</option></select></label>
-      <label><span>Type</span><select id="kindFilter"><option value="">All types</option><option value="signal">Current signal</option><option value="milestone">Historical milestone</option></select></label>
-      <div class="filter-actions"><button class="btn" type="submit">Search</button><button class="btn btn-secondary" id="resetFilters" type="button">Reset</button></div>
-    </form>
+    <header class="section-header"><div><p class="kicker">UPDATE · ARCHIVE</p><h2>Breakthroughs and current signals</h2></div><span id="resultCount" class="result-count">0 items</span></header>
+    <form class="filters panel" id="filterForm"><label><span>Search</span><input id="searchInput" type="search" placeholder="reasoning, agents, workflow, alignment"></label><label><span>Year</span><select id="yearFilter"><option value="">All years</option></select></label><label><span>AI layer</span><select id="layerFilter"><option value="">All layers</option></select></label><label><span>Impact</span><select id="impactFilter"><option value="">All impact levels</option></select></label><label><span>Type</span><select id="kindFilter"><option value="">All types</option><option value="signal">Current signal</option><option value="milestone">Historical milestone</option></select></label><div class="filter-actions"><button class="btn" type="submit">Search</button><button class="btn btn-secondary" id="resetFilters" type="button">Reset</button></div></form>
     <div class="news-grid" id="newsGrid"></div>
   </section>
 
   <section class="model-section" id="model">
-    <header class="section-header"><div><p class="kicker">MENTAL MODEL</p><h2>How every update is classified</h2></div><p>Plain-language definitions so the radar works even if you do not use innovation or cloud terminology every day.</p></header>
+    <header class="section-header"><div><p class="kicker">REFERENCE</p><h2>How every update is classified</h2></div><p>Plain-language definitions so the radar works even if you do not use innovation or cloud terminology every day.</p></header>
     <div class="model-grid">
       <div class="panel model-table-panel">
         <h3>AI layers</h3>
@@ -113,6 +88,6 @@
   <nav><a href="https://www.rapidventurelab.com/" target="_blank" rel="noopener">Website</a><a href="https://de.linkedin.com/company/rapid-venture-lab" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/RapidVentureLab/genai-change-radar" target="_blank" rel="noopener">GitHub</a></nav>
   <p>Public sources only. Impact, direction and velocity are editorial assessments based on the curated archive.</p>
 </footer>
-<script src="app.js?v=8" defer></script>
+<script src="app.js?v=9" defer></script>
 </body>
 </html>
