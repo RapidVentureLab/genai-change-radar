@@ -1,0 +1,14 @@
+:root{
+--ed-paper:#F6F3EC;--ed-paper-deep:#EEEAE1;--ed-surface:#FFFEFB;
+--ed-ink:#16181D;--ed-ink-soft:#3F4450;--ed-muted:#62615C;--ed-faint:#8B8A84;
+--ed-rule:#D8D5CD;--ed-rule-strong:#A8A59D;
+--ed-green:#39B54A;--ed-green-dark:#1E7230;--ed-green-soft:#E9F7EC;
+--ed-warning:#9A6610;--ed-danger:#B53131;--ed-info:#365FB7;
+--font-editorial:"Newsreader",Georgia,"Times New Roman",serif;
+--font-ui:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+--font-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;--space-20:80px;--space-24:96px;
+--radius-editorial:0;--radius-control:4px;--radius-small:3px;--radius-pill:999px;
+--container:1280px;--grid-gap:20px;--outer-gutter:32px;--reading-measure:66ch;--deck-measure:56ch;
+--focus-ring:0 0 0 3px rgba(30,114,48,.24);
+}
