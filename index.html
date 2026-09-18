@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A vendor-neutral radar for meaningful changes in enterprise GenAI architecture, product and production.">
+  <title>GenAI Change Radar | Rapid Venture Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="GenAI Change Radar home">
+      <span class="brand-mark">RVL</span>
+      <span><strong>GenAI Change Radar</strong><small>by Rapid Venture Lab</small></span>
+    </a>
+    <div class="updated" id="updatedAt">Loading…</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">ENTERPRISE AI · RATE OF CHANGE</p>
+        <h1>See where GenAI is changing, not just what launched.</h1>
+        <p class="lede">A decision-focused radar for solution architects, AI/product leaders and builders. Every change is mapped to an AI layer, cloud primitives, impact level, and a simple before → after.</p>
+      </div>
+      <aside class="hero-note">
+        <span>FIRST DERIVATIVE</span>
+        <strong>Track direction + velocity</strong>
+        <p>Not a news feed. A map of changes that can alter architecture, product decisions, adoption or economics.</p>
+      </aside>
+    </section>
+
+    <nav class="tabs" aria-label="Dashboard sections">
+      <button class="tab active" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="map">Architecture map</button>
+      <button class="tab" data-tab="timeline">Timeline</button>
+    </nav>
+
+    <section id="overview" class="panel active">
+      <div class="metrics">
+        <article class="metric"><span>Meaningful changes</span><strong id="metricTotal">–</strong><small>curated items</small></article>
+        <article class="metric"><span>Last 30 days</span><strong id="metric30d">–</strong><small>change events</small></article>
+        <article class="metric"><span>Fastest-moving layer</span><strong id="metricLayer">–</strong><small>in this dataset</small></article>
+        <article class="metric"><span>Most-touched primitive</span><strong id="metricPrimitive">–</strong><small>cloud lens</small></article>
+      </div>
+
+      <div class="grid two">
+        <article class="card">
+          <div class="card-head"><div><p class="eyebrow">CHANGE CONCENTRATION</p><h2>AI layers</h2></div><span class="hint">Count ≠ importance</span></div>
+          <div id="layerBars" class="bars"></div>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><p class="eyebrow">INFRASTRUCTURE LENS</p><h2>Cloud primitives affected</h2></div></div>
+          <div id="primitiveBars" class="bars"></div>
+          <div class="primitive-key">
+            <span><b>Compute</b> where it runs</span><span><b>Networking</b> how it connects</span>
+            <span><b>Storage</b> where data/state lives</span><span><b>Security</b> who/what can access it</span>
+          </div>
+        </article>
+      </div>
+
+      <article class="card spotlight">
+        <div class="card-head"><div><p class="eyebrow">LATEST SIGNAL</p><h2 id="signalTitle">Loading…</h2></div><span id="signalImpact" class="badge"></span></div>
+        <p id="signalSummary"></p>
+        <div class="before-after"><div><span>BEFORE</span><p id="signalBefore"></p></div><div class="arrow">→</div><div><span>AFTER</span><p id="signalAfter"></p></div></div>
+        <a id="signalLink" class="text-link" href="#" target="_blank" rel="noopener noreferrer">Open source ↗</a>
+      </article>
+    </section>
+
+    <section id="map" class="panel">
+      <div class="section-intro">
+        <p class="eyebrow">ONE MENTAL MODEL</p><h2>AI layers × cloud primitives</h2>
+        <p>The AI layer tells you <b>what part of the solution is changing</b>. The cloud primitive tells you <b>what infrastructure question it touches</b>.</p>
+      </div>
+      <div class="map-grid" id="architectureMap"></div>
+      <article class="card map-note">
+        <strong>Start with the business problem.</strong>
+        <span>Then map the change to Data & Knowledge → Model → Agent & Infrastructure → Application & Workflow → Production & Business. Across every layer ask: Compute? Networking? Storage? Security?</span>
+      </article>
+    </section>
+
+    <section id="timeline" class="panel">
+      <div class="section-intro"><p class="eyebrow">HISTORY</p><h2>Change timeline</h2><p>Filter the archive. Open any update to see before → after, why it matters, what to learn, and the original source.</p></div>
+      <div class="filters">
+        <label>Search<input id="searchInput" type="search" placeholder="agents, RAG, evals…"></label>
+        <label>AI layer<select id="layerFilter"><option value="">All layers</option></select></label>
+        <label>Impact<select id="impactFilter"><option value="">All impact levels</option></select></label>
+        <label>Cloud primitive<select id="primitiveFilter"><option value="">All primitives</option></select></label>
+        <button id="clearFilters" type="button">Clear</button>
+      </div>
+      <div class="result-line"><span id="resultCount">0 updates</span><span>Newest first</span></div>
+      <div id="timelineList" class="timeline"></div>
+    </section>
+  </main>
+
+  <footer><span>GenAI Change Radar · Rapid Venture Lab</span><span>Public sources only. Impact labels are editorial assessments, not vendor claims.</span></footer>
+  <script src="app.js" defer></script>
+</body>
+</html>
