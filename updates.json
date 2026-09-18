@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "updatedAt": "2026-09-18T16:20:00+02:00",
   "mentalModel": {
     "layers": [
@@ -123,6 +123,12 @@
           "name": "OpenAI - Introducing ChatGPT",
           "url": "https://openai.com/index/chatgpt/"
         }
+      ],
+      "architectureImplication": "Treat natural language as an interface layer, while separating the chat experience from the underlying model and business workflow.",
+      "tradeoffs": [
+        "Reliability",
+        "Control",
+        "Cost"
       ]
     },
     {
@@ -149,6 +155,12 @@
           "name": "OpenAI - GPT-4",
           "url": "https://openai.com/index/gpt-4/"
         }
+      ],
+      "architectureImplication": "Model capability matters, but architecture still needs evals, data, controls and workflow design around it.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost"
       ]
     },
     {
@@ -174,6 +186,12 @@
           "name": "OpenAI - Function calling and other API updates",
           "url": "https://openai.com/index/function-calling-and-other-api-updates/"
         }
+      ],
+      "architectureImplication": "Separate model judgment from deterministic execution. Validate arguments and permissions before tools run.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Control"
       ]
     },
     {
@@ -200,6 +218,12 @@
           "name": "Google - Introducing Gemini 1.5",
           "url": "https://blog.google/innovation-and-ai/products/google-gemini-next-generation-model-february-2024/"
         }
+      ],
+      "architectureImplication": "Choose between long context, retrieval and hybrids based on data size, freshness, latency, cost and access control.",
+      "tradeoffs": [
+        "Accuracy",
+        "Security",
+        "Cost"
       ]
     },
     {
@@ -225,6 +249,12 @@
           "name": "OpenAI - Hello GPT-4o",
           "url": "https://openai.com/index/hello-gpt-4o/"
         }
+      ],
+      "architectureImplication": "For multimodal systems, architecture decisions shift toward streaming, latency, session state, interruption handling and cost.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost"
       ]
     },
     {
@@ -251,6 +281,12 @@
           "name": "Meta - Introducing Llama 3.1",
           "url": "https://ai.meta.com/blog/meta-llama-3-1/"
         }
+      ],
+      "architectureImplication": "Model selection should include deployment control, licensing, data location, cost, skill requirements and operational burden.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost"
       ]
     },
     {
@@ -275,6 +311,12 @@
           "name": "OpenAI - Introducing o1-preview",
           "url": "https://openai.com/index/introducing-openai-o1-preview/"
         }
+      ],
+      "architectureImplication": "Route work by difficulty and value. Not every task needs expensive reasoning.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost"
       ]
     },
     {
@@ -301,6 +343,12 @@
           "name": "Anthropic - Developing a computer use model",
           "url": "https://www.anthropic.com/news/developing-computer-use"
         }
+      ],
+      "architectureImplication": "Computer use expands reach but raises verification, sandboxing, credential and recovery requirements.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Control"
       ]
     },
     {
@@ -326,6 +374,12 @@
           "name": "Anthropic - Introducing the Model Context Protocol",
           "url": "https://www.anthropic.com/news/model-context-protocol"
         }
+      ],
+      "architectureImplication": "Watch standards adoption. Protocols matter when ecosystems converge around them, not just when they are announced.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Control"
       ]
     },
     {
@@ -352,6 +406,12 @@
           "name": "DeepSeek - R1 release",
           "url": "https://deepseek.com/en/news/deepseek-r1/"
         }
+      ],
+      "architectureImplication": "Avoid hard-wiring architecture to one provider. Model routing and portability become more valuable as capability and price move quickly.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost"
       ]
     },
     {
@@ -378,6 +438,12 @@
           "name": "OpenAI - New tools for building agents",
           "url": "https://openai.com/index/new-tools-for-building-agents/"
         }
+      ],
+      "architectureImplication": "Distinguish fundamental capability changes from packaging changes. Managed runtimes can still matter because they change build-versus-buy economics.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Control"
       ]
     },
     {
@@ -402,6 +468,12 @@
           "name": "Google - Announcing the Agent2Agent Protocol",
           "url": "https://developers.googleblog.com/a2a-a-new-era-of-agent-interoperability/"
         }
+      ],
+      "architectureImplication": "Treat emerging protocols as directional signals first. Adopt them when ecosystem support and customer requirements justify it.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Control"
       ]
     },
     {
@@ -428,6 +500,12 @@
           "name": "OpenAI - New tools and features in the Responses API",
           "url": "https://openai.com/index/new-tools-and-features-in-the-responses-api/"
         }
+      ],
+      "architectureImplication": "Compare managed convenience with portability, visibility, security requirements and provider lock-in.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Control"
       ]
     },
     {
@@ -454,6 +532,12 @@
           "name": "Microsoft Research - long-horizon tasks",
           "url": "https://www.microsoft.com/en-us/research/publication/on-training-large-language-models-for-long-horizon-tasks-an-empirical-study-of-horizon-length/"
         }
+      ],
+      "architectureImplication": "Long-horizon reliability, persistent state, retries, recovery, verification and human escalation.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Control"
       ]
     },
     {
@@ -479,6 +563,12 @@
           "name": "Google Cloud - workload identities",
           "url": "https://cloud.google.com/iam/docs/workload-identities"
         }
+      ],
+      "architectureImplication": "Least privilege, credential isolation, agent identity, sandboxing and approval gates.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Control"
       ]
     },
     {
@@ -505,6 +595,12 @@
           "name": "OpenAI - agent platform reference",
           "url": "https://openai.com/index/new-tools-for-building-agents/"
         }
+      ],
+      "architectureImplication": "Agent harness means state, context, tools, execution, retries, permissions, memory and observability.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Control"
       ]
     },
     {
@@ -530,6 +626,12 @@
           "name": "Microsoft Research - diagnosing agent failures",
           "url": "https://www.microsoft.com/en-us/research/publication/diagnosing-with-insights-structured-analysis-of-agent-failures-via-behavioral-abstractions/"
         }
+      ],
+      "architectureImplication": "Output evals, trajectory evals, audit logs, policy checks and risk-based human review.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Control"
       ]
     },
     {
@@ -556,6 +658,12 @@
           "name": "Google Cloud Next 2026 recap",
           "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/google-cloud-next-26-recap/"
         }
+      ],
+      "architectureImplication": "Compare integrated agent platforms on portability, observability, governance, cost, and ecosystem fit.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Control"
       ]
     },
     {
@@ -582,6 +690,12 @@
           "name": "Google Workspace updates 2026",
           "url": "https://blog.google/products-and-platforms/products/workspace/workspace-updates/"
         }
+      ],
+      "architectureImplication": "Workflow architecture needs clear delegation, approvals, context boundaries, and user control.",
+      "tradeoffs": [
+        "Reliability",
+        "Control",
+        "Cost"
       ]
     },
     {
@@ -608,6 +722,12 @@
           "name": "Anthropic - Claude Fable 5",
           "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
         }
+      ],
+      "architectureImplication": "Evaluate models on the duration and complexity of work they can complete reliably, not only benchmark scores.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost"
       ]
     },
     {
@@ -634,6 +754,12 @@
           "name": "OpenAI - Safety and alignment in an era of long-horizon models",
           "url": "https://openai.com/index/safety-alignment-long-horizon-models/"
         }
+      ],
+      "architectureImplication": "Learn trajectory-level monitoring, long-horizon evals, approval boundaries, and recovery.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Control"
       ]
     },
     {
@@ -660,6 +786,12 @@
           "name": "OpenAI - AI-native company workflows",
           "url": "https://openai.com/index/ai-native-company-workflows/"
         }
+      ],
+      "architectureImplication": "Start workflow design with task boundaries, data, tools, approvals, failure handling, and measurable outcome.",
+      "tradeoffs": [
+        "Reliability",
+        "Control",
+        "Cost"
       ]
     },
     {
@@ -690,6 +822,12 @@
           "name": "OpenAI - GPT-6 Astra safety overview",
           "url": "https://openai.com/index/safety-overview-gpt-6-astra/"
         }
+      ],
+      "architectureImplication": "As capability broadens, architecture must pair models with stronger controls, routing, monitoring, and risk assessment.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost"
       ]
     },
     {
@@ -716,6 +854,12 @@
           "name": "OpenAI - Research acceleration",
           "url": "https://openai.com/index/research-acceleration-view-inside-openai/"
         }
+      ],
+      "architectureImplication": "Watch research automation because it can accelerate both model progress and the need for alignment and governance.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Control"
       ]
     },
     {
@@ -742,6 +886,12 @@
           "name": "OpenAI - Now everyone can put data to work",
           "url": "https://openai.com/index/put-data-to-work/"
         }
+      ],
+      "architectureImplication": "The architectural issues move to data permissions, metric definitions, provenance, freshness, and auditability.",
+      "tradeoffs": [
+        "Accuracy",
+        "Security",
+        "Cost"
       ]
     },
     {
@@ -768,6 +918,12 @@
           "name": "OpenAI - ChatGPT for Financial Services",
           "url": "https://openai.com/index/introducing-chatgpt-financial-services/"
         }
+      ],
+      "architectureImplication": "Expect more industry-specific AI products where data rights, workflow design, and governance matter as much as the model.",
+      "tradeoffs": [
+        "Reliability",
+        "Control",
+        "Cost"
       ]
     },
     {
@@ -793,6 +949,74 @@
         {
           "name": "OpenAI - How workers are unlocking new ways of working",
           "url": "https://openai.com/index/unlocking-new-ways-of-working/"
+        }
+      ],
+      "architectureImplication": "Measure workflow change, task expansion, and role redesign alongside simple time savings.",
+      "tradeoffs": [
+        "Reliability",
+        "Control",
+        "Cost"
+      ]
+    },
+    {
+      "id": "2023-05-01-llmops-production",
+      "date": "2023-05-01",
+      "layer": "Production & Business",
+      "kind": "milestone",
+      "changeType": "LLMOps",
+      "impact": "Step-change",
+      "title": "LLMOps emerged as a distinct production discipline for generative AI",
+      "whatChanged": "Enterprise guidance began treating LLM applications as systems needing dedicated evaluation, deployment, monitoring, feedback, privacy, and operational management across their lifecycle.",
+      "whyCare": "Generative AI production work was no longer only conventional software operations. Teams needed practices for non-deterministic outputs, prompts, retrieval, model versions, quality, and safety.",
+      "before": "Early GenAI work focused heavily on prompts, prototypes, and model capability.",
+      "after": "Production architecture increasingly included evaluation, validation, monitoring, feedback loops, privacy, and lifecycle management.",
+      "learn": "A GenAI system needs an operating lifecycle, not only a model endpoint.",
+      "architectureImplication": "Design evaluation, versioning, monitoring, feedback, and rollback into the system before production rather than adding them after launch.",
+      "tradeoffs": [
+        "Reliability",
+        "Cost",
+        "Control"
+      ],
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft - LLMOps operational management",
+          "url": "https://learn.microsoft.com/en-us/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/"
+        }
+      ]
+    },
+    {
+      "id": "2024-04-01-genaiops-monitoring",
+      "date": "2024-04-01",
+      "layer": "Production & Business",
+      "kind": "milestone",
+      "changeType": "production monitoring",
+      "impact": "Incremental",
+      "title": "GenAIOps expanded production monitoring beyond infrastructure health",
+      "whatChanged": "Cloud architecture guidance formalized continuous monitoring of prompts, completions, relevance, safety, data drift, model performance, and workload metrics for GenAI systems.",
+      "whyCare": "A healthy server does not mean a healthy AI application. Quality, safety, relevance, and model behavior also need production observability.",
+      "before": "Operations could focus primarily on infrastructure availability, latency, and errors.",
+      "after": "Production monitoring increasingly covered both system health and AI behavior.",
+      "learn": "Observe the application, data, model behavior, safety, and infrastructure together.",
+      "architectureImplication": "Add AI quality and safety telemetry alongside normal application monitoring, with explicit quality gates and auditability.",
+      "tradeoffs": [
+        "Reliability",
+        "Security",
+        "Cost"
+      ],
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft Azure Well-Architected - MLOps and GenAIOps",
+          "url": "https://learn.microsoft.com/en-us/azure/well-architected/ai/mlops-genaiops"
         }
       ]
     }
