@@ -1,0 +1,131 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-18T14:20:00+02:00",
+  "editorial": {
+    "audience": [
+      "Solution Architects",
+      "Applied AI / Product Leaders",
+      "Engineering Leaders",
+      "AI Transformation Teams"
+    ],
+    "aiLayers": [
+      "Data & Knowledge",
+      "Model",
+      "Agent & Infrastructure",
+      "Application & Workflow",
+      "Production & Business"
+    ],
+    "cloudPrimitives": [
+      "Compute",
+      "Networking",
+      "Storage",
+      "Security"
+    ],
+    "impactLevels": [
+      "Disruptive",
+      "Step-change",
+      "Incremental",
+      "Packaging / distribution"
+    ]
+  },
+  "updates": [
+    {
+      "id": "2026-09-18-long-running-agent-reliability",
+      "date": "2026-09-18",
+      "layer": "Agent & Infrastructure",
+      "changeType": "architecture frontier",
+      "impact": "Step-change",
+      "title": "Long-running agent reliability is becoming the real bottleneck",
+      "whatChanged": "Frontier agent systems can already execute multi-step work, but reliability falls as tasks get longer and tool use becomes more complex. The industry is increasingly focusing on state, recovery, verification and trajectory-level control rather than only model quality.",
+      "whyCare": "For enterprise architecture, the important question is shifting from whether an agent can do one task to whether it can complete a long workflow safely and repeatedly.",
+      "before": "Agents were judged mainly on impressive individual tasks and demos.",
+      "after": "Architecture increasingly centers on reliable execution across many steps, tools, failures and approvals.",
+      "learn": "Long-horizon reliability, persistent state, retries, recovery, verification and human escalation.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft Research — long-horizon tasks",
+          "url": "https://www.microsoft.com/en-us/research/publication/on-training-large-language-models-for-long-horizon-tasks-an-empirical-study-of-horizon-length/"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-18-agent-security-controls",
+      "date": "2026-09-18",
+      "layer": "Production & Business",
+      "changeType": "operating model",
+      "impact": "Step-change",
+      "title": "Agent security is moving from app security to actor-level control",
+      "whatChanged": "As agents gain tools and autonomy, enterprises increasingly need agent identity, scoped permissions, sandboxing, audit logs and approval gates.",
+      "whyCare": "An agent with access to enterprise systems behaves more like a software actor than a chatbot. It needs its own operating controls.",
+      "before": "Secure the AI application and its API access.",
+      "after": "Secure each agent as an actor with identity, privileges and auditable actions.",
+      "learn": "Least privilege, credential isolation, agent identity, sandboxing and approval gates.",
+      "cloudPrimitives": [
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Google Cloud — workload identities",
+          "url": "https://cloud.google.com/iam/docs/workload-identities"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-10-openai-agents-api",
+      "date": "2026-09-10",
+      "layer": "Agent & Infrastructure",
+      "changeType": "packaging / distribution",
+      "impact": "Packaging / distribution",
+      "title": "Managed agent runtimes reduce custom harness work",
+      "whatChanged": "OpenAI introduced a managed agent runtime that packages context, tools, subagents, execution and long-running task infrastructure.",
+      "whyCare": "The underlying pattern was already available through custom stacks and other frameworks. The meaningful change is lower implementation friction for teams using that provider.",
+      "before": "Teams assembled much of the harness themselves or through separate frameworks.",
+      "after": "More runtime pieces can be consumed as managed infrastructure.",
+      "learn": "Agent harness = state, context, tools, execution, retries, permissions, memory and observability.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI — Agents API",
+          "url": "https://openai.com/index/introducing-the-agents-api/"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-01-enterprise-evals",
+      "date": "2026-09-01",
+      "layer": "Production & Business",
+      "changeType": "evaluation practice",
+      "impact": "Incremental",
+      "title": "Agent evaluation is expanding from output quality to behaviour",
+      "whatChanged": "Teams increasingly need to inspect what tools an agent used, which path it took, and whether it stayed inside policy, not only whether the final answer looked correct.",
+      "whyCare": "A correct-looking output can still come from an unsafe or invalid path. That matters once agents can take actions.",
+      "before": "Evaluate whether the final answer is correct.",
+      "after": "Evaluate both the result and the action trajectory that produced it.",
+      "learn": "Output evals, trajectory evals, audit logs, policy checks and risk-based human review.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft Research — diagnosing agent failures",
+          "url": "https://www.microsoft.com/en-us/research/publication/diagnosing-with-insights-structured-analysis-of-agent-failures-via-behavioral-abstractions/"
+        }
+      ]
+    }
+  ]
+}
