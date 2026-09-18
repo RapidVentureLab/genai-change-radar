@@ -1,43 +1,445 @@
 {
-  "schemaVersion": 1,
-  "updatedAt": "2026-09-18T14:20:00+02:00",
-  "editorial": {
-    "audience": [
-      "Solution Architects",
-      "Applied AI / Product Leaders",
-      "Engineering Leaders",
-      "AI Transformation Teams"
+  "schemaVersion": 2,
+  "updatedAt": "2026-09-18T15:45:00+02:00",
+  "mentalModel": {
+    "layers": [
+      {
+        "name": "Data & Knowledge",
+        "description": "The information the AI can use: documents, databases, retrieval, context, memory and the systems that keep that information current."
+      },
+      {
+        "name": "Model",
+        "description": "The model that performs language, reasoning, coding, vision or audio tasks. This is the raw capability layer."
+      },
+      {
+        "name": "Agent & Infrastructure",
+        "description": "The runtime around the model: tools, state, memory, orchestration, permissions, sandboxes and the ability to take actions."
+      },
+      {
+        "name": "Application & Workflow",
+        "description": "The user experience and business process where AI is used, from copilots to end-to-end task flows."
+      },
+      {
+        "name": "Production & Business",
+        "description": "Everything needed to run AI responsibly at scale: evals, monitoring, governance, cost, risk, reliability and measurable business value."
+      }
     ],
-    "aiLayers": [
-      "Data & Knowledge",
-      "Model",
-      "Agent & Infrastructure",
-      "Application & Workflow",
-      "Production & Business"
+    "primitives": [
+      {
+        "name": "Compute",
+        "description": "Where it runs. This covers model inference, agent runtimes, application code, indexing, evals and other processing."
+      },
+      {
+        "name": "Networking",
+        "description": "How it connects. This covers traffic between users, models, tools, data sources, APIs and enterprise systems."
+      },
+      {
+        "name": "Storage",
+        "description": "Where data and state live. This includes documents, databases, vectors, memory, logs, traces and application state."
+      },
+      {
+        "name": "Security",
+        "description": "Who or what is allowed access. This includes identity, permissions, secrets, isolation, approvals and audit controls."
+      }
     ],
-    "cloudPrimitives": [
-      "Compute",
-      "Networking",
-      "Storage",
-      "Security"
-    ],
-    "impactLevels": [
-      "Disruptive",
-      "Step-change",
-      "Incremental",
-      "Packaging / distribution"
+    "impacts": [
+      {
+        "name": "Disruptive",
+        "description": "Changes what is practical to build or reshapes the market enough that old assumptions need to be reconsidered."
+      },
+      {
+        "name": "Step-change",
+        "description": "A clear jump in capability, cost, reliability or usability that changes architecture decisions, but does not reset the whole market."
+      },
+      {
+        "name": "Incremental",
+        "description": "A meaningful improvement to an existing approach. It matters, but the basic architecture and workflow stay mostly the same."
+      },
+      {
+        "name": "Packaging / distribution",
+        "description": "The underlying capability mostly existed already, but it becomes easier, cheaper, more integrated or available to more teams."
+      }
     ]
   },
+  "trajectories": [
+    {
+      "layer": "Data & Knowledge",
+      "description": "How AI gets the right information at the right time.",
+      "past": "Small context windows and bespoke retrieval pipelines.",
+      "now": "Long context, retrieval, connected sources and richer memory are used together.",
+      "direction": "Permission-aware context with provenance, freshness and memory that can be reused across models and agents."
+    },
+    {
+      "layer": "Model",
+      "description": "The raw intelligence and modality layer.",
+      "past": "Mostly text generation and short prompt-response interactions.",
+      "now": "Multimodal models, explicit reasoning, tool use and a wider open versus closed model choice.",
+      "direction": "Cheaper adaptive reasoning with model routing by task, cost, latency and risk rather than one model for everything."
+    },
+    {
+      "layer": "Agent & Infrastructure",
+      "description": "The system that lets models act over time.",
+      "past": "Prompt chains and hard-coded tool calls.",
+      "now": "Agent runtimes, computer use, MCP, state, tracing and early agent interoperability.",
+      "direction": "Long-running software actors with identity, bounded permissions, recovery, verification and interoperable tools."
+    },
+    {
+      "layer": "Application & Workflow",
+      "description": "Where AI meets users and business processes.",
+      "past": "Standalone chatbots and copilots beside existing work.",
+      "now": "AI is increasingly embedded inside workflow steps and task execution.",
+      "direction": "Processes are redesigned around AI execution, with people handling judgment, approvals and exceptions."
+    },
+    {
+      "layer": "Production & Business",
+      "description": "How AI systems are controlled and justified in production.",
+      "past": "Prompt testing, manual review and pilot metrics.",
+      "now": "Evals, traces, policy controls, approval gates, cost monitoring and operational evidence.",
+      "direction": "Risk-based verification and measurable AI operations where reliability, cost and business value are managed continuously."
+    }
+  ],
   "updates": [
+    {
+      "id": "2022-11-30-chatgpt",
+      "date": "2022-11-30",
+      "layer": "Application & Workflow",
+      "kind": "milestone",
+      "changeType": "interface shift",
+      "impact": "Disruptive",
+      "title": "ChatGPT put conversational generative AI in a public product",
+      "whatChanged": "OpenAI released ChatGPT as a public research preview built around a conversational interface with follow-up dialogue.",
+      "whyCare": "It gave a broad audience a simple way to use a capable language model and made natural-language interaction a mainstream product pattern.",
+      "before": "Foundation models were mainly experienced through research demos, APIs and specialist tools.",
+      "after": "A general-purpose conversational interface became a practical product surface for everyday users and teams.",
+      "learn": "Treat natural language as an interface layer, while separating the chat experience from the underlying model and business workflow.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - Introducing ChatGPT",
+          "url": "https://openai.com/index/chatgpt/"
+        }
+      ]
+    },
+    {
+      "id": "2023-03-14-gpt4",
+      "date": "2023-03-14",
+      "layer": "Model",
+      "kind": "milestone",
+      "changeType": "model capability",
+      "impact": "Step-change",
+      "title": "GPT-4 raised the capability ceiling and added image input",
+      "whatChanged": "OpenAI released GPT-4 as a large multimodal model that accepted image and text inputs and improved performance across professional and academic benchmarks.",
+      "whyCare": "More capable models made higher-value knowledge work and multimodal applications more credible, while also increasing the need for evaluation and control.",
+      "before": "Most mainstream GenAI applications were built around weaker text-first models.",
+      "after": "Architects could consider more complex reasoning, higher-stakes workflows and image-plus-text use cases.",
+      "learn": "Model capability matters, but architecture still needs evals, data, controls and workflow design around it.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - GPT-4",
+          "url": "https://openai.com/index/gpt-4/"
+        }
+      ]
+    },
+    {
+      "id": "2023-06-13-function-calling",
+      "date": "2023-06-13",
+      "layer": "Agent & Infrastructure",
+      "kind": "milestone",
+      "changeType": "tool use",
+      "impact": "Step-change",
+      "title": "Function calling made model-to-tool connections more structured",
+      "whatChanged": "OpenAI added function calling so models could choose a described function and return structured arguments that software could use to call APIs or tools.",
+      "whyCare": "This moved applications beyond free-form text toward systems where models could reliably trigger software actions.",
+      "before": "Developers often parsed model text or built brittle prompt conventions to connect models to software.",
+      "after": "Models could return structured tool calls that application code could validate and execute.",
+      "learn": "Separate model judgment from deterministic execution. Validate arguments and permissions before tools run.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - Function calling and other API updates",
+          "url": "https://openai.com/index/function-calling-and-other-api-updates/"
+        }
+      ]
+    },
+    {
+      "id": "2024-02-15-gemini15-context",
+      "date": "2024-02-15",
+      "layer": "Data & Knowledge",
+      "kind": "milestone",
+      "changeType": "context expansion",
+      "impact": "Step-change",
+      "title": "Gemini 1.5 pushed long context to one million tokens in preview",
+      "whatChanged": "Google introduced Gemini 1.5 Pro with a standard 128,000-token context and a one-million-token experimental context window for selected users.",
+      "whyCare": "Very long context changed the trade-off between retrieval, chunking and putting large amounts of source material directly into model context.",
+      "before": "Large document collections usually had to be aggressively chunked and retrieved in small pieces.",
+      "after": "Some workloads could send much larger corpora directly, while retrieval remained important for cost, freshness, permissions and precision.",
+      "learn": "Choose between long context, retrieval and hybrids based on data size, freshness, latency, cost and access control.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Google - Introducing Gemini 1.5",
+          "url": "https://blog.google/innovation-and-ai/products/google-gemini-next-generation-model-february-2024/"
+        }
+      ]
+    },
+    {
+      "id": "2024-05-13-gpt4o",
+      "date": "2024-05-13",
+      "layer": "Model",
+      "kind": "milestone",
+      "changeType": "multimodal interaction",
+      "impact": "Step-change",
+      "title": "GPT-4o integrated text, vision and audio with much lower interaction latency",
+      "whatChanged": "OpenAI introduced GPT-4o as a model designed to reason across text, audio and vision in real time, including much faster audio interaction.",
+      "whyCare": "Integrated multimodality reduced the need to stitch together separate speech, vision and language components for some experiences.",
+      "before": "Voice and multimodal applications often required several models and conversion stages.",
+      "after": "A single model family could handle more of the interaction loop directly.",
+      "learn": "For multimodal systems, architecture decisions shift toward streaming, latency, session state, interruption handling and cost.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - Hello GPT-4o",
+          "url": "https://openai.com/index/hello-gpt-4o/"
+        }
+      ]
+    },
+    {
+      "id": "2024-07-23-llama31",
+      "date": "2024-07-23",
+      "layer": "Model",
+      "kind": "milestone",
+      "changeType": "open model ecosystem",
+      "impact": "Step-change",
+      "title": "Llama 3.1 expanded the credible open-model option",
+      "whatChanged": "Meta released Llama 3.1, including a 405B model with 128K context and weights available for broad use under its license.",
+      "whyCare": "The gap between closed frontier APIs and models teams could run or control themselves narrowed for more use cases.",
+      "before": "Frontier-level capability was concentrated more heavily in closed hosted APIs.",
+      "after": "Enterprises had a stronger open-model option for control, customization and deployment choices.",
+      "learn": "Model selection should include deployment control, licensing, data location, cost, skill requirements and operational burden.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Meta - Introducing Llama 3.1",
+          "url": "https://ai.meta.com/blog/meta-llama-3-1/"
+        }
+      ]
+    },
+    {
+      "id": "2024-09-12-o1",
+      "date": "2024-09-12",
+      "layer": "Model",
+      "kind": "milestone",
+      "changeType": "reasoning model",
+      "impact": "Step-change",
+      "title": "o1 made test-time reasoning a visible model design choice",
+      "whatChanged": "OpenAI released o1-preview, a model series designed to spend more time reasoning before responding and to improve on harder science, coding and math tasks.",
+      "whyCare": "It made inference-time reasoning effort an explicit trade-off between capability, latency and cost.",
+      "before": "Most model calls were treated as roughly the same kind of single-pass generation.",
+      "after": "Architects could choose when a task justified more reasoning time and cost.",
+      "learn": "Route work by difficulty and value. Not every task needs expensive reasoning.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - Introducing o1-preview",
+          "url": "https://openai.com/index/introducing-openai-o1-preview/"
+        }
+      ]
+    },
+    {
+      "id": "2024-10-22-computer-use",
+      "date": "2024-10-22",
+      "layer": "Agent & Infrastructure",
+      "kind": "milestone",
+      "changeType": "computer interaction",
+      "impact": "Step-change",
+      "title": "Computer use let a frontier model operate graphical software",
+      "whatChanged": "Anthropic released computer use in public beta so Claude could inspect screens, move a cursor, click and type through software interfaces.",
+      "whyCare": "Agents could act in systems that had no clean API or purpose-built integration, although reliability and security remained difficult.",
+      "before": "Automation generally needed APIs, scripts or brittle browser automation.",
+      "after": "A model could interact with existing graphical software in a more general way.",
+      "learn": "Computer use expands reach but raises verification, sandboxing, credential and recovery requirements.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic - Developing a computer use model",
+          "url": "https://www.anthropic.com/news/developing-computer-use"
+        }
+      ]
+    },
+    {
+      "id": "2024-11-25-mcp",
+      "date": "2024-11-25",
+      "layer": "Agent & Infrastructure",
+      "kind": "milestone",
+      "changeType": "open protocol",
+      "impact": "Step-change",
+      "title": "MCP introduced an open standard for connecting AI systems to tools and data",
+      "whatChanged": "Anthropic open-sourced the Model Context Protocol as a standard way to connect AI assistants to data sources, business tools and development environments.",
+      "whyCare": "It created a common integration pattern where each model application did not need a completely bespoke connector for every source.",
+      "before": "Tool and data connections were commonly implemented separately for each application or framework.",
+      "after": "A shared protocol could let tools and data sources expose reusable interfaces to many AI clients.",
+      "learn": "Watch standards adoption. Protocols matter when ecosystems converge around them, not just when they are announced.",
+      "cloudPrimitives": [
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic - Introducing the Model Context Protocol",
+          "url": "https://www.anthropic.com/news/model-context-protocol"
+        }
+      ]
+    },
+    {
+      "id": "2025-01-20-deepseek-r1",
+      "date": "2025-01-20",
+      "layer": "Model",
+      "kind": "milestone",
+      "changeType": "open reasoning economics",
+      "impact": "Step-change",
+      "title": "DeepSeek-R1 increased pressure on reasoning cost and open access",
+      "whatChanged": "DeepSeek released R1 and distilled reasoning models with open weights under the MIT license and published low API pricing.",
+      "whyCare": "Reasoning capability became available through a wider range of deployment and cost options, increasing pressure on closed-model economics.",
+      "before": "Advanced reasoning was more strongly associated with a small number of closed providers.",
+      "after": "Teams had more options to trade off model quality, hosting control, openness and cost.",
+      "learn": "Avoid hard-wiring architecture to one provider. Model routing and portability become more valuable as capability and price move quickly.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "DeepSeek - R1 release",
+          "url": "https://deepseek.com/en/news/deepseek-r1/"
+        }
+      ]
+    },
+    {
+      "id": "2025-03-11-responses-agents",
+      "date": "2025-03-11",
+      "layer": "Agent & Infrastructure",
+      "kind": "milestone",
+      "changeType": "managed agent platform",
+      "impact": "Packaging / distribution",
+      "title": "Agent building blocks moved further into managed platform infrastructure",
+      "whatChanged": "OpenAI released the Responses API, built-in tools and an Agents SDK with tracing for building agentic applications.",
+      "whyCare": "Core agent runtime capabilities became easier to consume as managed services, reducing custom orchestration work for teams using that stack.",
+      "before": "Teams commonly assembled tool use, orchestration, tracing and state through custom code or separate frameworks.",
+      "after": "More of the agent harness could be bought as platform infrastructure.",
+      "learn": "Distinguish fundamental capability changes from packaging changes. Managed runtimes can still matter because they change build-versus-buy economics.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - New tools for building agents",
+          "url": "https://openai.com/index/new-tools-for-building-agents/"
+        }
+      ]
+    },
+    {
+      "id": "2025-04-09-a2a",
+      "date": "2025-04-09",
+      "layer": "Agent & Infrastructure",
+      "kind": "milestone",
+      "changeType": "agent interoperability",
+      "impact": "Incremental",
+      "title": "A2A formalized a direction toward agent-to-agent interoperability",
+      "whatChanged": "Google announced the Agent2Agent protocol to let agents built by different vendors or frameworks communicate and coordinate.",
+      "whyCare": "It made cross-agent interoperability a clearer ecosystem goal, although standards need adoption before they become architecture defaults.",
+      "before": "Multi-agent systems usually assumed one framework, one vendor or custom communication conventions.",
+      "after": "A shared protocol could reduce coupling between agent systems if ecosystem adoption follows.",
+      "learn": "Treat emerging protocols as directional signals first. Adopt them when ecosystem support and customer requirements justify it.",
+      "cloudPrimitives": [
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Google - Announcing the Agent2Agent Protocol",
+          "url": "https://developers.googleblog.com/a2a-a-new-era-of-agent-interoperability/"
+        }
+      ]
+    },
+    {
+      "id": "2025-05-21-managed-mcp-background",
+      "date": "2025-05-21",
+      "layer": "Agent & Infrastructure",
+      "kind": "milestone",
+      "changeType": "managed runtime maturity",
+      "impact": "Incremental",
+      "title": "Managed agent runtimes added remote MCP and more reliable long-running execution",
+      "whatChanged": "OpenAI added remote MCP support, background mode and additional reliability and privacy features to its Responses API.",
+      "whyCare": "Agent infrastructure started absorbing more connectivity, long-running execution and observability concerns into managed runtimes.",
+      "before": "Teams had to assemble more of the connectivity and long-running execution behavior themselves.",
+      "after": "Managed platforms covered more of the operational agent harness.",
+      "learn": "Compare managed convenience with portability, visibility, security requirements and provider lock-in.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - New tools and features in the Responses API",
+          "url": "https://openai.com/index/new-tools-and-features-in-the-responses-api/"
+        }
+      ]
+    },
     {
       "id": "2026-09-18-long-running-agent-reliability",
       "date": "2026-09-18",
       "layer": "Agent & Infrastructure",
+      "kind": "signal",
       "changeType": "architecture frontier",
       "impact": "Step-change",
       "title": "Long-running agent reliability is becoming the real bottleneck",
-      "whatChanged": "Frontier agent systems can already execute multi-step work, but reliability falls as tasks get longer and tool use becomes more complex. The industry is increasingly focusing on state, recovery, verification and trajectory-level control rather than only model quality.",
-      "whyCare": "For enterprise architecture, the important question is shifting from whether an agent can do one task to whether it can complete a long workflow safely and repeatedly.",
+      "whatChanged": "Frontier agent systems can already execute multi-step work, but reliability falls as tasks get longer and tool use becomes more complex. The engineering focus is shifting toward state, recovery, verification and trajectory-level control.",
+      "whyCare": "For enterprise architecture, the question is moving from whether an agent can do one task to whether it can complete a long workflow safely and repeatedly.",
       "before": "Agents were judged mainly on impressive individual tasks and demos.",
       "after": "Architecture increasingly centers on reliable execution across many steps, tools, failures and approvals.",
       "learn": "Long-horizon reliability, persistent state, retries, recovery, verification and human escalation.",
@@ -49,7 +451,7 @@
       ],
       "sources": [
         {
-          "name": "Microsoft Research — long-horizon tasks",
+          "name": "Microsoft Research - long-horizon tasks",
           "url": "https://www.microsoft.com/en-us/research/publication/on-training-large-language-models-for-long-horizon-tasks-an-empirical-study-of-horizon-length/"
         }
       ]
@@ -58,6 +460,7 @@
       "id": "2026-09-18-agent-security-controls",
       "date": "2026-09-18",
       "layer": "Production & Business",
+      "kind": "signal",
       "changeType": "operating model",
       "impact": "Step-change",
       "title": "Agent security is moving from app security to actor-level control",
@@ -73,23 +476,24 @@
       ],
       "sources": [
         {
-          "name": "Google Cloud — workload identities",
+          "name": "Google Cloud - workload identities",
           "url": "https://cloud.google.com/iam/docs/workload-identities"
         }
       ]
     },
     {
-      "id": "2026-09-10-openai-agents-api",
+      "id": "2026-09-10-managed-agent-runtimes",
       "date": "2026-09-10",
       "layer": "Agent & Infrastructure",
+      "kind": "signal",
       "changeType": "packaging / distribution",
       "impact": "Packaging / distribution",
-      "title": "Managed agent runtimes reduce custom harness work",
-      "whatChanged": "OpenAI introduced a managed agent runtime that packages context, tools, subagents, execution and long-running task infrastructure.",
-      "whyCare": "The underlying pattern was already available through custom stacks and other frameworks. The meaningful change is lower implementation friction for teams using that provider.",
+      "title": "Managed agent runtimes continue to reduce custom harness work",
+      "whatChanged": "More providers are packaging context, tools, subagents, execution and long-running task infrastructure into managed agent runtimes.",
+      "whyCare": "The underlying patterns already existed, but lower implementation friction changes build-versus-buy decisions.",
       "before": "Teams assembled much of the harness themselves or through separate frameworks.",
       "after": "More runtime pieces can be consumed as managed infrastructure.",
-      "learn": "Agent harness = state, context, tools, execution, retries, permissions, memory and observability.",
+      "learn": "Agent harness means state, context, tools, execution, retries, permissions, memory and observability.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -98,8 +502,8 @@
       ],
       "sources": [
         {
-          "name": "OpenAI — Agents API",
-          "url": "https://openai.com/index/introducing-the-agents-api/"
+          "name": "OpenAI - agent platform reference",
+          "url": "https://openai.com/index/new-tools-for-building-agents/"
         }
       ]
     },
@@ -107,10 +511,11 @@
       "id": "2026-09-01-enterprise-evals",
       "date": "2026-09-01",
       "layer": "Production & Business",
+      "kind": "signal",
       "changeType": "evaluation practice",
       "impact": "Incremental",
       "title": "Agent evaluation is expanding from output quality to behaviour",
-      "whatChanged": "Teams increasingly need to inspect what tools an agent used, which path it took, and whether it stayed inside policy, not only whether the final answer looked correct.",
+      "whatChanged": "Teams increasingly need to inspect which tools an agent used, which path it took and whether it stayed inside policy, not only whether the final answer looked correct.",
       "whyCare": "A correct-looking output can still come from an unsafe or invalid path. That matters once agents can take actions.",
       "before": "Evaluate whether the final answer is correct.",
       "after": "Evaluate both the result and the action trajectory that produced it.",
@@ -122,7 +527,7 @@
       ],
       "sources": [
         {
-          "name": "Microsoft Research — diagnosing agent failures",
+          "name": "Microsoft Research - diagnosing agent failures",
           "url": "https://www.microsoft.com/en-us/research/publication/diagnosing-with-insights-structured-analysis-of-agent-failures-via-behavioral-abstractions/"
         }
       ]

@@ -1,33 +1,33 @@
-# RVL Editorial System — Swiss Newsroom Edition
+# RVL Editorial System: Swiss Newsroom Edition
 
-Status: v1.0  
+Status: v1.1  
 Owner: Rapid Venture Lab  
-Purpose: reading-first intelligence products, research radars, market/technology briefings, reports, editorial dashboards, and public knowledge products.
+Purpose: reading-first intelligence products, research radars, market and technology briefings, reports, editorial archives, and public knowledge products.
 
 ## 1. Design intent
 
-RVL Editorial is not a generic “Swiss-looking” theme. It combines three traditions:
+RVL Editorial combines three disciplines:
 
-1. **Swiss / International Typographic structure**: grid discipline, asymmetry, flush-left/ragged-right type, restrained colour, precision, and minimal ornament.
-2. **Newsroom information architecture**: strong story hierarchy, vertical reading flow, visible metadata, modular grids, rules, and repeatable story anatomy.
-3. **Digital reading/accessibility practice**: controlled line length, readable body size, generous leading, high contrast, relative units, keyboard focus, and responsive reflow.
+1. Swiss and International Typographic structure: grid discipline, asymmetry, flush-left type, restrained colour, precision, and minimal ornament.
+2. Newsroom information architecture: strong story hierarchy, vertical reading flow, visible metadata, modular grids, rules, and repeatable story anatomy.
+3. Digital reading and accessibility practice: controlled line length, readable body size, generous leading, high contrast, keyboard focus, and responsive reflow.
 
-The intended result is a serious digital newspaper/research journal for technology and enterprise-AI intelligence.
+The result should feel like a serious digital newspaper or research journal, not a SaaS dashboard.
 
 ## 2. Non-negotiable principles
 
 ### Reading before dashboard density
-- Primary unit = **story**, not card.
-- Main content reads continuously top-to-bottom.
+- Primary unit is a story, not a card.
+- Main content reads top to bottom.
 - Analytics, filters, maps, and metrics support the reading flow.
-- Essential story content is visible by default, not hidden in accordions.
+- Essential story text stays visible by default.
 
 ### Grid is structural
 - Desktop: 12 columns.
 - Tablet: 8 columns.
-- Mobile: 4-column underlying grid / one reading column.
-- Major text blocks, rules, metadata rails, and modules align to grid.
-- Grid lines are usually invisible; alignment exposes the system.
+- Mobile: 4-column underlying grid with one reading column.
+- Major text blocks, rules, metadata rails, and modules align to the grid.
+- Grid lines are usually invisible. Alignment reveals the system.
 
 ### Flush-left, ragged-right
 - Running text is left aligned.
@@ -35,66 +35,50 @@ The intended result is a serious digital newspaper/research journal for technolo
 - Headings default left aligned.
 
 ### Restrained colour
-- Paper + ink dominate.
-- RVL green is the editorial signal: active filters, links, selected states, section marks, high-value data marks.
-- Bright green is not used for normal body text.
+- Near-white paper and dark ink dominate.
+- RVL green is the signal colour for active states, links, selected filters, live indicators, and charts.
+- Bright green is not body text.
 - No gradients on reading surfaces.
 
 ### Rules before boxes
-- Separate stories with whitespace and 1px rules.
-- Do not wrap every story in a rounded card.
-- Cards only for tools, architecture matrices, compact data modules, or explicit callouts.
+- Separate stories with whitespace and thin rules.
+- Do not wrap every story in a card.
+- Boxed components are reserved for tools, controls, matrices, or explicit callouts.
 
-### Explicit font roles
-- Serif = story reading/editorial voice.
-- Sans = navigation, labels, interface, supporting summaries.
-- Mono = dates, impact labels, taxonomy, compact data.
-- Maximum three font families.
+### Two-font system
+- Newsreader: editorial headlines, decks, body copy, before and after text.
+- Instrument Sans: navigation, metadata, tags, dates, filters, buttons, section headings, data labels.
+- Do not add a third font unless a future product requirement proves it is necessary.
 
 ## 3. Typography
 
-### Families
-**Newsreader**
-- Article headlines, decks, body copy, quotations, before/after narrative.
-- Use `font-optical-sizing:auto`.
+### Type roles
 
-**Instrument Sans**
-- Navigation, filters, section headings, buttons, UI, supporting summaries.
-
-**JetBrains Mono**
-- Dates, timestamps, impact/status labels, taxonomy, counts, source labels.
-- Never for long paragraphs.
-
-### Type scale
-
-| Token | Family | Size | Leading | Weight | Use |
+| Token | Family | Desktop size | Leading | Weight | Use |
 |---|---|---:|---:|---:|---|
-| masthead | Instrument Sans | 14px | 1.2 | 600 | product/nav |
-| kicker | JetBrains Mono | 11px | 1.35 | 600 | meta/section labels |
-| display | Newsreader | 56px | 1.00 | 500 | page lead |
-| h1 | Newsreader | 42px | 1.05 | 500 | major story |
-| h2 | Newsreader | 32px | 1.10 | 500 | archive story |
-| h3 | Instrument Sans | 22px | 1.20 | 600 | analytical sections |
-| deck | Newsreader | 21px | 1.42 | 400 | why-care/deck |
-| body-lg | Newsreader | 19px | 1.62 | 400 | lead story |
+| display | Newsreader | 56 to 70px | 0.98 to 1.02 | 500 | page lead |
+| h1 story | Newsreader | 42 to 52px | 1.04 | 500 | lead story |
+| h2 story | Newsreader | 30 to 34px | 1.09 | 500 | archive story |
+| deck | Newsreader | 19 to 21px | 1.47 to 1.50 | 400 | why it matters |
+| body large | Newsreader | 19px | 1.64 | 400 | lead story |
 | body | Newsreader | 18px | 1.62 | 400 | archive story |
-| body-sm | Instrument Sans | 14px | 1.55 | 400 | UI/support |
-| caption | Instrument Sans | 12px | 1.45 | 400 | caption/helper |
-| meta | JetBrains Mono | 10px | 1.4 | 600 | labels |
+| section heading | Instrument Sans | 24 to 30px | 1.15 | 600 | editorial sections |
+| interface | Instrument Sans | 13 to 16px | 1.4 to 1.55 | 400 to 650 | controls and support |
+| metadata | Instrument Sans | 12px | 1.3 | 700 | dates, layers, impact |
 
-Implement with rem/clamp where possible so user scaling works.
+Use rem and clamp where possible so user scaling works.
 
 ### Reading measure
-- Main story body: 58–68ch, target 64–66ch.
-- Deck: 48–58ch.
-- Secondary narrow columns: 38–50ch.
-- Avoid >80 characters for running prose.
+- Main story body: 58 to 68ch, target 64 to 66ch.
+- Deck: 48 to 58ch.
+- Secondary narrow columns: 38 to 50ch.
+- Avoid running prose wider than roughly 80 characters.
 
 ### Paragraph rhythm
-- Paragraph bottom: 1.15em.
-- Semantic story blocks: 2–2.5rem.
-- Headline → deck: 0.5–0.75rem.
-- Deck → body: 1.5–2rem.
+- Paragraph bottom: about 1.15em.
+- Semantic story blocks: 2 to 2.5rem.
+- Headline to deck: 0.5 to 0.75rem.
+- Deck to body: 1.5 to 2rem.
 
 ## 4. Layout
 
@@ -103,295 +87,318 @@ Implement with rem/clamp where possible so user scaling works.
 - Desktop gutter: 32px.
 - Tablet gutter: 24px.
 - Mobile gutter: 16px.
-- Grid gap: 20px desktop, 16px tablet/mobile.
+- Grid gap: 20px desktop, 16px tablet and mobile.
 
 ### Desktop story anatomy
-- Columns 1–2: date/metadata rail.
-- Columns 3–9: story.
-- Columns 10–12: impact/cloud/source rail.
-- Story prose itself remains capped near 66ch.
+- Columns 1 to 2: date and metadata rail.
+- Columns 3 to 9: story.
+- Columns 10 to 12: impact, cloud, and source rail.
+- Story prose remains capped near 66ch.
 
 ### Tablet
-- 8 columns.
-- Metadata rail 2 columns.
-- Story 6 columns.
+- 8-column behavior.
+- Metadata rail: 2 columns.
+- Story: 6 columns.
 - Right rail moves below story.
 
 ### Mobile
 - One reading flow.
-- Metadata becomes inline row above headline.
-- Before/after stacks.
+- Metadata becomes an inline row above headline.
+- Before and after stacks.
 - No prose horizontal scrolling.
-- Architecture/data matrices may scroll independently.
+- Dense matrices may scroll independently.
 
-## 5. Spacing tokens
+## 5. Spacing
 
-4px base rhythm:
+Use a 4px base rhythm:
 
-```
-4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96
-```
+4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96.
 
 Rules:
-- Story-to-story: 48–64px + 1px rule.
-- Major sections: 72–96px.
-- Controls: 8–12px gaps.
-- Avoid arbitrary one-off spacing values.
+- Story to story: 48 to 64px plus one rule.
+- Major sections: 72 to 96px.
+- Controls: 8 to 12px gaps.
+- Avoid arbitrary one-off spacing.
 
 ## 6. Colour
 
 ```
-paper        #F6F3EC
-paper-deep   #EEEAE1
-surface      #FFFEFB
-ink          #16181D
-ink-soft     #3F4450
-muted        #62615C
-faint        #8B8A84
-rule         #D8D5CD
-rule-strong  #A8A59D
+paper        #FCFCF9
+surface      #FFFFFF
+soft         #F5F5F0
+ink          #171A1F
+ink-soft     #44484F
+muted        #62676F
+faint        #858A91
+rule         #DEDFDA
+rule-strong  #AEB1AC
 
-green        #39B54A  // graphic accent
-green-dark   #1E7230  // links/active text
-green-soft   #E9F7EC
-
-warning      #9A6610
-danger       #B53131
-info         #365FB7
+green        #39B54A
+green-dark   #1E7230
+green-soft   #EAF7ED
 ```
 
 Rules:
-- Body = ink.
-- Secondary = muted.
-- Links = dark green and visibly underlined.
-- Bright green = bars, dots, accent rules, non-text marks.
+- html, body, masthead, and page shell use the same paper token.
+- Force light colour scheme for consistent desktop and mobile rendering.
+- Body copy uses ink.
+- Secondary copy uses muted.
+- Links use dark green and visible underlines.
+- Bright green is for dots, progress, bars, and other non-text signal marks.
 - Colour never carries meaning alone.
 
 ## 7. Corners, borders, shadows
 
 ### Radius
-```
-editorial surface 0px
-control           4px
-small label       3px
-pill              999px only for compact status
-```
+- Editorial surfaces: 0px.
+- Controls: 4px.
+- Small status: 3px.
+- Pills only for compact data when justified.
 
 ### Borders
 - Default rule: 1px solid rule.
-- Major section: 2px solid ink.
+- Major section rule: 2px solid ink.
 - Accent rule: 3px solid green, sparingly.
 
 ### Shadows
 - Default: none.
-- Floating overlays only: restrained shadow.
+- Floating overlays only.
 - No persistent card shadows.
 
 ## 8. Story anatomy
 
-Every update is ordered:
+Every tracked change uses this order:
 
-1. Date / layer / change type / impact
-2. Headline
-3. Deck = why it matters
-4. What changed
-5. Before → After
-6. What to learn
-7. Cloud primitives
-8. Sources
+1. Type: Current signal or Historical milestone
+2. Date
+3. Primary AI layer
+4. Change type
+5. Impact
+6. Headline
+7. Why it matters
+8. What changed
+9. Before
+10. After
+11. What to learn
+12. Cloud primitives
+13. Sources
 
 ### Lead story
 - Latest meaningful update.
-- Largest headline.
-- Full body visible.
-- Green appears as rule/marker, not green hero card.
+- Largest story headline.
+- Full story visible.
+- Green appears as a signal, not a hero background.
 
 ### Archive story
-- Metadata rail + story + analytical rail.
+- Metadata rail plus story plus analytical rail.
 - Visible by default.
-- Top/bottom rules and generous space.
+- Separated by whitespace and rules.
 - No accordion required.
 
-### Before → After
-Desktop:
-- two equal columns
-- thin dividing rule
-- labels in mono
-- narrative in Newsreader 16–17px
+## 9. Mental model
 
-Mobile:
-- stack vertically
-- divider becomes horizontal
+### Five AI layers
 
-## 9. Navigation and filters
+**Data & Knowledge**  
+The information the AI can use: documents, databases, retrieval, context, memory, and the systems that keep information current.
+
+**Model**  
+The model that performs language, reasoning, coding, vision, or audio tasks.
+
+**Agent & Infrastructure**  
+The runtime around the model: tools, state, memory, orchestration, permissions, sandboxes, and the ability to take actions.
+
+**Application & Workflow**  
+The user experience and business process where AI is used, from copilots to end-to-end task flows.
+
+**Production & Business**  
+Everything needed to run AI responsibly at scale: evals, monitoring, governance, cost, risk, reliability, and measurable business value.
+
+### Four cloud primitives
+
+**Compute**  
+Where it runs: inference, agents, application code, indexing, evals, and processing.
+
+**Networking**  
+How it connects: traffic between users, models, tools, data sources, APIs, and enterprise systems.
+
+**Storage**  
+Where data and state live: documents, databases, vectors, memory, logs, traces, and application state.
+
+**Security**  
+Who or what is allowed access: identity, permissions, secrets, isolation, approvals, and audit controls.
+
+### Impact labels
+
+**Disruptive**  
+Changes what is practical to build or reshapes the market enough that old assumptions need to be reconsidered.
+
+**Step-change**  
+A clear jump in capability, cost, reliability, or usability that changes architecture decisions, but does not reset the whole market.
+
+**Incremental**  
+A meaningful improvement to an existing approach. It matters, but the basic architecture and workflow stay mostly the same.
+
+**Packaging / distribution**  
+The underlying capability mostly existed already, but it becomes easier, cheaper, more integrated, or available to more teams.
+
+## 10. Direction and velocity
+
+The radar must show history and trajectory, not only latest news.
+
+### Historical baseline
+- Start with the public ChatGPT launch on 30 November 2022 as the practical beginning of this archive.
+- Add only milestones that changed architectural capability, cost, integration, deployment, workflow, or production practice.
+- Vendor launches are not milestones merely because they are new.
+
+### Direction
+For each AI layer show:
+- Past
+- Now
+- Direction hypothesis
+
+Direction is explicitly an editorial hypothesis, not a guaranteed end state.
+
+### Velocity proxy
+Velocity is not market growth and must never be presented as a scientific measure.
+
+Recommended proxy:
+- Use curated archive events from the trailing 36 months.
+- Weight impact:
+  - Disruptive: 4
+  - Step-change: 3
+  - Incremental: 1
+  - Packaging / distribution: 0.5
+- Apply recency:
+  - <=12 months: 1.0
+  - 13 to 24 months: 0.65
+  - 25 to 36 months: 0.35
+- Normalize layer scores against the highest layer in the archive.
+- Label as High, Medium, Low, or No recent signal.
+- Always display the note that this is a relative proxy based on the curated archive.
+
+## 11. Live cues
+
+The product updates daily, so the interface should communicate freshness without looking like a trading terminal.
+
+Required:
+- Small live green dot beside Updated daily.
+- Exact latest data update date.
+- Tracked-change count.
+- Thin green scroll-progress rule at the very top.
+- Newest story visibly presented first.
+
+Motion:
+- One restrained pulse on the live dot.
+- Scroll progress reacts to reading position.
+- Respect prefers-reduced-motion.
+- No ticker, bouncing, parallax, or constant animation.
+
+## 12. Navigation and filters
 
 ### Masthead
 - Full Rapid Venture Lab horizontal wordmark.
 - Product name as secondary descriptor.
-- Nav: Latest / Archive / Architecture.
-- Updated timestamp on right where space allows.
+- Navigation: Latest, Direction, Archive, Mental model.
 
 ### Search form
 Required:
-- Search input
-- AI layer
-- Impact
-- Cloud primitive
-- primary button **Search**
-- secondary action **Reset**
+- Search input.
+- AI layer.
+- Impact.
+- Type: Current signal or Historical milestone.
+- Primary button: Search.
+- Secondary button: Reset.
 
 Rules:
-- Primary action must never say Clear.
-- Reset is visually secondary.
-- Enter in the search input submits.
-- Architecture cells may apply filters and scroll/focus Archive.
+- Primary action never says Clear.
+- Enter submits the search form.
+- Reset restores the full archive.
 
-## 10. Metrics
-- Use one compact horizontal issue index.
-- Prefer columns + rules over cards.
-- Metrics are context, not hero.
-- Do not claim rate/velocity until enough baseline exists; use **Building baseline** until then.
+## 13. Visualization
 
-## 11. Architecture matrix
-The map may behave more like a tool:
-- strict square grid
-- no shadows
-- paper-deep header cells
-- green-soft hover/active
-- clicking cell filters Archive by layer + primitive
-- strong visible keyboard focus
+Use simple editorial visualizations first:
+- Impact-weighted velocity bars by AI layer.
+- Past to Now to Direction trajectory rows.
+- Year-based milestone timeline.
+- Thin rules, dots, and bars instead of decorative charts.
 
-## 12. Accessibility target
+Do not add a visualization unless it improves understanding of direction, density, comparison, or timing.
+
+## 14. Architecture atlas
+
+Do not use a tiny spreadsheet-like table.
+
+For each AI layer:
+- Layer heading and plain-language description.
+- Four larger primitive columns: Compute, Networking, Storage, Security.
+- Each primitive contains a full plain-language explanation.
+- Clicking a primitive filters the archive.
+- On mobile use a two-column primitive layout or stack.
+
+## 15. Contact and ownership
+
+The footer should include:
+- Rapid Venture Lab website.
+- Rapid Venture Lab LinkedIn.
+- GitHub repository.
+- Clear statement that sources are public and impact/direction labels are editorial assessments.
+
+A sponsor link is optional and should remain secondary until a GitHub Sponsors profile is configured.
+
+## 16. Accessibility target
 
 Minimum: WCAG 2.2 AA.
-- Normal text contrast >= 4.5:1.
-- Large text >= 3:1.
-- Relevant UI/focus graphics >= 3:1.
-- Body >= 16px, 17–19px preferred.
-- Long prose leading >= 1.5.
-- Survive user text-spacing overrides.
-- Resize to 200% without loss of content/function.
+- Normal text contrast at least 4.5:1.
+- Large text at least 3:1.
+- Relevant UI and focus graphics at least 3:1.
+- Body at least 16px; 17 to 19px preferred.
+- Long prose leading at least 1.5.
+- Resize to 200% without loss of content or function.
 - Do not disable pinch zoom.
 - Visible keyboard focus.
-- Sticky masthead must not obscure targets: use scroll-padding-top.
+- Sticky masthead must not obscure anchors.
 - Semantic heading order.
-- Native form controls and buttons/links.
+- Native form controls and buttons where possible.
 
-## 13. Motion
-
-Allowed:
-- 120–180ms hover/focus/underline transitions.
-- optional subtle result fade.
-- smooth scroll unless reduced-motion requested.
-
-Banned:
-- staggered card entrance
-- pulsing live dots in reading flow
-- card lifts
-- spring/bounce/parallax
-
-## 14. Core components
-
-### Masthead
-Square/quiet, rule-bottom, full RVL lockup.
-
-### Section rule
-2px ink top rule + 10px mono kicker + 24–32px heading.
-
-### Story
-No card; top/bottom rule and vertical rhythm.
-
-### Status
-Mono 10px uppercase; square or 3px radius.
-
-### Source
-Underlined text link, never hidden in decorative chip.
-
-### Search/filter
-One row desktop, stacked responsive. Search primary, Reset secondary.
-
-### Metric strip
-Four columns separated by vertical rules.
-
-### Architecture matrix
-Dense boxed component permitted.
-
-## 15. Content rules
-- Headlines factual, not clickbait.
-- Deck answers “why should I care?”
-- What changed describes the actual change.
-- Before → After is concrete.
-- What to learn names a concept/skill.
-- Impact is editorial assessment, visually distinct from vendor claim.
-- Sources always visible/clickable.
-
-## 16. Responsive breakpoints
+## 17. Responsive breakpoints
 
 ### >= 1200px
-12-column story: metadata / story / rail.
+12-column story: metadata, story, rail.
 
-### 768–1199px
-8-column behavior; analysis rail below story.
+### 768 to 1199px
+8-column behavior with analysis rail below story.
 
 ### < 768px
-Single reading flow; 16px gutters; body 16–17px / 1.6; filter form stacks; only architecture matrix may scroll horizontally.
+Single reading flow, 16px gutters, 16 to 17px body, stacked filter form. Only dense analytical components may scroll horizontally.
 
-## 17. Mandatory pre-publish QA
+## 18. Commit and release hygiene
 
-### Readability
-- body 58–68ch desktop
-- body >=16px, leading >=1.5
-- no full justification
-- essential story text visible
-- sources visible/clickable
+- Do not create one commit per user prompt.
+- Group a coherent feature or design pass into one release commit.
+- Current working tree contains only active files. Old implementations remain in Git history, not as duplicate live files.
+- Do not squash published history merely to make it prettier unless there is a specific maintenance reason.
+- Before release: validate syntax, data schema, labels, links, and responsive behavior.
 
-### Interaction
-- Search button says Search
-- Reset says Reset and is secondary
-- Enter submits
-- each filter works
-- combined filters work
-- architecture intersections filter correctly
-- source links open correctly
-- logical Tab order
-- visible focus
+## 19. Research basis
 
-### Responsive
-- test 1440 desktop
-- test 1024 tablet
-- test 390 mobile
-- no prose horizontal overflow
-- architecture-only horizontal scroll acceptable
-
-### Technical
-- no JS console errors
-- updates.json loads
-- result count matches
-- current CSS/JS cache version
-- no unexpected 404s
-- valid heading/form labeling
-
-## 18. Research basis
-
-This system uses documented principles instead of treating “Swiss” as a visual mood:
-
-- Swiss National Library, International Style: precision, typographic grid, sans-serif type, rational composition, restrained colour, readability.  
+- Swiss National Library: International Style, precision, grid, rational composition, restrained colour, readability.  
   https://www.nb.admin.ch/en/the-international-style-1950-1970
-- Swiss Federal Department of Foreign Affairs, Swiss Style: reduction to essentials, restrained colour, sans serif, asymmetry and Zurich grid tradition.  
+- Swiss Federal Department of Foreign Affairs: Swiss Style, reduction, asymmetry, grids, restrained colour.  
   https://www.aboutswitzerland.eda.admin.ch/en/swiss-style-forever-the-story-of-a-graphic-design-tradition
-- Cooper Hewitt, Armin Hofmann / Swiss Style: typography, asymmetrical layout, grid-based design.  
+- Cooper Hewitt: Armin Hofmann and Swiss Style, typography, asymmetry and grid-based design.  
   https://www.cooperhewitt.org/2018/08/05/aharmonyofcontrasts/
-- Poynter, The Grid: news grids as invisible structure; multi-column flexibility, baseline/horizontal grids, whitespace and readability.  
+- Poynter: newsroom grids as invisible structure, whitespace, multi-column flexibility and readability.  
   https://www.poynter.org/reporting-editing/2003/the-grid-the-structure-of-design/
-- The Guardian Design System: editorial grid, typography roles, spacing and colour as navigation.  
+- The Guardian Design System: editorial grid, typography roles, spacing and colour.  
   https://design.theguardian.com/
-- Production Type, Newsreader: serif designed for on-screen long-form news/publishing reading.  
+- Production Type: Newsreader, designed for on-screen long-form news and publishing.  
   https://productiontype.com/font/newsreader
-- Baymard, Optimal Line Length: 50–75 characters; cites Emil Ruder’s 50–60 CPL recommendation.  
+- Baymard: line length and readability, 50 to 75 character guidance.  
   https://baymard.com/research-articles/line-length-readability
-- web.dev Typography: 45–75 CPL single-column; ~66 target; relative ch measure.  
+- web.dev: 45 to 75 characters per line and around 66 as a useful target.  
   https://web.dev/learn/design/typography
-- U.S. Web Design System typography: 16px+ body, flush-left, ~66-character target, 1.5+ leading for long text.  
+- U.S. Web Design System: 16px+ body, flush-left, about 66-character target, 1.5+ leading.  
   https://designsystem.digital.gov/components/typography/
-- W3C WCAG 2.2: contrast, resizing, text spacing, non-text contrast and focus.  
+- W3C WCAG 2.2: contrast, text spacing, resizing, non-text contrast and focus.  
   https://www.w3.org/TR/WCAG22/
