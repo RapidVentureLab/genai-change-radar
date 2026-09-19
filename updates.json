@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-09-18T16:20:00+02:00",
+  "updatedAt": "2026-09-19T12:01:00+02:00",
   "mentalModel": {
     "layers": [
       {
@@ -1017,6 +1017,76 @@
         {
           "name": "Microsoft Azure Well-Architected - MLOps and GenAIOps",
           "url": "https://learn.microsoft.com/en-us/azure/well-architected/ai/mlops-genaiops"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-18-agentcore-runtime-v2",
+      "date": "2026-09-18",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "agent runtime",
+      "impact": "Incremental",
+      "title": "Agent runtimes are becoming more elastic for long-running and bursty agents",
+      "whatChanged": "AWS introduced AgentCore Runtime V2 with memory reclamation during sessions and snapshot-based startup. AWS measured about 2-second P75 cold starts across container images from 200 MB to 2 GB, versus roughly 5.4 to 30 seconds for the earlier runtime.",
+      "whyCare": "Production agents increasingly need isolated compute that can sit idle, resume quickly, run for long periods, and avoid paying for peak memory throughout a session.",
+      "before": "Teams often kept agent environments warm, paid for memory held at the session high-water mark, or built their own lifecycle machinery to reduce cold starts and idle cost.",
+      "after": "A managed agent runtime can scale to zero, reclaim unused memory during a session, and restore prepared environments from snapshots with more predictable startup.",
+      "learn": "Separate the agent harness from the agent runtime. The harness manages reasoning, tools and context; the runtime provides compute, isolation, state and lifecycle.",
+      "architectureImplication": "Treat agent execution as its own infrastructure layer and compare managed runtimes on isolation, startup latency, session lifecycle, state, identity, portability and cost.",
+      "tradeoffs": [
+        "Latency",
+        "Cost",
+        "Control"
+      ],
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS - The new AgentCore runtime",
+          "url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/"
+        },
+        {
+          "name": "AWS - AgentCore Runtime V2 documentation",
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-how-it-works.html"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-18-hyperpod-inference-gateway",
+      "date": "2026-09-18",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "inference routing",
+      "impact": "Packaging / distribution",
+      "title": "Inference-aware routing is becoming a managed production primitive",
+      "whatChanged": "AWS introduced SageMaker HyperPod Inference Gateway, which routes LLM requests using signals such as KV-cache utilization, queue depth, LoRA adapter residency, prefix-cache hit rate and running requests. AWS reports up to 82% lower time-to-first-token in its tests.",
+      "whyCare": "LLM replicas are not interchangeable in the way ordinary stateless web servers are. Cache state, queues and loaded adapters can materially change latency and GPU efficiency.",
+      "before": "Generic round-robin or least-connections routing could send a request to a model pod with a poor cache state, a deep queue or the wrong adapter loaded.",
+      "after": "An inference-aware router can select a backend using model-serving state, improving cache reuse, latency and GPU utilization without changing application clients.",
+      "learn": "Understand KV cache, prefix caching, time-to-first-token, prefill versus decode, LoRA adapters and inference-aware routing. These increasingly determine self-hosted model economics.",
+      "architectureImplication": "For dedicated GPU inference, treat routing and cache topology as part of model-serving architecture rather than using a generic load balancer by default.",
+      "tradeoffs": [
+        "Latency",
+        "Cost",
+        "Reliability"
+      ],
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "AWS - Introducing SageMaker HyperPod Inference Gateway",
+          "url": "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-inference-gateway/"
+        },
+        {
+          "name": "AWS - HyperPod Inference release notes",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-inference-release-notes.html"
         }
       ]
     }
