@@ -5,7 +5,12 @@ const W={"Disruptive":4,"Step-change":3,"Incremental":1,"Packaging / distributio
 let db,heatView="layers"; const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
 const fd=d=>new Intl.DateTimeFormat("en-GB",{day:"numeric",month:"short",year:"numeric"}).format(new Date(d+"T12:00:00Z"));
-const score=a=>a.reduce((s,x)=>s+(W[x.impact]||1),0);\n// Recency rule: newer date first; for same-day updates, later append wins.\n// updates[] is append-only, so array position is the ingestion-order tie-breaker.\nconst byRecency=(a,b)=>b.item.date.localeCompare(a.item.date)||b.index-a.index;\nconst recentUpdates=()=>db.updates.map((item,index)=>({item,index})).sort(byRecency).map(x=>x.item);\nconst latestFor=l=>recentUpdates().find(x=>x.layer===l);
+const score=a=>a.reduce((s,x)=>s+(W[x.impact]||1),0);
+// Recency rule: newer date first; for same-day updates, later append wins.
+// updates[] is append-only, so array position is the ingestion-order tie-breaker.
+const byRecency=(a,b)=>b.item.date.localeCompare(a.item.date)||b.index-a.index;
+const recentUpdates=()=>db.updates.map((item,index)=>({item,index})).sort(byRecency).map(x=>x.item);
+const latestFor=l=>recentUpdates().find(x=>x.layer===l);
 const topBreakthroughs=(l,n=2)=>[...db.updates].filter(x=>x.layer===l).sort((a,b)=>(W[b.impact]||1)-(W[a.impact]||1)||b.date.localeCompare(a.date)).slice(0,n);
 function velocity(){const end=new Date(db.updatedAt),cut=new Date(end);cut.setUTCMonth(cut.getUTCMonth()-36);const raw=Object.fromEntries(LAYERS.map(l=>[l,0]));db.updates.forEach(x=>{const d=new Date(x.date+"T12:00:00Z");if(d<cut)return;const age=(end-d)/(365.25*864e5),r=age<=1?1:age<=2?.65:.35;raw[x.layer]+=(W[x.impact]||1)*r});const max=Math.max(1,...Object.values(raw));return Object.fromEntries(LAYERS.map(l=>[l,Math.round(raw[l]/max*100)]))}
 const velLabel=p=>p>=75?"High":p>=45?"Medium":p>0?"Low":"None";
