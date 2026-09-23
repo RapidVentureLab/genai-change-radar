@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-09-22T10:09:00+02:00",
+  "updatedAt": "2026-09-23T07:12:24.100Z",
   "mentalModel": {
     "layers": [
       {
@@ -1087,6 +1087,85 @@
         {
           "name": "AWS - HyperPod Inference release notes",
           "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-inference-release-notes.html"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-22-gpt-6-sol-luna-cost-capability",
+      "date": "2026-09-22",
+      "layer": "Model",
+      "kind": "milestone",
+      "changeType": "model capability and economics",
+      "impact": "Step-change",
+      "title": "GPT-6 Sol and Luna bring newer reasoning capability to cheaper model tiers",
+      "whatChanged": "OpenAI released GPT-6 Sol and Luna on September 22. Standard short-context API pricing per million tokens is Sol $2 input/$10 output and Luna $0.10 input/$0.50 output, with cached input at $0.20 and $0.01 respectively. OpenAI says these models bring advances from GPT-6 Astra to cheaper tiers; vendor performance claims require task-specific evaluation.",
+      "whyCare": "A larger share of enterprise reasoning, coding and agent subtasks may become economical at higher volume. The right comparison is task success, latency and total cost including retries, not token price alone.",
+      "before": "Teams commonly reserved stronger models for difficult steps and used older or less capable low-cost models for high-volume steps.",
+      "after": "Teams can evaluate newer reasoning-capable Sol and Luna tiers for both difficult and high-volume steps while retaining higher-end and competing models for cases where measured quality warrants them.",
+      "learn": "Build task-specific evals and model routing using accuracy, latency, cache hit rate, retries, cost per successful task and security requirements.",
+      "architectureImplication": "Benchmark multiple models and route by workload and risk; keep provider abstraction and fallback rather than replacing all models based on vendor claims.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost",
+        "Reliability",
+        "Control"
+      ],
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - Introducing GPT-6 Sol and Luna",
+          "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
+        },
+        {
+          "name": "OpenAI API changelog",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        },
+        {
+          "name": "OpenAI API pricing",
+          "url": "https://developers.openai.com/api/docs/pricing"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-22-claude-opus-55-agent-economics",
+      "date": "2026-09-22",
+      "layer": "Model",
+      "kind": "milestone",
+      "changeType": "long-running agent model economics",
+      "impact": "Step-change",
+      "title": "Claude Opus 5.5 lowers the cost of long-running agent workloads",
+      "whatChanged": "Anthropic released Claude Opus 5.5 on September 22 with $4 input/$20 output per million tokens, $0.20 per million cache reads and over 30% faster output than Opus 5 in Anthropic's tests. Anthropic reports typical workloads cost 40% less than Opus 5. The model has a 1M-token context window and always-on adaptive thinking.",
+      "whyCare": "Long-running coding and knowledge agents can become less expensive, especially when they repeatedly read cached context. Production upgrades also need migration testing because several tool-use and thinking behaviors changed.",
+      "before": "Opus 5 had higher token and cache-read prices, and existing integrations could assume optional thinking or forced tool use.",
+      "after": "Opus 5.5 offers cheaper cached context and faster output according to Anthropic, but requires compatibility checks for always-on thinking, tool choice, thinking blocks and computer-use tool versions.",
+      "learn": "Evaluate end-to-end agent cost, cache economics, long-horizon task reliability, prompt-injection resistance and API migration behavior.",
+      "architectureImplication": "Test Opus 5.5 on representative agent tasks and run migration tests for thinking/tool-use behavior before changing production model routing.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost",
+        "Reliability",
+        "Security",
+        "Control"
+      ],
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic - Claude Opus 5.5 announcement",
+          "url": "https://www.anthropic.com/claude-opus-5-5"
+        },
+        {
+          "name": "Anthropic - Opus 5.5 platform docs",
+          "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview"
         }
       ]
     }
