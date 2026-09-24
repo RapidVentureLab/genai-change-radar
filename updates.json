@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-09-23T07:12:24.100Z",
+  "updatedAt": "2026-09-24T13:05:00+02:00",
   "mentalModel": {
     "layers": [
       {
@@ -1166,6 +1166,39 @@
         {
           "name": "Anthropic - Opus 5.5 platform docs",
           "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-23-microsoft-ai-work-system-economics",
+      "date": "2026-09-23",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "enterprise AI operating model",
+      "impact": "Incremental",
+      "title": "Enterprise AI is shifting from seat licensing toward measured agent work",
+      "whatChanged": "Microsoft described an enterprise AI operating model that combines multi-model choice, organizational data and context, centralized monitoring/governance, continuous agent improvement loops, and separate economics for human subscriptions versus autonomous agent work. The individual components already existed, but their convergence into a mainstream enterprise operating model is consequential.",
+      "whyCare": "As agents perform variable amounts of work, a flat per-user software price no longer describes the full economics. Architecture and product teams increasingly need to measure cost and quality per completed task or workflow, while keeping models portable and agents governed.",
+      "before": "Enterprise AI was often bought and managed mainly as a per-user copilot subscription, with agent cost, evaluation and governance handled separately or experimentally.",
+      "after": "Enterprises are increasingly treating agents as metered workloads: choose among models, ground them in enterprise context, monitor and govern them centrally, continuously evaluate outcomes, and manage variable consumption economics.",
+      "learn": "Understand cost per successful task, model routing, agent evaluation loops, centralized governance and the difference between predictable human-seat pricing and variable autonomous-work consumption.",
+      "architectureImplication": "Design enterprise agent platforms with model portability, usage and outcome telemetry, evaluation loops, policy controls and cost attribution at the workflow or agent level rather than assuming one model and one flat license.",
+      "tradeoffs": [
+        "Cost",
+        "Reliability",
+        "Security",
+        "Control"
+      ],
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft - Building the system for AI at work",
+          "url": "https://www.microsoft.com/en-us/copilot/blog/2026/09/23/building-the-system-for-ai-at-work/"
         }
       ]
     }
