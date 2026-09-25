@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-09-24T13:05:00+02:00",
+  "updatedAt": "2026-09-25T10:57:00+02:00",
   "mentalModel": {
     "layers": [
       {
@@ -1199,6 +1199,42 @@
         {
           "name": "Microsoft - Building the system for AI at work",
           "url": "https://www.microsoft.com/en-us/copilot/blog/2026/09/23/building-the-system-for-ai-at-work/"
+        }
+      ]
+    },
+    {
+      "id": "2026-09-24-cross-platform-agent-management",
+      "date": "2026-09-24",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "agent governance",
+      "impact": "Packaging / distribution",
+      "title": "Cross-platform agent governance is becoming a standalone enterprise control layer",
+      "whatChanged": "Dataiku launched Agent Management as a standalone product that discovers and inventories agents across major vendor platforms and custom OpenTelemetry environments, monitors health, usage, cost, quality and behavior, and maintains risk/certification evidence. The underlying monitoring and governance concepts already existed; the notable change is packaging them as a vendor-agnostic layer above fragmented agent stacks.",
+      "whyCare": "Enterprises adopting agents across multiple clouds and SaaS platforms need portfolio-level visibility that no single agent platform naturally provides. Governance is moving from controls inside each builder/runtime toward an independent inventory, evaluation and risk layer.",
+      "before": "Teams typically monitored and governed agents inside the platform where each agent was built, leaving cross-platform inventory, ownership, cost, quality and risk fragmented.",
+      "after": "A separate management layer can discover heterogeneous agents, map their models and tools, track operational and business measures, and maintain risk/certification evidence across platforms.",
+      "learn": "Understand agent inventory, OpenTelemetry-based observability, lifecycle governance, certification, business-value measurement and why multi-vendor agent estates create a control-plane problem.",
+      "architectureImplication": "For enterprises with agents across several platforms, consider a governance/control plane above individual runtimes rather than assuming each vendor's native monitoring provides an enterprise-wide view.",
+      "tradeoffs": [
+        "Cost",
+        "Reliability",
+        "Security",
+        "Control"
+      ],
+      "cloudPrimitives": [
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Dataiku - Agent Management general availability announcement",
+          "url": "https://www.dataiku.com/company/news/dataiku-agent-management-general-availability"
+        },
+        {
+          "name": "Dataiku - Discover Agent Management",
+          "url": "https://www.dataiku.com/blog/dataiku-agent-management"
         }
       ]
     }
