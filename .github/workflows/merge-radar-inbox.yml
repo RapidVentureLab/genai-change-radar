@@ -1,0 +1,42 @@
+name: Merge GenAI Radar Inbox
+
+on:
+  push:
+    paths:
+      - "inbox/**.json"
+  schedule:
+    - cron: "15 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: genai-radar-merge
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Merge inbox
+        run: node scripts/merge-inbox.mjs
+      - name: Validate recency
+        run: node qa-recent.mjs
+      - name: Commit generated dataset
+        run: |
+          if git diff --quiet -- updates.json; then
+            echo "No dataset change required."
+            exit 0
+          fi
+          git config user.name "genai-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add updates.json
+          git commit -m "Merge GenAI Change Radar daily inbox"
+          git push
