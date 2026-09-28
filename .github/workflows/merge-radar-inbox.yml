@@ -1,42 +1,106 @@
-name: Merge GenAI Radar Inbox
+name: Daily GenAI Change Radar
 
 on:
-  push:
-    paths:
-      - "inbox/**.json"
   schedule:
-    - cron: "15 6 * * *"
+    # Run at both possible UTC offsets; the Berlin-time guard keeps exactly 07:45 local.
+    - cron: "45 5,6 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+  copilot-requests: write
+  pages: write
 
 concurrency:
-  group: genai-radar-merge
+  group: genai-radar-daily
   cancel-in-progress: false
 
 jobs:
-  merge:
+  radar:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Berlin-time schedule guard
+        id: guard
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          elif [ "$(TZ=Europe/Berlin date +%H:%M)" = "07:45" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+
+      - name: Set up Node
+        if: steps.guard.outputs.run == 'true'
+        uses: actions/setup-node@v7
         with:
           node-version: "22"
-      - name: Merge inbox
-        run: node scripts/merge-inbox.mjs
-      - name: Validate recency
-        run: node qa-recent.mjs
-      - name: Commit generated dataset
+
+      - name: Prepare today's inbox
+        if: steps.guard.outputs.run == 'true'
+        shell: bash
         run: |
-          if git diff --quiet -- updates.json; then
-            echo "No dataset change required."
-            exit 0
-          fi
+          mkdir -p inbox
+          DAY="$(TZ=Europe/Berlin date +%F)"
+          FILE="inbox/$DAY.json"
+          printf '{\n  "scannedAt": "%s",\n  "updates": []\n}\n' "$(TZ=Europe/Berlin date --iso-8601=seconds)" > "$FILE"
+          echo "RADAR_INBOX=$FILE" >> "$GITHUB_ENV"
+
+      - name: Install Copilot CLI
+        if: steps.guard.outputs.run == 'true'
+        run: npm install -g @github/copilot
+
+      - name: Research and classify
+        if: steps.guard.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          PROMPT="$(cat .github/radar-research-prompt.md)"
+          copilot -p "$PROMPT" -s --no-ask-user --allow-tool='write,url' --allow-all-urls
+
+      - name: Validate inbox and merge
+        if: steps.guard.outputs.run == 'true'
+        shell: bash
+        run: |
+          node -e 'const fs=require("fs"); const f=process.env.RADAR_INBOX; const x=JSON.parse(fs.readFileSync(f,"utf8")); if(!x.scannedAt||!Array.isArray(x.updates)) throw new Error("Invalid inbox"); console.log({inbox:f,accepted:x.updates.length,scannedAt:x.scannedAt});'
+          node scripts/merge-inbox.mjs
+          node qa-recent.mjs
+
+      - name: Commit validated scan
+        if: steps.guard.outputs.run == 'true'
+        shell: bash
+        run: |
           git config user.name "genai-radar-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add updates.json
-          git commit -m "Merge GenAI Change Radar daily inbox"
+          git add "$RADAR_INBOX" updates.json
+          if git diff --cached --quiet; then
+            echo "No change to commit."
+            exit 0
+          fi
+          git commit -m "Daily GenAI Change Radar scan $(TZ=Europe/Berlin date +%F)"
           git push
+
+      - name: Request Pages rebuild
+        if: steps.guard.outputs.run == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds" >/dev/null
+          echo "Pages rebuild requested."
+
+      - name: Verify committed dataset
+        if: steps.guard.outputs.run == 'true'
+        shell: bash
+        run: |
+          git fetch origin main
+          git show origin/main:updates.json > /tmp/committed-updates.json
+          node -e 'const fs=require("fs"); const d=JSON.parse(fs.readFileSync("/tmp/committed-updates.json","utf8")); const i=JSON.parse(fs.readFileSync(process.env.RADAR_INBOX,"utf8")); if(d.updatedAt!==i.scannedAt) throw new Error("updatedAt mismatch"); const ids=d.updates.map(x=>x.id); if(new Set(ids).size!==ids.length) throw new Error("duplicate IDs"); for(const x of i.updates){if(!ids.includes(x.id)) throw new Error("missing accepted ID "+x.id)} console.log({ok:true,updatedAt:d.updatedAt,count:d.updates.length,accepted:i.updates.length});'
