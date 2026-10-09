@@ -1,0 +1,102 @@
+{
+  "scannedAt": "2026-10-09T20:53:25+02:00",
+  "updates": [
+    {
+      "id": "2026-10-09-postman-agent-mode-production-patterns",
+      "date": "2026-10-09",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "production agent architecture",
+      "impact": "Incremental",
+      "title": "Postman's production agent design treats context and tool scope as core runtime constraints",
+      "whatChanged": "Postman and AWS described the architecture behind Agent Mode: a root agent narrows more than 170 possible tools to about 15 per task, structured data is exposed through schema-aware queries rather than many one-off read tools, and purpose-built context handlers supply relevant application state. Postman also keeps approval for state-changing actions and uses Amazon Bedrock for model choice, geographic inference profiles, model-dependent zero data retention, and tiered prompt caching. The post reports tool-selection errors increasing above roughly 40 visible tools in Postman's testing.",
+      "whyCare": "This production case shows that adding tools and prompt text is not a substitute for shaping context and limiting the model's action surface. It offers practical patterns for scaling agents embedded in mature products, while retaining user approval and managing inference geography and cost.",
+      "before": "Early implementations used many atomic tools and interface-shaped data, forcing agents to navigate UI state and serially call tools; an expanding tool catalog and incomplete context made failures and latency more likely.",
+      "after": "Tools are dynamically scoped to the task, structured reads use schema-aware queries, purpose-shaped handlers provide context, and approvals gate changes. Model and inference choices can be configured per workload, with geographic processing boundaries and prompt-cache tiers.",
+      "learn": "Treat the tool catalog as part of the context budget. Dynamically select tools, provide schema-grounded read access for well-structured data, build purpose-shaped context rather than serializing UI objects, and preserve approval for consequential writes.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS - How Postman runs Agent Mode for 40 million developers on Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/how-postman-runs-agent-mode-for-40-million-developers-on-amazon-bedrock/"
+        }
+      ],
+      "architectureImplication": "Design production agents around bounded, task-specific tools and curated context rather than exposing every API or UI object to every model call. Keep write approvals, model-specific data-retention checks, and inference geography explicit; compare the added complexity with simpler per-workflow tools and existing query interfaces.",
+      "tradeoffs": [
+        "Reliability",
+        "Latency",
+        "Cost",
+        "Security",
+        "Control"
+      ]
+    },
+    {
+      "id": "2026-10-09-ai2-gpu-time-budget-scheduler",
+      "date": "2026-10-09",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "GPU cluster scheduling",
+      "impact": "Incremental",
+      "title": "Ai2 reports GPU time budgets and preemption contracts improved shared-cluster scheduling",
+      "whatChanged": "Ai2 replaced a priority-based GPU scheduler with hierarchical fair-share allocation weighted by manager-set GPU-time budgets, plus declared minimum-runtime contracts that allow resumable workloads to be preempted and requeued. In its 30-day test period, the system delivered 98% of allocated GPU hours while maintaining 98% cluster occupancy; debug-job p90 queue waits fell from two hours to 30 seconds and human-involved repairs fell 74%.",
+      "whyCare": "Scarce accelerators create incentives to squat on capacity and inflate priorities. Budgeted fair share can align allocation with organizational priorities while allowing idle capacity to be borrowed, short debug jobs to start quickly, and unhealthy hosts to drain with less manual intervention.",
+      "before": "Ai2's prior priority scheduler allowed non-preemptible work to reserve capacity, encouraged priority inflation, and made maintenance depend on negotiating job shutdowns; fixed team GPU monopolies also left capacity idle when demand shifted.",
+      "after": "GPU time is allocated across a hierarchy of projects, actual usage is balanced over a sliding window, and minimum-runtime declarations provide a progress guarantee before resumable work becomes preemptible. Unallocated capacity can still be used opportunistically.",
+      "learn": "For shared GPU fleets, budget time rather than permanently assigning devices; pair hierarchical fair share with explicit preemption and checkpoint/requeue contracts, visible allocation telemetry, and simulation of queueing and fragmentation effects.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "Hugging Face - Impactful scheduling for GPU clusters (Ai2)",
+          "url": "https://huggingface.co/blog/allenai/impactful-scheduling"
+        }
+      ],
+      "architectureImplication": "Teams operating shared training or inference accelerators can evaluate budget-weighted fair-share and time-slicing rather than relying on strict priority or static GPU quotas. The scheduling algorithm builds on established options such as Slurm Fair Tree and YARN Fair Scheduler; the differentiator is manager-set GPU-time budgets and runtime contracts. Test checkpointability, developer-session state loss, largest-job fragmentation, and adoption needs before rollout.",
+      "tradeoffs": [
+        "Reliability",
+        "Latency",
+        "Cost",
+        "Control"
+      ]
+    },
+    {
+      "id": "2026-10-07-claude-haiku-55-copilot",
+      "date": "2026-10-07",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "model distribution",
+      "impact": "Packaging / distribution",
+      "title": "Claude Haiku 5.5 becomes available across GitHub Copilot products",
+      "whatChanged": "GitHub made Claude Haiku 5.5 generally available in Copilot for individual, Business, and Enterprise plans, including IDEs, Copilot CLI, cloud agent, and github.com, with a gradual rollout and administrator model-policy controls. GitHub positions it for fast, high-volume coding work such as subagents, quick edits, and terminal tasks; its early testing found it matched Sonnet 5 on many coding tasks while using significantly fewer tokens and steps. Copilot usage is billed at provider list pricing.",
+      "whyCare": "A lightweight model choice is now integrated across enterprise coding-agent surfaces, giving teams another candidate for high-volume subtasks without forcing every operation onto a larger model. Actual savings and quality depend on provider pricing and workload-specific evaluation.",
+      "before": "Copilot users selected from models already exposed in their plans, while teams needing a fast model for subagents and routine coding steps had fewer integrated options.",
+      "after": "Organizations can evaluate Haiku 5.5 across Copilot IDE and agent surfaces, manage its availability through enterprise model policy, and compare it with existing models using usage-based provider pricing.",
+      "learn": "Evaluate the model on representative coding and subagent tasks, comparing success rate, latency, token use, retries, and total cost per completed task; check tenant model policies and usage-based billing before broad enablement.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Claude Haiku 5.5 in GitHub Copilot",
+          "url": "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot"
+        }
+      ],
+      "architectureImplication": "Treat Haiku 5.5 as an additional model-routing option for short, high-volume coding tasks rather than a blanket replacement. Compare it with current Copilot models, including smaller or faster alternatives, under enterprise policy and measure cost per successful task rather than token use alone.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost",
+        "Reliability",
+        "Control"
+      ]
+    }
+  ]
+}
