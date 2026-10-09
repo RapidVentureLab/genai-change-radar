@@ -5,8 +5,10 @@ on:
     paths:
       - ".github/workflows/merge-radar-inbox.yml"
   schedule:
-    # Run at both possible UTC offsets; the Berlin-time guard keeps exactly 07:45 local.
-    - cron: "45 5,6 * * *"
+    # GitHub often starts scheduled runs hours late, so an exact-time check never matches.
+    # Try three times a day; the first run that gets through does the scan and the
+    # later ones skip because today's inbox file already exists.
+    - cron: "17 4,8,12 * * *"
   workflow_dispatch:
 
 permissions:
@@ -22,23 +24,24 @@ jobs:
   radar:
     runs-on: ubuntu-latest
     steps:
-      - name: Berlin-time schedule guard
-        id: guard
-        shell: bash
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event_name }}" = "push" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          elif [ "$(TZ=Europe/Berlin date +%H:%M)" = "07:45" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "run=false" >> "$GITHUB_OUTPUT"
-          fi
-
       - name: Checkout
-        if: steps.guard.outputs.run == 'true'
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
+
+      - name: Once-a-day guard
+        id: guard
+        shell: bash
+        run: |
+          DAY="$(TZ=Europe/Berlin date +%F)"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event_name }}" = "push" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          elif [ -f "inbox/$DAY.json" ]; then
+            echo "Today's scan ($DAY) is already done. Skipping."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Set up Node
         if: steps.guard.outputs.run == 'true'
@@ -53,7 +56,8 @@ jobs:
           mkdir -p inbox
           DAY="$(TZ=Europe/Berlin date +%F)"
           FILE="inbox/$DAY.json"
-          printf '{\n  "scannedAt": "%s",\n  "updates": []\n}\n' "$(TZ=Europe/Berlin date --iso-8601=seconds)" > "$FILE"
+          # scannedAt starts empty so the run fails visibly if the research agent never writes the file.
+          printf '{\n  "scannedAt": "",\n  "updates": []\n}\n' > "$FILE"
           echo "RADAR_INBOX=$FILE" >> "$GITHUB_ENV"
 
       - name: Install Copilot CLI
@@ -73,7 +77,7 @@ jobs:
         if: steps.guard.outputs.run == 'true'
         shell: bash
         run: |
-          node -e 'const fs=require("fs"); const f=process.env.RADAR_INBOX; const x=JSON.parse(fs.readFileSync(f,"utf8")); if(!x.scannedAt||!Array.isArray(x.updates)) throw new Error("Invalid inbox"); console.log({inbox:f,accepted:x.updates.length,scannedAt:x.scannedAt});'
+          node -e 'const fs=require("fs"); const f=process.env.RADAR_INBOX; const x=JSON.parse(fs.readFileSync(f,"utf8")); if(!x.scannedAt) throw new Error("Research agent did not complete: scannedAt is still empty in "+f); if(!Array.isArray(x.updates)) throw new Error("Invalid inbox"); console.log({inbox:f,accepted:x.updates.length,scannedAt:x.scannedAt});'
           node scripts/merge-inbox.mjs
           node qa-recent.mjs
 
@@ -89,6 +93,7 @@ jobs:
             exit 0
           fi
           git commit -m "Daily GenAI Change Radar scan $(TZ=Europe/Berlin date +%F)"
+          git pull --rebase origin main
           git push
 
       - name: Request Pages rebuild

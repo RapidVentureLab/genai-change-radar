@@ -11,6 +11,22 @@ Read updates.json first. Research meaningful PUBLIC developments from the last 2
 
 Filter aggressively. Accept only changes that materially affect enterprise AI architecture, evaluation, deployment, security, operations, adoption, pricing, or product strategy. Exclude funding, generic news, hype, benchmark-only noise, minor launches, and anything already represented by an existing underlying development in updates.json.
 
+You do not have a web search tool. You can fetch URLs. Start by fetching these primary sources and reading their newest entries, then follow links from them to the full announcements:
+- https://openai.com/news/
+- https://www.anthropic.com/news
+- https://blog.google/technology/ai/
+- https://cloud.google.com/blog/products/ai-machine-learning
+- https://aws.amazon.com/new/
+- https://aws.amazon.com/blogs/machine-learning/
+- https://azure.microsoft.com/en-us/updates/
+- https://ai.meta.com/blog/
+- https://mistral.ai/news
+- https://huggingface.co/blog
+- https://github.blog/changelog/
+- https://blog.langchain.com/
+- https://modelcontextprotocol.io/
+Spend real effort here. Open the individual announcement pages before accepting an item, and check the publication date against the last 24-48 hours.
+
 Prefer primary sources: vendor documentation/changelogs, official engineering/product announcements, standards bodies, major open-source project releases, cloud provider documentation. Use independent reporting only as secondary corroboration when useful.
 
 For each accepted development, compare it with the prior state and with relevant vendor/open-source/custom alternatives. Never invent facts, dates, prices, capabilities, sources, or signals.
