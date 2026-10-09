@@ -1,0 +1,73 @@
+{
+  "scannedAt": "2026-10-09T20:52:00+02:00",
+  "updates": [
+    {
+      "id": "2026-10-07-claude-haiku-55-agent-economics",
+      "date": "2026-10-07",
+      "layer": "Model",
+      "kind": "milestone",
+      "changeType": "model capability and economics",
+      "impact": "Step-change",
+      "title": "Claude Haiku 5.5 lowers the cost of high-volume agent work",
+      "whatChanged": "Anthropic introduced Claude Haiku 5.5 for high-volume, cost-sensitive tasks, including summarization, subagents, customer support, and browser use. Anthropic says it is its fastest small model and costs about 75% less to run on average than Haiku 4.5. It adds adjustable effort settings. Anthropic also halved Sonnet 5.5 cache-read pricing from $0.20 to $0.10 per million tokens, which it estimates reduces the cost of most agentic Sonnet work by about 20%.",
+      "whyCare": "A lower-cost, faster model tier can make delegation of narrow, repetitive tasks more economical, while cheaper cache reads change the cost of repeated-context agent workloads. These are material routing inputs, but vendor claims need validation on enterprise tasks.",
+      "before": "Teams could use Haiku 4.5 for cheaper requests and reserve stronger models for complex tasks, with cost and capability tradeoffs between tiers.",
+      "after": "Haiku 5.5 offers a newer option for high-volume tasks at a vendor-reported average 75% lower run cost than Haiku 4.5. Anthropic says it offers best value for prompts up to 100,000 tokens, and it is available through Anthropic and major cloud platforms.",
+      "learn": "Evaluate cost per successful task, not token price alone. Test effort settings and route bounded subtasks separately from complex work; verify quality, latency, safety, and total agent-run cost against incumbent and competing models.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic - Introducing Claude Haiku 5.5",
+          "url": "https://www.anthropic.com/claude-haiku-5-5"
+        }
+      ],
+      "architectureImplication": "Add Haiku 5.5 as a candidate low-cost tier for validated, narrow agent tasks rather than replacing stronger models wholesale. Compare end-to-end success, latency, cache behavior, and safety across providers before changing routing.",
+      "tradeoffs": [
+        "Cost",
+        "Latency",
+        "Accuracy",
+        "Reliability"
+      ]
+    },
+    {
+      "id": "2026-10-09-langchain-harness-model-routing",
+      "date": "2026-10-09",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "agent-level model routing",
+      "impact": "Incremental",
+      "title": "LangChain reports lower coding-agent costs from task-aware model routing",
+      "whatChanged": "On October 9, LangChain described a router in its Open SWE coding agent that classifies the initial request and selects a fast, balanced, or performance model tier for the whole thread. In a 973-thread A/B test against always using GPT-6 Astra, median routed-thread cost was $0.94 versus $2.61, a 64% reduction. The merged-PR rates were 29.2% for routed threads and 27.3% for the control (p = 0.49), so the experiment did not establish a quality difference.",
+      "whyCare": "The report provides production evidence that routing decisions informed by an agent's task mix can reduce spend compared with sending every request to a frontier model. Its measurements are specific to one coding agent and should not be generalized without local evaluation.",
+      "before": "Open SWE sent all threads to its top-tier model, regardless of task complexity.",
+      "after": "The agent classifies each initial request and selects among models from multiple providers; the selected model remains in use for the full thread.",
+      "learn": "Use production traces to characterize task mix, then test routing against a fixed-model control using task success, cost, and user outcomes. A non-significant result is not proof of equivalent quality, and this implementation does not reroute when a thread changes scope.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "LangChain - How to Build a Model Router in the Harness",
+          "url": "https://www.langchain.com/blog/how-to-build-a-model-router-in-the-harness"
+        },
+        {
+          "name": "LangChain - Open SWE model-selection middleware",
+          "url": "https://github.com/langchain-ai/open-swe/blob/main/openswe/middleware/model_selection.py"
+        }
+      ],
+      "architectureImplication": "Keep task-specific routing in the agent harness when it depends on the request, tools, and domain context; A/B test it against a strong fixed-model baseline and retain a path for escalation or mid-thread rerouting.",
+      "tradeoffs": [
+        "Cost",
+        "Accuracy",
+        "Latency",
+        "Control"
+      ]
+    }
+  ]
+}
