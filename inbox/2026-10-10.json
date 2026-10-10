@@ -1,0 +1,42 @@
+{
+  "scannedAt": "2026-10-10T12:37:10+02:00",
+  "updates": [
+    {
+      "id": "2026-10-08-google-gemini-work-agent",
+      "date": "2026-10-08",
+      "layer": "Agent & Infrastructure",
+      "kind": "milestone",
+      "changeType": "enterprise workplace agent",
+      "impact": "Packaging / distribution",
+      "title": "Google announced an identity-aware Gemini agent for workplace workflows",
+      "whatChanged": "At Gemini at Work 2026, Google announced a Gemini agent that can use organizational context, skills, and tools across Workspace applications and connected business systems. The announcement describes team coworker agents with their own Workspace accounts and directory identities, whose access follows existing sharing permissions. Google also described agent-attributed audit trails, sandboxed execution behind an Agent Gateway, model routing, and project-level spend caps. The announcement does not specify general availability or rollout scope.",
+      "whyCare": "This packages cross-application task execution with agent identity, access controls, auditability, and cost limits in a workplace suite. It makes the boundary between personal assistance and delegated work by a persistent software actor more concrete for enterprise design.",
+      "before": "Enterprises commonly combined chat assistants with separately configured app automations or custom agents, while identity, permissions, auditing, and cost controls were handled across distinct services.",
+      "after": "Google's announced approach places an agent inside Workspace workflows and describes team agents with distinct identities, access inherited from shared resources, and centralized execution and spending controls.",
+      "learn": "Evaluate agent-owned identity versus user-delegated access, permission inheritance, action-level audit trails, sandbox boundaries, model routing, and spend limits on a bounded workflow before broad adoption.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Google Cloud - Welcome to Gemini at Work 2026",
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026"
+        },
+        {
+          "name": "Google - Google Cloud introduces the Gemini agent",
+          "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-at-work/"
+        }
+      ],
+      "architectureImplication": "Pilot a workflow and compare Gemini with Microsoft Copilot and custom agent stacks on identity delegation, permission inheritance, action audit, model choice, spending limits, and data boundaries. Workspace-native context may reduce integration work, while increasing dependence on Google’s suite and governance model; verify availability and controls before designing production dependencies.",
+      "tradeoffs": [
+        "Reliability",
+        "Cost",
+        "Security",
+        "Control"
+      ]
+    }
+  ]
+}
