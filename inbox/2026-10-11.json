@@ -1,0 +1,42 @@
+{
+  "scannedAt": "2026-10-11T12:49:15+02:00",
+  "updates": [
+    {
+      "id": "2026-10-09-copilot-local-sandbox-ga",
+      "date": "2026-10-09",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "agent sandbox availability",
+      "impact": "Packaging / distribution",
+      "title": "GitHub made local sandboxing broadly available across Copilot coding agents",
+      "whatChanged": "GitHub made local sandboxing generally available at no extra cost in Copilot CLI, the Copilot app, and VS Code sessions using Agent Host. It constrains agent-run commands' access to files, networks, and credentials, and enterprise-managed settings can require and configure sandboxing.",
+      "whyCare": "Coding agents can execute commands with the developer's privileges, so restricting their filesystem, network, and credential access is a practical adoption control. A first-party option across common Copilot surfaces can reduce reliance on separately assembled local restrictions.",
+      "before": "Without local sandboxing, Copilot CLI commands ran with the user's access; organizations wanting local execution limits had to rely on other system controls or use a separate cloud execution environment.",
+      "after": "Organizations can enable local OS-level sandboxing across several Copilot coding surfaces and enforce policy centrally, while keeping work on the developer's machine.",
+      "learn": "Treat sandboxing as a boundary to configure and validate, not as proof that agent actions are safe. Test filesystem, network, credential, MCP/LSP, and bypass policies on each supported OS; local sandboxing is lighter-weight than a separate VM or container, while GitHub's cloud sandbox provides an isolated remote environment with usage-based billing.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - GitHub Copilot weekly releases, October 5",
+          "url": "https://github.blog/changelog/2026-10-09-github-copilot-weekly-releases-october-5"
+        },
+        {
+          "name": "GitHub Docs - About cloud and local sandboxes for GitHub Copilot",
+          "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/about-cloud-and-local-sandboxes"
+        }
+      ],
+      "architectureImplication": "Evaluate the feature against locally managed OS restrictions and custom container/VM-based development environments. Validate its OS-specific enforcement, managed-policy behavior, and exceptions against the enterprise threat model; prefer the cloud sandbox or stronger isolation where local process-level controls are insufficient, accounting for its separate usage-based cost.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Reliability",
+        "Cost"
+      ]
+    }
+  ]
+}
