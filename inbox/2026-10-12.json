@@ -1,0 +1,36 @@
+{
+  "scannedAt": "2026-10-12T13:56:00+02:00",
+  "updates": [
+    {
+      "id": "2026-10-10-copilot-jetbrains-agent-controls",
+      "date": "2026-10-10",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "agent configuration controls",
+      "impact": "Incremental",
+      "title": "Copilot for JetBrains adds managed model defaults and MCP startup controls",
+      "whatChanged": "GitHub added enterprise-managed settings to choose the default Copilot agent model for new JetBrains conversations, while preserving the user's ability to choose another model. A new setting can also disable automatic startup of configured MCP servers for Copilot and Claude.",
+      "whyCare": "Administrators can set a more consistent model starting point and developers can reduce when configured tools become active. These controls improve IDE-level operations, but do not amount to model allowlisting or authorization for MCP tools.",
+      "before": "JetBrains users chose among exposed models without the newly announced managed default-model setting, and configured MCP servers started automatically.",
+      "after": "Administrators can set the default agent model for new conversations, and users can disable automatic MCP server startup; explicit model selection remains available.",
+      "learn": "Treat a managed default as a starting preference, not an enforced model policy. Validate its scope alongside model allowlists or gateway routing, and keep MCP authorization and least-privilege controls independent of whether servers start automatically.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - New controls and chat improvements in Copilot for JetBrains",
+          "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains"
+        }
+      ],
+      "architectureImplication": "Compare the managed default with stricter enterprise model-policy or gateway-based routing when model selection must be constrained. Treat the MCP startup toggle as a client activation control, not as a replacement for server permissions, scoped credentials, or auditing.",
+      "tradeoffs": [
+        "Control",
+        "Security",
+        "Compatibility"
+      ]
+    }
+  ]
+}
