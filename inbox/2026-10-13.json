@@ -1,0 +1,109 @@
+{
+  "scannedAt": "2026-10-13T13:46:25+02:00",
+  "updates": [
+    {
+      "id": "2026-10-12-agentcore-stm-pricing",
+      "date": "2026-10-12",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "agent memory pricing",
+      "impact": "Incremental",
+      "title": "AgentCore shifted short-term agent memory to consumption-based pricing",
+      "whatChanged": "AWS replaced AgentCore Memory short-term memory's flat per-event price with separate ingestion, retrieval, and storage charges: $1.00/GB ingested, $0.20/GB retrieved, and $0.10/GB-month stored. Ingestion and retrieval have a 12 KB minimum and 64 KB maximum billable size per event; storage is billed on actual event size. Long-term memory pricing is unchanged.",
+      "whyCare": "Agent memory costs now depend more directly on event payload size, retrieval volume, and retention. Teams should include these variables in agent unit economics instead of estimating cost from event counts alone.",
+      "before": "Short-term memory was charged at a flat rate per event, regardless of the amount of data ingested, retrieved, or stored.",
+      "after": "Short-term memory has distinct data-volume charges, with minimum and maximum billable sizes for ingestion and retrieval and TTL-sensitive storage costs.",
+      "learn": "Model memory costs using payload distributions, retrieval frequency, and TTL; compare managed memory with alternatives using total workload cost rather than headline rates alone.",
+      "cloudPrimitives": [
+        "Storage",
+        "Compute"
+      ],
+      "sources": [
+        {
+          "name": "AWS - Consumption-based pricing for short-term memory in Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/agentcore-memory-consumption-based-pricing"
+        },
+        {
+          "name": "AWS - Amazon Bedrock AgentCore pricing",
+          "url": "https://aws.amazon.com/bedrock/agentcore/pricing/"
+        }
+      ],
+      "architectureImplication": "Treat short-term memory payload sizing, retrieval patterns, and TTL as explicit cost and retention controls in agent design.",
+      "tradeoffs": [
+        "Cost",
+        "Control",
+        "Complexity"
+      ]
+    },
+    {
+      "id": "2026-10-12-copilot-telemetry-controls",
+      "date": "2026-10-12",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "AI telemetry and governance",
+      "impact": "Incremental",
+      "title": "Copilot added managed identity attribution and granular telemetry controls",
+      "whatChanged": "GitHub added an opt-in telemetry.capture.identity setting that records the authenticated Copilot account, local OS account, and host name in OpenTelemetry data without requiring prompt or tool-content capture. Enterprise-managed settings can independently enable or disable capture of prompts, responses, tool arguments, tool output, and policy details across Copilot CLI, the Copilot app, and VS Code sessions using Agent Host; all capture classes are off by default and managed values take precedence over local settings.",
+      "whyCare": "Enterprises can attribute agent activity to users and devices for operational or audit needs without collecting sensitive conversation content, while choosing which content categories are necessary for a specific investigation.",
+      "before": "Telemetry included a pseudonymous user identifier, while the legacy captureContent setting acted as a single shorthand for the content categories.",
+      "after": "Administrators can separately control identity attribution and five content classes through centrally managed settings, with identity and content capture disabled by default.",
+      "learn": "Design telemetry policy around the minimum data needed for attribution, reliability, or incident response; content capture can include source code, tool data, and local paths.",
+      "cloudPrimitives": [
+        "Security",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Client telemetry user attribution and configurable capture",
+          "url": "https://github.blog/changelog/2026-10-12-client-telemetry-user-attribution-and-configurable-capture"
+        },
+        {
+          "name": "GitHub Docs - Enterprise managed settings",
+          "url": "https://docs.github.com/copilot/reference/enterprise-administrators/enterprise-managed-settings"
+        }
+      ],
+      "architectureImplication": "Keep agent identity and content telemetry as separate policy decisions, and centrally configure capture scope and approved collection endpoints.",
+      "tradeoffs": [
+        "Privacy",
+        "Auditability",
+        "Control"
+      ]
+    },
+    {
+      "id": "2026-10-12-lambda-web-functions",
+      "date": "2026-10-12",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "serverless HTTP compute",
+      "impact": "Packaging / distribution",
+      "title": "Lambda Web Functions added an HTTP-native option for streaming AI endpoints",
+      "whatChanged": "AWS introduced Lambda Web Functions for standard Node.js HTTP servers, including AI inference endpoints that stream token responses. A warm environment can serve up to 128 concurrent requests; compute is billed on active CPU time while memory is billed for the lifetime of the environment. The launch supports native HTTP streaming, VPC connectivity, multi-Region routing, and traffic splitting across immutable revisions, but is initially limited to Node.js 24 on Arm64 and five AWS Regions.",
+      "whyCare": "Teams can deploy an HTTP server without converting it to an event handler or adding a framework adapter, potentially simplifying streaming inference APIs and reducing CPU charges during I/O waits.",
+      "before": "Teams using Lambda's event-handler model had to adapt HTTP applications to that model, while direct HTTP hosting commonly required assembling separate deployment, routing, and scaling components.",
+      "after": "A Node.js HTTP server can run on Lambda with concurrent request handling, native streaming, managed endpoints, and active-CPU billing.",
+      "learn": "Evaluate HTTP-native serverless compute for I/O-heavy inference APIs, but compare its concurrency, memory lifetime, runtime and Region limits with event-driven functions and container-based hosting.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS News Blog - Announcing AWS Lambda Web Functions",
+          "url": "https://aws.amazon.com/blogs/aws/announcing-aws-lambda-web-functions-for-fast-consistent-web-app-performance-anywhere/"
+        },
+        {
+          "name": "AWS What's New - AWS Lambda announces Lambda Web Functions",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-lambda-web-functions/"
+        }
+      ],
+      "architectureImplication": "Consider an HTTP-native serverless runtime for streaming inference endpoints where framework compatibility, concurrency, I/O wait, and managed global routing matter.",
+      "tradeoffs": [
+        "Latency",
+        "Cost",
+        "Control",
+        "Portability"
+      ]
+    }
+  ]
+}
