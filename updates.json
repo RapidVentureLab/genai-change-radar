@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-10-13T13:46:25+02:00",
+  "updatedAt": "2026-10-14T11:31:04+02:00",
   "mentalModel": {
     "layers": [
       {
@@ -1541,6 +1541,73 @@
         "Latency",
         "Cost",
         "Control",
+        "Portability"
+      ]
+    },
+    {
+      "id": "2026-10-13-gemini-4-argon",
+      "date": "2026-10-13",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "frontier multimodal model",
+      "impact": "Step-change",
+      "title": "Gemini 4 Argon adds a frontier model focused on complex reasoning",
+      "whatChanged": "Google announced Gemini 4 Argon as its latest frontier model, making it available to developers and enterprises. The announcement describes visual-semantic reasoning, physical understanding, and autonomous code generation; Google reports an 87% score on its Embodied Reasoning benchmark and an internal video-to-simulation-to-robot demonstration.",
+      "whyCare": "For teams building vision-driven automation or robotics, the release adds a candidate model for work that spans perception, spatial reasoning, and code generation. The published benchmark and robotics trial are Google-reported results, so enterprise suitability still depends on workload-specific evaluation.",
+      "before": "Teams evaluating frontier models had no access to Gemini 4 Argon or evidence of its stated physical-reasoning and video-to-simulation capabilities.",
+      "after": "Developers and enterprises can evaluate Gemini 4 Argon for complex reasoning and embodied-AI use cases, alongside existing proprietary and open-weight model options.",
+      "learn": "Test the model on representative video, spatial-reasoning, and action-generation tasks; compare quality, latency, cost, and operational controls with alternative frontier and open models rather than generalizing from a vendor benchmark or demonstration.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking"
+      ],
+      "sources": [
+        {
+          "name": "Google AI Blog - Gemini 4 Argon: Built to solve your hardest problems",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
+        }
+      ],
+      "architectureImplication": "Treat Gemini 4 Argon as an additional model candidate for video-grounded and spatial workflows, and validate its performance and serving economics against existing model choices before making it a dependency.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost",
+        "Control"
+      ]
+    },
+    {
+      "id": "2026-10-13-agent-registry-custom-metadata",
+      "date": "2026-10-13",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "agent registry governance",
+      "impact": "Incremental",
+      "title": "AWS Agent Registry adds schema-validated metadata for governed discovery",
+      "whatChanged": "AWS added registry-defined custom metadata schemas for agents, MCP servers, skills, gateways, and other records. Organizations can require common or type-specific fields such as owner, data classification, review status, or model family; the registry validates values on create and update and supports filtering by those fields in the console, CLI, SDKs, and MCP endpoint.",
+      "whyCare": "Teams managing large agent and tool inventories can encode ownership and review requirements directly in the catalog and use consistent fields for discovery, instead of relying only on names, descriptions, or a separate tracking system.",
+      "before": "Registry records relied on names and descriptions without organization-defined, schema-validated fields for governance and filtering.",
+      "after": "Administrators can define reusable common and record-type schemas, enforce required fields and allowed values, and filter registry results by custom metadata.",
+      "learn": "Define a small shared metadata schema for ownership, classification, and lifecycle status, then check that registry coverage and required-field policies match separate authorization, approval, and audit controls.",
+      "cloudPrimitives": [
+        "Storage",
+        "Security",
+        "Networking"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - AWS Agent Registry now supports custom metadata for registry records",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-agent-registry-custom-metadata-registry-records"
+        },
+        {
+          "name": "AWS Documentation - Define a custom metadata schema",
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-custom-metadata-schema.html"
+        }
+      ],
+      "architectureImplication": "Use registry metadata to provide a structured governance and discovery layer for agent resources, while keeping execution authorization and policy enforcement in the agent runtime and connected services.",
+      "tradeoffs": [
+        "Control",
+        "Security",
+        "Complexity",
         "Portability"
       ]
     }
