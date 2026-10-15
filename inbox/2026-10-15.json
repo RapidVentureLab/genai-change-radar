@@ -1,0 +1,80 @@
+{
+  "scannedAt": "2026-10-15T11:07:43+02:00",
+  "updates": [
+    {
+      "id": "2026-10-13-langchain-deep-agents-deploy",
+      "date": "2026-10-13",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "open agent deployment",
+      "impact": "Packaging / distribution",
+      "title": "LangChain packages an open, model-agnostic deployment path for persistent agents",
+      "whatChanged": "LangChain launched Deep Agents deploy in beta, bundling deployment of its open-source agent harness with a horizontally scalable LangSmith Deployment server. The deployment includes agent APIs for MCP, A2A, human-in-the-loop controls, and memory; it supports multiple model and sandbox providers, and LangChain says deployments can be self-hosted so teams retain control of agent memory.",
+      "whyCare": "This gives teams an alternative to building their own runtime around an open harness or adopting a provider-specific managed agent. Portability now depends on more than model APIs: the agent harness, accumulated memory, tools, and runtime all affect switching costs.",
+      "before": "Teams either operated their own orchestration, memory, sandbox, and server infrastructure around open agent frameworks, or adopted managed runtimes that bundle those pieces behind provider-specific APIs.",
+      "after": "A beta deployment command packages an open-source, model-agnostic harness with managed or self-hostable serving, plus interoperable agent endpoints and optional sandbox integrations.",
+      "learn": "Compare the convenience of a bundled runtime with self-hosting and other managed options such as Claude Managed Agents or Bedrock AgentCore. Test model and sandbox portability, memory export and ownership, tenancy isolation, human approvals, and beta reliability before committing production state.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "LangChain - Deep Agents Deploy: an open alternative to Claude Managed Agents",
+          "url": "https://www.langchain.com/blog/deep-agents-deploy-an-open-alternative-to-claude-managed-agents"
+        },
+        {
+          "name": "LangChain documentation - Managed Deep Agents",
+          "url": "https://docs.langchain.com/langsmith/python/managed-deep-agents-overview"
+        }
+      ],
+      "architectureImplication": "Treat harness, runtime, memory, and sandbox as separate portability and governance decisions. An open harness and self-hostable deployment can reduce dependence on a single agent platform, but verify data ownership, isolation, controls, and service maturity rather than assuming model agnosticism alone prevents lock-in.",
+      "tradeoffs": [
+        "Portability",
+        "Control",
+        "Security",
+        "Complexity",
+        "Reliability"
+      ]
+    },
+    {
+      "id": "2026-10-14-github-hydrafusion",
+      "date": "2026-10-14",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "multi-model orchestration",
+      "impact": "Packaging / distribution",
+      "title": "GitHub Copilot HydraFusion adds task-adaptive multi-model drafting and review",
+      "whatChanged": "GitHub updated HydraFusion, its research-preview Copilot orchestrator, with a refreshed model pool, per-step reasoning effort, and revised Cascade and Critique patterns. Cascade can judge a draft and request a stronger-model repair only when needed; Critique uses parallel models and workspace tools to inspect work. HydraFusion Max applies higher reasoning effort to demanding tasks.",
+      "whyCare": "This makes multi-model execution patterns available as a product option rather than requiring every coding team to assemble its own routing and review harness. It also exposes the cost of these patterns: each model call is billed at its standard rate, and multi-pass work can use more credits and take longer.",
+      "before": "Copilot users primarily selected a model or relied on per-request automatic model selection; teams wanting draft-review or escalation workflows had to build them into their own agent harness.",
+      "after": "Users can select a Copilot runtime that chooses between a single model, a judged cascade, or parallel critique for each task, with reasoning effort and models assigned per step.",
+      "learn": "Evaluate orchestration against single-model and custom-harness baselines on representative coding tasks, tracking accepted changes, regressions, latency, and total per-task credits. Keep it out of production-critical workflows while it remains a preview without an SLA.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - HydraFusion updates and new Max option",
+          "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option"
+        },
+        {
+          "name": "GitHub documentation - Using HydraFusion",
+          "url": "https://docs.github.com/en/early-access/copilot/hydrafusion"
+        }
+      ],
+      "architectureImplication": "Treat orchestration as a workload-specific quality-versus-cost choice, not as a universally better model. Compare its task routing, review visibility, credit consumption, latency, and policy compatibility with single-model selection and internal agent workflows; the research preview is explicitly not intended for production.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost",
+        "Control",
+        "Reliability"
+      ]
+    }
+  ]
+}
