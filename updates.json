@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-10-15T11:07:43+02:00",
+  "updatedAt": "2026-10-16T11:00:14+02:00",
   "mentalModel": {
     "layers": [
       {
@@ -1682,6 +1682,75 @@
         "Accuracy",
         "Latency",
         "Cost",
+        "Control",
+        "Reliability"
+      ]
+    },
+    {
+      "id": "2026-10-15-sagemaker-muse-spark-open",
+      "date": "2026-10-15",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "managed open-weight model deployment",
+      "impact": "Packaging / distribution",
+      "title": "SageMaker JumpStart adds in-account deployment of Meta Muse Spark Open",
+      "whatChanged": "AWS made Meta's Muse Spark Open available through SageMaker JumpStart as BF16 and NVFP4 variants. Teams can deploy a managed SageMaker endpoint in their AWS account; the 816-billion-parameter MoE model has 42 billion active parameters, a 1-million-token context window, and text, image, document, audio, and audio-video inputs. AWS lists ml.p6-b300.48xlarge for BF16 and ml.p5e.48xlarge for NVFP4, with initial availability in US East (N. Virginia) and US East (Ohio).",
+      "whyCare": "This gives AWS customers a managed route to evaluate a large open-weight model against private code and multimodal engineering workloads without moving prompts and source code to a third-party hosted inference API. It makes model choice, licensing, instance capacity, and continuously running endpoint cost explicit architecture decisions.",
+      "before": "Muse Spark Open was not listed in SageMaker JumpStart; teams wishing to run it on AWS needed another deployment route, while managed alternatives were limited to other models and providers.",
+      "after": "Teams can deploy either supported Muse Spark Open variant as a SageMaker endpoint in their AWS account, with configurable VPC, KMS encryption, network isolation, instance type, scaling limits, and model version pinning.",
+      "learn": "Benchmark both variants on representative private-code and multimodal tasks against other JumpStart models, hosted model APIs, and self-managed serving. Verify the Muse Model License and usage policy, model quality, region and quota availability, and total cost; the endpoint runs on large multi-GPU instances and is billed while it remains active.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - Meta's Muse Spark Open now available in Amazon SageMaker JumpStart",
+          "url": "https://aws.amazon.com/blogs/machine-learning/metas-muse-spark-open-now-available-in-amazon-sagemaker-jumpstart/"
+        }
+      ],
+      "architectureImplication": "Treat this as an additional managed model-serving option, not a low-cost default: compare the model's workload quality and open-weight deployment control with hosted APIs and self-managed alternatives, while sizing for the full weight-memory footprint and enforcing the license, network, and cost controls.",
+      "tradeoffs": [
+        "Cost",
+        "Control",
+        "Security",
+        "Latency",
+        "Complexity"
+      ]
+    },
+    {
+      "id": "2026-10-15-github-copilot-model-deprecations",
+      "date": "2026-10-15",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "model lifecycle and migration",
+      "impact": "Incremental",
+      "title": "GitHub scheduled Copilot model retirements for November 16",
+      "whatChanged": "GitHub announced that Claude Opus 4.8, Claude Opus 5, and GPT-5.6 Terra will be deprecated across Copilot Chat, inline edits, ask and agent modes, and code completions on November 16, 2026. GitHub recommends Claude Opus 5.5 for both Claude models, and GPT-6.1 Sol or GPT-6 Luna for GPT-5.6 Terra. Recommended alternatives are automatically enabled for Copilot Enterprise and Business under default model enablement, unless an administrator has changed model policies.",
+      "whyCare": "Organizations using these models in interactive workflows or integrations have a defined migration deadline and need to validate quality, policy, and behavior against the suggested replacements before the old options disappear.",
+      "before": "The listed models were selectable across supported Copilot experiences, with enterprise model access governed by administrator settings.",
+      "after": "The three models will no longer be available in most Copilot experiences after November 16, 2026; enterprises should verify replacement-model access and retest dependent workflows. Claude Opus 4.8 remains available to individual subscribers on annual plans.",
+      "learn": "Inventory model selections and pinned model IDs, test the recommended replacements on representative coding and agent tasks, and update workflow guidance before the deadline. Check organization model policies rather than assuming the replacements are enabled.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Upcoming deprecation of selected GitHub Copilot models in mid-November",
+          "url": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november"
+        },
+        {
+          "name": "GitHub Docs - Supported AI models in GitHub Copilot",
+          "url": "https://docs.github.com/copilot/reference/ai-models/supported-models"
+        }
+      ],
+      "architectureImplication": "Treat hosted coding models as versioned dependencies: maintain model-flexible evaluations and a migration path, and centrally verify model access policies for users and integrations ahead of vendor retirement dates.",
+      "tradeoffs": [
+        "Compatibility",
+        "Accuracy",
         "Control",
         "Reliability"
       ]
