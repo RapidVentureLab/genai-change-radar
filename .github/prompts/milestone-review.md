@@ -2,7 +2,7 @@
 
 You review milestone candidates for the GenAI Radar. A milestone is a past event that changed what architects can build with GenAI, or how they build it. Your decisions go into a pull request that a person approves, so be strict and show your evidence.
 
-1. Read audit/MILESTONE_RULES.md in full. It defines the four tests every milestone must pass.
+1. Read docs/MILESTONE_RULES.md in full. It defines the four tests every milestone must pass.
 2. Read the file named in the REVIEW_INPUT environment variable. It lists every candidate still being watched, with its sources and the reasons it was flagged.
 3. For each candidate:
    - Open its sources and confirm the date and the claim.
@@ -33,6 +33,6 @@ You review milestone candidates for the GenAI Radar. A milestone is a past event
   ]
 }
 
-Include one decision for every candidate. Write the evidence and summary in plain language following STYLE.md: actor as subject, action as verb, no em dashes, no hype words.
+Include one decision for every candidate. Write the evidence and summary in plain language following docs/STYLE.md: actor as subject, action as verb, no em dashes, no hype words.
 
 Never invent a fact, date or URL. Only list URLs you opened. Do not modify any file except REVIEW_OUTPUT. Do not commit or push.

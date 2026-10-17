@@ -1,7 +1,7 @@
 // Dependency-free QA for dashboard recency semantics.
-// Run: node qa-recent.mjs
+// Run: node scripts/qa-recent.mjs
 import fs from "node:fs";
-const db=JSON.parse(fs.readFileSync(new URL("./updates.json", import.meta.url),"utf8"));
+const db=JSON.parse(fs.readFileSync(new URL("../updates.json", import.meta.url),"utf8"));
 const ranked=db.updates.map((item,index)=>({item,index})).sort((a,b)=>b.item.date.localeCompare(a.item.date)||b.index-a.index).map(x=>x.item);
 const maxDate=db.updates.reduce((m,x)=>x.date>m?x.date:m,"");
 const sameDay=db.updates.map((item,index)=>({item,index})).filter(x=>x.item.date===maxDate);
