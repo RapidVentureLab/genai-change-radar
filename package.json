@@ -7,6 +7,7 @@
     "check:sources": "node scripts/check-sources.mjs",
     "check:sources:all": "node scripts/check-sources.mjs --all",
     "merge": "node scripts/merge-inbox.mjs",
+    "share": "node scripts/build-share.mjs",
     "candidates": "node scripts/candidates.mjs list /dev/stdout"
   },
   "engines": {
