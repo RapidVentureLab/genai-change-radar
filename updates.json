@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-10-17T20:53:45+02:00",
+  "updatedAt": "2026-10-17T21:25:13+02:00",
   "mentalModel": {
     "layers": [
       {
@@ -2366,6 +2366,41 @@
       "tradeoffs": [
         "Security",
         "Control",
+        "Complexity"
+      ]
+    },
+    {
+      "id": "2026-10-15-ibm-granite-switch-4-1",
+      "date": "2026-10-15",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "multi-task inference",
+      "impact": "Packaging / distribution",
+      "title": "IBM combines chat, decisions, and speech in Granite-Switch-4.1",
+      "whatChanged": "IBM released Granite-Switch-4.1-8B and Granite-Switch-4.1-30B on 15 October. Each model combines a general decision adapter, a safety-focused Guardian adapter, and Granite-Speech-5.0-Turbo-CTC for transcription. IBM says these components use about the same GPU VRAM as the base model and can share its KV cache.",
+      "whyCare": "You can serve chat, speech transcription, and specialized decisions through one model endpoint, without routing each task to a separate model. Shared KV-cache use may reduce extra GPU memory. Compare this setup with separate specialist models.",
+      "before": "Teams could compose task-specific adapters from Granite Libraries or route chat, classification, and speech tasks to separate models. The preconfigured Granite Switch combination was unavailable.",
+      "after": "Teams can run Granite Switch 4.1 in 8B or 30B sizes for chat, decisions, and transcription through one endpoint. The project supports vLLM through a plugin and native inference in llama.cpp.",
+      "learn": "Compare Granite Switch with separately deployed ASR and decision models for task accuracy, latency, throughput, and GPU memory. Verify adapter and shared-cache behavior in your serving runtime before consolidating endpoints.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking"
+      ],
+      "sources": [
+        {
+          "name": "IBM Granite on Hugging Face - Granite Switch 4.1: Chat, Decisions, and Speech from One Endpoint",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1"
+        },
+        {
+          "name": "Granite Switch project",
+          "url": "https://github.com/generative-computing/granite-switch"
+        }
+      ],
+      "architectureImplication": "A multi-adapter model could consolidate separate endpoints for text, classification, and ASR, reducing serving duplication. Keep task-level evaluations and fallback routes because this release does not establish equal quality or reliability across tasks.",
+      "tradeoffs": [
+        "Cost",
+        "Accuracy",
+        "Latency",
         "Complexity"
       ]
     }
