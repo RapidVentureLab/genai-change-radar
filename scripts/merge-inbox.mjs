@@ -16,9 +16,19 @@ for(const file of files){
   for(const x of batch.updates||[]){
     if(!x.id||!x.date||!x.title||!x.layer||!x.impact||!Array.isArray(x.sources)||!x.sources.length) throw new Error(`Invalid record in ${file}`);
     if(x.sources.some(s=>!s.name||!/^https?:\/\//.test(s.url))) throw new Error(`Invalid source in ${x.id}`);
-    if(!originalIds.has(x.id)&&!db.updates.some(y=>y.id===x.id)){
-      db.updates.push(x); added++;
+    if(originalIds.has(x.id)||db.updates.some(y=>y.id===x.id)) continue;
+    // Daily runs never create milestones. Only the monthly review, approved by a person, does.
+    // A new item the agent filed as a milestone becomes a signal that is watched as a candidate.
+    if(x.kind!=="signal"){
+      console.log(`Filed ${x.id} as a signal and milestone candidate (agent set kind "${x.kind}").`);
+      x.kind="signal";
+      if(!x.candidate) x.candidate={status:"watching",flaggedOn:x.date,tests:{note:"The research agent filed this as a milestone. The monthly review decides."}};
     }
+    if(x.candidate){
+      x.candidate.status="watching";
+      if(!/^\d{4}-\d{2}-\d{2}$/.test(x.candidate.flaggedOn||"")) x.candidate.flaggedOn=x.date;
+    }
+    db.updates.push(x); added++;
   }
 }
 db.updatedAt=latestScan;

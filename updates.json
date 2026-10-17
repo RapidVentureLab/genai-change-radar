@@ -1330,7 +1330,17 @@
         "Cost",
         "Security",
         "Control"
-      ]
+      ],
+      "candidate": {
+        "status": "watching",
+        "flaggedOn": "2026-10-17",
+        "tests": {
+          "datedEvent": "Google announced it at Gemini at Work on 8 October 2026.",
+          "primarySource": "Google Cloud blog and Google blog posts of 8 October 2026.",
+          "designChoice": "Gives agents their own identity and permissions, separate from the user who delegates to them.",
+          "firstOrDefining": "Qualifies if other major vendors also give agents their own identities, or if this becomes generally available and widely used."
+        }
+      }
     },
     {
       "id": "2026-10-09-copilot-local-sandbox-ga",
