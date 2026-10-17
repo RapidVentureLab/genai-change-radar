@@ -51,7 +51,7 @@ Impact must be one of the radar's established labels: Disruptive, Step-change, I
 
 Set "kind" to "signal" for every item. You never create a milestone. Milestones are decided later, in a monthly review that a person approves, because many milestones only become clear once others adopt them.
 
-If an item might become a milestone, add a "candidate" object. Read audit/MILESTONE_RULES.md first. Flag an item only if it plausibly passes all four tests there. Most days nothing qualifies, and that is the expected result.
+If an item might become a milestone, add a "candidate" object. Read docs/MILESTONE_RULES.md first. Flag an item only if it plausibly passes all four tests there. Most days nothing qualifies, and that is the expected result.
 
 "candidate": {
   "status": "watching",
@@ -66,12 +66,12 @@ If an item might become a milestone, add a "candidate" object. Read audit/MILEST
 
 ## Writing
 
-Read STYLE.md before you write any item, and follow it for every text field. In short:
+Read docs/STYLE.md before you write any item, and follow it for every text field. In short:
 - Start each title with the actor (company, product or project), then a present-tense verb: "GitHub retires several Copilot models on 16 November".
 - Make the actor the subject and the action the verb in every sentence. Avoid nouns made from verbs.
-- Stay within the word limits in the STYLE.md table.
+- Stay within the word limits in the docs/STYLE.md table.
 - No em dashes, no exclamation marks, no banned words, no "X, not Y" framing.
 
-After you write all items, reread each one against STYLE.md and fix any miss before you save. A separate editor pass and an automated check run after you, and items that fail are held back from the site.
+After you write all items, reread each one against docs/STYLE.md and fix any miss before you save. A separate editor pass and an automated check run after you, and items that fail are held back from the site.
 
 Do the research, write only RADAR_INBOX, re-read it, ensure it parses as JSON, and finish. Do not commit or push anything.

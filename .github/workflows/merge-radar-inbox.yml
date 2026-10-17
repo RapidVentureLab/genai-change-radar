@@ -70,7 +70,7 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          PROMPT="$(cat .github/radar-research-prompt.md)"
+          PROMPT="$(cat .github/prompts/research.md)"
           copilot -p "$PROMPT" -s --no-ask-user --allow-tool='write,url' --allow-all-urls
 
       - name: Check the research agent finished
@@ -90,7 +90,7 @@ jobs:
             echo "No items today. Skipping editor pass."
             exit 0
           fi
-          PROMPT="$(cat .github/radar-editor-prompt.md)"
+          PROMPT="$(cat .github/prompts/editor.md)"
           copilot -p "$PROMPT" -s --no-ask-user --allow-tool='write' || echo "Editor pass did not finish. Keeping the research agent's wording."
           node scripts/guard-editor-pass.mjs "$RUNNER_TEMP/inbox-before-editor.json" "$RADAR_INBOX"
 
@@ -104,7 +104,7 @@ jobs:
         shell: bash
         run: |
           node scripts/merge-inbox.mjs
-          node qa-recent.mjs
+          node scripts/qa-recent.mjs
 
       - name: Commit validated scan
         if: steps.guard.outputs.run == 'true'

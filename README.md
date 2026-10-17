@@ -1,40 +1,85 @@
 # GenAI Change Radar
 
-A public, vendor-neutral dashboard for tracking meaningful changes in enterprise GenAI and placing them in architectural context.
+A daily-updated radar of changes in GenAI that matter for system design. Every item says what changed, why it matters, and what to do about it.
+
+**Live:** https://rapidventurelab.github.io/genai-change-radar/
 
 ## Who it is for
-- Solution Architects
-- Applied AI / Product leaders
-- Engineering leaders
-- AI transformation teams
 
-## Mental model
-Every update maps to one primary AI layer:
-1. Data & Knowledge
-2. Model
-3. Agent & Infrastructure
-4. Application & Workflow
-5. Production & Business
+- **Solution architects** who need to know which changes affect their designs.
+- **Engineering and platform leads** who plan around model retirements, pricing changes and new platform features.
+- **AI product managers** who track what has become possible.
+- **CTOs at smaller companies** without a dedicated team watching vendors.
+- **Consultants and pre-sales teams** who need to be current with clients.
 
-Across every layer, use four cloud primitives:
-- Compute — where it runs
-- Networking — how it connects
-- Storage — where data/state lives
-- Security — who/what can access it
+## How it works
 
-Impact labels:
-- Disruptive
-- Step-change
-- Incremental
-- Packaging / distribution
+```mermaid
+flowchart LR
+    A[Vendor changelogs,<br/>docs and blogs] --> B[Research agent<br/>daily]
+    B --> C[Editor agent<br/>rewrites to style guide]
+    C --> D{Checks}
+    D -- pass --> E[updates.json]
+    D -- fail --> H[inbox/held<br/>for review]
+    E --> F[Website]
+    E --> G[Monthly review<br/>of milestone candidates]
+    G --> P[Pull request<br/>a person approves]
+    P --> E
+```
+
+1. **Every morning** a GitHub Actions workflow runs a research agent. It reads primary sources (vendor changelogs, documentation, engineering blogs) and writes new items to `inbox/<date>.json`.
+2. **An editor agent** rewrites each item to the [style guide](docs/STYLE.md). A guard script throws away its edits if it changed anything besides wording.
+3. **Checks run.** A style check holds items with banned words, contrast framing or fields over their word limit in `inbox/held/`. Items that pass are merged into `updates.json` and the site rebuilds.
+4. **Once a month** another workflow reopens every milestone source to catch broken links, and reviews milestone candidates. Promotions arrive as a pull request. Nothing enters the history until a person merges it.
+
+### Signals and milestones
+
+- **Signals** are the daily items: what changed this week.
+- **Milestones** are the history: events that changed what architects can build, or how. Each one passes the four tests in [docs/MILESTONE_RULES.md](docs/MILESTONE_RULES.md) and carries a `verified` date.
+
+The daily agent can only flag a signal as a milestone candidate. Many milestones only become clear once others adopt them, so the monthly review decides with hindsight, and a person approves.
+
+## Quality checks
+
+| Check | When | What happens on failure |
+|---|---|---|
+| Research agent finished | Daily | The run fails and GitHub emails the owner |
+| Editor guard | Daily | The rewrite is discarded, the original wording continues |
+| Style check | Daily | The item is held in `inbox/held/` |
+| Dataset verification | Daily | The run fails |
+| Milestone source links | Monthly | The run fails and GitHub emails the owner |
+| Milestone promotion | Monthly | Needs all four tests with evidence, then a person's approval |
+
+## Repository layout
+
+```
+index.html, app.js, styles.css, assets/   the website (served by GitHub Pages)
+updates.json                              the dataset: every signal and milestone
+inbox/                                    daily scan results; held/ for items that failed checks
+docs/STYLE.md                             writing guide used by the agents and the style check
+docs/MILESTONE_RULES.md                   what counts as a milestone, and how new ones are added
+docs/design-system/                       design notes for the current site
+audit/                                    audit reports, their data, and monthly review records
+scripts/                                  checks and data scripts (no dependencies)
+.github/prompts/                          prompts for the research, editor and review agents
+.github/workflows/                        the daily run and the monthly review
+```
+
+## Run it locally
+
+Requires Node.js 22 or later. There are no dependencies to install.
+
+```bash
+npm run check            # style check and dataset checks
+npm run check:sources    # reopen every milestone source link
+npm run candidates       # list milestone candidates being watched
+python3 -m http.server   # then open http://localhost:8000
+```
 
 ## Data policy
-Only public-source technology and enterprise-AI developments belong in updates.json. No private customer information, personal data, credentials, interview notes, API keys, or secrets.
 
-## Files
-- index.html — dashboard shell
-- styles.css — visual system
-- app.js — filters, timeline and architecture map
-- updates.json — structured update history
+`updates.json` holds public-source technology developments only. No private customer information, personal data, credentials or interview notes.
 
-Built by Rapid Venture Lab.
+## Built by
+
+Haris Rehman, [Rapid Venture Lab](https://www.rapidventurelab.com/).

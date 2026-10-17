@@ -74,7 +74,7 @@ jobs:
         shell: bash
         run: |
           printf '{"reviewedOn":"%s","decisions":[]}\n' "$(date -u +%F)" > "$REVIEW_OUTPUT"
-          PROMPT="$(cat .github/milestone-review-prompt.md)"
+          PROMPT="$(cat .github/prompts/milestone-review.md)"
           copilot -p "$PROMPT" -s --no-ask-user --allow-tool='write,url' --allow-all-urls || echo "Review agent did not finish. Only expiry will be applied."
           node -e 'JSON.parse(require("fs").readFileSync(process.env.REVIEW_OUTPUT,"utf8"))' || printf '{"reviewedOn":"%s","decisions":[]}\n' "$(date -u +%F)" > "$REVIEW_OUTPUT"
 
@@ -86,7 +86,7 @@ jobs:
           node scripts/candidates.mjs apply "$REVIEW_OUTPUT" --summary "$RUNNER_TEMP/summary.md" --today "$(date -u +%F)"
           cat "$RUNNER_TEMP/summary.md" >> "$GITHUB_STEP_SUMMARY"
           node scripts/style-check.mjs updates.json --strict
-          node qa-recent.mjs > /dev/null
+          node scripts/qa-recent.mjs > /dev/null
 
       - name: Open pull request
         if: steps.list.outputs.count != '0' && steps.apply.outputs.changed == 'true'

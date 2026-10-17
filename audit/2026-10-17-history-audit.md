@@ -11,7 +11,7 @@ This audit checks the 26 milestones that make up the radar's history. It asks th
 - **There is a 10-month hole.** Nothing is recorded between May 2025 and April 2026. I found 14 candidate milestones to add, 5 of them in that window.
 - **After these changes**, the history goes from 26 to 31 items and is spread more evenly across years and layers. Some gaps remain, listed at the end.
 
-Rules used for every decision: [MILESTONE_RULES.md](MILESTONE_RULES.md).
+Rules used for every decision: [MILESTONE_RULES.md](../docs/MILESTONE_RULES.md).
 
 ## How I checked
 

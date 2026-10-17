@@ -1,4 +1,4 @@
-// Checks radar items against STYLE.md.
+// Checks radar items against docs/STYLE.md.
 //
 // Usage:
 //   node scripts/style-check.mjs <file.json>          report errors and warnings
@@ -6,13 +6,13 @@
 //   node scripts/style-check.mjs <inbox.json> --hold  move items with errors to inbox/held/<name>
 //
 // <file.json> is an inbox file or updates.json (any JSON with an "updates" array).
-// Banned words and field limits are read from STYLE.md, so the guide stays the
+// Banned words and field limits are read from docs/STYLE.md, so the guide stays the
 // single source of truth. Errors hold an item back. Warnings are reported only.
 import fs from "node:fs";
 import path from "node:path";
 
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
-const style = fs.readFileSync(path.join(root, "STYLE.md"), "utf8");
+const style = fs.readFileSync(path.join(root, "docs", "STYLE.md"), "utf8");
 
 // Banned words: the "Banned:" line in STYLE.md.
 const bannedLine = style.split("\n").find((l) => /Banned:/.test(l));
