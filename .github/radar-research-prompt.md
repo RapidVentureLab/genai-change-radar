@@ -47,4 +47,14 @@ Every source must contain a human-readable name and a public http/https URL. IDs
 
 Impact must be one of the radar's established labels: Disruptive, Step-change, Incremental, Packaging / distribution.
 
+## Writing
+
+Read STYLE.md before you write any item, and follow it for every text field. In short:
+- Start each title with the actor (company, product or project), then a present-tense verb: "GitHub retires several Copilot models on 16 November".
+- Make the actor the subject and the action the verb in every sentence. Avoid nouns made from verbs.
+- Stay within the word limits in the STYLE.md table.
+- No em dashes, no exclamation marks, no banned words, no "X, not Y" framing.
+
+After you write all items, reread each one against STYLE.md and fix any miss before you save. A separate editor pass and an automated check run after you, and items that fail are held back from the site.
+
 Do the research, write only RADAR_INBOX, re-read it, ensure it parses as JSON, and finish. Do not commit or push anything.
