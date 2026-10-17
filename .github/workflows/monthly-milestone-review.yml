@@ -1,0 +1,109 @@
+name: Monthly milestone review
+
+# Runs on the 1st of each month.
+#  1. Source check: reopens every milestone source. A broken link fails this job,
+#     and GitHub sends the usual failure email.
+#  2. Candidate review: an agent reviews items flagged as milestone candidates and
+#     proposes promotions. Changes arrive as a pull request. Nothing reaches the
+#     history until a person merges it.
+#
+# One-time setting: Settings > Actions > General > Workflow permissions >
+# "Allow GitHub Actions to create and approve pull requests" must be on, or the
+# review job cannot open its pull request.
+on:
+  schedule:
+    - cron: "23 5 1 * *"
+  workflow_dispatch:
+
+concurrency:
+  group: genai-radar-monthly
+  cancel-in-progress: false
+
+jobs:
+  sources:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - name: Check milestone sources
+        run: node scripts/check-sources.mjs
+
+  review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      copilot-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v7
+        with:
+          node-version: "22"
+
+      - name: List candidates
+        id: list
+        shell: bash
+        run: |
+          COUNT="$(node scripts/candidates.mjs list "$RUNNER_TEMP/review-input.json")"
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "REVIEW_INPUT=$RUNNER_TEMP/review-input.json" >> "$GITHUB_ENV"
+          echo "REVIEW_OUTPUT=$RUNNER_TEMP/review-output.json" >> "$GITHUB_ENV"
+          echo "Candidates being watched: $COUNT"
+
+      - name: Install Copilot CLI
+        if: steps.list.outputs.count != '0'
+        run: npm install -g @github/copilot
+
+      - name: Review candidates
+        if: steps.list.outputs.count != '0'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          printf '{"reviewedOn":"%s","decisions":[]}\n' "$(date -u +%F)" > "$REVIEW_OUTPUT"
+          PROMPT="$(cat .github/milestone-review-prompt.md)"
+          copilot -p "$PROMPT" -s --no-ask-user --allow-tool='write,url' --allow-all-urls || echo "Review agent did not finish. Only expiry will be applied."
+          node -e 'JSON.parse(require("fs").readFileSync(process.env.REVIEW_OUTPUT,"utf8"))' || printf '{"reviewedOn":"%s","decisions":[]}\n' "$(date -u +%F)" > "$REVIEW_OUTPUT"
+
+      - name: Apply decisions
+        id: apply
+        if: steps.list.outputs.count != '0'
+        shell: bash
+        run: |
+          node scripts/candidates.mjs apply "$REVIEW_OUTPUT" --summary "$RUNNER_TEMP/summary.md" --today "$(date -u +%F)"
+          cat "$RUNNER_TEMP/summary.md" >> "$GITHUB_STEP_SUMMARY"
+          node scripts/style-check.mjs updates.json --strict
+          node qa-recent.mjs > /dev/null
+
+      - name: Open pull request
+        if: steps.list.outputs.count != '0' && steps.apply.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          BRANCH="milestone-review-$(date -u +%Y-%m)"
+          mkdir -p audit/reviews
+          cp "$REVIEW_OUTPUT" "audit/reviews/$(date -u +%Y-%m).json"
+          git config user.name "genai-radar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add updates.json audit/reviews
+          git commit -m "Monthly milestone review $(date -u +%Y-%m)"
+          git push -f origin "$BRANCH"
+          TITLE="Monthly milestone review $(date -u +%Y-%m): ${{ steps.apply.outputs.promoted }} proposed"
+          jq -n --arg t "$TITLE" --arg h "$BRANCH" --rawfile b "$RUNNER_TEMP/summary.md" \
+            '{title:$t, head:$h, base:"main", body:$b}' \
+            | gh api "repos/$GITHUB_REPOSITORY/pulls" --input - --jq '.html_url'

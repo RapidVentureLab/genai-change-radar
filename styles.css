@@ -17,4 +17,4 @@
 .nav-recent{justify-content:center}
 #radar>.section-header{background:var(--green-soft);margin-left:-16px;margin-right:-16px;padding:11px 16px 12px;border-top:4px solid var(--green);border-bottom:1px solid var(--green)}
 #radar>.section-header>p{color:var(--ink-soft)}
-}
+}.watch-badge{background:var(--green-soft);color:var(--green-dark);padding:0 6px}

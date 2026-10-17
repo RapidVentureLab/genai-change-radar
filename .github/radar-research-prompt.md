@@ -47,6 +47,23 @@ Every source must contain a human-readable name and a public http/https URL. IDs
 
 Impact must be one of the radar's established labels: Disruptive, Step-change, Incremental, Packaging / distribution.
 
+## Signals and milestone candidates
+
+Set "kind" to "signal" for every item. You never create a milestone. Milestones are decided later, in a monthly review that a person approves, because many milestones only become clear once others adopt them.
+
+If an item might become a milestone, add a "candidate" object. Read audit/MILESTONE_RULES.md first. Flag an item only if it plausibly passes all four tests there. Most days nothing qualifies, and that is the expected result.
+
+"candidate": {
+  "status": "watching",
+  "flaggedOn": "<today, YYYY-MM-DD>",
+  "tests": {
+    "datedEvent": "<the dated announcement or release>",
+    "primarySource": "<which source confirms it>",
+    "designChoice": "<which design choice it changes for many teams, and how>",
+    "firstOrDefining": "<why this is the first or defining instance, or what adoption would make it so>"
+  }
+}
+
 ## Writing
 
 Read STYLE.md before you write any item, and follow it for every text field. In short:
