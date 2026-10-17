@@ -95,6 +95,7 @@ for (const d of review.decisions || []) {
     }
     item.kind = "milestone";
     item.verified = today;
+    item.short = String(d.short || item.short || item.title.split(" ").slice(0, 3).join(" ")).trim();
     item.candidate.status = "promoted";
     item.candidate.decidedOn = today;
     item.candidate.review = { tests: d.tests, evidenceUrls: urls, summary: d.summary || "" };

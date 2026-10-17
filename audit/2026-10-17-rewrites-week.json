@@ -1,0 +1,55 @@
+{
+  "2026-10-12-agentcore-stm-pricing": {
+    "title": "AWS AgentCore now charges for short-term memory by data volume",
+    "whatChanged": "AWS replaced the flat per-event price for AgentCore short-term memory with separate charges: $1.00 per GB ingested, $0.20 per GB retrieved and $0.10 per GB-month stored. Ingestion and retrieval bill at least 12 KB and at most 64 KB per event. Long-term memory pricing stays the same.",
+    "whyCare": "Agent memory cost now depends on payload size, retrieval volume and retention, so event counts alone no longer predict it.",
+    "before": "AWS charged a flat rate per event, whatever the amount of data.",
+    "after": "AWS charges for data ingested, retrieved and stored, with minimum and maximum billable sizes per event.",
+    "learn": "Recalculate memory costs with your real payload sizes, retrieval rates and retention times. Compare total cost with other memory options.",
+    "architectureImplication": "Size memory payloads, retrieval patterns and retention times on purpose, because each now drives cost."
+  },
+  "2026-10-13-gemini-4-argon": {
+    "title": "Google releases Gemini 4 Argon, a frontier model for complex reasoning",
+    "whatChanged": "Google announced Gemini 4 Argon as its newest frontier model and made it available to developers and enterprises. Google describes visual and spatial reasoning, physical understanding and code generation. It reports an 87% score on its own Embodied Reasoning benchmark and an internal video-to-simulation-to-robot demonstration.",
+    "whyCare": "Teams building vision-driven automation or robotics get a new model to test. The benchmark and robot demonstration are Google's own results.",
+    "before": "Teams had no access to Gemini 4 Argon or its stated physical-reasoning abilities.",
+    "after": "Developers and enterprises can test Gemini 4 Argon for complex reasoning and embodied-AI work.",
+    "learn": "Test it on your own video, spatial and action tasks. Compare quality, latency, cost and controls with the models you use now.",
+    "architectureImplication": "Add Gemini 4 Argon as a candidate for video and spatial work. Measure quality and serving cost before you depend on it."
+  },
+  "2026-10-13-agent-registry-custom-metadata": {
+    "title": "AWS Agent Registry now checks agent metadata against a schema",
+    "whatChanged": "AWS added custom metadata schemas to Agent Registry for agents, MCP servers, skills, gateways and other records. Teams can require fields such as owner, data classification or review status. The registry checks values when records change and lets you filter by them.",
+    "whyCare": "Teams with many agents and tools can record owners and review status in the catalog itself, in a consistent form.",
+    "before": "Registry records had names and descriptions, but no required fields that the registry checked.",
+    "after": "Administrators define schemas, enforce required fields and allowed values, and filter by them.",
+    "learn": "Start with a small shared schema for owner, classification and lifecycle status. Keep access control and approvals in their own systems.",
+    "architectureImplication": "Use the registry to find and govern agent resources. Keep authorization and policy checks in the runtime and connected services."
+  },
+  "2026-10-13-langchain-deep-agents-deploy": {
+    "title": "LangChain offers a self-hostable way to deploy long-running agents on any model",
+    "whatChanged": "LangChain launched Deep Agents deploy in beta. It bundles its open-source agent harness with a scalable LangSmith Deployment server, with endpoints for MCP, A2A, human approvals and memory. It works with several model and sandbox providers, and LangChain says teams can self-host it to keep control of agent memory.",
+    "whyCare": "Teams get a middle path between building their own agent runtime and adopting one vendor's managed agent service.",
+    "before": "Teams either ran their own orchestration, memory and sandbox around an open framework, or used a vendor's managed runtime.",
+    "after": "One command deploys an open, model-agnostic harness, managed or self-hosted, with standard agent endpoints.",
+    "learn": "Compare it with self-hosting and with managed services such as Bedrock AgentCore. Test memory export, isolation, approvals and beta reliability before you store production state in it.",
+    "architectureImplication": "Treat the harness, runtime, memory and sandbox as separate lock-in decisions. A model-agnostic harness alone does not remove lock-in."
+  },
+  "2026-10-15-github-copilot-model-deprecations": {
+    "architectureImplication": "Treat hosted models as versioned dependencies. Keep tests ready so you can switch models before a vendor retires one."
+  },
+  "2026-10-15-github-copilot-multi-repo-slack-teams": {
+    "whatChanged": "GitHub says Copilot in Slack and Microsoft Teams now works across several repositories in one conversation. Users can create issues, open pull requests and investigate bugs across them. The update also shares Slack thread context and makes switching repositories easier.",
+    "whyCare": "Teams that coordinate work across services can handle cross-repository tasks in one chat, with repository permissions and pull request review still in place.",
+    "before": "Copilot in Slack and Teams handled one repository per conversation.",
+    "after": "One conversation can span repositories, from investigating a bug to opening a pull request."
+  },
+  "2026-10-15-ibm-granite-switch-4-1": {
+    "whatChanged": "IBM released Granite-Switch-4.1 in 8B and 30B sizes on 15 October. Each model combines a decision adapter, a safety adapter called Guardian, and a speech model for transcription. IBM says the parts use about the same GPU memory as the base model and can share its KV cache.",
+    "whyCare": "You can serve chat, transcription and specialised decisions from one endpoint, with less extra GPU memory. Compare it with separate specialist models first.",
+    "before": "Teams combined task adapters themselves or sent chat, classification and speech to separate models.",
+    "after": "One Granite Switch endpoint handles chat, decisions and transcription. It runs on vLLM through a plugin and in llama.cpp.",
+    "learn": "Compare Granite Switch with separate speech and decision models on accuracy, latency, throughput and GPU memory.",
+    "architectureImplication": "One multi-adapter model can replace several endpoints. Keep per-task tests and fallback routes, since equal quality across tasks is not shown."
+  }
+}

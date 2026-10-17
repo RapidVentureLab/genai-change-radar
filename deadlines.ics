@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Rapid Venture Lab//GenAI Radar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:The GenAI Radar deadlines
+BEGIN:VEVENT
+UID:2026-10-15-github-copilot-model-deprecations@genai-radar
+DTSTAMP:20261017T195622Z
+DTSTART;VALUE=DATE:20261116
+DTEND;VALUE=DATE:20261117
+SUMMARY:Deadline: GitHub retires three Copilot models on 16 November 2026
+DESCRIPTION:Test the replacement models and update your Copilot model poli
+ cies.\n\nhttps://rapidventurelab.github.io/genai-change-radar/#item-2026-
+ 10-15-github-copilot-model-deprecations
+URL:https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-15-
+ github-copilot-model-deprecations
+END:VEVENT
+END:VCALENDAR

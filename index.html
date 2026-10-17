@@ -1,16 +1,166 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#FCFCF9"><meta name="color-scheme" content="light"><meta name="description" content="GenAI Change Radar by Rapid Venture Lab. Track how GenAI architecture is changing, where it is heading, and what that changes for system design."><title>GenAI Change Radar | Rapid Venture Lab</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Newsreader:opsz,wght@6..72,300..800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css?v=12"></head>
-<body><header class="masthead" id="top"><div class="masthead-main"><a class="brand" href="#top" aria-label="Rapid Venture Lab, GenAI Change Radar"><img src="assets/rvl-lockup-horizontal.svg" alt="Rapid Venture Lab" class="brand-lockup"><span class="product-name">GenAI Change Radar</span></a><nav class="nav" aria-label="Primary"><a href="#direction">Direction</a><a href="#evolution">Evolution</a><a href="#radar" class="nav-recent">Recent<span class="nav-live-dot" aria-hidden="true"></span></a><a href="#reference">Reference</a></nav></div><div class="live-line"><span class="live-dot"></span><strong>Updated daily</strong><span id="updatedAt">Loading</span><span class="sep">·</span><span id="liveCount"></span></div></header>
-<main class="shell">
-<section class="intro"><p class="kicker">GENAI CHANGE RADAR</p><h1>See what is changing in GenAI architecture, where it is heading, and what that changes for system design.</h1><p class="intro-deck">A decision-oriented radar for solutions architects, AI product leaders, applied AI teams and senior builders.</p><div class="lens-strip" aria-label="Architect's lens"><span>AI stack</span><span>Cloud primitives</span><span>Architecture decisions</span><span>Business consequence</span></div></section>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The GenAI Radar | What changed in GenAI, and what to do about it</title>
+<meta name="description" content="A daily paper for solution architects: what changed in GenAI, why it matters, and what to do. Every item is checked against its primary source.">
+<meta name="theme-color" content="#F3EFE4">
+<meta property="og:title" content="The GenAI Radar">
+<meta property="og:description" content="What changed in GenAI, and what it means for the systems you design.">
+<meta property="og:type" content="website">
+<link rel="alternate" type="application/rss+xml" title="The GenAI Radar" href="feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,400&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;family=Libre+Franklin:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=21">
+</head>
+<body>
+<div class="wrap">
 
-<section id="direction" class="major-section"><header class="section-header"><div><p class="kicker">01 · DIRECTION</p><h2>Where are we going?</h2></div><p>Current state, direction, rate of change, constraints and the evidence behind each layer.</p></header><div class="orientation-lead panel panel-accent"><div><span class="section-tag">OVERALL DIRECTION HYPOTHESIS</span><h2 id="overallDirectionTitle"></h2><p id="overallDirectionSummary"></p></div><div class="orientation-side"><div><b>Destination if the trend continues</b><p id="overallDestination"></p></div><div><b>Main constraint</b><p id="overallConstraint"></p></div><div class="source-row" id="overallSources"></div></div></div><div class="direction-desktop direction-table-wrap"><table class="direction-table"><thead><tr><th>Layer</th><th>Now</th><th>Direction</th><th>Constraint</th><th>Velocity</th><th>Highest-impact evidence</th></tr></thead><tbody id="directionBody"></tbody></table></div><div id="directionCards" class="direction-mobile"></div><p class="method-note">Direction and velocity are editorial interpretations of the curated evidence, not forecasts or market-growth statistics.</p></section>
+<div class="topline">
+<span id="today"></span>
+<span class="live" id="scanStatus">Loading today's edition</span>
+<span>Berlin</span>
+</div>
 
-<section id="evolution" class="major-section"><header class="section-header"><div><p class="kicker">02 · EVOLUTION</p><h2>How did we get here?</h2></div><p>See which parts of the AI stack and cloud foundation are represented by consequential milestones over time.</p></header><div class="view-tabs" role="group" aria-label="Evolution view"><button class="view-tab active" data-heat-view="layers">AI layers</button><button class="view-tab" data-heat-view="cloud">Cloud primitives</button></div><div class="heatmap-card panel"><div class="heatmap-scroll"><div id="heatmap" class="heatmap"></div></div><div id="yearSummary" class="year-summary"></div></div><p class="method-note">Darker means more impact-weighted evidence in this curated archive. It does not prove that a category objectively progressed most across the industry. Tap a cell to inspect the evidence.</p></section>
+<header class="masthead">
+<h1><a href="./" id="siteName">The GenAI Radar</a></h1>
+<p class="tagline">What changed in GenAI, and what it means for the systems you design.</p>
+<div class="publisher">
+<svg width="20" height="20" viewBox="0 0 96 96" aria-hidden="true"><g fill="none" stroke-miterlimit="10"><polyline points="2,-2 48,44 94,-2" stroke="#39B54A" stroke-width="13"></polyline><polyline points="-8,20 32,60 -8,100" stroke="#161616" stroke-width="13"></polyline><polyline points="104,20 64,60 104,100" stroke="#161616" stroke-width="13"></polyline></g></svg>
+A Rapid Venture Lab publication
+</div>
+</header>
 
-<section id="radar" class="major-section"><header class="section-header"><div><p class="kicker recent-kicker"><span class="live-dot"></span>03 · RECENT CHANGES</p><h2>What is changing now?</h2></div><p>Every signal is translated into architecture, cloud, trade-offs, customer consequence and what to learn.</p></header><article class="lead-panel panel"><div class="panel-head"><span class="section-tag recent-label">LATEST CONSEQUENTIAL CHANGE</span><span class="new-badge">NEW</span></div><div class="lead-meta"><span id="leadDate"></span><span id="leadLayer"></span><span id="leadImpact"></span></div><h2 id="leadTitle"></h2><p class="lead-deck" id="leadWhy"></p><div class="analysis-grid"><div><b>Before</b><p id="leadBefore"></p></div><div><b>After</b><p id="leadAfter"></p></div><div><b>Architecture implication</b><p id="leadImplication"></p></div><div><b>Cloud primitives</b><p id="leadCloud"></p></div><div><b>Trade-offs affected</b><div id="leadTradeoffs" class="tradeoff-row"></div></div><div><b>Customer consequence</b><p id="leadCustomer"></p></div><div><b>What to learn</b><p id="leadLearn"></p></div><div><b>Evidence</b><p>Public source · classification is editorial</p></div></div><a id="leadSource" class="story-link">Open source</a></article>
+<div class="double-rule"></div>
+<nav class="guide" aria-label="In this edition">
+<div>
+<div class="label">About this paper</div>
+<p><b>Written for solution architects.</b> Also read by platform leads, AI product managers, CTOs and consultants.</p>
+</div>
+<a href="#front"><div class="num">1</div><div class="what">This week</div><div class="desc" id="guideWeek">Changes, filtered to your stack</div></a>
+<a href="#notices"><div class="num red">2</div><div class="what red">Deadlines</div><div class="desc">Retirements and price changes that need action</div></a>
+<a href="#decisions"><div class="num">3</div><div class="what">Decisions</div><div class="desc">Design choices with new evidence</div></a>
+<a href="#history"><div class="num">4</div><div class="what">History</div><div class="desc" id="guideHistory">Milestones since 2022, clickable</div></a>
+</nav>
 
-<div class="archive-head"><div><p class="kicker">EVIDENCE ARCHIVE</p><h3>All tracked changes</h3></div><span id="resultCount"></span></div><form class="filters panel" id="filterForm"><label><span>Search</span><input id="searchInput" type="search" placeholder="agents, RAG, security"></label><label><span>Year</span><select id="yearFilter"><option value="">All years</option></select></label><label><span>AI layer</span><select id="layerFilter"><option value="">All layers</option></select></label><label><span>Impact</span><select id="impactFilter"><option value="">All impact levels</option></select></label><label><span>Type</span><select id="kindFilter"><option value="">All types</option><option value="signal">Current signal</option><option value="milestone">Historical milestone</option></select></label><div class="filter-actions"><button class="btn" type="submit">Search</button><button class="btn btn-secondary" id="resetFilters" type="button">Reset</button></div></form><div id="newsGrid" class="news-grid"></div></section>
+<div class="sections" id="front" role="region" aria-label="Filters">
+<span class="label">Sections</span>
+<div id="tabs" style="display: contents"></div>
+<span id="newPill" class="newpill" hidden></span>
+<span class="sep" aria-hidden="true"></span>
+<details class="stack" id="stack">
+<summary>My stack: <span id="stackSummary">all vendors</span></summary>
+<div class="stack-panel" id="stackPanel"></div>
+</details>
+<label class="toggle"><input type="checkbox" id="needsAction">Needs action only</label>
+<input type="search" class="search" id="search" placeholder="Search the paper" aria-label="Search the paper">
+</div>
+<p class="filter-note" id="filterNote" aria-live="polite" hidden></p>
 
-<section id="reference" class="major-section"><header class="section-header"><div><p class="kicker">04 · ARCHITECT'S LENS</p><h2>The map behind every change</h2></div><p>The same lens is used repeatedly so the radar builds architectural judgment, not just awareness.</p></header><div class="lens-map"><div class="panel"><h3>AI stack</h3><div id="layerDefs"></div></div><div class="panel"><h3>Cloud primitives</h3><div id="primitiveDefs"></div></div><div class="panel"><h3>Architecture decisions</h3><p class="decision-list">Model selection · RAG vs long context · fine-tuning vs prompting · rules vs AI · agent vs deterministic workflow · managed vs custom · build vs buy · human approval boundaries · state and memory · deployment · identity and permissions · observability and evals</p></div><div class="panel"><h3>Trade-offs</h3><p class="decision-list">Cost · latency · accuracy · reliability · security · control · portability</p></div></div></section>
-</main><footer class="footer"><div><strong>Rapid Venture Lab</strong><span>GenAI Change Radar</span></div><nav><a href="https://www.rapidventurelab.com/" target="_blank" rel="noopener">Website</a><a href="https://de.linkedin.com/company/rapid-venture-lab" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/RapidVentureLab/genai-change-radar" target="_blank" rel="noopener">GitHub</a></nav><p>Public sources only. Impact, direction, velocity and architecture implications are editorial assessments based on the curated archive.</p></footer><script src="app.js?v=13" defer></script></body></html>
+<main>
+<div class="front">
+<aside class="col-left" aria-labelledby="briefHead">
+<div class="label colhead" id="briefHead">In brief</div>
+<div id="briefs"></div>
+</aside>
+
+<article class="col-main lead" id="lead"></article>
+
+<aside class="col-right">
+<section class="notices" id="notices" aria-labelledby="noticeHead">
+<div class="label" id="noticeHead">2 · Deadlines and actions</div>
+<div id="noticeList"></div>
+<a class="ui" style="display: inline-block; margin-top: 8px; font-size: 14px; font-weight: 700" href="deadlines.ics">Add deadlines to your calendar</a>
+</section>
+
+<section id="decisions" aria-labelledby="decHead">
+<div class="label colhead" id="decHead">3 · Decisions to revisit</div>
+<div id="decisionList"></div>
+</section>
+
+<section aria-labelledby="takeHead">
+<div class="label colhead" id="takeHead">Take the Radar with you</div>
+<div class="takeaway">
+<a href="deadlines.ics">Deadline calendar<small>Outlook, Google, Apple</small></a>
+<a href="feed.xml">RSS feed<small>Every new story</small></a>
+<a href="updates.json">Open data<small>JSON, free to use</small></a>
+<a href="https://github.com/RapidVentureLab/genai-change-radar" rel="noopener">Source code<small>How it is made</small></a>
+</div>
+</section>
+
+<section class="corrections" aria-labelledby="corrHead">
+<div class="label" id="corrHead">Corrections and held items</div>
+<div id="corrections"><p>Loading.</p></div>
+</section>
+</aside>
+</div>
+
+<div class="row4" id="row4"></div>
+<div class="all-stories"><button type="button" class="btn-outline" id="allBtn">All stories</button></div>
+<div class="archive-list" id="archive" hidden></div>
+
+<section class="history" id="history" aria-labelledby="histHead">
+<div class="history-head">
+<div>
+<div class="label">4 · From the archive</div>
+<h2 id="histHead">How we got here</h2>
+<p id="histIntro">Milestones since ChatGPT, each checked against its primary source. A milestone changed what architects can build, or how they build it.</p>
+</div>
+<div class="howto">
+<div class="label">How to read this chart</div>
+<ol>
+<li>Each row is one layer of the AI stack.</li>
+<li>Each dot is a milestone. Bigger dots changed more.</li>
+<li><b>Click any dot</b> to read it below.</li>
+<li>A dashed dot is being watched and may become a milestone.</li>
+</ol>
+</div>
+</div>
+<div class="timeline-scroll"><div class="timeline"><div class="lanes" id="lanes"></div><div class="plot" id="plot" role="group" aria-label="Milestone timeline"></div></div></div>
+<p class="phone-hint"><b>Tap any entry</b> to read the full story. A dashed marker means the entry is being watched and may become a milestone.</p>
+<div class="history-list" id="historyList"></div>
+<div class="history-foot">
+<article class="selected" id="selected" aria-live="polite"></article>
+<div>
+<div class="label colhead">The pace, by the numbers</div>
+<div class="numbers" id="numbers"></div>
+</div>
+</div>
+</section>
+
+<section class="survey" id="survey" hidden>
+<div>
+<div class="label">Reader survey</div>
+<h2>Would you read a Monday email edition?</h2>
+<p>Tell us if you would. If enough readers ask, we will start it and tell you first.</p>
+</div>
+<a class="btn-solid" id="surveyLink" href="#" target="_blank" rel="noopener">Count me in</a>
+</section>
+</main>
+
+<footer class="foot">
+<span class="brandline">
+<svg width="24" height="24" viewBox="0 0 96 96" aria-hidden="true"><g fill="none" stroke-miterlimit="10"><polyline points="2,-2 48,44 94,-2" stroke="#39B54A" stroke-width="13"></polyline><polyline points="-8,20 32,60 -8,100" stroke="#161616" stroke-width="13"></polyline><polyline points="104,20 64,60 104,100" stroke="#161616" stroke-width="13"></polyline></g></svg>
+Published by Haris Rehman, <a href="https://www.rapidventurelab.com/" rel="noopener">Rapid Venture Lab</a>, Berlin
+</span>
+<nav aria-label="Footer">
+<a href="https://github.com/RapidVentureLab/genai-change-radar#how-it-works" rel="noopener">How this paper is made</a>
+<a href="https://github.com/RapidVentureLab/genai-change-radar" rel="noopener">GitHub</a>
+<a href="https://de.linkedin.com/company/rapid-venture-lab" rel="noopener">LinkedIn</a>
+<a href="https://www.rapidventurelab.com/" rel="noopener">Rapid Venture Lab website</a>
+</nav>
+</footer>
+</div>
+
+<dialog class="reader" id="reader" aria-labelledby="readerTitle">
+<div class="reader-inner">
+<button type="button" class="reader-close" id="readerClose">Close</button>
+<div id="readerBody"></div>
+</div>
+</dialog>
+
+<script src="app.js?v=21" defer></script>
+</body>
+</html>

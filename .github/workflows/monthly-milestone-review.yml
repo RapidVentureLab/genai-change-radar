@@ -86,6 +86,7 @@ jobs:
           node scripts/candidates.mjs apply "$REVIEW_OUTPUT" --summary "$RUNNER_TEMP/summary.md" --today "$(date -u +%F)"
           cat "$RUNNER_TEMP/summary.md" >> "$GITHUB_STEP_SUMMARY"
           node scripts/style-check.mjs updates.json --strict
+          node scripts/schema-check.mjs updates.json --strict
           node scripts/qa-recent.mjs > /dev/null
 
       - name: Open pull request

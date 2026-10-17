@@ -3,7 +3,7 @@
   "private": true,
   "description": "A daily-updated radar of GenAI changes for solution architects.",
   "scripts": {
-    "check": "node scripts/style-check.mjs updates.json --strict && node scripts/qa-recent.mjs",
+    "check": "node scripts/style-check.mjs updates.json --strict && node scripts/schema-check.mjs updates.json --strict && node scripts/qa-recent.mjs",
     "check:sources": "node scripts/check-sources.mjs",
     "check:sources:all": "node scripts/check-sources.mjs --all",
     "merge": "node scripts/merge-inbox.mjs",

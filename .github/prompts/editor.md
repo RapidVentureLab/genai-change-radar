@@ -12,7 +12,7 @@ Rules for this pass:
 - Change wording only. Keep every fact, name, number, version, date and region exactly as the research agent wrote it.
 - Do not add any new fact. If a sentence needs a fact you do not have, shorten the sentence instead.
 - You may delete a claim only if it is opinion presented as fact.
-- Do not change these fields: id, date, layer, kind, impact, cloudPrimitives, tradeoffs, sources. A script compares them before and after your pass and discards your edits if any of them changed.
+- Do not change these fields: id, date, layer, kind, impact, cloudPrimitives, tradeoffs, sources, vendors, decisions, action, candidate. A script compares them before and after your pass and discards your edits if any of them changed.
 - Do not add, remove or reorder items.
 - Stay within the word and character limits in the docs/STYLE.md table.
 - Do not use any banned word, em dash, exclamation mark, or "X, not Y" framing.
