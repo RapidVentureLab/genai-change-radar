@@ -92,7 +92,7 @@
     },
     {
       "layer": "Production & Business",
-      "description": "Making AI controllable, measurable, and economically useful.",
+      "description": "Making AI controllable, measurable, and economically useful. LLMOps and GenAIOps practices for running GenAI in production grew gradually from 2023 onward.",
       "now": "Evals, traces, trajectory monitoring, governance, approval gates, and cost controls are becoming core production architecture.",
       "direction": "Continuous risk-based control where capability, alignment, reliability, cost, and business value are measured together.",
       "constraint": "Scalable alignment and oversight as models become more capable and autonomous."
@@ -106,12 +106,12 @@
       "kind": "milestone",
       "changeType": "interface shift",
       "impact": "Disruptive",
-      "title": "ChatGPT put conversational generative AI in a public product",
-      "whatChanged": "OpenAI released ChatGPT as a public research preview built around a conversational interface with follow-up dialogue.",
-      "whyCare": "It gave a broad audience a simple way to use a capable language model and made natural-language interaction a mainstream product pattern.",
-      "before": "Foundation models were mainly experienced through research demos, APIs and specialist tools.",
-      "after": "A general-purpose conversational interface became a practical product surface for everyday users and teams.",
-      "learn": "Treat natural language as an interface layer, while separating the chat experience from the underlying model and business workflow.",
+      "title": "OpenAI releases ChatGPT as a public research preview",
+      "whatChanged": "OpenAI released ChatGPT as a free research preview. People could talk to a language model in plain conversation and ask follow-up questions.",
+      "whyCare": "Chat became the way most people first used a language model.",
+      "before": "People used language models mainly through research demos, APIs and specialist tools.",
+      "after": "Anyone with a browser could use a capable model through a chat window.",
+      "learn": "Treat chat as one interface among several. Keep the conversation layer separate from the model and the business logic behind it.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -124,12 +124,13 @@
           "url": "https://openai.com/index/chatgpt/"
         }
       ],
-      "architectureImplication": "Treat natural language as an interface layer, while separating the chat experience from the underlying model and business workflow.",
+      "architectureImplication": "Design the chat interface, the model and the business workflow as separate layers, so each can change on its own.",
       "tradeoffs": [
         "Reliability",
         "Control",
         "Cost"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2023-03-14-gpt4",
@@ -138,12 +139,12 @@
       "kind": "milestone",
       "changeType": "model capability",
       "impact": "Step-change",
-      "title": "GPT-4 raised the capability ceiling and added image input",
-      "whatChanged": "OpenAI released GPT-4 as a large multimodal model that accepted image and text inputs and improved performance across professional and academic benchmarks.",
-      "whyCare": "More capable models made higher-value knowledge work and multimodal applications more credible, while also increasing the need for evaluation and control.",
-      "before": "Most mainstream GenAI applications were built around weaker text-first models.",
-      "after": "Architects could consider more complex reasoning, higher-stakes workflows and image-plus-text use cases.",
-      "learn": "Model capability matters, but architecture still needs evals, data, controls and workflow design around it.",
+      "title": "OpenAI releases GPT-4, which accepts both images and text",
+      "whatChanged": "OpenAI released GPT-4, a large multimodal model that accepts image and text input. It improved on professional and academic benchmarks.",
+      "whyCare": "Harder knowledge work and image-plus-text use cases became realistic, and so did the need for evaluation and controls.",
+      "before": "Most GenAI applications ran on weaker, text-only models.",
+      "after": "Teams could build for more complex reasoning, higher-stakes workflows and image-plus-text input.",
+      "learn": "Test the model on your own tasks before you raise the stakes. Add evaluation and controls as capability grows.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -152,16 +153,21 @@
       ],
       "sources": [
         {
+          "name": "OpenAI - GPT-4 research",
+          "url": "https://openai.com/index/gpt-4-research/"
+        },
+        {
           "name": "OpenAI - GPT-4",
           "url": "https://openai.com/index/gpt-4/"
         }
       ],
-      "architectureImplication": "Model capability matters, but architecture still needs evals, data, controls and workflow design around it.",
+      "architectureImplication": "A stronger model still needs evaluations, good data, controls and workflow design around it.",
       "tradeoffs": [
         "Accuracy",
         "Latency",
         "Cost"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2023-06-13-function-calling",
@@ -170,12 +176,12 @@
       "kind": "milestone",
       "changeType": "tool use",
       "impact": "Step-change",
-      "title": "Function calling made model-to-tool connections more structured",
-      "whatChanged": "OpenAI added function calling so models could choose a described function and return structured arguments that software could use to call APIs or tools.",
-      "whyCare": "This moved applications beyond free-form text toward systems where models could reliably trigger software actions.",
-      "before": "Developers often parsed model text or built brittle prompt conventions to connect models to software.",
-      "after": "Models could return structured tool calls that application code could validate and execute.",
-      "learn": "Separate model judgment from deterministic execution. Validate arguments and permissions before tools run.",
+      "title": "OpenAI adds function calling so models can return structured tool calls",
+      "whatChanged": "OpenAI added function calling to its API. A model can pick a described function and return structured arguments that code can use to call an API or tool.",
+      "whyCare": "Applications could let models trigger software actions reliably.",
+      "before": "Developers parsed free text or relied on fragile prompt conventions to connect models to software.",
+      "after": "Models return structured tool calls that code can validate and run.",
+      "learn": "Let the model choose the action and let your code run it. Check arguments and permissions before any tool runs.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -187,12 +193,13 @@
           "url": "https://openai.com/index/function-calling-and-other-api-updates/"
         }
       ],
-      "architectureImplication": "Separate model judgment from deterministic execution. Validate arguments and permissions before tools run.",
+      "architectureImplication": "Separate model judgment from deterministic execution. Put validation and permission checks between them.",
       "tradeoffs": [
         "Reliability",
         "Security",
         "Control"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2024-02-15-gemini15-context",
@@ -201,12 +208,12 @@
       "kind": "milestone",
       "changeType": "context expansion",
       "impact": "Step-change",
-      "title": "Gemini 1.5 pushed long context to one million tokens in preview",
-      "whatChanged": "Google introduced Gemini 1.5 Pro with a standard 128,000-token context and a one-million-token experimental context window for selected users.",
-      "whyCare": "Very long context changed the trade-off between retrieval, chunking and putting large amounts of source material directly into model context.",
-      "before": "Large document collections usually had to be aggressively chunked and retrieved in small pieces.",
-      "after": "Some workloads could send much larger corpora directly, while retrieval remained important for cost, freshness, permissions and precision.",
-      "learn": "Choose between long context, retrieval and hybrids based on data size, freshness, latency, cost and access control.",
+      "title": "Google previews Gemini 1.5 Pro with a one-million-token context window",
+      "whatChanged": "Google introduced Gemini 1.5 Pro with a standard 128,000-token context window. A one-million-token window was available in private preview for selected developers and enterprise customers.",
+      "whyCare": "Very long context changed the choice between retrieval and putting source material straight into the prompt.",
+      "before": "Teams split large document sets into small chunks and retrieved a few at a time.",
+      "after": "Some workloads could send far larger collections directly. Retrieval still mattered for cost, freshness, permissions and precision.",
+      "learn": "Test long context, retrieval and a mix of both on your data. Compare cost, latency and accuracy.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -219,12 +226,13 @@
           "url": "https://blog.google/innovation-and-ai/products/google-gemini-next-generation-model-february-2024/"
         }
       ],
-      "architectureImplication": "Choose between long context, retrieval and hybrids based on data size, freshness, latency, cost and access control.",
+      "architectureImplication": "Choose between long context, retrieval or both based on data size, freshness, latency, cost and access control.",
       "tradeoffs": [
         "Accuracy",
         "Security",
         "Cost"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2024-05-13-gpt4o",
@@ -233,12 +241,12 @@
       "kind": "milestone",
       "changeType": "multimodal interaction",
       "impact": "Step-change",
-      "title": "GPT-4o integrated text, vision and audio with much lower interaction latency",
-      "whatChanged": "OpenAI introduced GPT-4o as a model designed to reason across text, audio and vision in real time, including much faster audio interaction.",
-      "whyCare": "Integrated multimodality reduced the need to stitch together separate speech, vision and language components for some experiences.",
-      "before": "Voice and multimodal applications often required several models and conversion stages.",
-      "after": "A single model family could handle more of the interaction loop directly.",
-      "learn": "For multimodal systems, architecture decisions shift toward streaming, latency, session state, interruption handling and cost.",
+      "title": "OpenAI releases GPT-4o, one model for text, vision and audio",
+      "whatChanged": "OpenAI introduced GPT-4o, trained as a single model across text, vision and audio. It can respond to audio input in as little as 232 milliseconds.",
+      "whyCare": "Voice and multimodal products need fewer separate speech, vision and language components.",
+      "before": "Voice applications chained several models and conversion steps.",
+      "after": "One model can handle more of the interaction directly.",
+      "learn": "For voice and multimodal products, plan for streaming, interruptions, session state and cost.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -250,12 +258,13 @@
           "url": "https://openai.com/index/hello-gpt-4o/"
         }
       ],
-      "architectureImplication": "For multimodal systems, architecture decisions shift toward streaming, latency, session state, interruption handling and cost.",
+      "architectureImplication": "Design multimodal systems around streaming, latency, session state and interruption handling.",
       "tradeoffs": [
         "Accuracy",
         "Latency",
         "Cost"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2024-07-23-llama31",
@@ -264,12 +273,12 @@
       "kind": "milestone",
       "changeType": "open model ecosystem",
       "impact": "Step-change",
-      "title": "Llama 3.1 expanded the credible open-model option",
-      "whatChanged": "Meta released Llama 3.1, including a 405B model with 128K context and weights available for broad use under its license.",
-      "whyCare": "The gap between closed frontier APIs and models teams could run or control themselves narrowed for more use cases.",
-      "before": "Frontier-level capability was concentrated more heavily in closed hosted APIs.",
-      "after": "Enterprises had a stronger open-model option for control, customization and deployment choices.",
-      "learn": "Model selection should include deployment control, licensing, data location, cost, skill requirements and operational burden.",
+      "title": "Meta releases Llama 3.1, including an openly available 405B model",
+      "whatChanged": "Meta released Llama 3.1, including a 405B model with a 128K context window. The weights are available for broad use under Meta's license.",
+      "whyCare": "Teams could run a model close to the frontier on infrastructure they control.",
+      "before": "Frontier-level capability sat mostly behind closed, hosted APIs.",
+      "after": "Enterprises had a strong open-weight option for control, customization and deployment.",
+      "learn": "Compare licensing, data location, hosting cost and the skills you need to run it before you self-host.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -282,12 +291,13 @@
           "url": "https://ai.meta.com/blog/meta-llama-3-1/"
         }
       ],
-      "architectureImplication": "Model selection should include deployment control, licensing, data location, cost, skill requirements and operational burden.",
+      "architectureImplication": "Weigh who runs the model, the license and the effort to operate it, next to quality and price.",
       "tradeoffs": [
         "Accuracy",
         "Latency",
         "Cost"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2024-09-12-o1",
@@ -296,12 +306,12 @@
       "kind": "milestone",
       "changeType": "reasoning model",
       "impact": "Step-change",
-      "title": "o1 made test-time reasoning a visible model design choice",
-      "whatChanged": "OpenAI released o1-preview, a model series designed to spend more time reasoning before responding and to improve on harder science, coding and math tasks.",
-      "whyCare": "It made inference-time reasoning effort an explicit trade-off between capability, latency and cost.",
-      "before": "Most model calls were treated as roughly the same kind of single-pass generation.",
-      "after": "Architects could choose when a task justified more reasoning time and cost.",
-      "learn": "Route work by difficulty and value. Not every task needs expensive reasoning.",
+      "title": "OpenAI releases o1, a model that reasons before it answers",
+      "whatChanged": "OpenAI released o1-preview, a model series that spends more time reasoning before responding. It improves on harder science, coding and math tasks.",
+      "whyCare": "Reasoning time became a setting you choose, with a trade-off between quality, latency and cost.",
+      "before": "Teams treated most model calls as the same kind of single-pass answer.",
+      "after": "Teams can choose when a task is worth more reasoning time and cost.",
+      "learn": "Route tasks by difficulty and value. Save expensive reasoning for the tasks that need it.",
       "cloudPrimitives": [
         "Compute",
         "Networking"
@@ -312,12 +322,13 @@
           "url": "https://openai.com/index/introducing-openai-o1-preview/"
         }
       ],
-      "architectureImplication": "Route work by difficulty and value. Not every task needs expensive reasoning.",
+      "architectureImplication": "Add routing between fast and reasoning models, based on task difficulty, risk and cost.",
       "tradeoffs": [
         "Accuracy",
         "Latency",
         "Cost"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2024-10-22-computer-use",
@@ -326,12 +337,12 @@
       "kind": "milestone",
       "changeType": "computer interaction",
       "impact": "Step-change",
-      "title": "Computer use let a frontier model operate graphical software",
-      "whatChanged": "Anthropic released computer use in public beta so Claude could inspect screens, move a cursor, click and type through software interfaces.",
-      "whyCare": "Agents could act in systems that had no clean API or purpose-built integration, although reliability and security remained difficult.",
-      "before": "Automation generally needed APIs, scripts or brittle browser automation.",
-      "after": "A model could interact with existing graphical software in a more general way.",
-      "learn": "Computer use expands reach but raises verification, sandboxing, credential and recovery requirements.",
+      "title": "Anthropic releases computer use, letting Claude operate graphical software",
+      "whatChanged": "Anthropic released computer use in public beta. Claude can look at screenshots, move a pointer, click and type through software interfaces.",
+      "whyCare": "Agents can act in systems that have no API, though reliability and security remain hard.",
+      "before": "Automation needed APIs, scripts or fragile browser automation.",
+      "after": "A model can operate existing graphical software in a general way.",
+      "learn": "Run computer-use agents in a sandbox. Limit credentials and plan how to check and undo their actions.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -344,12 +355,13 @@
           "url": "https://www.anthropic.com/news/developing-computer-use"
         }
       ],
-      "architectureImplication": "Computer use expands reach but raises verification, sandboxing, credential and recovery requirements.",
+      "architectureImplication": "Computer use widens what agents can reach. Add sandboxing, credential limits, verification and recovery.",
       "tradeoffs": [
         "Reliability",
         "Security",
         "Control"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2024-11-25-mcp",
@@ -358,12 +370,12 @@
       "kind": "milestone",
       "changeType": "open protocol",
       "impact": "Step-change",
-      "title": "MCP introduced an open standard for connecting AI systems to tools and data",
-      "whatChanged": "Anthropic open-sourced the Model Context Protocol as a standard way to connect AI assistants to data sources, business tools and development environments.",
-      "whyCare": "It created a common integration pattern where each model application did not need a completely bespoke connector for every source.",
-      "before": "Tool and data connections were commonly implemented separately for each application or framework.",
-      "after": "A shared protocol could let tools and data sources expose reusable interfaces to many AI clients.",
-      "learn": "Watch standards adoption. Protocols matter when ecosystems converge around them, not just when they are announced.",
+      "title": "Anthropic open-sources MCP, a standard for connecting AI to tools and data",
+      "whatChanged": "Anthropic open-sourced the Model Context Protocol, a standard way to connect AI assistants to data sources, business tools and development environments.",
+      "whyCare": "Teams can build a connector once and use it with many AI clients.",
+      "before": "Each application or framework needed its own connection to each tool and data source.",
+      "after": "Tools and data sources can expose one interface that many AI clients use.",
+      "learn": "Check which of your tools already offer MCP servers. Adopt a protocol once the ecosystem around it grows.",
       "cloudPrimitives": [
         "Networking",
         "Storage",
@@ -375,12 +387,13 @@
           "url": "https://www.anthropic.com/news/model-context-protocol"
         }
       ],
-      "architectureImplication": "Watch standards adoption. Protocols matter when ecosystems converge around them, not just when they are announced.",
+      "architectureImplication": "Use a shared protocol for tool and data connections to reduce coupling between AI clients and systems.",
       "tradeoffs": [
         "Reliability",
         "Security",
         "Control"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2025-01-20-deepseek-r1",
@@ -389,12 +402,12 @@
       "kind": "milestone",
       "changeType": "open reasoning economics",
       "impact": "Step-change",
-      "title": "DeepSeek-R1 increased pressure on reasoning cost and open access",
-      "whatChanged": "DeepSeek released R1 and distilled reasoning models with open weights under the MIT license and published low API pricing.",
-      "whyCare": "Reasoning capability became available through a wider range of deployment and cost options, increasing pressure on closed-model economics.",
-      "before": "Advanced reasoning was more strongly associated with a small number of closed providers.",
-      "after": "Teams had more options to trade off model quality, hosting control, openness and cost.",
-      "learn": "Avoid hard-wiring architecture to one provider. Model routing and portability become more valuable as capability and price move quickly.",
+      "title": "DeepSeek releases R1, an open-weight reasoning model with low API prices",
+      "whatChanged": "DeepSeek released R1 and smaller distilled reasoning models with open weights under the MIT license. API prices were $0.14 to $0.55 per million input tokens and $2.19 per million output tokens.",
+      "whyCare": "Reasoning became available at lower cost and with open weights, which put pressure on closed-model prices.",
+      "before": "Advanced reasoning came mainly from a few closed providers.",
+      "after": "Teams had more choice across quality, hosting control, openness and cost.",
+      "learn": "Keep your design portable across providers. Test new models quickly when capability and prices move.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -407,12 +420,13 @@
           "url": "https://deepseek.com/en/news/deepseek-r1/"
         }
       ],
-      "architectureImplication": "Avoid hard-wiring architecture to one provider. Model routing and portability become more valuable as capability and price move quickly.",
+      "architectureImplication": "Avoid tying the architecture to one provider. Model routing and portability gain value as prices change.",
       "tradeoffs": [
         "Accuracy",
         "Latency",
         "Cost"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2025-03-11-responses-agents",
@@ -421,12 +435,12 @@
       "kind": "milestone",
       "changeType": "managed agent platform",
       "impact": "Packaging / distribution",
-      "title": "Agent building blocks moved further into managed platform infrastructure",
-      "whatChanged": "OpenAI released the Responses API, built-in tools and an Agents SDK with tracing for building agentic applications.",
-      "whyCare": "Core agent runtime capabilities became easier to consume as managed services, reducing custom orchestration work for teams using that stack.",
-      "before": "Teams commonly assembled tool use, orchestration, tracing and state through custom code or separate frameworks.",
-      "after": "More of the agent harness could be bought as platform infrastructure.",
-      "learn": "Distinguish fundamental capability changes from packaging changes. Managed runtimes can still matter because they change build-versus-buy economics.",
+      "title": "OpenAI launches the Responses API, built-in tools and an Agents SDK",
+      "whatChanged": "OpenAI released the Responses API, built-in tools for web search, file search and computer use, and an Agents SDK with tracing.",
+      "whyCare": "Teams could buy core agent infrastructure as a managed service and write less orchestration code.",
+      "before": "Teams assembled tool use, orchestration, tracing and state with custom code or separate frameworks.",
+      "after": "More of the agent harness comes from the platform.",
+      "learn": "Decide which parts of the agent harness to buy and which to build. Check what you can export or move later.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -439,12 +453,13 @@
           "url": "https://openai.com/index/new-tools-for-building-agents/"
         }
       ],
-      "architectureImplication": "Distinguish fundamental capability changes from packaging changes. Managed runtimes can still matter because they change build-versus-buy economics.",
+      "architectureImplication": "Managed agent runtimes change build-versus-buy decisions. Weigh speed of delivery against portability.",
       "tradeoffs": [
         "Reliability",
         "Security",
         "Control"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2025-04-09-a2a",
@@ -453,12 +468,12 @@
       "kind": "milestone",
       "changeType": "agent interoperability",
       "impact": "Incremental",
-      "title": "A2A formalized a direction toward agent-to-agent interoperability",
-      "whatChanged": "Google announced the Agent2Agent protocol to let agents built by different vendors or frameworks communicate and coordinate.",
-      "whyCare": "It made cross-agent interoperability a clearer ecosystem goal, although standards need adoption before they become architecture defaults.",
-      "before": "Multi-agent systems usually assumed one framework, one vendor or custom communication conventions.",
-      "after": "A shared protocol could reduce coupling between agent systems if ecosystem adoption follows.",
-      "learn": "Treat emerging protocols as directional signals first. Adopt them when ecosystem support and customer requirements justify it.",
+      "title": "Google announces A2A, a protocol for agents to work with other agents",
+      "whatChanged": "Google announced the Agent2Agent protocol so agents from different vendors and frameworks can communicate and coordinate.",
+      "whyCare": "Agent-to-agent interoperability became a stated industry goal. Standards still need adoption before teams can rely on them.",
+      "before": "Multi-agent systems assumed one framework, one vendor or custom conventions.",
+      "after": "A shared protocol could reduce coupling between agent systems as adoption grows.",
+      "learn": "Track which vendors support A2A. Adopt it when your partners or customers need cross-vendor agents.",
       "cloudPrimitives": [
         "Networking",
         "Security"
@@ -469,12 +484,13 @@
           "url": "https://developers.googleblog.com/a2a-a-new-era-of-agent-interoperability/"
         }
       ],
-      "architectureImplication": "Treat emerging protocols as directional signals first. Adopt them when ecosystem support and customer requirements justify it.",
+      "architectureImplication": "Plan agent boundaries so a standard protocol can replace custom connections later.",
       "tradeoffs": [
         "Reliability",
         "Security",
         "Control"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2025-05-21-managed-mcp-background",
@@ -483,12 +499,12 @@
       "kind": "milestone",
       "changeType": "managed runtime maturity",
       "impact": "Incremental",
-      "title": "Managed agent runtimes added remote MCP and more reliable long-running execution",
-      "whatChanged": "OpenAI added remote MCP support, background mode and additional reliability and privacy features to its Responses API.",
-      "whyCare": "Agent infrastructure started absorbing more connectivity, long-running execution and observability concerns into managed runtimes.",
-      "before": "Teams had to assemble more of the connectivity and long-running execution behavior themselves.",
-      "after": "Managed platforms covered more of the operational agent harness.",
-      "learn": "Compare managed convenience with portability, visibility, security requirements and provider lock-in.",
+      "title": "OpenAI adds remote MCP servers and background mode to the Responses API",
+      "whatChanged": "OpenAI added support for remote MCP servers, a background mode for long-running tasks, and further reliability and privacy features to its Responses API.",
+      "whyCare": "Managed runtimes now handle more of the connections and long-running execution that agents need.",
+      "before": "Teams built connectivity and long-running execution for agents themselves.",
+      "after": "The platform covers more of the operational agent harness.",
+      "learn": "Check what the managed runtime lets you see, export and secure. Decide how much lock-in you accept for the convenience.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -501,12 +517,13 @@
           "url": "https://openai.com/index/new-tools-and-features-in-the-responses-api/"
         }
       ],
-      "architectureImplication": "Compare managed convenience with portability, visibility, security requirements and provider lock-in.",
+      "architectureImplication": "Managed runtimes can absorb connectivity and long-running work. Keep observability and an exit path in your design.",
       "tradeoffs": [
         "Reliability",
         "Security",
         "Control"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2026-09-18-long-running-agent-reliability",
@@ -610,12 +627,12 @@
       "kind": "signal",
       "changeType": "evaluation practice",
       "impact": "Incremental",
-      "title": "Agent evaluation is expanding from output quality to behaviour",
-      "whatChanged": "Teams increasingly need to inspect which tools an agent used, which path it took and whether it stayed inside policy, not only whether the final answer looked correct.",
-      "whyCare": "A correct-looking output can still come from an unsafe or invalid path. That matters once agents can take actions.",
-      "before": "Evaluate whether the final answer is correct.",
-      "after": "Evaluate both the result and the action trajectory that produced it.",
-      "learn": "Output evals, trajectory evals, audit logs, policy checks and risk-based human review.",
+      "title": "Teams start to evaluate the path an agent takes as well as its answer",
+      "whatChanged": "Teams now need to check which tools an agent used, which path it took and whether it stayed inside policy. Checking the final answer alone misses these.",
+      "whyCare": "A correct-looking answer can come from an unsafe path. This matters once agents take actions.",
+      "before": "Teams evaluated whether the final answer was correct.",
+      "after": "Teams evaluate the result and the sequence of actions that produced it.",
+      "learn": "Add trajectory checks to your evaluations. Keep audit logs and use human review for risky actions.",
       "cloudPrimitives": [
         "Compute",
         "Storage",
@@ -627,7 +644,7 @@
           "url": "https://www.microsoft.com/en-us/research/publication/diagnosing-with-insights-structured-analysis-of-agent-failures-via-behavioral-abstractions/"
         }
       ],
-      "architectureImplication": "Output evals, trajectory evals, audit logs, policy checks and risk-based human review.",
+      "architectureImplication": "Combine output evaluations, trajectory evaluations, audit logs, policy checks and risk-based human review.",
       "tradeoffs": [
         "Reliability",
         "Security",
@@ -638,7 +655,7 @@
       "id": "2026-04-24-gemini-agent-platform",
       "date": "2026-04-24",
       "layer": "Agent & Infrastructure",
-      "kind": "milestone",
+      "kind": "signal",
       "changeType": "enterprise agent platform",
       "impact": "Packaging / distribution",
       "title": "Enterprise agent building, governance, and scale became a single platform concern",
@@ -673,12 +690,12 @@
       "kind": "milestone",
       "changeType": "embedded agent workflow",
       "impact": "Step-change",
-      "title": "Persistent agents moved deeper into everyday workplace software",
-      "whatChanged": "Google announced Gemini Spark as a persistent personal AI agent designed to act across Workspace applications under user direction.",
-      "whyCare": "It shows the application layer moving from a chat tool beside work toward a persistent actor inside the software people already use.",
-      "before": "AI mainly helped inside isolated prompts or single application features.",
-      "after": "A persistent agent can coordinate work across multiple everyday applications.",
-      "learn": "Workflow architecture needs clear delegation, approvals, context boundaries, and user control.",
+      "title": "Google announces Gemini Spark, a persistent agent across Workspace apps",
+      "whatChanged": "Google announced Gemini Spark, a persistent personal agent that acts across Workspace applications under user direction.",
+      "whyCare": "AI at work is moving from a chat tool next to the work to an agent inside the software people already use.",
+      "before": "AI helped in single prompts or inside one application at a time.",
+      "after": "A persistent agent can coordinate work across several everyday applications.",
+      "learn": "Define what users may delegate, which actions need approval and what context the agent may see.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -691,12 +708,13 @@
           "url": "https://blog.google/products-and-platforms/products/workspace/workspace-updates/"
         }
       ],
-      "architectureImplication": "Workflow architecture needs clear delegation, approvals, context boundaries, and user control.",
+      "architectureImplication": "Design for delegation, approvals, context boundaries and user control when agents act across applications.",
       "tradeoffs": [
         "Reliability",
         "Control",
         "Cost"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2026-06-09-fable5",
@@ -705,12 +723,12 @@
       "kind": "milestone",
       "changeType": "long-horizon model capability",
       "impact": "Step-change",
-      "title": "Claude Fable 5 raised the bar for long, complex knowledge and coding work",
-      "whatChanged": "Anthropic released Fable 5 with stronger performance on longer and more complex tasks across coding, knowledge work, vision, and research.",
-      "whyCare": "Long-horizon model capability is becoming a core differentiator, not only benchmark accuracy on short tasks.",
-      "before": "Hard tasks often required users to break work into many smaller supervised steps.",
-      "after": "Stronger models can sustain larger projects and longer reasoning chains before handing control back.",
-      "learn": "Evaluate models on the duration and complexity of work they can complete reliably, not only benchmark scores.",
+      "title": "Anthropic releases Claude Fable 5, built for long and complex tasks",
+      "whatChanged": "Anthropic released Claude Fable 5. Anthropic says its lead over its other models grows with the length and complexity of the task, across coding, knowledge work, vision and research.",
+      "whyCare": "How long and complex a task a model can finish is becoming a main way to compare models.",
+      "before": "Hard tasks had to be split into many small steps with a person checking each one.",
+      "after": "Stronger models can carry larger projects further before handing control back.",
+      "learn": "Test models on how long and how complex a task they finish reliably. Use your own tasks.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -723,12 +741,13 @@
           "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
         }
       ],
-      "architectureImplication": "Evaluate models on the duration and complexity of work they can complete reliably, not only benchmark scores.",
+      "architectureImplication": "Evaluate models on task length and complexity as well as benchmark scores.",
       "tradeoffs": [
         "Accuracy",
         "Latency",
         "Cost"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2026-07-20-long-horizon-safety",
@@ -737,12 +756,12 @@
       "kind": "milestone",
       "changeType": "long-horizon safety",
       "impact": "Step-change",
-      "title": "Long-running models forced safety evaluation to move from actions to trajectories",
-      "whatChanged": "OpenAI reported novel failures during limited internal use of a long-running model and responded with new evaluations, long-horizon alignment work, trajectory monitoring, and more user control.",
-      "whyCare": "Once systems persist and act over time, checking isolated outputs is not enough.",
-      "before": "Safety and evaluation could focus mainly on individual model responses or bounded tasks.",
-      "after": "Production control increasingly needs to evaluate sequences of actions and intervene across a whole trajectory.",
-      "learn": "Learn trajectory-level monitoring, long-horizon evals, approval boundaries, and recovery.",
+      "title": "OpenAI moves safety evaluation from single actions to whole trajectories",
+      "whatChanged": "OpenAI reported new failure types during limited internal use of a long-running model. It responded with new evaluations, long-horizon alignment work, trajectory monitoring and more user control.",
+      "whyCare": "Once systems act over long periods, checking single outputs misses what the sequence of actions is working toward.",
+      "before": "Safety checks focused on single responses or short, bounded tasks.",
+      "after": "Teams need to judge whole sequences of actions and step in during a run.",
+      "learn": "Add trajectory monitoring, long-horizon evaluations, approval points and recovery steps to agent designs.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -755,12 +774,13 @@
           "url": "https://openai.com/index/safety-alignment-long-horizon-models/"
         }
       ],
-      "architectureImplication": "Learn trajectory-level monitoring, long-horizon evals, approval boundaries, and recovery.",
+      "architectureImplication": "Monitor whole agent runs. Define where a run must stop for approval and how to recover it.",
       "tradeoffs": [
         "Reliability",
         "Security",
         "Control"
-      ]
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2026-09-01-workflow-execution",
@@ -801,12 +821,12 @@
       "kind": "milestone",
       "changeType": "frontier capability",
       "impact": "Step-change",
-      "title": "Frontier models pushed further into computer use, science, cyber, and professional work",
-      "whatChanged": "A new frontier generation improved across computer use, browsing, software engineering, cybersecurity, science, and professional work.",
-      "whyCare": "Frontier capability is increasingly crossing from answering questions into operating software and carrying out complex professional tasks.",
-      "before": "Models were less reliable across long, tool-using professional work and advanced computer use.",
-      "after": "A frontier model can handle a broader set of complex tasks and operate software more effectively.",
-      "learn": "As capability broadens, architecture must pair models with stronger controls, routing, monitoring, and risk assessment.",
+      "title": "OpenAI releases GPT-6 Astra with gains in computer use, science and cyber",
+      "whatChanged": "OpenAI released GPT-6 Astra and reported state-of-the-art results on benchmarks for computer use, science, cybersecurity and professional work.",
+      "whyCare": "Frontier models now operate software and carry out complex professional tasks as well as answering questions.",
+      "before": "Models were less reliable at long, tool-using professional work and computer use.",
+      "after": "A frontier model handles a wider set of complex tasks and operates software better.",
+      "learn": "Test it on your own tool-using tasks. Treat vendor benchmark results as claims until you reproduce them.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -823,18 +843,20 @@
           "url": "https://openai.com/index/safety-overview-gpt-6-astra/"
         }
       ],
-      "architectureImplication": "As capability broadens, architecture must pair models with stronger controls, routing, monitoring, and risk assessment.",
+      "architectureImplication": "Broader capability needs stronger controls, routing, monitoring and risk assessment around the model.",
       "tradeoffs": [
         "Accuracy",
         "Latency",
         "Cost"
-      ]
+      ],
+      "verified": "2026-10-17",
+      "verificationNote": "The OpenAI page shows only a 29 September 2026 update. Launch date confirmed by news coverage."
     },
     {
       "id": "2026-09-06-automated-research",
       "date": "2026-09-06",
       "layer": "Agent & Infrastructure",
-      "kind": "milestone",
+      "kind": "signal",
       "changeType": "automated research",
       "impact": "Step-change",
       "title": "Automated research moved from aspiration to an internal working milestone",
@@ -866,7 +888,7 @@
       "id": "2026-09-10-data-agent",
       "date": "2026-09-10",
       "layer": "Data & Knowledge",
-      "kind": "milestone",
+      "kind": "signal",
       "changeType": "connected business data",
       "impact": "Packaging / distribution",
       "title": "Business data, analysis, dashboards, and action are converging into one agent workflow",
@@ -898,15 +920,15 @@
       "id": "2026-09-10-financial-services",
       "date": "2026-09-10",
       "layer": "Application & Workflow",
-      "kind": "milestone",
+      "kind": "signal",
       "changeType": "vertical workflow product",
       "impact": "Packaging / distribution",
-      "title": "Vertical AI products are combining trusted data, reasoning, and templates into complete workflows",
-      "whatChanged": "A financial-services AI product combined premium data, reasoning, citations, and firm templates for research, models, and client materials.",
-      "whyCare": "It shows the application layer becoming more domain-specific and workflow-complete rather than offering a generic assistant alone.",
-      "before": "Teams assembled generic AI, data subscriptions, templates, and controls separately.",
-      "after": "A vertical product can package trusted data, domain workflows, output formats, and governance together.",
-      "learn": "Expect more industry-specific AI products where data rights, workflow design, and governance matter as much as the model.",
+      "title": "OpenAI launches ChatGPT for financial services with premium market data",
+      "whatChanged": "OpenAI launched a financial-services edition of ChatGPT. It combines premium market data from partners such as Daloopa and PitchBook with GPT-6 Astra for research, modeling and client materials.",
+      "whyCare": "AI products are becoming industry-specific, with data rights and workflows built in.",
+      "before": "Teams combined a general assistant, data subscriptions, templates and controls themselves.",
+      "after": "A vertical product packages trusted data, domain workflows, output formats and governance together.",
+      "learn": "When you compare vertical AI products, check data rights, workflow fit and governance as closely as the model.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -919,7 +941,7 @@
           "url": "https://openai.com/index/introducing-chatgpt-financial-services/"
         }
       ],
-      "architectureImplication": "Expect more industry-specific AI products where data rights, workflow design, and governance matter as much as the model.",
+      "architectureImplication": "Expect more industry products where data rights and workflow design matter as much as the model.",
       "tradeoffs": [
         "Reliability",
         "Control",
@@ -933,12 +955,12 @@
       "kind": "signal",
       "changeType": "work redesign",
       "impact": "Incremental",
-      "title": "AI use is beginning to expand the set of tasks people regularly perform",
-      "whatChanged": "Economic research reported that some AI-assisted tasks outside a worker's usual occupation become recurring parts of their workflow.",
-      "whyCare": "This is an early sign that AI may change job scope and task boundaries, not only make existing tasks faster.",
-      "before": "AI adoption was often measured as faster execution of the same tasks.",
-      "after": "Some workers are adding new recurring tasks to their role because AI lowers the expertise or effort barrier.",
-      "learn": "Measure workflow change, task expansion, and role redesign alongside simple time savings.",
+      "title": "Research finds AI use adds new recurring tasks to people's jobs",
+      "whatChanged": "Economic research reported that some AI-assisted tasks outside a worker's usual occupation become recurring parts of their work.",
+      "whyCare": "AI may change what jobs include as well as how fast people work.",
+      "before": "Teams measured AI adoption as faster work on the same tasks.",
+      "after": "Some workers add new recurring tasks because AI lowers the skill or effort needed.",
+      "learn": "Measure changes in tasks and roles alongside time saved.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -951,73 +973,11 @@
           "url": "https://openai.com/index/unlocking-new-ways-of-working/"
         }
       ],
-      "architectureImplication": "Measure workflow change, task expansion, and role redesign alongside simple time savings.",
+      "architectureImplication": "Measure workflow change, task expansion and role redesign alongside time savings.",
       "tradeoffs": [
         "Reliability",
         "Control",
         "Cost"
-      ]
-    },
-    {
-      "id": "2023-05-01-llmops-production",
-      "date": "2023-05-01",
-      "layer": "Production & Business",
-      "kind": "milestone",
-      "changeType": "LLMOps",
-      "impact": "Step-change",
-      "title": "LLMOps emerged as a distinct production discipline for generative AI",
-      "whatChanged": "Enterprise guidance began treating LLM applications as systems needing dedicated evaluation, deployment, monitoring, feedback, privacy, and operational management across their lifecycle.",
-      "whyCare": "Generative AI production work was no longer only conventional software operations. Teams needed practices for non-deterministic outputs, prompts, retrieval, model versions, quality, and safety.",
-      "before": "Early GenAI work focused heavily on prompts, prototypes, and model capability.",
-      "after": "Production architecture increasingly included evaluation, validation, monitoring, feedback loops, privacy, and lifecycle management.",
-      "learn": "A GenAI system needs an operating lifecycle, not only a model endpoint.",
-      "architectureImplication": "Design evaluation, versioning, monitoring, feedback, and rollback into the system before production rather than adding them after launch.",
-      "tradeoffs": [
-        "Reliability",
-        "Cost",
-        "Control"
-      ],
-      "cloudPrimitives": [
-        "Compute",
-        "Storage",
-        "Security"
-      ],
-      "sources": [
-        {
-          "name": "Microsoft - LLMOps operational management",
-          "url": "https://learn.microsoft.com/en-us/ai/playbook/technology-guidance/generative-ai/mlops-in-openai/"
-        }
-      ]
-    },
-    {
-      "id": "2024-04-01-genaiops-monitoring",
-      "date": "2024-04-01",
-      "layer": "Production & Business",
-      "kind": "milestone",
-      "changeType": "production monitoring",
-      "impact": "Incremental",
-      "title": "GenAIOps expanded production monitoring beyond infrastructure health",
-      "whatChanged": "Cloud architecture guidance formalized continuous monitoring of prompts, completions, relevance, safety, data drift, model performance, and workload metrics for GenAI systems.",
-      "whyCare": "A healthy server does not mean a healthy AI application. Quality, safety, relevance, and model behavior also need production observability.",
-      "before": "Operations could focus primarily on infrastructure availability, latency, and errors.",
-      "after": "Production monitoring increasingly covered both system health and AI behavior.",
-      "learn": "Observe the application, data, model behavior, safety, and infrastructure together.",
-      "architectureImplication": "Add AI quality and safety telemetry alongside normal application monitoring, with explicit quality gates and auditability.",
-      "tradeoffs": [
-        "Reliability",
-        "Security",
-        "Cost"
-      ],
-      "cloudPrimitives": [
-        "Compute",
-        "Storage",
-        "Security"
-      ],
-      "sources": [
-        {
-          "name": "Microsoft Azure Well-Architected - MLOps and GenAIOps",
-          "url": "https://learn.microsoft.com/en-us/azure/well-architected/ai/mlops-genaiops"
-        }
       ]
     },
     {
@@ -1094,16 +1054,16 @@
       "id": "2026-09-22-gpt-6-sol-luna-cost-capability",
       "date": "2026-09-22",
       "layer": "Model",
-      "kind": "milestone",
+      "kind": "signal",
       "changeType": "model capability and economics",
       "impact": "Step-change",
-      "title": "GPT-6 Sol and Luna bring newer reasoning capability to cheaper model tiers",
-      "whatChanged": "OpenAI released GPT-6 Sol and Luna on September 22. Standard short-context API pricing per million tokens is Sol $2 input/$10 output and Luna $0.10 input/$0.50 output, with cached input at $0.20 and $0.01 respectively. OpenAI says these models bring advances from GPT-6 Astra to cheaper tiers; vendor performance claims require task-specific evaluation.",
-      "whyCare": "A larger share of enterprise reasoning, coding and agent subtasks may become economical at higher volume. The right comparison is task success, latency and total cost including retries, not token price alone.",
-      "before": "Teams commonly reserved stronger models for difficult steps and used older or less capable low-cost models for high-volume steps.",
-      "after": "Teams can evaluate newer reasoning-capable Sol and Luna tiers for both difficult and high-volume steps while retaining higher-end and competing models for cases where measured quality warrants them.",
-      "learn": "Build task-specific evals and model routing using accuracy, latency, cache hit rate, retries, cost per successful task and security requirements.",
-      "architectureImplication": "Benchmark multiple models and route by workload and risk; keep provider abstraction and fallback rather than replacing all models based on vendor claims.",
+      "title": "OpenAI releases GPT-6 Sol and Luna as lower-cost model tiers",
+      "whatChanged": "OpenAI released GPT-6 Sol and Luna on 22 September. Per million tokens, Sol costs $2 input and $10 output, and Luna $0.10 input and $0.50 output. OpenAI says they bring GPT-6 Astra advances to cheaper tiers.",
+      "whyCare": "More reasoning, coding and agent subtasks may become affordable at high volume. Compare task success, latency and total cost with retries included.",
+      "before": "Teams kept strong models for hard steps and used older, cheaper models for high-volume steps.",
+      "after": "Teams can test newer, cheaper tiers for both hard and high-volume steps.",
+      "learn": "Build task-specific evaluations. Route by accuracy, latency, cache hit rate, retries and cost per successful task.",
+      "architectureImplication": "Benchmark several models and route by workload and risk. Keep a provider abstraction and a fallback.",
       "tradeoffs": [
         "Accuracy",
         "Latency",
@@ -1135,15 +1095,15 @@
       "id": "2026-09-22-claude-opus-55-agent-economics",
       "date": "2026-09-22",
       "layer": "Model",
-      "kind": "milestone",
-      "changeType": "long-running agent model economics",
+      "kind": "signal",
+      "changeType": "model pricing and migration",
       "impact": "Step-change",
-      "title": "Claude Opus 5.5 lowers the cost of long-running agent workloads",
-      "whatChanged": "Anthropic released Claude Opus 5.5 on September 22 with $4 input/$20 output per million tokens, $0.20 per million cache reads and over 30% faster output than Opus 5 in Anthropic's tests. Anthropic reports typical workloads cost 40% less than Opus 5. The model has a 1M-token context window and always-on adaptive thinking.",
-      "whyCare": "Long-running coding and knowledge agents can become less expensive, especially when they repeatedly read cached context. Production upgrades also need migration testing because several tool-use and thinking behaviors changed.",
+      "title": "Anthropic releases Claude Opus 5.5 at lower prices than Opus 5",
+      "whatChanged": "Anthropic released Claude Opus 5.5 on 22 September at $4 input and $20 output per million tokens, with cache reads at $0.20. Anthropic reports typical workloads cost 40% less than on Opus 5. It has a 1M-token context window and always-on adaptive thinking.",
+      "whyCare": "Agents that reread cached context often may cost less to run. Upgrades need testing because several thinking and tool-use behaviours changed.",
       "before": "Opus 5 had higher token and cache-read prices, and existing integrations could assume optional thinking or forced tool use.",
-      "after": "Opus 5.5 offers cheaper cached context and faster output according to Anthropic, but requires compatibility checks for always-on thinking, tool choice, thinking blocks and computer-use tool versions.",
-      "learn": "Evaluate end-to-end agent cost, cache economics, long-horizon task reliability, prompt-injection resistance and API migration behavior.",
+      "after": "Opus 5.5 offers cheaper cached context and faster output, according to Anthropic. Integrations need checks for always-on thinking and tool-use changes.",
+      "learn": "Measure total agent cost and cache hit rate on your own tasks. Run migration tests for thinking and tool-use behaviour.",
       "architectureImplication": "Test Opus 5.5 on representative agent tasks and run migration tests for thinking/tool-use behavior before changing production model routing.",
       "tradeoffs": [
         "Accuracy",
@@ -1245,12 +1205,12 @@
       "kind": "signal",
       "changeType": "production agent architecture",
       "impact": "Incremental",
-      "title": "Postman's production agent design treats context and tool scope as core runtime constraints",
-      "whatChanged": "Postman and AWS described the architecture behind Agent Mode: a root agent narrows more than 170 possible tools to about 15 per task, structured data is exposed through schema-aware queries rather than many one-off read tools, and purpose-built context handlers supply relevant application state. Postman also keeps approval for state-changing actions and uses Amazon Bedrock for model choice, geographic inference profiles, model-dependent zero data retention, and tiered prompt caching. The post reports tool-selection errors increasing above roughly 40 visible tools in Postman's testing.",
-      "whyCare": "This production case shows that adding tools and prompt text is not a substitute for shaping context and limiting the model's action surface. It offers practical patterns for scaling agents embedded in mature products, while retaining user approval and managing inference geography and cost.",
-      "before": "Early implementations used many atomic tools and interface-shaped data, forcing agents to navigate UI state and serially call tools; an expanding tool catalog and incomplete context made failures and latency more likely.",
-      "after": "Tools are dynamically scoped to the task, structured reads use schema-aware queries, purpose-shaped handlers provide context, and approvals gate changes. Model and inference choices can be configured per workload, with geographic processing boundaries and prompt-cache tiers.",
-      "learn": "Treat the tool catalog as part of the context budget. Dynamically select tools, provide schema-grounded read access for well-structured data, build purpose-shaped context rather than serializing UI objects, and preserve approval for consequential writes.",
+      "title": "Postman shows how it limits tools and context for its production agent",
+      "whatChanged": "Postman and AWS described Agent Mode's design. A root agent narrows over 170 tools to about 15 per task. Schema-aware queries replace many read tools, and context handlers supply relevant state. State-changing actions still need approval. Tool-selection errors rose above about 40 visible tools in Postman's testing.",
+      "whyCare": "Past a point, more tools and prompt text make agents less reliable. Shaping context and limiting actions keeps them working.",
+      "before": "Early versions used many small tools and UI-shaped data, which raised errors and latency.",
+      "after": "Tools are chosen per task, reads use schema-aware queries, and approvals gate changes.",
+      "learn": "Count your tool catalog as part of the context budget. Select tools per task and keep approval for important writes.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -1263,7 +1223,7 @@
           "url": "https://aws.amazon.com/blogs/machine-learning/how-postman-runs-agent-mode-for-40-million-developers-on-amazon-bedrock/"
         }
       ],
-      "architectureImplication": "Design production agents around bounded, task-specific tools and curated context rather than exposing every API or UI object to every model call. Keep write approvals, model-specific data-retention checks, and inference geography explicit; compare the added complexity with simpler per-workflow tools and existing query interfaces.",
+      "architectureImplication": "Give each task a small, relevant tool set and curated context. Keep write approvals, data retention and inference region explicit.",
       "tradeoffs": [
         "Reliability",
         "Latency",
@@ -1279,12 +1239,12 @@
       "kind": "signal",
       "changeType": "GPU cluster scheduling",
       "impact": "Incremental",
-      "title": "Ai2 reports GPU time budgets and preemption contracts improved shared-cluster scheduling",
-      "whatChanged": "Ai2 replaced a priority-based GPU scheduler with hierarchical fair-share allocation weighted by manager-set GPU-time budgets, plus declared minimum-runtime contracts that allow resumable workloads to be preempted and requeued. In its 30-day test period, the system delivered 98% of allocated GPU hours while maintaining 98% cluster occupancy; debug-job p90 queue waits fell from two hours to 30 seconds and human-involved repairs fell 74%.",
-      "whyCare": "Scarce accelerators create incentives to squat on capacity and inflate priorities. Budgeted fair share can align allocation with organizational priorities while allowing idle capacity to be borrowed, short debug jobs to start quickly, and unhealthy hosts to drain with less manual intervention.",
-      "before": "Ai2's prior priority scheduler allowed non-preemptible work to reserve capacity, encouraged priority inflation, and made maintenance depend on negotiating job shutdowns; fixed team GPU monopolies also left capacity idle when demand shifted.",
-      "after": "GPU time is allocated across a hierarchy of projects, actual usage is balanced over a sliding window, and minimum-runtime declarations provide a progress guarantee before resumable work becomes preemptible. Unallocated capacity can still be used opportunistically.",
-      "learn": "For shared GPU fleets, budget time rather than permanently assigning devices; pair hierarchical fair share with explicit preemption and checkpoint/requeue contracts, visible allocation telemetry, and simulation of queueing and fragmentation effects.",
+      "title": "Ai2 replaces GPU priorities with time budgets and preemption contracts",
+      "whatChanged": "Ai2 replaced its priority-based GPU scheduler with fair-share allocation weighted by GPU-time budgets, plus minimum-runtime contracts that let resumable jobs be preempted. In 30 days it delivered 98% of allocated GPU hours at 98% occupancy. Debug-job p90 waits fell from two hours to 30 seconds.",
+      "whyCare": "Scarce GPUs tempt teams to hold capacity and inflate priorities. Budgets align use with company priorities and let idle capacity be borrowed.",
+      "before": "Non-preemptible jobs could hold capacity, priorities inflated, and fixed team allocations left GPUs idle.",
+      "after": "GPU time is shared across projects by budget, and resumable work can be preempted after a guaranteed run time.",
+      "learn": "Budget GPU time per team. Pair fair share with checkpointing, preemption rules and visible usage data.",
       "cloudPrimitives": [
         "Compute",
         "Storage"
@@ -1295,7 +1255,7 @@
           "url": "https://huggingface.co/blog/allenai/impactful-scheduling"
         }
       ],
-      "architectureImplication": "Teams operating shared training or inference accelerators can evaluate budget-weighted fair-share and time-slicing rather than relying on strict priority or static GPU quotas. The scheduling algorithm builds on established options such as Slurm Fair Tree and YARN Fair Scheduler; the differentiator is manager-set GPU-time budgets and runtime contracts. Test checkpointability, developer-session state loss, largest-job fragmentation, and adoption needs before rollout.",
+      "architectureImplication": "Shared GPU fleets can use budget-weighted fair share with preemption. Test checkpointing and fragmentation before rollout.",
       "tradeoffs": [
         "Reliability",
         "Latency",
@@ -1310,12 +1270,12 @@
       "kind": "signal",
       "changeType": "model distribution",
       "impact": "Packaging / distribution",
-      "title": "Claude Haiku 5.5 becomes available across GitHub Copilot products",
-      "whatChanged": "GitHub made Claude Haiku 5.5 generally available in Copilot for individual, Business, and Enterprise plans, including IDEs, Copilot CLI, cloud agent, and github.com, with a gradual rollout and administrator model-policy controls. GitHub positions it for fast, high-volume coding work such as subagents, quick edits, and terminal tasks; its early testing found it matched Sonnet 5 on many coding tasks while using significantly fewer tokens and steps. Copilot usage is billed at provider list pricing.",
-      "whyCare": "A lightweight model choice is now integrated across enterprise coding-agent surfaces, giving teams another candidate for high-volume subtasks without forcing every operation onto a larger model. Actual savings and quality depend on provider pricing and workload-specific evaluation.",
-      "before": "Copilot users selected from models already exposed in their plans, while teams needing a fast model for subagents and routine coding steps had fewer integrated options.",
-      "after": "Organizations can evaluate Haiku 5.5 across Copilot IDE and agent surfaces, manage its availability through enterprise model policy, and compare it with existing models using usage-based provider pricing.",
-      "learn": "Evaluate the model on representative coding and subagent tasks, comparing success rate, latency, token use, retries, and total cost per completed task; check tenant model policies and usage-based billing before broad enablement.",
+      "title": "GitHub brings Claude Haiku 5.5 to all Copilot plans and surfaces",
+      "whatChanged": "GitHub made Claude Haiku 5.5 generally available in Copilot for individual, Business and Enterprise plans, across IDEs, Copilot CLI, cloud agent and github.com. GitHub positions it for fast, high-volume work such as subagents and quick edits. Usage is billed at provider list price.",
+      "whyCare": "Teams get a small, fast model for high-volume subtasks inside their existing coding tools.",
+      "before": "Teams had fewer integrated options for a fast model for subagents and routine coding steps.",
+      "after": "Organizations can enable Haiku 5.5 across Copilot under their model policies.",
+      "learn": "Test it on your coding and subagent tasks. Compare success rate, latency, retries and cost per finished task.",
       "cloudPrimitives": [
         "Compute",
         "Security"
@@ -1326,7 +1286,7 @@
           "url": "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot"
         }
       ],
-      "architectureImplication": "Treat Haiku 5.5 as an additional model-routing option for short, high-volume coding tasks rather than a blanket replacement. Compare it with current Copilot models, including smaller or faster alternatives, under enterprise policy and measure cost per successful task rather than token use alone.",
+      "architectureImplication": "Add Haiku 5.5 as a routing option for short, high-volume tasks. Measure cost per successful task.",
       "tradeoffs": [
         "Accuracy",
         "Latency",
@@ -1339,15 +1299,15 @@
       "id": "2026-10-08-google-gemini-work-agent",
       "date": "2026-10-08",
       "layer": "Agent & Infrastructure",
-      "kind": "milestone",
+      "kind": "signal",
       "changeType": "enterprise workplace agent",
       "impact": "Packaging / distribution",
-      "title": "Google announced an identity-aware Gemini agent for workplace workflows",
-      "whatChanged": "At Gemini at Work 2026, Google announced a Gemini agent that can use organizational context, skills, and tools across Workspace applications and connected business systems. The announcement describes team coworker agents with their own Workspace accounts and directory identities, whose access follows existing sharing permissions. Google also described agent-attributed audit trails, sandboxed execution behind an Agent Gateway, model routing, and project-level spend caps. The announcement does not specify general availability or rollout scope.",
-      "whyCare": "This packages cross-application task execution with agent identity, access controls, auditability, and cost limits in a workplace suite. It makes the boundary between personal assistance and delegated work by a persistent software actor more concrete for enterprise design.",
-      "before": "Enterprises commonly combined chat assistants with separately configured app automations or custom agents, while identity, permissions, auditing, and cost controls were handled across distinct services.",
-      "after": "Google's announced approach places an agent inside Workspace workflows and describes team agents with distinct identities, access inherited from shared resources, and centralized execution and spending controls.",
-      "learn": "Evaluate agent-owned identity versus user-delegated access, permission inheritance, action-level audit trails, sandbox boundaries, model routing, and spend limits on a bounded workflow before broad adoption.",
+      "title": "Google announces a Gemini agent with its own identity for workplace tasks",
+      "whatChanged": "At Gemini at Work 2026, Google announced a Gemini agent that works across Workspace and connected systems. Team agents get their own accounts and identities, and their access follows existing sharing permissions. Google also described audit trails, sandboxed execution, model routing and spend caps.",
+      "whyCare": "Agent identity, permissions, audit and cost limits now come packaged in a workplace suite.",
+      "before": "Enterprises combined chat assistants with separate automations, and handled identity, audit and cost controls in different services.",
+      "after": "Team agents have their own identities, inherit access from shared resources and run under central controls.",
+      "learn": "Test agent-owned identity and user-delegated access on one bounded workflow. Check audit trails and spend limits.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -1364,7 +1324,7 @@
           "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-at-work/"
         }
       ],
-      "architectureImplication": "Pilot a workflow and compare Gemini with Microsoft Copilot and custom agent stacks on identity delegation, permission inheritance, action audit, model choice, spending limits, and data boundaries. Workspace-native context may reduce integration work, while increasing dependence on Google’s suite and governance model; verify availability and controls before designing production dependencies.",
+      "architectureImplication": "Compare suite-native agents with custom agent stacks on identity, permissions, audit and lock-in. Check availability first.",
       "tradeoffs": [
         "Reliability",
         "Cost",
@@ -1379,12 +1339,12 @@
       "kind": "signal",
       "changeType": "agent sandbox availability",
       "impact": "Packaging / distribution",
-      "title": "GitHub made local sandboxing broadly available across Copilot coding agents",
-      "whatChanged": "GitHub made local sandboxing generally available at no extra cost in Copilot CLI, the Copilot app, and VS Code sessions using Agent Host. It constrains agent-run commands' access to files, networks, and credentials, and enterprise-managed settings can require and configure sandboxing.",
-      "whyCare": "Coding agents can execute commands with the developer's privileges, so restricting their filesystem, network, and credential access is a practical adoption control. A first-party option across common Copilot surfaces can reduce reliance on separately assembled local restrictions.",
-      "before": "Without local sandboxing, Copilot CLI commands ran with the user's access; organizations wanting local execution limits had to rely on other system controls or use a separate cloud execution environment.",
-      "after": "Organizations can enable local OS-level sandboxing across several Copilot coding surfaces and enforce policy centrally, while keeping work on the developer's machine.",
-      "learn": "Treat sandboxing as a boundary to configure and validate, not as proof that agent actions are safe. Test filesystem, network, credential, MCP/LSP, and bypass policies on each supported OS; local sandboxing is lighter-weight than a separate VM or container, while GitHub's cloud sandbox provides an isolated remote environment with usage-based billing.",
+      "title": "GitHub makes local sandboxing generally available for Copilot coding agents",
+      "whatChanged": "GitHub made local sandboxing generally available at no extra cost in Copilot CLI, the Copilot app and VS Code Agent Host sessions. It limits agent commands' access to files, networks and credentials. Enterprise settings can require it.",
+      "whyCare": "Coding agents run commands with the developer's privileges. A built-in sandbox makes limiting that access simpler.",
+      "before": "Copilot CLI commands ran with the user's full access unless teams added other controls.",
+      "after": "Organizations can turn on OS-level sandboxing across several Copilot surfaces and enforce it centrally.",
+      "learn": "Test the sandbox's file, network and credential limits on each operating system. Use cloud sandboxes where you need stronger isolation.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -1401,7 +1361,7 @@
           "url": "https://docs.github.com/en/copilot/concepts/security-governance-and-network-settings/about-cloud-and-local-sandboxes"
         }
       ],
-      "architectureImplication": "Evaluate the feature against locally managed OS restrictions and custom container/VM-based development environments. Validate its OS-specific enforcement, managed-policy behavior, and exceptions against the enterprise threat model; prefer the cloud sandbox or stronger isolation where local process-level controls are insufficient, accounting for its separate usage-based cost.",
+      "architectureImplication": "Compare local sandboxing with containers, VMs and GitHub's cloud sandbox. Match the isolation level to your threat model.",
       "tradeoffs": [
         "Security",
         "Control",
@@ -1416,12 +1376,12 @@
       "kind": "signal",
       "changeType": "agent configuration controls",
       "impact": "Incremental",
-      "title": "Copilot for JetBrains adds managed model defaults and MCP startup controls",
-      "whatChanged": "GitHub added enterprise-managed settings to choose the default Copilot agent model for new JetBrains conversations, while preserving the user's ability to choose another model. A new setting can also disable automatic startup of configured MCP servers for Copilot and Claude.",
-      "whyCare": "Administrators can set a more consistent model starting point and developers can reduce when configured tools become active. These controls improve IDE-level operations, but do not amount to model allowlisting or authorization for MCP tools.",
-      "before": "JetBrains users chose among exposed models without the newly announced managed default-model setting, and configured MCP servers started automatically.",
-      "after": "Administrators can set the default agent model for new conversations, and users can disable automatic MCP server startup; explicit model selection remains available.",
-      "learn": "Treat a managed default as a starting preference, not an enforced model policy. Validate its scope alongside model allowlists or gateway routing, and keep MCP authorization and least-privilege controls independent of whether servers start automatically.",
+      "title": "GitHub adds managed model defaults and MCP startup controls to Copilot for JetBrains",
+      "whatChanged": "GitHub added enterprise settings to choose the default Copilot agent model for new JetBrains conversations. Users can still pick another model. A new setting can stop configured MCP servers from starting automatically.",
+      "whyCare": "Administrators get a consistent starting model, and developers control when tools become active. Neither setting restricts which models or MCP tools are allowed.",
+      "before": "JetBrains users chose models with no managed default, and MCP servers started automatically.",
+      "after": "Administrators set the default model, and users can turn off automatic MCP startup.",
+      "learn": "Use model allowlists or a gateway where you must restrict models. Keep MCP permissions and least privilege separate from startup settings.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -1433,7 +1393,7 @@
           "url": "https://github.blog/changelog/2026-10-10-new-controls-and-chat-improvements-in-copilot-for-jetbrains"
         }
       ],
-      "architectureImplication": "Compare the managed default with stricter enterprise model-policy or gateway-based routing when model selection must be constrained. Treat the MCP startup toggle as a client activation control, not as a replacement for server permissions, scoped credentials, or auditing.",
+      "architectureImplication": "Treat the default model as a preference. Enforce model policy and MCP permissions through separate controls.",
       "tradeoffs": [
         "Control",
         "Security",
@@ -1481,12 +1441,12 @@
       "kind": "signal",
       "changeType": "AI telemetry and governance",
       "impact": "Incremental",
-      "title": "Copilot added managed identity attribution and granular telemetry controls",
-      "whatChanged": "GitHub added an opt-in telemetry.capture.identity setting that records the authenticated Copilot account, local OS account, and host name in OpenTelemetry data without requiring prompt or tool-content capture. Enterprise-managed settings can independently enable or disable capture of prompts, responses, tool arguments, tool output, and policy details across Copilot CLI, the Copilot app, and VS Code sessions using Agent Host; all capture classes are off by default and managed values take precedence over local settings.",
-      "whyCare": "Enterprises can attribute agent activity to users and devices for operational or audit needs without collecting sensitive conversation content, while choosing which content categories are necessary for a specific investigation.",
-      "before": "Telemetry included a pseudonymous user identifier, while the legacy captureContent setting acted as a single shorthand for the content categories.",
-      "after": "Administrators can separately control identity attribution and five content classes through centrally managed settings, with identity and content capture disabled by default.",
-      "learn": "Design telemetry policy around the minimum data needed for attribution, reliability, or incident response; content capture can include source code, tool data, and local paths.",
+      "title": "GitHub adds identity attribution and per-category telemetry controls to Copilot",
+      "whatChanged": "GitHub added an opt-in setting that records the Copilot account, OS account and host name in OpenTelemetry data. Enterprise settings separately control capture of prompts, responses, tool arguments, tool output and policy details. All capture is off by default.",
+      "whyCare": "Enterprises can link agent activity to users and devices without collecting conversation content.",
+      "before": "Telemetry used a pseudonymous user ID, and one setting controlled all content capture.",
+      "after": "Administrators control identity capture and five content types separately, all off by default.",
+      "learn": "Collect the minimum data you need. Content capture can include source code, tool data and local paths.",
       "cloudPrimitives": [
         "Security",
         "Storage"
@@ -1501,7 +1461,7 @@
           "url": "https://docs.github.com/copilot/reference/enterprise-administrators/enterprise-managed-settings"
         }
       ],
-      "architectureImplication": "Keep agent identity and content telemetry as separate policy decisions, and centrally configure capture scope and approved collection endpoints.",
+      "architectureImplication": "Keep identity and content telemetry as separate policy decisions, set centrally.",
       "tradeoffs": [
         "Privacy",
         "Auditability",
@@ -1515,12 +1475,12 @@
       "kind": "signal",
       "changeType": "serverless HTTP compute",
       "impact": "Packaging / distribution",
-      "title": "Lambda Web Functions added an HTTP-native option for streaming AI endpoints",
-      "whatChanged": "AWS introduced Lambda Web Functions for standard Node.js HTTP servers, including AI inference endpoints that stream token responses. A warm environment can serve up to 128 concurrent requests; compute is billed on active CPU time while memory is billed for the lifetime of the environment. The launch supports native HTTP streaming, VPC connectivity, multi-Region routing, and traffic splitting across immutable revisions, but is initially limited to Node.js 24 on Arm64 and five AWS Regions.",
-      "whyCare": "Teams can deploy an HTTP server without converting it to an event handler or adding a framework adapter, potentially simplifying streaming inference APIs and reducing CPU charges during I/O waits.",
-      "before": "Teams using Lambda's event-handler model had to adapt HTTP applications to that model, while direct HTTP hosting commonly required assembling separate deployment, routing, and scaling components.",
-      "after": "A Node.js HTTP server can run on Lambda with concurrent request handling, native streaming, managed endpoints, and active-CPU billing.",
-      "learn": "Evaluate HTTP-native serverless compute for I/O-heavy inference APIs, but compare its concurrency, memory lifetime, runtime and Region limits with event-driven functions and container-based hosting.",
+      "title": "AWS launches Lambda Web Functions for HTTP servers and streaming AI endpoints",
+      "whatChanged": "AWS introduced Lambda Web Functions, which run standard Node.js HTTP servers, including streaming inference endpoints. One warm environment serves up to 128 concurrent requests. Compute is billed on active CPU time and memory for the environment's lifetime. It launches on Node.js 24, Arm64 and five Regions.",
+      "whyCare": "Teams can deploy an HTTP server without rewriting it as an event handler, and pay less for CPU while waiting on I/O.",
+      "before": "Lambda required an event-handler model, so HTTP apps needed adapters or separate hosting.",
+      "after": "A Node.js HTTP server runs on Lambda with concurrency, native streaming and active-CPU billing.",
+      "learn": "Compare it with event-driven functions and containers on concurrency, memory cost, runtime and Region limits.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -1536,7 +1496,7 @@
           "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/aws-lambda-web-functions/"
         }
       ],
-      "architectureImplication": "Consider an HTTP-native serverless runtime for streaming inference endpoints where framework compatibility, concurrency, I/O wait, and managed global routing matter.",
+      "architectureImplication": "Consider HTTP-native serverless hosting for streaming inference APIs with long I/O waits.",
       "tradeoffs": [
         "Latency",
         "Cost",
@@ -1656,12 +1616,12 @@
       "kind": "signal",
       "changeType": "multi-model orchestration",
       "impact": "Packaging / distribution",
-      "title": "GitHub Copilot HydraFusion adds task-adaptive multi-model drafting and review",
-      "whatChanged": "GitHub updated HydraFusion, its research-preview Copilot orchestrator, with a refreshed model pool, per-step reasoning effort, and revised Cascade and Critique patterns. Cascade can judge a draft and request a stronger-model repair only when needed; Critique uses parallel models and workspace tools to inspect work. HydraFusion Max applies higher reasoning effort to demanding tasks.",
-      "whyCare": "This makes multi-model execution patterns available as a product option rather than requiring every coding team to assemble its own routing and review harness. It also exposes the cost of these patterns: each model call is billed at its standard rate, and multi-pass work can use more credits and take longer.",
-      "before": "Copilot users primarily selected a model or relied on per-request automatic model selection; teams wanting draft-review or escalation workflows had to build them into their own agent harness.",
-      "after": "Users can select a Copilot runtime that chooses between a single model, a judged cascade, or parallel critique for each task, with reasoning effort and models assigned per step.",
-      "learn": "Evaluate orchestration against single-model and custom-harness baselines on representative coding tasks, tracking accepted changes, regressions, latency, and total per-task credits. Keep it out of production-critical workflows while it remains a preview without an SLA.",
+      "title": "GitHub Copilot HydraFusion drafts and reviews with several models per task",
+      "whatChanged": "GitHub updated HydraFusion, its research-preview Copilot orchestrator. Cascade judges a draft and asks a stronger model for a repair only when needed. Critique runs models in parallel to inspect the work. Each model call is billed at its standard rate.",
+      "whyCare": "Teams get draft-and-review patterns without building their own harness, though multi-pass work costs more credits and time.",
+      "before": "Teams picked one model, or built escalation and review workflows into their own agent harness.",
+      "after": "Copilot can pick one model, a judged cascade or parallel critique for each task.",
+      "learn": "Compare it with single-model use on real coding tasks. Track accepted changes, regressions, latency and credits. Keep it out of critical workflows while in preview.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -1677,7 +1637,7 @@
           "url": "https://docs.github.com/en/early-access/copilot/hydrafusion"
         }
       ],
-      "architectureImplication": "Treat orchestration as a workload-specific quality-versus-cost choice, not as a universally better model. Compare its task routing, review visibility, credit consumption, latency, and policy compatibility with single-model selection and internal agent workflows; the research preview is explicitly not intended for production.",
+      "architectureImplication": "Choose orchestration per workload based on quality and cost. The preview has no SLA.",
       "tradeoffs": [
         "Accuracy",
         "Latency",
@@ -1693,12 +1653,12 @@
       "kind": "signal",
       "changeType": "managed open-weight model deployment",
       "impact": "Packaging / distribution",
-      "title": "SageMaker JumpStart adds in-account deployment of Meta Muse Spark Open",
-      "whatChanged": "AWS made Meta's Muse Spark Open available through SageMaker JumpStart as BF16 and NVFP4 variants. Teams can deploy a managed SageMaker endpoint in their AWS account; the 816-billion-parameter MoE model has 42 billion active parameters, a 1-million-token context window, and text, image, document, audio, and audio-video inputs. AWS lists ml.p6-b300.48xlarge for BF16 and ml.p5e.48xlarge for NVFP4, with initial availability in US East (N. Virginia) and US East (Ohio).",
-      "whyCare": "This gives AWS customers a managed route to evaluate a large open-weight model against private code and multimodal engineering workloads without moving prompts and source code to a third-party hosted inference API. It makes model choice, licensing, instance capacity, and continuously running endpoint cost explicit architecture decisions.",
-      "before": "Muse Spark Open was not listed in SageMaker JumpStart; teams wishing to run it on AWS needed another deployment route, while managed alternatives were limited to other models and providers.",
-      "after": "Teams can deploy either supported Muse Spark Open variant as a SageMaker endpoint in their AWS account, with configurable VPC, KMS encryption, network isolation, instance type, scaling limits, and model version pinning.",
-      "learn": "Benchmark both variants on representative private-code and multimodal tasks against other JumpStart models, hosted model APIs, and self-managed serving. Verify the Muse Model License and usage policy, model quality, region and quota availability, and total cost; the endpoint runs on large multi-GPU instances and is billed while it remains active.",
+      "title": "AWS adds Meta Muse Spark Open to SageMaker JumpStart for in-account deployment",
+      "whatChanged": "AWS made Meta's Muse Spark Open available in SageMaker JumpStart in BF16 and NVFP4 variants. The 816B-parameter model has 42B active parameters, a 1M-token context window and text, image, document, audio and video input. It launches in two US East Regions.",
+      "whyCare": "Teams can test a large open-weight model on private code and media without sending data to a third-party API.",
+      "before": "Teams needed another deployment route to run Muse Spark Open on AWS.",
+      "after": "Teams can deploy it as a SageMaker endpoint in their own account with VPC, KMS encryption and network isolation.",
+      "learn": "Benchmark both variants on your tasks. Check the license, quotas and cost, since the endpoint bills on large GPU instances while active.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -1711,7 +1671,7 @@
           "url": "https://aws.amazon.com/blogs/machine-learning/metas-muse-spark-open-now-available-in-amazon-sagemaker-jumpstart/"
         }
       ],
-      "architectureImplication": "Treat this as an additional managed model-serving option, not a low-cost default: compare the model's workload quality and open-weight deployment control with hosted APIs and self-managed alternatives, while sizing for the full weight-memory footprint and enforcing the license, network, and cost controls.",
+      "architectureImplication": "Weigh open-weight control against hosted APIs. Size for the full model memory and enforce license, network and cost controls.",
       "tradeoffs": [
         "Cost",
         "Control",
@@ -1727,12 +1687,12 @@
       "kind": "signal",
       "changeType": "model lifecycle and migration",
       "impact": "Incremental",
-      "title": "GitHub scheduled Copilot model retirements for November 16",
-      "whatChanged": "GitHub announced that Claude Opus 4.8, Claude Opus 5, and GPT-5.6 Terra will be deprecated across Copilot Chat, inline edits, ask and agent modes, and code completions on November 16, 2026. GitHub recommends Claude Opus 5.5 for both Claude models, and GPT-6.1 Sol or GPT-6 Luna for GPT-5.6 Terra. Recommended alternatives are automatically enabled for Copilot Enterprise and Business under default model enablement, unless an administrator has changed model policies.",
-      "whyCare": "Organizations using these models in interactive workflows or integrations have a defined migration deadline and need to validate quality, policy, and behavior against the suggested replacements before the old options disappear.",
-      "before": "The listed models were selectable across supported Copilot experiences, with enterprise model access governed by administrator settings.",
-      "after": "The three models will no longer be available in most Copilot experiences after November 16, 2026; enterprises should verify replacement-model access and retest dependent workflows. Claude Opus 4.8 remains available to individual subscribers on annual plans.",
-      "learn": "Inventory model selections and pinned model IDs, test the recommended replacements on representative coding and agent tasks, and update workflow guidance before the deadline. Check organization model policies rather than assuming the replacements are enabled.",
+      "title": "GitHub retires three Copilot models on 16 November 2026",
+      "whatChanged": "GitHub will deprecate Claude Opus 4.8, Claude Opus 5 and GPT-5.6 Terra across Copilot on 16 November 2026. It recommends Claude Opus 5.5, GPT-6.1 Sol or GPT-6 Luna as replacements, enabled automatically under default model policies.",
+      "whyCare": "Teams using these models have a fixed migration deadline and need to test the replacements first.",
+      "before": "The three models were available across supported Copilot experiences.",
+      "after": "They disappear from most Copilot experiences after 16 November. Opus 4.8 stays for annual individual plans.",
+      "learn": "List where you use these models. Test the replacements on real tasks and check your model policies before the deadline.",
       "cloudPrimitives": [
         "Compute",
         "Security"
@@ -1747,7 +1707,7 @@
           "url": "https://docs.github.com/copilot/reference/ai-models/supported-models"
         }
       ],
-      "architectureImplication": "Treat hosted coding models as versioned dependencies: maintain model-flexible evaluations and a migration path, and centrally verify model access policies for users and integrations ahead of vendor retirement dates.",
+      "architectureImplication": "Treat hosted models as versioned dependencies. Keep evaluations and a migration path ready for retirements.",
       "tradeoffs": [
         "Compatibility",
         "Accuracy",
@@ -1762,12 +1722,12 @@
       "kind": "signal",
       "changeType": "agent supply-chain policy enforcement",
       "impact": "Incremental",
-      "title": "GitHub made enterprise license policy enforceable for dependencies and coding agents",
-      "whatChanged": "GitHub made open source license compliance generally available for GitHub Enterprise Cloud repositories with Code Security. Enterprise rulesets can now block merges until new or changed dependencies meet centralized license policy. The release also adds policy APIs, audit events, an enterprise license-manager role, and an API for checking whether packages comply; GitHub says coding agents can use that check to avoid recommending or incorporating disallowed packages.",
-      "whyCare": "Coding agents can introduce dependencies quickly, so license restrictions need to be available at the point of package selection as well as enforced at pull-request merge. This gives enterprise teams a native control path linking agent-generated changes to organization-wide software-supply-chain policy.",
-      "before": "Dependency Review and the public-preview license-compliance feature could check pull requests, but agent workflows had no generally available enterprise API for checking a proposed package against centralized license policy.",
-      "after": "Agents and other tools can check package compliance through the new API, while repository rulesets provide a separate pre-merge enforcement gate and policy changes are auditable.",
-      "learn": "Integrate package checks into coding-agent dependency selection, keep required ruleset checks as the enforcement boundary, and test how exceptions, policy updates, and audit events fit existing approval workflows.",
+      "title": "GitHub enforces license policy on new dependencies, including those added by agents",
+      "whatChanged": "GitHub made open source license compliance generally available for Enterprise Cloud with Code Security. Rulesets can block merges until new dependencies meet license policy. A new API lets coding agents check a package before they add it.",
+      "whyCare": "Coding agents add dependencies quickly, so license checks need to happen when they choose a package and again at merge.",
+      "before": "Pull request checks existed, but agents had no generally available API to check a package against policy.",
+      "after": "Agents can check packages through the API, and rulesets enforce policy before merge.",
+      "learn": "Connect your coding agents to the package check. Keep the required merge check as the final gate.",
       "cloudPrimitives": [
         "Compute",
         "Security"
@@ -1782,7 +1742,7 @@
           "url": "https://docs.github.com/enterprise-cloud@latest/code-security/concepts/supply-chain-security/open-source-license-compliance"
         }
       ],
-      "architectureImplication": "Connect coding agents to the package-compliance API before they select dependencies, and retain a required pre-merge ruleset check as an independent enforcement point; audit exceptions and policy changes.",
+      "architectureImplication": "Check license policy at package selection and enforce it again at merge. Audit exceptions.",
       "tradeoffs": [
         "Security",
         "Control",
@@ -1796,12 +1756,12 @@
       "kind": "signal",
       "changeType": "open-weight model and deployment availability",
       "impact": "Packaging / distribution",
-      "title": "Beam adds an Apache-licensed long-context coding model with managed AWS deployment paths",
-      "whatChanged": "Reflection released Beam 1.0, a text-only, sparse mixture-of-experts model with 501 billion total parameters, 23 billion active parameters, and a reported 1-million-token context window under Apache 2.0. Hugging Face documents BF16, FP8, and NVFP4 checkpoints and open Transformers, vLLM, and SGLang support. AWS made Beam available through SageMaker JumpStart and documented both managed endpoints and HyperPod deployments; AWS also announced a Trainium3-optimized port. Initial JumpStart availability is in US East (N. Virginia) and US East (Ohio).",
-      "whyCare": "This gives teams another route to run and customize an open-weight model for coding agents and long-horizon tasks inside their own infrastructure. Compared with the Muse Spark Open model added to SageMaker the previous day, Beam is text-only and smaller in total parameter count, but has fewer active parameters per token and an Apache 2.0 license; those differences may change workload fit and deployment choices, not establish better quality or lower total cost.",
-      "before": "Teams evaluating open-weight coding models had to choose among other checkpoints and assemble a compatible serving path; Beam was not yet available as a SageMaker-managed option.",
-      "after": "Teams can evaluate Beam through SageMaker JumpStart or deploy it on HyperPod with JumpStart, SGLang, or vLLM, while retaining access to the published weights and customization paths.",
-      "learn": "Compare Beam against hosted coding models and other open-weight alternatives on representative agent tasks, including long-context reliability and tool use. Size for total weight memory, KV cache, and serving overhead—not active parameters alone—and check supported hardware, regional capacity, licensing, and cost. Treat the publisher's benchmark claims as unverified until reproduced on your workload.",
+      "title": "Reflection releases Beam, an open coding model you can run on AWS",
+      "whatChanged": "Reflection released Beam 1.0, an open-weight coding model with 501B total and 23B active parameters and a reported 1M-token context, under Apache 2.0. AWS offers it through SageMaker JumpStart and HyperPod in two US East Regions.",
+      "whyCare": "You can now run a coding model for agents inside your own AWS account, under a license that allows commercial use.",
+      "before": "Teams had to assemble serving for other open coding models themselves, and Beam was not yet available.",
+      "after": "Teams can deploy Beam through SageMaker JumpStart or HyperPod, or run the weights themselves.",
+      "learn": "Test Beam on your own agent tasks before you trust its benchmarks. Plan memory for all 501B parameters. Check which regions offer it.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -1822,13 +1782,551 @@
           "url": "https://aws.amazon.com/about-aws/whats-new/2026/01/reflection-beam-on-sagemaker-jumpstart-and-aws-trainium/"
         }
       ],
-      "architectureImplication": "Treat Beam as a new model candidate rather than a default: compare self-hosted control and customization with managed or hosted alternatives, and evaluate the full serving footprint and inference economics before choosing a deployment path.",
+      "architectureImplication": "Compare self-hosting Beam with hosted coding models on quality, serving footprint and cost.",
       "tradeoffs": [
         "Cost",
         "Control",
         "Complexity",
         "Latency"
       ]
+    },
+    {
+      "id": "2023-05-11-claude-100k-context",
+      "date": "2023-05-11",
+      "layer": "Data & Knowledge",
+      "kind": "milestone",
+      "changeType": "long context",
+      "impact": "Step-change",
+      "title": "Anthropic expands Claude's context window to 100K tokens",
+      "whatChanged": "Anthropic raised Claude's context window from 9K to 100K tokens, about 75,000 words.",
+      "whyCare": "Teams could put whole documents into one prompt for the first time at this scale.",
+      "before": "Most models held a few thousand tokens, so long documents had to be split or summarised first.",
+      "after": "A single request could hold a long report, contract or codebase section.",
+      "learn": "Compare long context with retrieval on your own documents. Measure cost and accuracy for each.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic - Introducing 100K context windows",
+          "url": "https://www.anthropic.com/news/100k-context-windows"
+        }
+      ],
+      "architectureImplication": "Long context became a design option next to retrieval. Choose per use case based on cost, latency and accuracy.",
+      "tradeoffs": [
+        "Cost",
+        "Latency",
+        "Accuracy"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2023-07-18-llama-2",
+      "date": "2023-07-18",
+      "layer": "Model",
+      "kind": "milestone",
+      "changeType": "open-weight model",
+      "impact": "Step-change",
+      "title": "Meta releases Llama 2 free for research and commercial use",
+      "whatChanged": "Meta released Llama 2 with model weights that companies could download and use commercially, together with Microsoft as a launch partner.",
+      "whyCare": "Companies could run a capable model on their own infrastructure under a license that allowed business use.",
+      "before": "Strong models were mostly available only through hosted APIs, and open models were limited or research-only.",
+      "after": "Teams could self-host, fine-tune and control a capable model.",
+      "learn": "Check the license terms for your use case. Plan for hosting, updates and safety controls you now own.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Meta - Meta and Microsoft Introduce the Next Generation of Llama",
+          "url": "https://about.fb.com/news/2023/07/llama-2/"
+        }
+      ],
+      "architectureImplication": "Self-hosted models became a real option for data control and cost. Teams take on serving, scaling and model updates.",
+      "tradeoffs": [
+        "Control",
+        "Cost",
+        "Complexity"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2023-08-02-owasp-llm-top-10",
+      "date": "2023-08-02",
+      "layer": "Production & Business",
+      "kind": "milestone",
+      "changeType": "security standard",
+      "impact": "Step-change",
+      "title": "OWASP publishes the first Top 10 risks for LLM applications",
+      "whatChanged": "OWASP published version 1.0 of its Top 10 for Large Language Model Applications. It lists the main risks, such as prompt injection and insecure output handling.",
+      "whyCare": "Security teams got a shared list to review LLM applications against.",
+      "before": "Teams had no common reference for LLM-specific security risks.",
+      "after": "Reviews, threat models and vendor questionnaires could point to one public list.",
+      "learn": "Review your application against the current version of the list. Add the relevant risks to your threat model.",
+      "cloudPrimitives": [
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OWASP - Top 10 for Large Language Model Applications",
+          "url": "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+        },
+        {
+          "name": "SD Times - OWASP releases Top 10 list for LLMs",
+          "url": "https://sdtimes.com/security/owasp-releases-top-10-list-for-llms/"
+        }
+      ],
+      "architectureImplication": "Treat model input and output as untrusted. Add controls for prompt injection, output handling and excessive agent permissions.",
+      "tradeoffs": [
+        "Security",
+        "Control"
+      ],
+      "verified": "2026-10-17",
+      "verificationNote": "The OWASP page shows no release date. Date from SD Times coverage published 2 August 2023."
+    },
+    {
+      "id": "2023-11-01-microsoft-365-copilot-ga",
+      "date": "2023-11-01",
+      "layer": "Application & Workflow",
+      "kind": "milestone",
+      "changeType": "workplace AI assistant",
+      "impact": "Step-change",
+      "title": "Microsoft makes Microsoft 365 Copilot generally available to enterprises",
+      "whatChanged": "Microsoft made Copilot for Microsoft 365 generally available to enterprise customers on 1 November 2023, inside Word, Excel, PowerPoint, Outlook and Teams.",
+      "whyCare": "GenAI moved into the office software most companies already use, with access tied to existing company data and permissions.",
+      "before": "Most GenAI use at work happened in separate chat tools.",
+      "after": "Employees could use GenAI inside their daily applications, grounded in company files and email.",
+      "learn": "Check how your data permissions apply when an assistant can read across files and email. Fix oversharing before rollout.",
+      "cloudPrimitives": [
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft - Announcing Microsoft 365 Copilot general availability and Microsoft 365 Chat",
+          "url": "https://www.microsoft.com/en-us/copilot/blog/2023/09/21/announcing-microsoft-365-copilot-general-availability-and-microsoft-365-chat/"
+        }
+      ],
+      "architectureImplication": "Existing access controls became the boundary for what AI can see. Data governance became a prerequisite for rollout.",
+      "tradeoffs": [
+        "Security",
+        "Control"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2023-11-06-openai-devday-assistants",
+      "date": "2023-11-06",
+      "layer": "Agent & Infrastructure",
+      "kind": "milestone",
+      "changeType": "managed assistant runtime",
+      "impact": "Step-change",
+      "title": "OpenAI launches the Assistants API and GPT-4 Turbo with 128K context",
+      "whatChanged": "At DevDay, OpenAI announced GPT-4 Turbo with a 128K context window, JSON mode, and the Assistants API with threads, retrieval and code execution.",
+      "whyCare": "Developers could build assistants that keep state and use tools without running that infrastructure themselves.",
+      "before": "Developers stored conversation state, retrieval and tool loops in their own code.",
+      "after": "The platform could hold threads, files and tool calls for them.",
+      "learn": "Decide which state you want the vendor to hold. Check how to export it if you change vendors.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Networking"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - New models and developer products announced at DevDay",
+          "url": "https://openai.com/index/new-models-and-developer-products-announced-at-devday/"
+        }
+      ],
+      "architectureImplication": "State and tool orchestration could move into the vendor platform. This trades build effort for portability.",
+      "tradeoffs": [
+        "Control",
+        "Portability",
+        "Complexity"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2024-08-01-eu-ai-act-in-force",
+      "date": "2024-08-01",
+      "layer": "Production & Business",
+      "kind": "milestone",
+      "changeType": "regulation",
+      "impact": "Step-change",
+      "title": "EU AI Act enters into force",
+      "whatChanged": "The EU AI Act entered into force on 1 August 2024. Its rules apply in stages over the following years.",
+      "whyCare": "Teams that build or use AI in the EU now have legal duties that depend on the risk level of each use case.",
+      "before": "No broad law set rules for how AI systems are built and used in the EU.",
+      "after": "Providers and deployers must classify use cases by risk and meet the duties for each level.",
+      "learn": "List your AI use cases and classify them by risk. Track which obligations apply on which date.",
+      "cloudPrimitives": [
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "European Commission - AI Act enters into force",
+          "url": "https://commission.europa.eu/news-and-media/news/ai-act-enters-force-2024-08-01_en"
+        }
+      ],
+      "architectureImplication": "Plan for documentation, logging, human oversight and transparency features as part of the design.",
+      "tradeoffs": [
+        "Control",
+        "Auditability",
+        "Cost"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2024-08-06-openai-structured-outputs",
+      "date": "2024-08-06",
+      "layer": "Data & Knowledge",
+      "kind": "milestone",
+      "changeType": "structured output",
+      "impact": "Step-change",
+      "title": "OpenAI makes model output follow a developer's JSON schema",
+      "whatChanged": "OpenAI introduced Structured Outputs in the API. Model outputs now reliably follow a JSON Schema the developer supplies.",
+      "whyCare": "Systems that pass model output to other code can rely on its shape.",
+      "before": "Developers asked for JSON in the prompt, then validated and retried when the output broke.",
+      "after": "The API guarantees the output matches the schema.",
+      "learn": "Define schemas for every model output that other code reads. Remove retry logic that only fixed format errors.",
+      "cloudPrimitives": [
+        "Compute"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - Introducing Structured Outputs in the API",
+          "url": "https://openai.com/index/introducing-structured-outputs-in-the-api/"
+        }
+      ],
+      "architectureImplication": "Model output can feed other systems directly. Validation still matters for content, though format errors drop away.",
+      "tradeoffs": [
+        "Reliability",
+        "Accuracy"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2024-08-14-anthropic-prompt-caching",
+      "date": "2024-08-14",
+      "layer": "Data & Knowledge",
+      "kind": "milestone",
+      "changeType": "prompt caching",
+      "impact": "Step-change",
+      "title": "Anthropic introduces prompt caching for long, repeated context",
+      "whatChanged": "Anthropic launched prompt caching for Claude. Reusing a cached prompt prefix cuts cost by up to 90% and latency by up to 85% for long prompts.",
+      "whyCare": "Long system prompts, documents and tool definitions became cheap to resend on every call.",
+      "before": "Every request paid full price for the whole prompt, even when most of it repeated.",
+      "after": "Repeated context costs a fraction of the normal input price.",
+      "learn": "Put stable content at the start of the prompt and changing content at the end. Measure your cache hit rate.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic - Prompt caching with Claude",
+          "url": "https://claude.com/blog/prompt-caching"
+        },
+        {
+          "name": "SD Times - Anthropic introduces prompt caching",
+          "url": "https://sdtimes.com/ai/anthropic-introduces-prompt-caching-to-reduce-latency-and-costs"
+        }
+      ],
+      "architectureImplication": "Prompt structure became a cost lever. Agents and long-context designs got much cheaper to run.",
+      "tradeoffs": [
+        "Cost",
+        "Latency"
+      ],
+      "verified": "2026-10-17",
+      "verificationNote": "Anthropic's page now shows a later republish date. Launch date confirmed by news coverage from 14 August 2024."
+    },
+    {
+      "id": "2025-02-24-claude-code-preview",
+      "date": "2025-02-24",
+      "layer": "Application & Workflow",
+      "kind": "milestone",
+      "changeType": "coding agent",
+      "impact": "Step-change",
+      "title": "Anthropic launches Claude Code, an agentic coding tool for the terminal",
+      "whatChanged": "Anthropic released Claude Code in limited research preview with Claude 3.7 Sonnet. Developers can hand off engineering tasks from their terminal.",
+      "whyCare": "Coding assistants started to act on a codebase, editing files and running commands.",
+      "before": "Coding assistants mostly suggested code inside an editor for a developer to accept.",
+      "after": "An agent could carry out multi-step engineering tasks under a developer's direction.",
+      "learn": "Set clear permissions for what a coding agent may run. Review its changes like any other contributor's.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic - Claude 3.7 Sonnet and Claude Code",
+          "url": "https://www.anthropic.com/news/claude-3-7-sonnet"
+        }
+      ],
+      "architectureImplication": "Developer machines and repositories became places where agents act. Permissions and review gates matter.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Reliability"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2025-05-16-openai-codex-cloud-agent",
+      "date": "2025-05-16",
+      "layer": "Application & Workflow",
+      "kind": "milestone",
+      "changeType": "cloud coding agent",
+      "impact": "Step-change",
+      "title": "OpenAI launches Codex, a cloud coding agent that works on tasks in parallel",
+      "whatChanged": "OpenAI introduced Codex as a cloud-based software engineering agent that can work on many tasks in parallel.",
+      "whyCare": "Coding agents moved off the developer's machine and into managed cloud sandboxes.",
+      "before": "Coding agents ran one task at a time on a developer's machine.",
+      "after": "Teams could queue several coding tasks to agents running in the cloud.",
+      "learn": "Decide which repositories and secrets a cloud agent may access. Track the cost and quality of agent work.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security",
+        "Networking"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - Introducing Codex",
+          "url": "https://openai.com/index/introducing-codex/"
+        }
+      ],
+      "architectureImplication": "Agent work became something you can run in parallel and in the cloud. Sandboxes, secrets and review queues became part of the design.",
+      "tradeoffs": [
+        "Security",
+        "Cost",
+        "Control"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2025-08-02-eu-ai-act-gpai-obligations",
+      "date": "2025-08-02",
+      "layer": "Production & Business",
+      "kind": "milestone",
+      "changeType": "regulation",
+      "impact": "Step-change",
+      "title": "EU AI Act rules for general-purpose AI models start to apply",
+      "whatChanged": "From 2 August 2025, providers of general-purpose AI models in the EU must meet transparency and copyright duties under the AI Act.",
+      "whyCare": "Model providers must now document their models, which gives teams more information when they choose one.",
+      "before": "Model providers had no legal duty in the EU to document training data or model capabilities.",
+      "after": "Providers must publish documentation and a summary of training content.",
+      "learn": "Ask model vendors for their AI Act documentation. Use it in your model selection and risk records.",
+      "cloudPrimitives": [
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "European Commission - General-purpose AI obligations under the AI Act",
+          "url": "https://digital-strategy.ec.europa.eu/en/factpages/general-purpose-ai-obligations-under-ai-act"
+        }
+      ],
+      "architectureImplication": "Use vendor documentation when you select a model and keep it in your risk records.",
+      "tradeoffs": [
+        "Control",
+        "Auditability"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2025-08-05-openai-gpt-oss",
+      "date": "2025-08-05",
+      "layer": "Model",
+      "kind": "milestone",
+      "changeType": "open-weight model",
+      "impact": "Step-change",
+      "title": "OpenAI releases gpt-oss, its first open-weight models since 2019",
+      "whatChanged": "OpenAI released gpt-oss-120b and gpt-oss-20b under the Apache 2.0 license.",
+      "whyCare": "A leading model lab now offered open weights, so teams could self-host models from the same vendor they use through an API.",
+      "before": "OpenAI models were available only through hosted services.",
+      "after": "Teams could run OpenAI reasoning models on their own infrastructure.",
+      "learn": "Test the open models against your hosted model on the same tasks. Compare total cost, including serving.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - Introducing gpt-oss",
+          "url": "https://openai.com/index/introducing-gpt-oss/"
+        }
+      ],
+      "architectureImplication": "Mixed designs became easier: hosted models for some tasks, self-hosted open weights for sensitive or high-volume ones.",
+      "tradeoffs": [
+        "Control",
+        "Cost",
+        "Portability"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2025-08-07-openai-gpt-5",
+      "date": "2025-08-07",
+      "layer": "Model",
+      "kind": "milestone",
+      "changeType": "frontier model with routing",
+      "impact": "Step-change",
+      "title": "OpenAI releases GPT-5 with a router between fast and deep reasoning",
+      "whatChanged": "OpenAI released GPT-5 as the new default in ChatGPT. A router picks a quick model or a deeper reasoning model for each request.",
+      "whyCare": "Choosing between a fast model and a reasoning model became something the system can decide per request.",
+      "before": "Users and developers picked a reasoning or non-reasoning model themselves.",
+      "after": "One entry point routes each request to the right level of reasoning.",
+      "learn": "Test how routing affects your cost and latency. Pin a model version where you need predictable behaviour.",
+      "cloudPrimitives": [
+        "Compute"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - Introducing GPT-5",
+          "url": "https://openai.com/index/introducing-gpt-5/"
+        }
+      ],
+      "architectureImplication": "Routing between model tiers became a standard design pattern, inside vendor products and in your own systems.",
+      "tradeoffs": [
+        "Cost",
+        "Latency",
+        "Accuracy"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2025-09-29-platform-context-management",
+      "date": "2025-09-29",
+      "layer": "Data & Knowledge",
+      "kind": "milestone",
+      "changeType": "context management",
+      "impact": "Step-change",
+      "title": "Anthropic adds context editing and a memory tool for long-running agents",
+      "whatChanged": "Anthropic launched context editing, which clears stale tool results as the context fills, and a memory tool that stores information in files outside the context. OpenAI added compaction in December 2025 and Anthropic a Compaction API in February 2026.",
+      "whyCare": "Agents can now run far longer than one context window because the platform manages what stays in context.",
+      "before": "Developers trimmed, summarised and stored agent context with their own code.",
+      "after": "Major platforms offer context editing, memory and compaction as built-in features.",
+      "learn": "Test how your agent behaves when old context is cleared or compacted. Decide what must go to durable memory.",
+      "cloudPrimitives": [
+        "Storage",
+        "Compute"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic - Managing context on the Claude Developer Platform",
+          "url": "https://claude.com/blog/context-management"
+        },
+        {
+          "name": "OpenAI - API changelog (compaction, 11 December 2025)",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        },
+        {
+          "name": "Anthropic - Claude Platform release notes (Compaction API, 5 February 2026)",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        }
+      ],
+      "architectureImplication": "Context became a managed resource. Design what lives in the window, what goes to memory and what gets summarised.",
+      "tradeoffs": [
+        "Reliability",
+        "Cost",
+        "Accuracy"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2025-12-09-agentic-ai-foundation",
+      "date": "2025-12-09",
+      "layer": "Agent & Infrastructure",
+      "kind": "milestone",
+      "changeType": "open standards governance",
+      "impact": "Step-change",
+      "title": "Linux Foundation forms the Agentic AI Foundation for MCP, goose and AGENTS.md",
+      "whatChanged": "The Linux Foundation announced the Agentic AI Foundation, with the Model Context Protocol, goose and AGENTS.md as founding projects.",
+      "whyCare": "Key agent standards moved under neutral governance, which lowers the risk of building on them.",
+      "before": "MCP and related agent standards were led by single companies.",
+      "after": "A vendor-neutral foundation governs them.",
+      "learn": "Prefer standards with neutral governance for long-lived integrations. Track the foundation's specification releases.",
+      "cloudPrimitives": [
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Linux Foundation - Announces the formation of the Agentic AI Foundation",
+          "url": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation"
+        }
+      ],
+      "architectureImplication": "MCP-based integrations became a safer long-term bet for tool and data connections.",
+      "tradeoffs": [
+        "Portability",
+        "Control"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2025-12-18-agent-skills-open-standard",
+      "date": "2025-12-18",
+      "layer": "Agent & Infrastructure",
+      "kind": "milestone",
+      "changeType": "open standard",
+      "impact": "Incremental",
+      "title": "Anthropic publishes Agent Skills as an open standard",
+      "whatChanged": "Anthropic published the Agent Skills specification as an open standard at agentskills.io. OpenAI added Skills support to its Responses API in February 2026.",
+      "whyCare": "Teams can package instructions, scripts and resources for agents once and use them across vendors.",
+      "before": "Each agent platform had its own way to package reusable know-how.",
+      "after": "A shared format works across at least two major platforms.",
+      "learn": "Package repeated agent procedures as skills. Keep them in version control like code.",
+      "cloudPrimitives": [
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic - Organization skills and directory",
+          "url": "https://claude.com/blog/organization-skills-and-directory"
+        },
+        {
+          "name": "OpenAI - API changelog (Skills in the Responses API, 10 February 2026)",
+          "url": "https://developers.openai.com/api/docs/changelog"
+        }
+      ],
+      "architectureImplication": "Agent know-how became a portable asset that teams can version, review and share.",
+      "tradeoffs": [
+        "Portability",
+        "Control"
+      ],
+      "verified": "2026-10-17"
+    },
+    {
+      "id": "2026-08-02-eu-ai-act-transparency",
+      "date": "2026-08-02",
+      "layer": "Production & Business",
+      "kind": "milestone",
+      "changeType": "regulation",
+      "impact": "Step-change",
+      "title": "EU AI Act transparency rules start to apply",
+      "whatChanged": "From 2 August 2026, AI-generated content such as deepfakes must be labelled, and users must be told when they interact with an AI system such as a chatbot.",
+      "whyCare": "Customer-facing AI in the EU now needs disclosure and content labelling built in.",
+      "before": "Disclosure and labelling were voluntary in most products.",
+      "after": "Providers and deployers in the EU must disclose AI interaction and label AI-generated content.",
+      "learn": "Check every customer-facing AI feature for disclosure. Add labels or metadata to generated media.",
+      "cloudPrimitives": [
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "European Commission - Safer and more transparent AI",
+          "url": "https://commission.europa.eu/news-and-media/news/safer-and-more-transparent-ai-2026-08-02_en"
+        }
+      ],
+      "architectureImplication": "Disclosure and content labelling became product requirements for AI features used in the EU.",
+      "tradeoffs": [
+        "Control",
+        "Auditability"
+      ],
+      "verified": "2026-10-17"
     },
     {
       "id": "2026-10-15-github-copilot-multi-repo-slack-teams",
