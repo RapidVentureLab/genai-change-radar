@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/rss+xml" title="The Daily Model" href="feed.xml">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
-<link rel="stylesheet" href="styles.css?v=25">
+<link rel="stylesheet" href="styles.css?v=27">
 </head>
 <body>
 <div class="wrap">
@@ -68,9 +68,14 @@
 <aside class="col-left" aria-labelledby="briefHead">
 <div class="label colhead" id="briefHead">In brief</div>
 <div id="briefs"></div>
+<div class="headlines" id="headlines" hidden><div class="label colhead">Also in the paper</div><div id="headlineList"></div></div>
 </aside>
 
-<article class="col-main lead" id="lead"></article>
+<div class="col-main">
+<article class="lead" id="lead"></article>
+<section class="more-stories" aria-labelledby="moreHead"><div class="label colhead" id="moreHead">More stories this week</div><div class="row4" id="row4"></div></section>
+<section class="watchbox" id="watchBox" aria-labelledby="watchHead"></section>
+</div>
 
 <aside class="col-right">
 <section class="notices" id="notices" aria-labelledby="noticeHead">
@@ -101,7 +106,6 @@
 </aside>
 </div>
 
-<div class="row4" id="row4"></div>
 <div class="all-stories"><button type="button" class="btn-outline" id="allBtn">All stories</button></div>
 <div class="archive-list" id="archive" hidden></div>
 
@@ -178,6 +182,6 @@
 </div>
 </dialog>
 
-<script src="app.js?v=25" defer></script>
+<script src="app.js?v=27" defer></script>
 </body>
 </html>
