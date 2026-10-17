@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-10-17T10:35:00+02:00",
+  "updatedAt": "2026-10-17T20:53:45+02:00",
   "mentalModel": {
     "layers": [
       {
@@ -1828,6 +1828,37 @@
         "Control",
         "Complexity",
         "Latency"
+      ]
+    },
+    {
+      "id": "2026-10-15-github-copilot-multi-repo-slack-teams",
+      "date": "2026-10-15",
+      "layer": "Application & Workflow",
+      "kind": "signal",
+      "changeType": "cross-repository coding agent workflow",
+      "impact": "Incremental",
+      "title": "GitHub lets Copilot span repositories in Slack and Teams",
+      "whatChanged": "GitHub says Copilot in Slack and Microsoft Teams now supports one conversation across multiple repositories. Users can create issues, open pull requests, and investigate bugs across repositories in that conversation. The update adds shared Slack thread context, easier repository switching, mentions anywhere in a message, and reliability improvements.",
+      "whyCare": "You can bring code and discussion context together across repositories in Slack or Teams. Teams coordinating work across services can handle cross-repository tasks in one agent conversation, with repository permissions and pull request review as controls.",
+      "before": "GitHub in Slack and Teams handled one repository per conversation. Teams had to start separate conversations or transfer context to investigate and change multiple repositories.",
+      "after": "GitHub in Slack and Teams now lets one conversation span repositories. Users can investigate bugs, create issues, and open pull requests across them.",
+      "learn": "Test cross-repository tasks in representative Slack and Teams workflows. Review which repositories your users can access and preserve human review before merging agent-generated changes.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Multi-repository support and other improvements for GitHub in Slack and Teams",
+          "url": "https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates"
+        }
+      ],
+      "architectureImplication": "Teams can start cross-repository agent tasks in Slack and Teams and carry thread context into code work. Keep repository access scoped, and retain pull request checks and human review.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Complexity"
       ]
     }
   ],
