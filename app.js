@@ -205,7 +205,7 @@ function balance() {
 }
 
 function shareLinks(x) {
-  const url = location.origin + location.pathname + "#item-" + encodeURIComponent(x.id);
+  const url = itemUrl(x.id);
   return `<span class="push"><button type="button" class="linkbtn share-native" data-share="${esc(x.id)}">Share</button><a class="share-wide" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}" target="_blank" rel="noopener">Share on LinkedIn</a><button type="button" class="linkbtn share-wide" data-copy="${esc(url)}">Copy link</button></span>`;
 }
 
@@ -422,7 +422,8 @@ function closeReader() {
 }
 
 /* ---------- sharing ---------- */
-function itemUrl(id) { return location.origin + location.pathname + "#item-" + encodeURIComponent(id); }
+// Share links point at s/<id>.html, a small page with its own preview card that forwards to the story.
+function itemUrl(id) { return new URL("s/" + encodeURIComponent(id) + ".html", location.href).href; }
 async function share(id, btn) {
   const x = byId.get(id);
   if (!x) return;

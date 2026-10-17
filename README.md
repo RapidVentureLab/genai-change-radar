@@ -57,6 +57,7 @@ The daily agent can only flag a signal as a milestone candidate. Many milestones
 index.html, app.js, styles.css, assets/   the website (served by GitHub Pages)
 updates.json                              the dataset: every signal and milestone
 feed.xml, deadlines.ics, status.json      RSS feed, deadline calendar and scan status, rebuilt daily
+s/                                        share pages and LinkedIn preview cards, one per story, rebuilt daily
 inbox/                                    daily scan results; held/ for items that failed checks
 docs/STYLE.md                             writing guide used by the agents and the style check
 docs/MILESTONE_RULES.md                   what counts as a milestone, and how new ones are added
