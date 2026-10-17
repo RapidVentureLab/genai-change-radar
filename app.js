@@ -157,6 +157,7 @@ function renderFront() {
     $("lead").innerHTML = `<div class="label">Lead story</div><p class="empty">No stories this week match your filters. Try another section, or <button type="button" class="linkbtn" id="clearFilters2">clear all filters</button>.</p>`;
     $("briefs").innerHTML = "";
     $("row4").innerHTML = "";
+    document.querySelector(".more-stories").hidden = true;
   } else {
     const src = (lead.sources || [])[0];
     $("lead").innerHTML = `<div class="label">Lead story · ${kicker(lead)} · <span class="impact-badge">${esc(lead.impact)}</span></div>
@@ -174,9 +175,33 @@ function renderFront() {
     if (items.length > 1) $("briefs").insertAdjacentHTML("beforeend", `<button type="button" class="btn-outline phone-only more-btn" data-all="1">${esc(more)}</button>`);
     $("row4").innerHTML = items.slice(4, 8).map((x) => briefHtml(x, false)).join("");
   }
+  document.querySelector(".more-stories").hidden = items.length <= 4;
+  frontPool = [...items.slice(8), ...DB.updates.filter((x) => matches(x) && x.kind !== "milestone" && !items.includes(x)).sort((a, b) => b.date.localeCompare(a.date))];
+  requestAnimationFrame(balance);
   const rest = items.length > 8 ? items.length - 8 : 0;
   $("allBtn").textContent = state.showAll ? "Hide the full list" : rest ? `All ${items.length} stories this week · Earlier editions` : "Earlier editions";
   renderArchive();
+}
+
+/* Fill the left column with more headlines until it is about as long as the centre column. */
+let frontPool = [];
+function balance() {
+  const box = $("headlines");
+  const list = $("headlineList");
+  list.innerHTML = "";
+  box.hidden = true;
+  if (window.innerWidth <= 1100 || !frontPool.length) return;
+  const left = document.querySelector(".col-left");
+  const main = document.querySelector(".col-main");
+  const bottom = (el) => [...el.children].filter((c) => !c.hidden).reduce((m, c) => Math.max(m, c.getBoundingClientRect().bottom), 0) - el.getBoundingClientRect().top;
+  const target = bottom(main);
+  const thisWeek = new Set(weekItems.map((x) => x.id));
+  box.hidden = false;
+  for (const x of frontPool) {
+    if (bottom(left) > target - 70) break;
+    list.insertAdjacentHTML("beforeend", `<button type="button" class="headline" data-open="${esc(x.id)}"><span class="kicker">${thisWeek.has(x.id) ? "" : esc(fmtShort(x.date)) + " · "}${esc(layerShort(x))}</span>${esc(x.title)}</button>`);
+  }
+  if (!list.children.length) box.hidden = true;
 }
 
 function shareLinks(x) {
@@ -297,7 +322,39 @@ function renderHistory() {
 
   renderSelected();
   renderNumbers();
+  renderWatch();
   reveal();
+}
+
+const TESTS = [
+  ["datedEvent", "It happened on a date"],
+  ["primarySource", "A primary source confirms it"],
+  ["designChoice", "It changed a design choice"],
+  ["firstOrDefining", "It is the first or defining case"],
+];
+function nextReview(day) {
+  const [y, m] = day.split("-").map(Number);
+  return fmtLong(m === 12 ? `${y + 1}-01-01` : `${y}-${String(m + 1).padStart(2, "0")}-01`);
+}
+function renderWatch() {
+  const box = $("watchBox");
+  const watching = DB.updates.filter(isWatching).sort((a, b) => b.date.localeCompare(a.date));
+  const latest = DB.updates.filter((x) => x.kind === "milestone").sort((a, b) => b.date.localeCompare(a.date))[0];
+  const c = watching[0];
+  if (!c && !latest) { box.hidden = true; return; }
+  const tests = c ? TESTS.map(([k, label]) => {
+    const t = (c.candidate.tests || {})[k] || "";
+    const open = !t || /^(qualifies if|open|not yet|unclear)/i.test(t);
+    return `<li class="${open ? "open" : "met"}"><b>${open ? "Open" : "Met"}</b><span><strong>${esc(label)}.</strong> ${esc(t || "No evidence yet.")}</span></li>`;
+  }).join("") : "";
+  box.innerHTML = `<div class="label colhead" id="watchHead">Milestone watch</div>
+<div class="watch-grid">
+${c ? `<div class="watch-main"><div class="kicker">${kicker(c, false)} · Candidate since ${esc(fmtShort(c.candidate.flaggedOn || c.date))}</div>
+<h3><button type="button" data-open="${esc(c.id)}">${esc(c.title)}</button></h3>
+<ol class="tests">${tests}</ol>
+<p class="watch-note">A candidate becomes a milestone only when all four tests are met with evidence. The next review is on ${esc(nextReview(scanDay))}, and a person approves every change.${watching.length > 1 ? ` ${watching.length - 1} more ${watching.length === 2 ? "candidate is" : "candidates are"} in the history below.` : ""}</p></div>` : ""}
+${latest ? `<div class="watch-side"><div class="label">Latest milestone</div><div class="big">${esc(latest.short || "")}</div><p>${esc(latest.title)}.</p><p class="meta">${esc(fmtLong(latest.date))} · ${esc(layerShort(latest))}</p><a href="#history">See all milestones since 2022 →</a></div>` : ""}
+</div>`;
 }
 
 function renderSelected() {
@@ -488,6 +545,9 @@ function wire() {
     if (location.hash.startsWith("#item-")) history.replaceState(null, "", location.pathname + location.search);
   });
   window.addEventListener("hashchange", openFromHash);
+  let rt;
+  window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(balance, 200); });
+  if (document.fonts) document.fonts.ready.then(balance);
 }
 function openFromHash() {
   const m = location.hash.match(/^#item-(.+)$/);
