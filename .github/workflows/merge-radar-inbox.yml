@@ -73,11 +73,36 @@ jobs:
           PROMPT="$(cat .github/radar-research-prompt.md)"
           copilot -p "$PROMPT" -s --no-ask-user --allow-tool='write,url' --allow-all-urls
 
-      - name: Validate inbox and merge
+      - name: Check the research agent finished
         if: steps.guard.outputs.run == 'true'
         shell: bash
         run: |
           node -e 'const fs=require("fs"); const f=process.env.RADAR_INBOX; const x=JSON.parse(fs.readFileSync(f,"utf8")); if(!x.scannedAt) throw new Error("Research agent did not complete: scannedAt is still empty in "+f); if(!Array.isArray(x.updates)) throw new Error("Invalid inbox"); console.log({inbox:f,accepted:x.updates.length,scannedAt:x.scannedAt});'
+
+      - name: Editor pass (rewrite to STYLE.md)
+        if: steps.guard.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          cp "$RADAR_INBOX" "$RUNNER_TEMP/inbox-before-editor.json"
+          if [ "$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.env.RADAR_INBOX,"utf8")).updates.length)')" = "0" ]; then
+            echo "No items today. Skipping editor pass."
+            exit 0
+          fi
+          PROMPT="$(cat .github/radar-editor-prompt.md)"
+          copilot -p "$PROMPT" -s --no-ask-user --allow-tool='write' || echo "Editor pass did not finish. Keeping the research agent's wording."
+          node scripts/guard-editor-pass.mjs "$RUNNER_TEMP/inbox-before-editor.json" "$RADAR_INBOX"
+
+      - name: Style check (hold items that fail)
+        if: steps.guard.outputs.run == 'true'
+        shell: bash
+        run: node scripts/style-check.mjs "$RADAR_INBOX" --hold
+
+      - name: Merge into the dataset
+        if: steps.guard.outputs.run == 'true'
+        shell: bash
+        run: |
           node scripts/merge-inbox.mjs
           node qa-recent.mjs
 
@@ -88,6 +113,7 @@ jobs:
           git config user.name "genai-radar-bot"
           git config user.email "actions@users.noreply.github.com"
           git add "$RADAR_INBOX" updates.json
+          if [ -d inbox/held ]; then git add inbox/held; fi
           if git diff --cached --quiet; then
             echo "No change to commit."
             exit 0
