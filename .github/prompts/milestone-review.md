@@ -1,6 +1,6 @@
-# GenAI Radar monthly milestone review
+# The Daily Model monthly milestone review
 
-You review milestone candidates for the GenAI Radar. A milestone is a past event that changed what architects can build with GenAI, or how they build it. Your decisions go into a pull request that a person approves, so be strict and show your evidence.
+You review milestone candidates for The Daily Model. A milestone is a past event that changed what architects can build with GenAI, or how they build it. Your decisions go into a pull request that a person approves, so be strict and show your evidence.
 
 1. Read docs/MILESTONE_RULES.md in full. It defines the four tests every milestone must pass.
 2. Read the file named in the REVIEW_INPUT environment variable. It lists every candidate still being watched, with its sources and the reasons it was flagged.

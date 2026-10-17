@@ -36,7 +36,7 @@ The archive should have at least one milestone per layer per half year from 2023
 
 ## How new milestones get added
 
-Many milestones are only clear in hindsight, once others adopt them. So the radar never decides on the day.
+Many milestones are only clear in hindsight, once others adopt them. So the paper never decides on the day.
 
 1. **Daily.** The research agent files every item as a signal. If an item might pass all four tests, it adds a `candidate` flag with a reason for each test. If the agent files an item as a milestone anyway, the merge script turns it into a candidate.
 2. **Monthly.** On the 1st, a review agent checks every candidate for evidence that appears later, such as other vendors following or a standard being adopted. It proposes promote, watch or drop. A script promotes an item only if all four tests pass with evidence links. Candidates not promoted within 90 days are dropped.

@@ -12,7 +12,7 @@ const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..")
 const args = process.argv.slice(2);
 const siteArg = args.indexOf("--site");
 const SITE = (siteArg >= 0 ? args[siteArg + 1] : "https://rapidventurelab.github.io/genai-change-radar/").replace(/\/?$/, "/");
-const NAME = "The GenAI Radar";
+const NAME = "The Daily Model";
 
 const db = JSON.parse(fs.readFileSync(path.join(root, "updates.json"), "utf8"));
 const items = [...db.updates].sort((a, b) => b.date.localeCompare(a.date) || a.id.localeCompare(b.id));
@@ -79,7 +79,7 @@ const events = deadlines.map((x) =>
     "END:VEVENT",
   ].map(fold).join("\r\n")
 );
-const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Rapid Venture Lab//GenAI Radar//EN", "CALSCALE:GREGORIAN", "METHOD:PUBLISH", `X-WR-CALNAME:${NAME} deadlines`, ...events, "END:VCALENDAR", ""].join("\r\n");
+const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Rapid Venture Lab//The Daily Model//EN", "CALSCALE:GREGORIAN", "METHOD:PUBLISH", `X-WR-CALNAME:${NAME} deadlines`, ...events, "END:VCALENDAR", ""].join("\r\n");
 fs.writeFileSync(path.join(root, "deadlines.ics"), ics);
 
 // ---- Status ----

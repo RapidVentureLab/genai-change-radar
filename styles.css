@@ -1,4 +1,4 @@
-/* The GenAI Radar: newspaper layout. */
+/* The Daily Model: newspaper layout. */
 :root {
   --paper: #F3EFE4;
   --paper-light: #FBF9F3;
@@ -77,7 +77,7 @@ button, input, select { font: inherit; color: inherit; }
 .sep { width: 1px; height: 24px; background: var(--ink); margin: 0 10px; }
 .newpill { font-size: 14px; font-weight: 800; color: var(--paper); background: var(--red); padding: 3px 8px; margin-left: 6px; }
 .stack { position: relative; }
-.stack summary { list-style: none; min-height: 40px; display: inline-flex; align-items: center; gap: 8px; padding: 0 12px; border: 1px solid var(--ink); background: var(--paper-light); font-size: 15px; font-weight: 600; cursor: pointer; }
+.stack summary { list-style: none; min-height: 40px; display: inline-flex; align-items: center; gap: 0; padding: 0 12px; border: 1px solid var(--ink); background: var(--paper-light); font-size: 15px; font-weight: 600; cursor: pointer; }
 .stack summary::-webkit-details-marker { display: none; }
 .stack-panel { position: absolute; top: calc(100% + 6px); left: 0; z-index: 10; width: 340px; background: var(--paper-light); border: 2px solid var(--ink); padding: 12px 14px; box-shadow: 0 8px 24px rgba(0, 0, 0, .12); }
 .stack-panel fieldset { border: 0; margin: 0 0 10px; padding: 0; }

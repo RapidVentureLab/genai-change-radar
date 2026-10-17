@@ -1,12 +1,12 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Rapid Venture Lab//GenAI Radar//EN
+PRODID:-//Rapid Venture Lab//The Daily Model//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
-X-WR-CALNAME:The GenAI Radar deadlines
+X-WR-CALNAME:The Daily Model deadlines
 BEGIN:VEVENT
 UID:2026-10-15-github-copilot-model-deprecations@genai-radar
-DTSTAMP:20261017T222816Z
+DTSTAMP:20261017T222825Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:Deadline: GitHub retires three Copilot models on 16 November 2026
