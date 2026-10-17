@@ -1,0 +1,44 @@
+{
+  "_about": "Controlled lists for item fields. The research agent, the checks and the website all read this file. See docs/TAXONOMY.md.",
+  "vendors": [
+    { "id": "AWS", "group": "Cloud" },
+    { "id": "Microsoft", "group": "Cloud" },
+    { "id": "Google Cloud", "group": "Cloud" },
+    { "id": "OpenAI", "group": "Model provider" },
+    { "id": "Anthropic", "group": "Model provider" },
+    { "id": "Google", "group": "Model provider" },
+    { "id": "Meta", "group": "Model provider" },
+    { "id": "DeepSeek", "group": "Model provider" },
+    { "id": "IBM", "group": "Model provider" },
+    { "id": "GitHub", "group": "Developer tools" },
+    { "id": "LangChain", "group": "Developer tools" },
+    { "id": "Open models", "group": "Topic" },
+    { "id": "Open standards", "group": "Topic" },
+    { "id": "EU regulation", "group": "Topic" },
+    { "id": "Other", "group": "Other" }
+  ],
+  "decisions": [
+    { "id": "model-selection", "label": "Which model to use" },
+    { "id": "hosted-vs-open", "label": "Hosted or open-weight models" },
+    { "id": "cost-and-routing", "label": "Cost and model routing" },
+    { "id": "rag-vs-long-context", "label": "Retrieval or long context" },
+    { "id": "state-and-memory", "label": "State and memory" },
+    { "id": "agent-vs-workflow", "label": "Agent or fixed workflow" },
+    { "id": "managed-vs-custom-runtime", "label": "Managed or self-run agent runtime" },
+    { "id": "build-vs-buy", "label": "Build or buy" },
+    { "id": "integration-standards", "label": "Integration standards" },
+    { "id": "identity-and-permissions", "label": "Agent identity and permissions" },
+    { "id": "security-and-guardrails", "label": "Security and guardrails" },
+    { "id": "human-approval", "label": "Where people approve actions" },
+    { "id": "observability-and-evals", "label": "Evaluation and monitoring" },
+    { "id": "deployment", "label": "Where and how to deploy" },
+    { "id": "compliance", "label": "Compliance and regulation" }
+  ],
+  "actionTypes": [
+    { "id": "retirement", "label": "Retirement" },
+    { "id": "pricing", "label": "Price change" },
+    { "id": "breaking-change", "label": "Breaking change" },
+    { "id": "regulation", "label": "Regulation" },
+    { "id": "security", "label": "Security fix" }
+  ]
+}

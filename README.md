@@ -45,6 +45,7 @@ The daily agent can only flag a signal as a milestone candidate. Many milestones
 |---|---|---|
 | Research agent finished | Daily | The run fails and GitHub emails the owner |
 | Editor guard | Daily | The rewrite is discarded, the original wording continues |
+| Schema check (vendors, decisions, deadlines) | Daily | The item is held in `inbox/held/` |
 | Style check | Daily | The item is held in `inbox/held/` |
 | Dataset verification | Daily | The run fails |
 | Milestone source links | Monthly | The run fails and GitHub emails the owner |
@@ -55,9 +56,11 @@ The daily agent can only flag a signal as a milestone candidate. Many milestones
 ```
 index.html, app.js, styles.css, assets/   the website (served by GitHub Pages)
 updates.json                              the dataset: every signal and milestone
+feed.xml, deadlines.ics, status.json      RSS feed, deadline calendar and scan status, rebuilt daily
 inbox/                                    daily scan results; held/ for items that failed checks
 docs/STYLE.md                             writing guide used by the agents and the style check
 docs/MILESTONE_RULES.md                   what counts as a milestone, and how new ones are added
+docs/TAXONOMY.md, docs/taxonomy.json      allowed vendors, decisions and action types for filtering
 docs/design-system/                       design notes for the current site
 audit/                                    audit reports, their data, and monthly review records
 scripts/                                  checks and data scripts (no dependencies)
@@ -75,6 +78,12 @@ npm run check:sources    # reopen every milestone source link
 npm run candidates       # list milestone candidates being watched
 python3 -m http.server   # then open http://localhost:8000
 ```
+
+## Feeds
+
+- **RSS:** `feed.xml`, the latest 50 items.
+- **Calendar:** `deadlines.ics`, every item with an action deadline. Subscribe to it in Outlook, Google Calendar or Apple Calendar.
+- **Open data:** `updates.json`, the full dataset.
 
 ## Data policy
 

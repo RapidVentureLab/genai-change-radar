@@ -28,6 +28,7 @@ You review milestone candidates for the GenAI Radar. A milestone is a past event
         "firstOrDefining": { "pass": true, "evidence": "<one sentence>" }
       },
       "evidenceUrls": ["<every URL you used as evidence>"],
+      "short": "<for promote only: a timeline label of one to three words, such as MCP or Claude Code>",
       "summary": "<one or two sentences a reviewer can read in the pull request>"
     }
   ]

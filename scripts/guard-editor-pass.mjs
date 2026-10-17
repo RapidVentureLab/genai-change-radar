@@ -9,7 +9,7 @@
 // original wording then goes on to the style check as it was.
 import fs from "node:fs";
 
-const PROTECTED = ["id", "date", "layer", "kind", "impact", "cloudPrimitives", "tradeoffs", "sources"];
+const PROTECTED = ["id", "date", "layer", "kind", "impact", "cloudPrimitives", "tradeoffs", "sources", "vendors", "decisions", "action", "candidate"];
 
 const [beforePath, afterPath] = process.argv.slice(2);
 if (!beforePath || !afterPath) {

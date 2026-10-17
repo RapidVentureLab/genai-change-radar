@@ -47,6 +47,15 @@ Every source must contain a human-readable name and a public http/https URL. IDs
 
 Impact must be one of the radar's established labels: Disruptive, Step-change, Incremental, Packaging / distribution.
 
+## Filter fields
+
+Read docs/TAXONOMY.md and docs/taxonomy.json. Every item needs:
+- "vendors": one or more values from the vendor list. Use "Other" only when nothing fits.
+- "decisions": zero to three values from the decision list, for the design choices this change gives new evidence on.
+- "action": only when readers must do something. Include "by" as YYYY-MM-DD only when a source states the date. Never estimate a date.
+
+Items with unknown values or a malformed date are held back from the site.
+
 ## Signals and milestone candidates
 
 Set "kind" to "signal" for every item. You never create a milestone. Milestones are decided later, in a monthly review that a person approves, because many milestones only become clear once others adopt them.

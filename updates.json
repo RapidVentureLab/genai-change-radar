@@ -130,7 +130,12 @@
         "Control",
         "Cost"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [],
+      "short": "ChatGPT"
     },
     {
       "id": "2023-03-14-gpt4",
@@ -167,7 +172,14 @@
         "Latency",
         "Cost"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "model-selection"
+      ],
+      "short": "GPT-4"
     },
     {
       "id": "2023-06-13-function-calling",
@@ -199,7 +211,15 @@
         "Security",
         "Control"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "agent-vs-workflow",
+        "integration-standards"
+      ],
+      "short": "Function calling"
     },
     {
       "id": "2024-02-15-gemini15-context",
@@ -232,7 +252,14 @@
         "Security",
         "Cost"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Google"
+      ],
+      "decisions": [
+        "rag-vs-long-context"
+      ],
+      "short": "1M context"
     },
     {
       "id": "2024-05-13-gpt4o",
@@ -264,7 +291,14 @@
         "Latency",
         "Cost"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "model-selection"
+      ],
+      "short": "GPT-4o"
     },
     {
       "id": "2024-07-23-llama31",
@@ -297,7 +331,15 @@
         "Latency",
         "Cost"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Meta",
+        "Open models"
+      ],
+      "decisions": [
+        "hosted-vs-open"
+      ],
+      "short": "Llama 3.1"
     },
     {
       "id": "2024-09-12-o1",
@@ -328,7 +370,15 @@
         "Latency",
         "Cost"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "model-selection",
+        "cost-and-routing"
+      ],
+      "short": "o1"
     },
     {
       "id": "2024-10-22-computer-use",
@@ -361,7 +411,15 @@
         "Security",
         "Control"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Anthropic"
+      ],
+      "decisions": [
+        "agent-vs-workflow",
+        "security-and-guardrails"
+      ],
+      "short": "Computer use"
     },
     {
       "id": "2024-11-25-mcp",
@@ -393,7 +451,15 @@
         "Security",
         "Control"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Anthropic",
+        "Open standards"
+      ],
+      "decisions": [
+        "integration-standards"
+      ],
+      "short": "MCP"
     },
     {
       "id": "2025-01-20-deepseek-r1",
@@ -426,7 +492,16 @@
         "Latency",
         "Cost"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "DeepSeek",
+        "Open models"
+      ],
+      "decisions": [
+        "hosted-vs-open",
+        "cost-and-routing"
+      ],
+      "short": "DeepSeek-R1"
     },
     {
       "id": "2025-03-11-responses-agents",
@@ -459,7 +534,15 @@
         "Security",
         "Control"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "managed-vs-custom-runtime",
+        "build-vs-buy"
+      ],
+      "short": "Agents SDK"
     },
     {
       "id": "2025-04-09-a2a",
@@ -490,7 +573,15 @@
         "Security",
         "Control"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Google",
+        "Open standards"
+      ],
+      "decisions": [
+        "integration-standards"
+      ],
+      "short": "A2A"
     },
     {
       "id": "2025-05-21-managed-mcp-background",
@@ -523,7 +614,15 @@
         "Security",
         "Control"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "managed-vs-custom-runtime",
+        "integration-standards"
+      ],
+      "short": "Remote MCP"
     },
     {
       "id": "2026-09-18-long-running-agent-reliability",
@@ -555,6 +654,13 @@
         "Reliability",
         "Security",
         "Control"
+      ],
+      "vendors": [
+        "Microsoft"
+      ],
+      "decisions": [
+        "observability-and-evals",
+        "state-and-memory"
       ]
     },
     {
@@ -586,6 +692,13 @@
         "Reliability",
         "Security",
         "Control"
+      ],
+      "vendors": [
+        "Google Cloud"
+      ],
+      "decisions": [
+        "identity-and-permissions",
+        "security-and-guardrails"
       ]
     },
     {
@@ -618,6 +731,12 @@
         "Reliability",
         "Security",
         "Control"
+      ],
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "managed-vs-custom-runtime"
       ]
     },
     {
@@ -649,6 +768,12 @@
         "Reliability",
         "Security",
         "Control"
+      ],
+      "vendors": [
+        "Microsoft"
+      ],
+      "decisions": [
+        "observability-and-evals"
       ]
     },
     {
@@ -681,6 +806,14 @@
         "Reliability",
         "Security",
         "Control"
+      ],
+      "vendors": [
+        "Google Cloud",
+        "Google"
+      ],
+      "decisions": [
+        "managed-vs-custom-runtime",
+        "build-vs-buy"
       ]
     },
     {
@@ -714,7 +847,14 @@
         "Control",
         "Cost"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Google"
+      ],
+      "decisions": [
+        "human-approval"
+      ],
+      "short": "Gemini Spark"
     },
     {
       "id": "2026-06-09-fable5",
@@ -747,7 +887,14 @@
         "Latency",
         "Cost"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Anthropic"
+      ],
+      "decisions": [
+        "model-selection"
+      ],
+      "short": "Claude Fable 5"
     },
     {
       "id": "2026-07-20-long-horizon-safety",
@@ -780,7 +927,15 @@
         "Security",
         "Control"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "observability-and-evals",
+        "human-approval"
+      ],
+      "short": "Trajectory safety"
     },
     {
       "id": "2026-09-01-workflow-execution",
@@ -812,6 +967,12 @@
         "Reliability",
         "Control",
         "Cost"
+      ],
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "agent-vs-workflow"
       ]
     },
     {
@@ -850,7 +1011,14 @@
         "Cost"
       ],
       "verified": "2026-10-17",
-      "verificationNote": "The OpenAI page shows only a 29 September 2026 update. Launch date confirmed by news coverage."
+      "verificationNote": "The OpenAI page shows only a 29 September 2026 update. Launch date confirmed by news coverage.",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "model-selection"
+      ],
+      "short": "GPT-6 Astra"
     },
     {
       "id": "2026-09-06-automated-research",
@@ -882,7 +1050,11 @@
         "Reliability",
         "Security",
         "Control"
-      ]
+      ],
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": []
     },
     {
       "id": "2026-09-10-data-agent",
@@ -914,6 +1086,12 @@
         "Accuracy",
         "Security",
         "Cost"
+      ],
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "build-vs-buy"
       ]
     },
     {
@@ -946,6 +1124,12 @@
         "Reliability",
         "Control",
         "Cost"
+      ],
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "build-vs-buy"
       ]
     },
     {
@@ -978,7 +1162,11 @@
         "Reliability",
         "Control",
         "Cost"
-      ]
+      ],
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": []
     },
     {
       "id": "2026-09-18-agentcore-runtime-v2",
@@ -1013,6 +1201,12 @@
           "name": "AWS - AgentCore Runtime V2 documentation",
           "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/runtime-how-it-works.html"
         }
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "managed-vs-custom-runtime"
       ]
     },
     {
@@ -1048,6 +1242,13 @@
           "name": "AWS - HyperPod Inference release notes",
           "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-inference-release-notes.html"
         }
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "cost-and-routing",
+        "deployment"
       ]
     },
     {
@@ -1089,6 +1290,13 @@
           "name": "OpenAI API pricing",
           "url": "https://developers.openai.com/api/docs/pricing"
         }
+      ],
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "cost-and-routing",
+        "model-selection"
       ]
     },
     {
@@ -1127,6 +1335,13 @@
           "name": "Anthropic - Opus 5.5 platform docs",
           "url": "https://platform.claude.com/docs/en/models/opus-5-5/overview"
         }
+      ],
+      "vendors": [
+        "Anthropic"
+      ],
+      "decisions": [
+        "cost-and-routing",
+        "model-selection"
       ]
     },
     {
@@ -1160,6 +1375,12 @@
           "name": "Microsoft - Building the system for AI at work",
           "url": "https://www.microsoft.com/en-us/copilot/blog/2026/09/23/building-the-system-for-ai-at-work/"
         }
+      ],
+      "vendors": [
+        "Microsoft"
+      ],
+      "decisions": [
+        "cost-and-routing"
       ]
     },
     {
@@ -1196,6 +1417,13 @@
           "name": "Dataiku - Discover Agent Management",
           "url": "https://www.dataiku.com/blog/dataiku-agent-management"
         }
+      ],
+      "vendors": [
+        "Other"
+      ],
+      "decisions": [
+        "observability-and-evals",
+        "identity-and-permissions"
       ]
     },
     {
@@ -1230,6 +1458,14 @@
         "Cost",
         "Security",
         "Control"
+      ],
+      "vendors": [
+        "AWS",
+        "Other"
+      ],
+      "decisions": [
+        "agent-vs-workflow",
+        "human-approval"
       ]
     },
     {
@@ -1261,6 +1497,13 @@
         "Latency",
         "Cost",
         "Control"
+      ],
+      "vendors": [
+        "Other"
+      ],
+      "decisions": [
+        "cost-and-routing",
+        "deployment"
       ]
     },
     {
@@ -1293,6 +1536,14 @@
         "Cost",
         "Reliability",
         "Control"
+      ],
+      "vendors": [
+        "GitHub",
+        "Anthropic"
+      ],
+      "decisions": [
+        "cost-and-routing",
+        "model-selection"
       ]
     },
     {
@@ -1340,7 +1591,15 @@
           "designChoice": "Gives agents their own identity and permissions, separate from the user who delegates to them.",
           "firstOrDefining": "Qualifies if other major vendors also give agents their own identities, or if this becomes generally available and widely used."
         }
-      }
+      },
+      "vendors": [
+        "Google",
+        "Google Cloud"
+      ],
+      "decisions": [
+        "identity-and-permissions"
+      ],
+      "short": "Agent identity"
     },
     {
       "id": "2026-10-09-copilot-local-sandbox-ga",
@@ -1377,6 +1636,12 @@
         "Control",
         "Reliability",
         "Cost"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "security-and-guardrails"
       ]
     },
     {
@@ -1408,6 +1673,13 @@
         "Control",
         "Security",
         "Compatibility"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "model-selection",
+        "security-and-guardrails"
       ]
     },
     {
@@ -1417,12 +1689,12 @@
       "kind": "signal",
       "changeType": "agent memory pricing",
       "impact": "Incremental",
-      "title": "AgentCore shifted short-term agent memory to consumption-based pricing",
-      "whatChanged": "AWS replaced AgentCore Memory short-term memory's flat per-event price with separate ingestion, retrieval, and storage charges: $1.00/GB ingested, $0.20/GB retrieved, and $0.10/GB-month stored. Ingestion and retrieval have a 12 KB minimum and 64 KB maximum billable size per event; storage is billed on actual event size. Long-term memory pricing is unchanged.",
-      "whyCare": "Agent memory costs now depend more directly on event payload size, retrieval volume, and retention. Teams should include these variables in agent unit economics instead of estimating cost from event counts alone.",
-      "before": "Short-term memory was charged at a flat rate per event, regardless of the amount of data ingested, retrieved, or stored.",
-      "after": "Short-term memory has distinct data-volume charges, with minimum and maximum billable sizes for ingestion and retrieval and TTL-sensitive storage costs.",
-      "learn": "Model memory costs using payload distributions, retrieval frequency, and TTL; compare managed memory with alternatives using total workload cost rather than headline rates alone.",
+      "title": "AWS AgentCore now charges for short-term memory by data volume",
+      "whatChanged": "AWS replaced the flat per-event price for AgentCore short-term memory with separate charges: $1.00 per GB ingested, $0.20 per GB retrieved and $0.10 per GB-month stored. Ingestion and retrieval bill at least 12 KB and at most 64 KB per event. Long-term memory pricing stays the same.",
+      "whyCare": "Agent memory cost now depends on payload size, retrieval volume and retention, so event counts alone no longer predict it.",
+      "before": "AWS charged a flat rate per event, whatever the amount of data.",
+      "after": "AWS charges for data ingested, retrieved and stored, with minimum and maximum billable sizes per event.",
+      "learn": "Recalculate memory costs with your real payload sizes, retrieval rates and retention times. Compare total cost with other memory options.",
       "cloudPrimitives": [
         "Storage",
         "Compute"
@@ -1437,12 +1709,23 @@
           "url": "https://aws.amazon.com/bedrock/agentcore/pricing/"
         }
       ],
-      "architectureImplication": "Treat short-term memory payload sizing, retrieval patterns, and TTL as explicit cost and retention controls in agent design.",
+      "architectureImplication": "Size memory payloads, retrieval patterns and retention times on purpose, because each now drives cost.",
       "tradeoffs": [
         "Cost",
         "Control",
         "Complexity"
-      ]
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "cost-and-routing",
+        "state-and-memory"
+      ],
+      "action": {
+        "type": "pricing",
+        "what": "Recalculate agent memory costs with payload size, retrieval volume and retention."
+      }
     },
     {
       "id": "2026-10-12-copilot-telemetry-controls",
@@ -1476,6 +1759,13 @@
         "Privacy",
         "Auditability",
         "Control"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "observability-and-evals",
+        "identity-and-permissions"
       ]
     },
     {
@@ -1512,6 +1802,12 @@
         "Cost",
         "Control",
         "Portability"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "deployment"
       ]
     },
     {
@@ -1521,12 +1817,12 @@
       "kind": "signal",
       "changeType": "frontier multimodal model",
       "impact": "Step-change",
-      "title": "Gemini 4 Argon adds a frontier model focused on complex reasoning",
-      "whatChanged": "Google announced Gemini 4 Argon as its latest frontier model, making it available to developers and enterprises. The announcement describes visual-semantic reasoning, physical understanding, and autonomous code generation; Google reports an 87% score on its Embodied Reasoning benchmark and an internal video-to-simulation-to-robot demonstration.",
-      "whyCare": "For teams building vision-driven automation or robotics, the release adds a candidate model for work that spans perception, spatial reasoning, and code generation. The published benchmark and robotics trial are Google-reported results, so enterprise suitability still depends on workload-specific evaluation.",
-      "before": "Teams evaluating frontier models had no access to Gemini 4 Argon or evidence of its stated physical-reasoning and video-to-simulation capabilities.",
-      "after": "Developers and enterprises can evaluate Gemini 4 Argon for complex reasoning and embodied-AI use cases, alongside existing proprietary and open-weight model options.",
-      "learn": "Test the model on representative video, spatial-reasoning, and action-generation tasks; compare quality, latency, cost, and operational controls with alternative frontier and open models rather than generalizing from a vendor benchmark or demonstration.",
+      "title": "Google releases Gemini 4 Argon, a frontier model for complex reasoning",
+      "whatChanged": "Google announced Gemini 4 Argon as its newest frontier model and made it available to developers and enterprises. Google describes visual and spatial reasoning, physical understanding and code generation. It reports an 87% score on its own Embodied Reasoning benchmark and an internal video-to-simulation-to-robot demonstration.",
+      "whyCare": "Teams building vision-driven automation or robotics get a new model to test. The benchmark and robot demonstration are Google's own results.",
+      "before": "Teams had no access to Gemini 4 Argon or its stated physical-reasoning abilities.",
+      "after": "Developers and enterprises can test Gemini 4 Argon for complex reasoning and embodied-AI work.",
+      "learn": "Test it on your own video, spatial and action tasks. Compare quality, latency, cost and controls with the models you use now.",
       "cloudPrimitives": [
         "Compute",
         "Networking"
@@ -1537,12 +1833,18 @@
           "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/"
         }
       ],
-      "architectureImplication": "Treat Gemini 4 Argon as an additional model candidate for video-grounded and spatial workflows, and validate its performance and serving economics against existing model choices before making it a dependency.",
+      "architectureImplication": "Add Gemini 4 Argon as a candidate for video and spatial work. Measure quality and serving cost before you depend on it.",
       "tradeoffs": [
         "Accuracy",
         "Latency",
         "Cost",
         "Control"
+      ],
+      "vendors": [
+        "Google"
+      ],
+      "decisions": [
+        "model-selection"
       ]
     },
     {
@@ -1552,12 +1854,12 @@
       "kind": "signal",
       "changeType": "agent registry governance",
       "impact": "Incremental",
-      "title": "AWS Agent Registry adds schema-validated metadata for governed discovery",
-      "whatChanged": "AWS added registry-defined custom metadata schemas for agents, MCP servers, skills, gateways, and other records. Organizations can require common or type-specific fields such as owner, data classification, review status, or model family; the registry validates values on create and update and supports filtering by those fields in the console, CLI, SDKs, and MCP endpoint.",
-      "whyCare": "Teams managing large agent and tool inventories can encode ownership and review requirements directly in the catalog and use consistent fields for discovery, instead of relying only on names, descriptions, or a separate tracking system.",
-      "before": "Registry records relied on names and descriptions without organization-defined, schema-validated fields for governance and filtering.",
-      "after": "Administrators can define reusable common and record-type schemas, enforce required fields and allowed values, and filter registry results by custom metadata.",
-      "learn": "Define a small shared metadata schema for ownership, classification, and lifecycle status, then check that registry coverage and required-field policies match separate authorization, approval, and audit controls.",
+      "title": "AWS Agent Registry now checks agent metadata against a schema",
+      "whatChanged": "AWS added custom metadata schemas to Agent Registry for agents, MCP servers, skills, gateways and other records. Teams can require fields such as owner, data classification or review status. The registry checks values when records change and lets you filter by them.",
+      "whyCare": "Teams with many agents and tools can record owners and review status in the catalog itself, in a consistent form.",
+      "before": "Registry records had names and descriptions, but no required fields that the registry checked.",
+      "after": "Administrators define schemas, enforce required fields and allowed values, and filter by them.",
+      "learn": "Start with a small shared schema for owner, classification and lifecycle status. Keep access control and approvals in their own systems.",
       "cloudPrimitives": [
         "Storage",
         "Security",
@@ -1573,12 +1875,18 @@
           "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-custom-metadata-schema.html"
         }
       ],
-      "architectureImplication": "Use registry metadata to provide a structured governance and discovery layer for agent resources, while keeping execution authorization and policy enforcement in the agent runtime and connected services.",
+      "architectureImplication": "Use the registry to find and govern agent resources. Keep authorization and policy checks in the runtime and connected services.",
       "tradeoffs": [
         "Control",
         "Security",
         "Complexity",
         "Portability"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "identity-and-permissions"
       ]
     },
     {
@@ -1588,12 +1896,12 @@
       "kind": "signal",
       "changeType": "open agent deployment",
       "impact": "Packaging / distribution",
-      "title": "LangChain packages an open, model-agnostic deployment path for persistent agents",
-      "whatChanged": "LangChain launched Deep Agents deploy in beta, bundling deployment of its open-source agent harness with a horizontally scalable LangSmith Deployment server. The deployment includes agent APIs for MCP, A2A, human-in-the-loop controls, and memory; it supports multiple model and sandbox providers, and LangChain says deployments can be self-hosted so teams retain control of agent memory.",
-      "whyCare": "This gives teams an alternative to building their own runtime around an open harness or adopting a provider-specific managed agent. Portability now depends on more than model APIs: the agent harness, accumulated memory, tools, and runtime all affect switching costs.",
-      "before": "Teams either operated their own orchestration, memory, sandbox, and server infrastructure around open agent frameworks, or adopted managed runtimes that bundle those pieces behind provider-specific APIs.",
-      "after": "A beta deployment command packages an open-source, model-agnostic harness with managed or self-hostable serving, plus interoperable agent endpoints and optional sandbox integrations.",
-      "learn": "Compare the convenience of a bundled runtime with self-hosting and other managed options such as Claude Managed Agents or Bedrock AgentCore. Test model and sandbox portability, memory export and ownership, tenancy isolation, human approvals, and beta reliability before committing production state.",
+      "title": "LangChain offers a self-hostable way to deploy long-running agents on any model",
+      "whatChanged": "LangChain launched Deep Agents deploy in beta. It bundles its open-source agent harness with a scalable LangSmith Deployment server, with endpoints for MCP, A2A, human approvals and memory. It works with several model and sandbox providers, and LangChain says teams can self-host it to keep control of agent memory.",
+      "whyCare": "Teams get a middle path between building their own agent runtime and adopting one vendor's managed agent service.",
+      "before": "Teams either ran their own orchestration, memory and sandbox around an open framework, or used a vendor's managed runtime.",
+      "after": "One command deploys an open, model-agnostic harness, managed or self-hosted, with standard agent endpoints.",
+      "learn": "Compare it with self-hosting and with managed services such as Bedrock AgentCore. Test memory export, isolation, approvals and beta reliability before you store production state in it.",
       "cloudPrimitives": [
         "Compute",
         "Networking",
@@ -1610,13 +1918,19 @@
           "url": "https://docs.langchain.com/langsmith/python/managed-deep-agents-overview"
         }
       ],
-      "architectureImplication": "Treat harness, runtime, memory, and sandbox as separate portability and governance decisions. An open harness and self-hostable deployment can reduce dependence on a single agent platform, but verify data ownership, isolation, controls, and service maturity rather than assuming model agnosticism alone prevents lock-in.",
+      "architectureImplication": "Treat the harness, runtime, memory and sandbox as separate lock-in decisions. A model-agnostic harness alone does not remove lock-in.",
       "tradeoffs": [
         "Portability",
         "Control",
         "Security",
         "Complexity",
         "Reliability"
+      ],
+      "vendors": [
+        "LangChain"
+      ],
+      "decisions": [
+        "managed-vs-custom-runtime"
       ]
     },
     {
@@ -1654,6 +1968,12 @@
         "Cost",
         "Control",
         "Reliability"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "cost-and-routing"
       ]
     },
     {
@@ -1688,6 +2008,15 @@
         "Security",
         "Latency",
         "Complexity"
+      ],
+      "vendors": [
+        "AWS",
+        "Meta",
+        "Open models"
+      ],
+      "decisions": [
+        "hosted-vs-open",
+        "deployment"
       ]
     },
     {
@@ -1717,13 +2046,26 @@
           "url": "https://docs.github.com/copilot/reference/ai-models/supported-models"
         }
       ],
-      "architectureImplication": "Treat hosted models as versioned dependencies. Keep evaluations and a migration path ready for retirements.",
+      "architectureImplication": "Treat hosted models as versioned dependencies. Keep tests ready so you can switch models before a vendor retires one.",
       "tradeoffs": [
         "Compatibility",
         "Accuracy",
         "Control",
         "Reliability"
-      ]
+      ],
+      "vendors": [
+        "GitHub",
+        "Anthropic",
+        "OpenAI"
+      ],
+      "decisions": [
+        "model-selection"
+      ],
+      "action": {
+        "type": "retirement",
+        "by": "2026-11-16",
+        "what": "Test the replacement models and update your Copilot model policies."
+      }
     },
     {
       "id": "2026-10-16-github-open-source-license-compliance-ga",
@@ -1757,6 +2099,13 @@
         "Security",
         "Control",
         "Complexity"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "security-and-guardrails",
+        "compliance"
       ]
     },
     {
@@ -1798,6 +2147,15 @@
         "Control",
         "Complexity",
         "Latency"
+      ],
+      "vendors": [
+        "AWS",
+        "Open models",
+        "Other"
+      ],
+      "decisions": [
+        "hosted-vs-open",
+        "deployment"
       ]
     },
     {
@@ -1829,7 +2187,14 @@
         "Latency",
         "Accuracy"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Anthropic"
+      ],
+      "decisions": [
+        "rag-vs-long-context"
+      ],
+      "short": "100K context"
     },
     {
       "id": "2023-07-18-llama-2",
@@ -1861,7 +2226,15 @@
         "Cost",
         "Complexity"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Meta",
+        "Open models"
+      ],
+      "decisions": [
+        "hosted-vs-open"
+      ],
+      "short": "Llama 2"
     },
     {
       "id": "2023-08-02-owasp-llm-top-10",
@@ -1895,7 +2268,14 @@
         "Control"
       ],
       "verified": "2026-10-17",
-      "verificationNote": "The OWASP page shows no release date. Date from SD Times coverage published 2 August 2023."
+      "verificationNote": "The OWASP page shows no release date. Date from SD Times coverage published 2 August 2023.",
+      "vendors": [
+        "Open standards"
+      ],
+      "decisions": [
+        "security-and-guardrails"
+      ],
+      "short": "OWASP LLM Top 10"
     },
     {
       "id": "2023-11-01-microsoft-365-copilot-ga",
@@ -1925,7 +2305,15 @@
         "Security",
         "Control"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Microsoft"
+      ],
+      "decisions": [
+        "build-vs-buy",
+        "identity-and-permissions"
+      ],
+      "short": "Microsoft 365 Copilot"
     },
     {
       "id": "2023-11-06-openai-devday-assistants",
@@ -1957,7 +2345,15 @@
         "Portability",
         "Complexity"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "managed-vs-custom-runtime",
+        "state-and-memory"
+      ],
+      "short": "Assistants API"
     },
     {
       "id": "2024-08-01-eu-ai-act-in-force",
@@ -1987,7 +2383,14 @@
         "Auditability",
         "Cost"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "EU regulation"
+      ],
+      "decisions": [
+        "compliance"
+      ],
+      "short": "EU AI Act"
     },
     {
       "id": "2024-08-06-openai-structured-outputs",
@@ -2016,7 +2419,14 @@
         "Reliability",
         "Accuracy"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "integration-standards"
+      ],
+      "short": "Structured outputs"
     },
     {
       "id": "2024-08-14-anthropic-prompt-caching",
@@ -2051,7 +2461,15 @@
         "Latency"
       ],
       "verified": "2026-10-17",
-      "verificationNote": "Anthropic's page now shows a later republish date. Launch date confirmed by news coverage from 14 August 2024."
+      "verificationNote": "Anthropic's page now shows a later republish date. Launch date confirmed by news coverage from 14 August 2024.",
+      "vendors": [
+        "Anthropic"
+      ],
+      "decisions": [
+        "cost-and-routing",
+        "rag-vs-long-context"
+      ],
+      "short": "Prompt caching"
     },
     {
       "id": "2025-02-24-claude-code-preview",
@@ -2082,7 +2500,15 @@
         "Control",
         "Reliability"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Anthropic"
+      ],
+      "decisions": [
+        "human-approval",
+        "security-and-guardrails"
+      ],
+      "short": "Claude Code"
     },
     {
       "id": "2025-05-16-openai-codex-cloud-agent",
@@ -2114,7 +2540,15 @@
         "Cost",
         "Control"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "managed-vs-custom-runtime",
+        "security-and-guardrails"
+      ],
+      "short": "Codex"
     },
     {
       "id": "2025-08-02-eu-ai-act-gpai-obligations",
@@ -2143,7 +2577,15 @@
         "Control",
         "Auditability"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "EU regulation"
+      ],
+      "decisions": [
+        "compliance",
+        "model-selection"
+      ],
+      "short": "EU model rules"
     },
     {
       "id": "2025-08-05-openai-gpt-oss",
@@ -2175,7 +2617,15 @@
         "Cost",
         "Portability"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "OpenAI",
+        "Open models"
+      ],
+      "decisions": [
+        "hosted-vs-open"
+      ],
+      "short": "gpt-oss"
     },
     {
       "id": "2025-08-07-openai-gpt-5",
@@ -2205,7 +2655,15 @@
         "Latency",
         "Accuracy"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "cost-and-routing",
+        "model-selection"
+      ],
+      "short": "GPT-5"
     },
     {
       "id": "2025-09-29-platform-context-management",
@@ -2244,7 +2702,15 @@
         "Cost",
         "Accuracy"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "decisions": [
+        "state-and-memory"
+      ],
+      "short": "Context management"
     },
     {
       "id": "2025-12-09-agentic-ai-foundation",
@@ -2274,7 +2740,14 @@
         "Portability",
         "Control"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Open standards"
+      ],
+      "decisions": [
+        "integration-standards"
+      ],
+      "short": "Agentic AI Foundation"
     },
     {
       "id": "2025-12-18-agent-skills-open-standard",
@@ -2307,7 +2780,16 @@
         "Portability",
         "Control"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "Anthropic",
+        "OpenAI",
+        "Open standards"
+      ],
+      "decisions": [
+        "integration-standards"
+      ],
+      "short": "Agent Skills"
     },
     {
       "id": "2026-08-02-eu-ai-act-transparency",
@@ -2336,7 +2818,14 @@
         "Control",
         "Auditability"
       ],
-      "verified": "2026-10-17"
+      "verified": "2026-10-17",
+      "vendors": [
+        "EU regulation"
+      ],
+      "decisions": [
+        "compliance"
+      ],
+      "short": "EU transparency rules"
     },
     {
       "id": "2026-10-15-github-copilot-multi-repo-slack-teams",
@@ -2346,10 +2835,10 @@
       "changeType": "cross-repository coding agent workflow",
       "impact": "Incremental",
       "title": "GitHub lets Copilot span repositories in Slack and Teams",
-      "whatChanged": "GitHub says Copilot in Slack and Microsoft Teams now supports one conversation across multiple repositories. Users can create issues, open pull requests, and investigate bugs across repositories in that conversation. The update adds shared Slack thread context, easier repository switching, mentions anywhere in a message, and reliability improvements.",
-      "whyCare": "You can bring code and discussion context together across repositories in Slack or Teams. Teams coordinating work across services can handle cross-repository tasks in one agent conversation, with repository permissions and pull request review as controls.",
-      "before": "GitHub in Slack and Teams handled one repository per conversation. Teams had to start separate conversations or transfer context to investigate and change multiple repositories.",
-      "after": "GitHub in Slack and Teams now lets one conversation span repositories. Users can investigate bugs, create issues, and open pull requests across them.",
+      "whatChanged": "GitHub says Copilot in Slack and Microsoft Teams now works across several repositories in one conversation. Users can create issues, open pull requests and investigate bugs across them. The update also shares Slack thread context and makes switching repositories easier.",
+      "whyCare": "Teams that coordinate work across services can handle cross-repository tasks in one chat, with repository permissions and pull request review still in place.",
+      "before": "Copilot in Slack and Teams handled one repository per conversation.",
+      "after": "One conversation can span repositories, from investigating a bug to opening a pull request.",
       "learn": "Test cross-repository tasks in representative Slack and Teams workflows. Review which repositories your users can access and preserve human review before merging agent-generated changes.",
       "cloudPrimitives": [
         "Compute",
@@ -2367,7 +2856,11 @@
         "Security",
         "Control",
         "Complexity"
-      ]
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": []
     },
     {
       "id": "2026-10-15-ibm-granite-switch-4-1",
@@ -2377,11 +2870,11 @@
       "changeType": "multi-task inference",
       "impact": "Packaging / distribution",
       "title": "IBM combines chat, decisions, and speech in Granite-Switch-4.1",
-      "whatChanged": "IBM released Granite-Switch-4.1-8B and Granite-Switch-4.1-30B on 15 October. Each model combines a general decision adapter, a safety-focused Guardian adapter, and Granite-Speech-5.0-Turbo-CTC for transcription. IBM says these components use about the same GPU VRAM as the base model and can share its KV cache.",
-      "whyCare": "You can serve chat, speech transcription, and specialized decisions through one model endpoint, without routing each task to a separate model. Shared KV-cache use may reduce extra GPU memory. Compare this setup with separate specialist models.",
-      "before": "Teams could compose task-specific adapters from Granite Libraries or route chat, classification, and speech tasks to separate models. The preconfigured Granite Switch combination was unavailable.",
-      "after": "Teams can run Granite Switch 4.1 in 8B or 30B sizes for chat, decisions, and transcription through one endpoint. The project supports vLLM through a plugin and native inference in llama.cpp.",
-      "learn": "Compare Granite Switch with separately deployed ASR and decision models for task accuracy, latency, throughput, and GPU memory. Verify adapter and shared-cache behavior in your serving runtime before consolidating endpoints.",
+      "whatChanged": "IBM released Granite-Switch-4.1 in 8B and 30B sizes on 15 October. Each model combines a decision adapter, a safety adapter called Guardian, and a speech model for transcription. IBM says the parts use about the same GPU memory as the base model and can share its KV cache.",
+      "whyCare": "You can serve chat, transcription and specialised decisions from one endpoint, with less extra GPU memory. Compare it with separate specialist models first.",
+      "before": "Teams combined task adapters themselves or sent chat, classification and speech to separate models.",
+      "after": "One Granite Switch endpoint handles chat, decisions and transcription. It runs on vLLM through a plugin and in llama.cpp.",
+      "learn": "Compare Granite Switch with separate speech and decision models on accuracy, latency, throughput and GPU memory.",
       "cloudPrimitives": [
         "Compute",
         "Networking"
@@ -2396,12 +2889,19 @@
           "url": "https://github.com/generative-computing/granite-switch"
         }
       ],
-      "architectureImplication": "A multi-adapter model could consolidate separate endpoints for text, classification, and ASR, reducing serving duplication. Keep task-level evaluations and fallback routes because this release does not establish equal quality or reliability across tasks.",
+      "architectureImplication": "One multi-adapter model can replace several endpoints. Keep per-task tests and fallback routes, since equal quality across tasks is not shown.",
       "tradeoffs": [
         "Cost",
         "Accuracy",
         "Latency",
         "Complexity"
+      ],
+      "vendors": [
+        "IBM"
+      ],
+      "decisions": [
+        "model-selection",
+        "deployment"
       ]
     }
   ],

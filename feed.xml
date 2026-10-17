@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>The GenAI Radar</title>
+    <link>https://rapidventurelab.github.io/genai-change-radar/</link>
+    <description>What changed in GenAI, and what it means for the systems you design.</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 17 Oct 2026 19:25:13 GMT</lastBuildDate>
+    <item>
+      <title>GitHub enforces license policy on new dependencies, including those added by agents</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-16-github-open-source-license-compliance-ga</link>
+      <guid isPermaLink="false">2026-10-16-github-open-source-license-compliance-ga</guid>
+      <pubDate>Fri, 16 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Coding agents add dependencies quickly, so license checks need to happen when they choose a package and again at merge. What to do: Connect your coding agents to the package check. Keep the required merge check as the final gate.</description>
+      <category>Production &amp; Business</category>
+      <category>GitHub</category>
+    </item>
+    <item>
+      <title>Reflection releases Beam, an open coding model you can run on AWS</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-16-reflection-beam-open-model-aws</link>
+      <guid isPermaLink="false">2026-10-16-reflection-beam-open-model-aws</guid>
+      <pubDate>Fri, 16 Oct 2026 06:00:00 GMT</pubDate>
+      <description>You can now run a coding model for agents inside your own AWS account, under a license that allows commercial use. What to do: Test Beam on your own agent tasks before you trust its benchmarks. Plan memory for all 501B parameters. Check which regions offer it.</description>
+      <category>Model</category>
+      <category>AWS</category>
+      <category>Open models</category>
+      <category>Other</category>
+    </item>
+    <item>
+      <title>GitHub retires three Copilot models on 16 November 2026</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-15-github-copilot-model-deprecations</link>
+      <guid isPermaLink="false">2026-10-15-github-copilot-model-deprecations</guid>
+      <pubDate>Thu, 15 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Teams using these models have a fixed migration deadline and need to test the replacements first. What to do: List where you use these models. Test the replacements on real tasks and check your model policies before the deadline.</description>
+      <category>Production &amp; Business</category>
+      <category>GitHub</category>
+      <category>Anthropic</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>GitHub lets Copilot span repositories in Slack and Teams</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-15-github-copilot-multi-repo-slack-teams</link>
+      <guid isPermaLink="false">2026-10-15-github-copilot-multi-repo-slack-teams</guid>
+      <pubDate>Thu, 15 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Teams that coordinate work across services can handle cross-repository tasks in one chat, with repository permissions and pull request review still in place. What to do: Test cross-repository tasks in representative Slack and Teams workflows. Review which repositories your users can access and preserve human review before merging agent-generated changes.</description>
+      <category>Application &amp; Workflow</category>
+      <category>GitHub</category>
+    </item>
+    <item>
+      <title>IBM combines chat, decisions, and speech in Granite-Switch-4.1</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-15-ibm-granite-switch-4-1</link>
+      <guid isPermaLink="false">2026-10-15-ibm-granite-switch-4-1</guid>
+      <pubDate>Thu, 15 Oct 2026 06:00:00 GMT</pubDate>
+      <description>You can serve chat, transcription and specialised decisions from one endpoint, with less extra GPU memory. Compare it with separate specialist models first. What to do: Compare Granite Switch with separate speech and decision models on accuracy, latency, throughput and GPU memory.</description>
+      <category>Model</category>
+      <category>IBM</category>
+    </item>
+    <item>
+      <title>AWS adds Meta Muse Spark Open to SageMaker JumpStart for in-account deployment</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-15-sagemaker-muse-spark-open</link>
+      <guid isPermaLink="false">2026-10-15-sagemaker-muse-spark-open</guid>
+      <pubDate>Thu, 15 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Teams can test a large open-weight model on private code and media without sending data to a third-party API. What to do: Benchmark both variants on your tasks. Check the license, quotas and cost, since the endpoint bills on large GPU instances while active.</description>
+      <category>Model</category>
+      <category>AWS</category>
+      <category>Meta</category>
+      <category>Open models</category>
+    </item>
+    <item>
+      <title>GitHub Copilot HydraFusion drafts and reviews with several models per task</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-14-github-hydrafusion</link>
+      <guid isPermaLink="false">2026-10-14-github-hydrafusion</guid>
+      <pubDate>Wed, 14 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Teams get draft-and-review patterns without building their own harness, though multi-pass work costs more credits and time. What to do: Compare it with single-model use on real coding tasks. Track accepted changes, regressions, latency and credits. Keep it out of critical workflows while in preview.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>GitHub</category>
+    </item>
+    <item>
+      <title>AWS Agent Registry now checks agent metadata against a schema</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-13-agent-registry-custom-metadata</link>
+      <guid isPermaLink="false">2026-10-13-agent-registry-custom-metadata</guid>
+      <pubDate>Tue, 13 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Teams with many agents and tools can record owners and review status in the catalog itself, in a consistent form. What to do: Start with a small shared schema for owner, classification and lifecycle status. Keep access control and approvals in their own systems.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>Google releases Gemini 4 Argon, a frontier model for complex reasoning</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-13-gemini-4-argon</link>
+      <guid isPermaLink="false">2026-10-13-gemini-4-argon</guid>
+      <pubDate>Tue, 13 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Teams building vision-driven automation or robotics get a new model to test. The benchmark and robot demonstration are Google's own results. What to do: Test it on your own video, spatial and action tasks. Compare quality, latency, cost and controls with the models you use now.</description>
+      <category>Model</category>
+      <category>Google</category>
+    </item>
+    <item>
+      <title>LangChain offers a self-hostable way to deploy long-running agents on any model</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-13-langchain-deep-agents-deploy</link>
+      <guid isPermaLink="false">2026-10-13-langchain-deep-agents-deploy</guid>
+      <pubDate>Tue, 13 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Teams get a middle path between building their own agent runtime and adopting one vendor's managed agent service. What to do: Compare it with self-hosting and with managed services such as Bedrock AgentCore. Test memory export, isolation, approvals and beta reliability before you store production state in it.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>LangChain</category>
+    </item>
+    <item>
+      <title>AWS AgentCore now charges for short-term memory by data volume</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-12-agentcore-stm-pricing</link>
+      <guid isPermaLink="false">2026-10-12-agentcore-stm-pricing</guid>
+      <pubDate>Mon, 12 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Agent memory cost now depends on payload size, retrieval volume and retention, so event counts alone no longer predict it. What to do: Recalculate memory costs with your real payload sizes, retrieval rates and retention times. Compare total cost with other memory options.</description>
+      <category>Production &amp; Business</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>GitHub adds identity attribution and per-category telemetry controls to Copilot</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-12-copilot-telemetry-controls</link>
+      <guid isPermaLink="false">2026-10-12-copilot-telemetry-controls</guid>
+      <pubDate>Mon, 12 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Enterprises can link agent activity to users and devices without collecting conversation content. What to do: Collect the minimum data you need. Content capture can include source code, tool data and local paths.</description>
+      <category>Production &amp; Business</category>
+      <category>GitHub</category>
+    </item>
+    <item>
+      <title>AWS launches Lambda Web Functions for HTTP servers and streaming AI endpoints</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-12-lambda-web-functions</link>
+      <guid isPermaLink="false">2026-10-12-lambda-web-functions</guid>
+      <pubDate>Mon, 12 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Teams can deploy an HTTP server without rewriting it as an event handler, and pay less for CPU while waiting on I/O. What to do: Compare it with event-driven functions and containers on concurrency, memory cost, runtime and Region limits.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>GitHub adds managed model defaults and MCP startup controls to Copilot for JetBrains</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-10-copilot-jetbrains-agent-controls</link>
+      <guid isPermaLink="false">2026-10-10-copilot-jetbrains-agent-controls</guid>
+      <pubDate>Sat, 10 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Administrators get a consistent starting model, and developers control when tools become active. Neither setting restricts which models or MCP tools are allowed. What to do: Use model allowlists or a gateway where you must restrict models. Keep MCP permissions and least privilege separate from startup settings.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>GitHub</category>
+    </item>
+    <item>
+      <title>Ai2 replaces GPU priorities with time budgets and preemption contracts</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-09-ai2-gpu-time-budget-scheduler</link>
+      <guid isPermaLink="false">2026-10-09-ai2-gpu-time-budget-scheduler</guid>
+      <pubDate>Fri, 09 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Scarce GPUs tempt teams to hold capacity and inflate priorities. Budgets align use with company priorities and let idle capacity be borrowed. What to do: Budget GPU time per team. Pair fair share with checkpointing, preemption rules and visible usage data.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Other</category>
+    </item>
+    <item>
+      <title>GitHub makes local sandboxing generally available for Copilot coding agents</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-09-copilot-local-sandbox-ga</link>
+      <guid isPermaLink="false">2026-10-09-copilot-local-sandbox-ga</guid>
+      <pubDate>Fri, 09 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Coding agents run commands with the developer's privileges. A built-in sandbox makes limiting that access simpler. What to do: Test the sandbox's file, network and credential limits on each operating system. Use cloud sandboxes where you need stronger isolation.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>GitHub</category>
+    </item>
+    <item>
+      <title>Postman shows how it limits tools and context for its production agent</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-09-postman-agent-mode-production-patterns</link>
+      <guid isPermaLink="false">2026-10-09-postman-agent-mode-production-patterns</guid>
+      <pubDate>Fri, 09 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Past a point, more tools and prompt text make agents less reliable. Shaping context and limiting actions keeps them working. What to do: Count your tool catalog as part of the context budget. Select tools per task and keep approval for important writes.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+      <category>Other</category>
+    </item>
+    <item>
+      <title>Google announces a Gemini agent with its own identity for workplace tasks</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-08-google-gemini-work-agent</link>
+      <guid isPermaLink="false">2026-10-08-google-gemini-work-agent</guid>
+      <pubDate>Thu, 08 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Agent identity, permissions, audit and cost limits now come packaged in a workplace suite. What to do: Test agent-owned identity and user-delegated access on one bounded workflow. Check audit trails and spend limits.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Google</category>
+      <category>Google Cloud</category>
+    </item>
+    <item>
+      <title>GitHub brings Claude Haiku 5.5 to all Copilot plans and surfaces</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-07-claude-haiku-55-copilot</link>
+      <guid isPermaLink="false">2026-10-07-claude-haiku-55-copilot</guid>
+      <pubDate>Wed, 07 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Teams get a small, fast model for high-volume subtasks inside their existing coding tools. What to do: Test it on your coding and subagent tasks. Compare success rate, latency, retries and cost per finished task.</description>
+      <category>Model</category>
+      <category>GitHub</category>
+      <category>Anthropic</category>
+    </item>
+    <item>
+      <title>Cross-platform agent governance is becoming a standalone enterprise control layer</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-24-cross-platform-agent-management</link>
+      <guid isPermaLink="false">2026-09-24-cross-platform-agent-management</guid>
+      <pubDate>Thu, 24 Sep 2026 06:00:00 GMT</pubDate>
+      <description>Enterprises adopting agents across multiple clouds and SaaS platforms need portfolio-level visibility that no single agent platform naturally provides. Governance is moving from controls inside each builder/runtime toward an independent inventory, evaluation and risk layer. What to do: Understand agent inventory, OpenTelemetry-based observability, lifecycle governance, certification, business-value measurement and why multi-vendor agent estates create a control-plane problem.</description>
+      <category>Production &amp; Business</category>
+      <category>Other</category>
+    </item>
+    <item>
+      <title>Enterprise AI is shifting from seat licensing toward measured agent work</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-23-microsoft-ai-work-system-economics</link>
+      <guid isPermaLink="false">2026-09-23-microsoft-ai-work-system-economics</guid>
+      <pubDate>Wed, 23 Sep 2026 06:00:00 GMT</pubDate>
+      <description>As agents perform variable amounts of work, a flat per-user software price no longer describes the full economics. Architecture and product teams increasingly need to measure cost and quality per completed task or workflow, while keeping models portable and agents governed. What to do: Understand cost per successful task, model routing, agent evaluation loops, centralized governance and the difference between predictable human-seat pricing and variable autonomous-work consumption.</description>
+      <category>Production &amp; Business</category>
+      <category>Microsoft</category>
+    </item>
+    <item>
+      <title>Anthropic releases Claude Opus 5.5 at lower prices than Opus 5</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-22-claude-opus-55-agent-economics</link>
+      <guid isPermaLink="false">2026-09-22-claude-opus-55-agent-economics</guid>
+      <pubDate>Tue, 22 Sep 2026 06:00:00 GMT</pubDate>
+      <description>Agents that reread cached context often may cost less to run. Upgrades need testing because several thinking and tool-use behaviours changed. What to do: Measure total agent cost and cache hit rate on your own tasks. Run migration tests for thinking and tool-use behaviour.</description>
+      <category>Model</category>
+      <category>Anthropic</category>
+    </item>
+    <item>
+      <title>OpenAI releases GPT-6 Sol and Luna as lower-cost model tiers</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-22-gpt-6-sol-luna-cost-capability</link>
+      <guid isPermaLink="false">2026-09-22-gpt-6-sol-luna-cost-capability</guid>
+      <pubDate>Tue, 22 Sep 2026 06:00:00 GMT</pubDate>
+      <description>More reasoning, coding and agent subtasks may become affordable at high volume. Compare task success, latency and total cost with retries included. What to do: Build task-specific evaluations. Route by accuracy, latency, cache hit rate, retries and cost per successful task.</description>
+      <category>Model</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>Agent security is moving from app security to actor-level control</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-18-agent-security-controls</link>
+      <guid isPermaLink="false">2026-09-18-agent-security-controls</guid>
+      <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
+      <description>An agent with access to enterprise systems behaves more like a software actor than a chatbot. It needs its own operating controls. What to do: Least privilege, credential isolation, agent identity, sandboxing and approval gates.</description>
+      <category>Production &amp; Business</category>
+      <category>Google Cloud</category>
+    </item>
+    <item>
+      <title>Agent runtimes are becoming more elastic for long-running and bursty agents</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-18-agentcore-runtime-v2</link>
+      <guid isPermaLink="false">2026-09-18-agentcore-runtime-v2</guid>
+      <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
+      <description>Production agents increasingly need isolated compute that can sit idle, resume quickly, run for long periods, and avoid paying for peak memory throughout a session. What to do: Separate the agent harness from the agent runtime. The harness manages reasoning, tools and context; the runtime provides compute, isolation, state and lifecycle.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>Inference-aware routing is becoming a managed production primitive</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-18-hyperpod-inference-gateway</link>
+      <guid isPermaLink="false">2026-09-18-hyperpod-inference-gateway</guid>
+      <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
+      <description>LLM replicas are not interchangeable in the way ordinary stateless web servers are. Cache state, queues and loaded adapters can materially change latency and GPU efficiency. What to do: Understand KV cache, prefix caching, time-to-first-token, prefill versus decode, LoRA adapters and inference-aware routing. These increasingly determine self-hosted model economics.</description>
+      <category>Production &amp; Business</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>Long-running agent reliability is becoming the real bottleneck</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-18-long-running-agent-reliability</link>
+      <guid isPermaLink="false">2026-09-18-long-running-agent-reliability</guid>
+      <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
+      <description>For enterprise architecture, the question is moving from whether an agent can do one task to whether it can complete a long workflow safely and repeatedly. What to do: Long-horizon reliability, persistent state, retries, recovery, verification and human escalation.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Microsoft</category>
+    </item>
+    <item>
+      <title>Research finds AI use adds new recurring tasks to people's jobs</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-16-work-expansion</link>
+      <guid isPermaLink="false">2026-09-16-work-expansion</guid>
+      <pubDate>Wed, 16 Sep 2026 06:00:00 GMT</pubDate>
+      <description>AI may change what jobs include as well as how fast people work. What to do: Measure changes in tasks and roles alongside time saved.</description>
+      <category>Application &amp; Workflow</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>Business data, analysis, dashboards, and action are converging into one agent workflow</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-10-data-agent</link>
+      <guid isPermaLink="false">2026-09-10-data-agent</guid>
+      <pubDate>Thu, 10 Sep 2026 06:00:00 GMT</pubDate>
+      <description>It packages retrieval, business context, analysis, and reporting into a simpler experience for non-specialists. What to do: The architectural issues move to data permissions, metric definitions, provenance, freshness, and auditability.</description>
+      <category>Data &amp; Knowledge</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>OpenAI launches ChatGPT for financial services with premium market data</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-10-financial-services</link>
+      <guid isPermaLink="false">2026-09-10-financial-services</guid>
+      <pubDate>Thu, 10 Sep 2026 06:00:00 GMT</pubDate>
+      <description>AI products are becoming industry-specific, with data rights and workflows built in. What to do: When you compare vertical AI products, check data rights, workflow fit and governance as closely as the model.</description>
+      <category>Application &amp; Workflow</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>Managed agent runtimes continue to reduce custom harness work</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-10-managed-agent-runtimes</link>
+      <guid isPermaLink="false">2026-09-10-managed-agent-runtimes</guid>
+      <pubDate>Thu, 10 Sep 2026 06:00:00 GMT</pubDate>
+      <description>The underlying patterns already existed, but lower implementation friction changes build-versus-buy decisions. What to do: Agent harness means state, context, tools, execution, retries, permissions, memory and observability.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>Automated research moved from aspiration to an internal working milestone</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-06-automated-research</link>
+      <guid isPermaLink="false">2026-09-06-automated-research</guid>
+      <pubDate>Sun, 06 Sep 2026 06:00:00 GMT</pubDate>
+      <description>Automating parts of AI research itself is a directional signal toward agents that improve the speed of capability and alignment research. What to do: Watch research automation because it can accelerate both model progress and the need for alignment and governance.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>OpenAI releases GPT-6 Astra with gains in computer use, science and cyber</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-03-gpt6-astra</link>
+      <guid isPermaLink="false">2026-09-03-gpt6-astra</guid>
+      <pubDate>Thu, 03 Sep 2026 06:00:00 GMT</pubDate>
+      <description>Frontier models now operate software and carry out complex professional tasks as well as answering questions. What to do: Test it on your own tool-using tasks. Treat vendor benchmark results as claims until you reproduce them.</description>
+      <category>Model</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>Teams start to evaluate the path an agent takes as well as its answer</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-01-enterprise-evals</link>
+      <guid isPermaLink="false">2026-09-01-enterprise-evals</guid>
+      <pubDate>Tue, 01 Sep 2026 06:00:00 GMT</pubDate>
+      <description>A correct-looking answer can come from an unsafe path. This matters once agents take actions. What to do: Add trajectory checks to your evaluations. Keep audit logs and use human review for risky actions.</description>
+      <category>Production &amp; Business</category>
+      <category>Microsoft</category>
+    </item>
+    <item>
+      <title>Enterprise AI is moving from assistance toward execution inside real workflows</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-01-workflow-execution</link>
+      <guid isPermaLink="false">2026-09-01-workflow-execution</guid>
+      <pubDate>Tue, 01 Sep 2026 06:00:00 GMT</pubDate>
+      <description>The important application shift is not a better chatbot. It is delegation of substantive parts of a business process. What to do: Start workflow design with task boundaries, data, tools, approvals, failure handling, and measurable outcome.</description>
+      <category>Application &amp; Workflow</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>EU AI Act transparency rules start to apply</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-08-02-eu-ai-act-transparency</link>
+      <guid isPermaLink="false">2026-08-02-eu-ai-act-transparency</guid>
+      <pubDate>Sun, 02 Aug 2026 06:00:00 GMT</pubDate>
+      <description>Customer-facing AI in the EU now needs disclosure and content labelling built in. What to do: Check every customer-facing AI feature for disclosure. Add labels or metadata to generated media.</description>
+      <category>Production &amp; Business</category>
+      <category>EU regulation</category>
+    </item>
+    <item>
+      <title>OpenAI moves safety evaluation from single actions to whole trajectories</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-07-20-long-horizon-safety</link>
+      <guid isPermaLink="false">2026-07-20-long-horizon-safety</guid>
+      <pubDate>Mon, 20 Jul 2026 06:00:00 GMT</pubDate>
+      <description>Once systems act over long periods, checking single outputs misses what the sequence of actions is working toward. What to do: Add trajectory monitoring, long-horizon evaluations, approval points and recovery steps to agent designs.</description>
+      <category>Production &amp; Business</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>Anthropic releases Claude Fable 5, built for long and complex tasks</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-06-09-fable5</link>
+      <guid isPermaLink="false">2026-06-09-fable5</guid>
+      <pubDate>Tue, 09 Jun 2026 06:00:00 GMT</pubDate>
+      <description>How long and complex a task a model can finish is becoming a main way to compare models. What to do: Test models on how long and how complex a task they finish reliably. Use your own tasks.</description>
+      <category>Model</category>
+      <category>Anthropic</category>
+    </item>
+    <item>
+      <title>Google announces Gemini Spark, a persistent agent across Workspace apps</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-05-19-gemini-spark</link>
+      <guid isPermaLink="false">2026-05-19-gemini-spark</guid>
+      <pubDate>Tue, 19 May 2026 06:00:00 GMT</pubDate>
+      <description>AI at work is moving from a chat tool next to the work to an agent inside the software people already use. What to do: Define what users may delegate, which actions need approval and what context the agent may see.</description>
+      <category>Application &amp; Workflow</category>
+      <category>Google</category>
+    </item>
+    <item>
+      <title>Enterprise agent building, governance, and scale became a single platform concern</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-04-24-gemini-agent-platform</link>
+      <guid isPermaLink="false">2026-04-24-gemini-agent-platform</guid>
+      <pubDate>Fri, 24 Apr 2026 06:00:00 GMT</pubDate>
+      <description>Agent infrastructure is becoming a first-class cloud platform category rather than a collection of disconnected components. What to do: Compare integrated agent platforms on portability, observability, governance, cost, and ecosystem fit.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Google Cloud</category>
+      <category>Google</category>
+    </item>
+    <item>
+      <title>Anthropic publishes Agent Skills as an open standard</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-12-18-agent-skills-open-standard</link>
+      <guid isPermaLink="false">2025-12-18-agent-skills-open-standard</guid>
+      <pubDate>Thu, 18 Dec 2025 06:00:00 GMT</pubDate>
+      <description>Teams can package instructions, scripts and resources for agents once and use them across vendors. What to do: Package repeated agent procedures as skills. Keep them in version control like code.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Anthropic</category>
+      <category>OpenAI</category>
+      <category>Open standards</category>
+    </item>
+    <item>
+      <title>Linux Foundation forms the Agentic AI Foundation for MCP, goose and AGENTS.md</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-12-09-agentic-ai-foundation</link>
+      <guid isPermaLink="false">2025-12-09-agentic-ai-foundation</guid>
+      <pubDate>Tue, 09 Dec 2025 06:00:00 GMT</pubDate>
+      <description>Key agent standards moved under neutral governance, which lowers the risk of building on them. What to do: Prefer standards with neutral governance for long-lived integrations. Track the foundation's specification releases.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Open standards</category>
+    </item>
+    <item>
+      <title>Anthropic adds context editing and a memory tool for long-running agents</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-09-29-platform-context-management</link>
+      <guid isPermaLink="false">2025-09-29-platform-context-management</guid>
+      <pubDate>Mon, 29 Sep 2025 06:00:00 GMT</pubDate>
+      <description>Agents can now run far longer than one context window because the platform manages what stays in context. What to do: Test how your agent behaves when old context is cleared or compacted. Decide what must go to durable memory.</description>
+      <category>Data &amp; Knowledge</category>
+      <category>Anthropic</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>OpenAI releases GPT-5 with a router between fast and deep reasoning</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-08-07-openai-gpt-5</link>
+      <guid isPermaLink="false">2025-08-07-openai-gpt-5</guid>
+      <pubDate>Thu, 07 Aug 2025 06:00:00 GMT</pubDate>
+      <description>Choosing between a fast model and a reasoning model became something the system can decide per request. What to do: Test how routing affects your cost and latency. Pin a model version where you need predictable behaviour.</description>
+      <category>Model</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>OpenAI releases gpt-oss, its first open-weight models since 2019</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-08-05-openai-gpt-oss</link>
+      <guid isPermaLink="false">2025-08-05-openai-gpt-oss</guid>
+      <pubDate>Tue, 05 Aug 2025 06:00:00 GMT</pubDate>
+      <description>A leading model lab now offered open weights, so teams could self-host models from the same vendor they use through an API. What to do: Test the open models against your hosted model on the same tasks. Compare total cost, including serving.</description>
+      <category>Model</category>
+      <category>OpenAI</category>
+      <category>Open models</category>
+    </item>
+    <item>
+      <title>EU AI Act rules for general-purpose AI models start to apply</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-08-02-eu-ai-act-gpai-obligations</link>
+      <guid isPermaLink="false">2025-08-02-eu-ai-act-gpai-obligations</guid>
+      <pubDate>Sat, 02 Aug 2025 06:00:00 GMT</pubDate>
+      <description>Model providers must now document their models, which gives teams more information when they choose one. What to do: Ask model vendors for their AI Act documentation. Use it in your model selection and risk records.</description>
+      <category>Production &amp; Business</category>
+      <category>EU regulation</category>
+    </item>
+    <item>
+      <title>OpenAI adds remote MCP servers and background mode to the Responses API</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-05-21-managed-mcp-background</link>
+      <guid isPermaLink="false">2025-05-21-managed-mcp-background</guid>
+      <pubDate>Wed, 21 May 2025 06:00:00 GMT</pubDate>
+      <description>Managed runtimes now handle more of the connections and long-running execution that agents need. What to do: Check what the managed runtime lets you see, export and secure. Decide how much lock-in you accept for the convenience.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>OpenAI launches Codex, a cloud coding agent that works on tasks in parallel</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-05-16-openai-codex-cloud-agent</link>
+      <guid isPermaLink="false">2025-05-16-openai-codex-cloud-agent</guid>
+      <pubDate>Fri, 16 May 2025 06:00:00 GMT</pubDate>
+      <description>Coding agents moved off the developer's machine and into managed cloud sandboxes. What to do: Decide which repositories and secrets a cloud agent may access. Track the cost and quality of agent work.</description>
+      <category>Application &amp; Workflow</category>
+      <category>OpenAI</category>
+    </item>
+    <item>
+      <title>Google announces A2A, a protocol for agents to work with other agents</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-04-09-a2a</link>
+      <guid isPermaLink="false">2025-04-09-a2a</guid>
+      <pubDate>Wed, 09 Apr 2025 06:00:00 GMT</pubDate>
+      <description>Agent-to-agent interoperability became a stated industry goal. Standards still need adoption before teams can rely on them. What to do: Track which vendors support A2A. Adopt it when your partners or customers need cross-vendor agents.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Google</category>
+      <category>Open standards</category>
+    </item>
+    <item>
+      <title>OpenAI launches the Responses API, built-in tools and an Agents SDK</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-03-11-responses-agents</link>
+      <guid isPermaLink="false">2025-03-11-responses-agents</guid>
+      <pubDate>Tue, 11 Mar 2025 06:00:00 GMT</pubDate>
+      <description>Teams could buy core agent infrastructure as a managed service and write less orchestration code. What to do: Decide which parts of the agent harness to buy and which to build. Check what you can export or move later.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>OpenAI</category>
+    </item>
+  </channel>
+</rss>
