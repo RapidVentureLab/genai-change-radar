@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Social cards</title>
+<!-- Source for the LinkedIn images. Render with scripts/render-cards.py. NAME and URL come from the query string. -->
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+:root { --paper:#F3EFE4; --light:#FBF9F3; --ink:#161616; --soft:#4F4A40; --red:#9E1B1B; --green:#1F6B33;
+  --head:"Playfair Display",Georgia,serif; --body:"Source Serif 4",Georgia,serif; --ui:"Libre Franklin",Arial,sans-serif; --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .24 0 0 0 0 .14 0 0 0 -1.1 .62'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23f)'/%3E%3C/svg%3E"); }
+body { margin:0; background:#888; display:flex; flex-direction:column; gap:40px; padding:40px; align-items:flex-start; }
+.card { position:relative; background: radial-gradient(ellipse 120% 70% at 50% 0%, rgba(255,253,246,.7), transparent 70%), var(--grain), var(--paper); color:var(--ink); overflow:hidden; box-sizing:border-box; }
+.label { font:800 15px/1 var(--ui); letter-spacing:.09em; text-transform:uppercase; }
+.lockup { display:inline-flex; align-items:center; gap:10px; font:600 20px/1 "Archivo",var(--ui); }
+.lockup svg { width:24px; height:25px; }
+.rule2 { border-top:4px solid var(--ink); border-bottom:1px solid var(--ink); height:3px; }
+.top { display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--ink); padding-bottom:12px; }
+.mast { font:900 92px/1 var(--head); letter-spacing:-.02em; margin:0; }
+.tag { font:italic 28px/1.3 var(--body); margin:12px 0 0; }
+
+/* Post: 1080 x 1350 */
+#post { width:1080px; height:1350px; padding:56px 64px; display:flex; flex-direction:column; }
+#post .mast { text-align:center; font-size:104px; margin-top:34px; }
+#post .tag { text-align:center; margin-bottom:26px; }
+#post h2 { font:900 58px/1.06 var(--head); margin:34px 0 0; letter-spacing:-.01em; }
+#post .deck { font:italic 27px/1.4 var(--head); margin:16px 0 0; color:var(--soft); }
+.anatomy { margin-top:34px; display:grid; grid-template-columns:1fr 1fr 1fr; border-top:2px solid var(--ink); border-bottom:1px solid var(--ink); }
+.anatomy > div { padding:20px 22px 22px; border-right:1px solid #B9B2A2; }
+.anatomy > div:first-child { padding-left:0; }
+.anatomy > div:last-child { border-right:0; padding-right:0; }
+.anatomy p { font:400 23px/1.4 var(--body); margin:10px 0 0; }
+.anatomy .do { background:var(--light); border:2px solid var(--ink); padding:16px 18px; margin-top:10px; }
+.anatomy .do p { margin:0; }
+.stamp { display:inline-block; margin-top:14px; font:800 17px/1 var(--ui); letter-spacing:.06em; color:var(--red); border:2px solid var(--red); padding:8px 10px; transform:rotate(-2deg); }
+.also { margin-top:30px; }
+.also p { margin:0; padding:12px 0; border-bottom:1px solid #B9B2A2; font:700 25px/1.25 var(--head); display:flex; gap:16px; align-items:baseline; }
+.also p:last-child { border-bottom:0; }
+.also p span { flex:none; width:130px; font:800 14px/1 var(--ui); letter-spacing:.08em; text-transform:uppercase; color:var(--soft); }
+.facts { margin-top:auto; display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-top:4px double var(--ink); padding-top:22px; }
+.facts > div { padding-right:22px; }
+.facts b { display:block; font:900 52px/1 var(--head); }
+.facts span { display:block; font:500 19px/1.35 var(--ui); margin-top:8px; }
+.foot { display:flex; justify-content:space-between; align-items:flex-end; margin-top:30px; padding-top:16px; border-top:1px solid var(--ink); font:600 20px/1.4 var(--ui); }
+.url { font:800 22px/1 var(--ui); }
+
+/* Link preview: 1200 x 627 */
+#og { width:1200px; height:627px; padding:44px 60px; display:flex; flex-direction:column; }
+#og .mast { font-size:96px; margin-top:34px; }
+#og .tag { font-size:30px; }
+#og .row { margin-top:auto; display:grid; grid-template-columns:repeat(3,1fr); border-top:2px solid var(--ink); }
+#og .row > div { padding:16px 20px 0 0; }
+#og .row b { display:block; font:800 17px/1 var(--ui); letter-spacing:.08em; text-transform:uppercase; }
+#og .row span { display:block; font:400 23px/1.35 var(--body); margin-top:8px; }
+#og .who { margin-top:22px; display:flex; justify-content:space-between; font:600 19px/1 var(--ui); }
+</style></head><body>
+
+<div class="card" id="post">
+  <div class="top"><span class="label">Daily edition · Free</span><span class="lockup"><svg viewBox="0 0 206.35 218.6" aria-hidden="true"><polygon fill="#111111" points="0 41.26 0 79.62 51.49 131.11 0 182.59 0 218.6 2.35 218.6 89.85 131.11 0 41.26"/><polygon fill="#39B54A" points="206.35 1.3 206.35 0 169.29 0 102.99 66.3 36.68 0 0 0 0 1.68 102.99 104.66 206.35 1.3"/><polygon fill="#111111" points="154.86 126.83 206.35 75.33 206.35 36.98 116.5 126.83 206.35 216.67 206.35 178.31 154.86 126.83"/></svg>Rapid Venture Lab</span></div>
+  <h1 class="mast" data-name>The GenAI Radar</h1>
+  <p class="tag">What changed in GenAI, and what it means for the systems you design.</p>
+  <div class="rule2"></div>
+  <h2>Every change comes with what it means for your design, and what to do next.</h2>
+  <p class="deck">Written each morning for solution architects, AI product managers and platform leads. Every story is checked against its primary source.</p>
+  <div class="anatomy">
+    <div><div class="label">What changed</div><p>GitHub retires three Copilot models on 16 November 2026.</p><span class="stamp">29 DAYS LEFT</span></div>
+    <div><div class="label">What it means</div><p>Treat hosted models as versioned dependencies, with tests ready to switch.</p></div>
+    <div><div class="label">What to do</div><div class="do"><p>Test the replacement models and update your model policies.</p></div></div>
+  </div>
+  <div class="also">
+    <div class="label">Also in this week's edition</div>
+    <p><span>Agents</span>AWS Agent Registry now checks agent metadata against a schema</p>
+    <p><span>Models</span>IBM combines chat, decisions and speech in Granite-Switch-4.1</p>
+    <p><span>Production</span>AWS AgentCore now charges for short-term memory by data volume</p>
+  </div>
+  <div class="facts">
+    <div><b>34</b><span>milestones since 2022, each verified against its source</span></div>
+    <div><b>15</b><span>vendors and topics. Filter the paper to your own stack</span></div>
+    <div><b>1</b><span>calendar feed with every retirement and price change</span></div>
+  </div>
+  <div class="foot"><span>Built and edited by Haris Rehman in Berlin</span><span class="url" data-url>rapidventurelab.github.io/genai-change-radar</span></div>
+</div>
+
+<div class="card" id="og">
+  <div class="top"><span class="label">Daily edition · For solution architects and AI product teams</span><span class="lockup"><svg viewBox="0 0 206.35 218.6" aria-hidden="true"><polygon fill="#111111" points="0 41.26 0 79.62 51.49 131.11 0 182.59 0 218.6 2.35 218.6 89.85 131.11 0 41.26"/><polygon fill="#39B54A" points="206.35 1.3 206.35 0 169.29 0 102.99 66.3 36.68 0 0 0 0 1.68 102.99 104.66 206.35 1.3"/><polygon fill="#111111" points="154.86 126.83 206.35 75.33 206.35 36.98 116.5 126.83 206.35 216.67 206.35 178.31 154.86 126.83"/></svg>Rapid Venture Lab</span></div>
+  <h1 class="mast" data-name>The GenAI Radar</h1>
+  <p class="tag">What changed in GenAI, and what it means for the systems you design.</p>
+  <div class="row">
+    <div><b>What changed</b><span>Checked against the primary source</span></div>
+    <div><b>What it means</b><span>For the systems you design and run</span></div>
+    <div><b class="red" style="color:var(--red)">What to do</b><span>With deadlines in your calendar</span></div>
+  </div>
+  <div class="who"><span>Updated every morning</span><span data-url>rapidventurelab.github.io/genai-change-radar</span></div>
+</div>
+
+<script>
+const p = new URLSearchParams(location.search);
+if (p.get("name")) document.querySelectorAll("[data-name]").forEach((e) => (e.textContent = p.get("name")));
+if (p.get("url")) document.querySelectorAll("[data-url]").forEach((e) => (e.textContent = p.get("url")));
+</script>
+</body></html>
