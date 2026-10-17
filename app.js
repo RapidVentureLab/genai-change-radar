@@ -1,9 +1,9 @@
-/* The GenAI Radar: newspaper front page.
+/* The Daily Model: newspaper front page.
    Reads updates.json, docs/taxonomy.json and status.json. No build step, no dependencies. */
 "use strict";
 
 const CONFIG = {
-  name: "The GenAI Radar",
+  name: "The Daily Model",
   // Link to the reader survey (for example a Google Form). Leave empty to hide the survey box.
   surveyUrl: "",
   weekDays: 7,

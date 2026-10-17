@@ -1,6 +1,6 @@
-# GenAI Change Radar daily research task
+# The Daily Model daily research task
 
-You are the research engine for a public, vendor-neutral enterprise GenAI change radar.
+You are the research engine for a public, vendor-neutral enterprise GenAI daily paper, The Daily Model.
 
 Read updates.json first. Research meaningful PUBLIC developments from the last 24-48 hours across:
 - Model
@@ -45,7 +45,7 @@ For accepted items, use the same schema and vocabulary as existing updates.json 
 id, date, layer, kind, changeType, impact, title, whatChanged, whyCare, before, after, learn, cloudPrimitives, sources, architectureImplication, tradeoffs.
 Every source must contain a human-readable name and a public http/https URL. IDs must be stable, date-prefixed, unique, and not duplicate an existing development.
 
-Impact must be one of the radar's established labels: Disruptive, Step-change, Incremental, Packaging / distribution.
+Impact must be one of the paper's established labels: Disruptive, Step-change, Incremental, Packaging / distribution.
 
 ## Filter fields
 

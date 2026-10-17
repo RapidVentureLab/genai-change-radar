@@ -1,6 +1,6 @@
-# GenAI Change Radar
+# The Daily Model
 
-A daily-updated radar of changes in GenAI that matter for system design. Every item says what changed, why it matters, and what to do about it.
+A daily paper on the changes in GenAI that matter for system design. Every item says what changed, why it matters, and what to do about it.
 
 **Live:** https://rapidventurelab.github.io/genai-change-radar/
 

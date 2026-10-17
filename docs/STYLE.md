@@ -1,6 +1,6 @@
-# GenAI Radar writing guide
+# The Daily Model writing guide
 
-Every item on the radar follows these rules. The research agent reads this file before it writes, a second model checks each item against it, and `scripts/style-check.mjs` tests the rules that code can test. Items that fail are held for review.
+Every item in the paper follows these rules. The research agent reads this file before it writes, a second model checks each item against it, and `scripts/style-check.mjs` tests the rules that code can test. Items that fail are held for review.
 
 The rules follow Joseph M. Williams, *Style: Lessons in Clarity and Grace*.
 
