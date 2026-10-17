@@ -92,6 +92,8 @@ function writeUrl() {
 
 /* ---------- render: top ---------- */
 function renderTop() {
+  $("siteName").textContent = CONFIG.name;
+  document.querySelector(".mini-mast").textContent = CONFIG.name;
   $("today").textContent = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Berlin" });
   const last = (STATUS && STATUS.lastScan) || DB.updatedAt;
   const when = last ? new Date(last).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Berlin" }) : "unknown";
@@ -119,11 +121,18 @@ function renderStack() {
   $("stackPanel").innerHTML = groups.map((g) => `<fieldset><legend>${esc(g)}</legend>${TAX.vendors.filter((v) => v.group === g).map((v) => `<label><input type="checkbox" value="${esc(v.id)}" ${state.stack.has(v.id) ? "checked" : ""}>${esc(v.id)}</label>`).join("")}</fieldset>`).join("") +
     `<div class="stack-actions"><button type="button" class="linkbtn" data-stack="clear">Show all vendors</button><button type="button" class="linkbtn" data-stack="done">Done</button></div>`;
   $("stackSummary").textContent = state.stack.size ? [...state.stack].slice(0, 3).join(", ") + (state.stack.size > 3 ? ` +${state.stack.size - 3}` : "") : "all vendors";
+  updateFilterCount();
+}
+function updateFilterCount() {
+  const n = (state.stack.size ? 1 : 0) + (state.action ? 1 : 0) + (state.q ? 1 : 0);
+  const c = $("filterCount");
+  c.hidden = n === 0;
+  c.textContent = n;
 }
 
 /* ---------- render: front page ---------- */
-function briefHtml(x, withMore = true) {
-  return `<button type="button" class="brief" data-open="${esc(x.id)}">
+function briefHtml(x, withMore = true, cls = "") {
+  return `<button type="button" class="brief${cls ? " " + cls : ""}" data-open="${esc(x.id)}">
 <div class="kicker">${kicker(x)}</div>
 <h3>${esc(x.title)}</h3>
 <p>${esc(x.whyCare)}</p>${withMore ? `<div class="more">Read: what to do →</div>` : ""}</button>`;
@@ -155,12 +164,14 @@ function renderFront() {
 <p class="deck">${esc(lead.whyCare)}</p>
 <div class="byline"><span>${esc(fmtLong(lead.date))}</span><span>${esc(lead.layer)}</span><span class="checked">✓ Checked against ${(lead.sources || []).length === 1 ? "its source" : `${lead.sources.length} sources`}</span></div>
 <div class="lead-body">
-<div><div class="label" style="margin-bottom: 4px">What changed</div><p>${esc(lead.whatChanged)}</p></div>
-<div><div class="label" style="margin-bottom: 4px">What it means for your design</div><p>${esc(lead.architectureImplication)}</p>
+<div class="lb-changed"><div class="label" style="margin-bottom: 4px">What changed</div><p>${esc(lead.whatChanged)}</p></div>
+<div><div class="lb-design"><div class="label" style="margin-bottom: 4px">What it means for your design</div><p>${esc(lead.architectureImplication)}</p></div>
 <div class="todo"><div class="label">What to do</div><p>${esc(lead.learn)}</p></div></div>
 </div>
-<div class="linkrow">${src ? `<a href="${esc(src.url)}" rel="noopener" target="_blank">Read the source</a>` : ""}<button type="button" class="linkbtn" data-open="${esc(lead.id)}">Full story</button>${shareLinks(lead)}</div>`;
-    $("briefs").innerHTML = items.slice(1, 4).map((x) => briefHtml(x)).join("") || `<p class="empty">Nothing else this week.</p>`;
+<div class="linkrow"><button type="button" class="btn-solid read-btn" data-open="${esc(lead.id)}">Read the full story</button>${src ? `<a href="${esc(src.url)}" rel="noopener" target="_blank">Read the source</a>` : ""}${shareLinks(lead)}</div>`;
+    const more = items.length > 8 ? `All ${items.length} stories this week` : "All stories and earlier editions";
+    $("briefs").innerHTML = (items.slice(1, 4).map((x) => briefHtml(x)).join("") + items.slice(4, 8).map((x) => briefHtml(x, false, "phone-only")).join("")) || `<p class="empty">Nothing else this week.</p>`;
+    if (items.length > 1) $("briefs").insertAdjacentHTML("beforeend", `<button type="button" class="btn-outline phone-only more-btn" data-all="1">${esc(more)}</button>`);
     $("row4").innerHTML = items.slice(4, 8).map((x) => briefHtml(x, false)).join("");
   }
   const rest = items.length > 8 ? items.length - 8 : 0;
@@ -170,7 +181,7 @@ function renderFront() {
 
 function shareLinks(x) {
   const url = location.origin + location.pathname + "#item-" + encodeURIComponent(x.id);
-  return `<span class="push"><a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}" target="_blank" rel="noopener">Share on LinkedIn</a><button type="button" class="linkbtn" data-copy="${esc(url)}">Copy link</button></span>`;
+  return `<span class="push"><button type="button" class="linkbtn share-native" data-share="${esc(x.id)}">Share</button><a class="share-wide" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}" target="_blank" rel="noopener">Share on LinkedIn</a><button type="button" class="linkbtn share-wide" data-copy="${esc(url)}">Copy link</button></span>`;
 }
 
 function renderArchive() {
@@ -189,6 +200,9 @@ function renderNotices() {
   const dated = pool.filter((x) => x.action.by && x.action.by >= today).sort((a, b) => a.action.by.localeCompare(b.action.by));
   const undated = pool.filter((x) => !x.action.by && daysBetween(x.date, today) <= 60).sort((a, b) => b.date.localeCompare(a.date));
   const list = [...dated, ...undated].slice(0, 4);
+  const dn = $("dockDeadlines");
+  dn.hidden = dated.length === 0;
+  dn.textContent = dated.length;
   $("noticeList").innerHTML = list.length ? list.map((x) => {
     const when = x.action.by
       ? `<div class="when">${esc(fmtShort(x.action.by).toUpperCase())} · ${daysBetween(today, x.action.by)} DAYS LEFT</div>`
@@ -283,6 +297,7 @@ function renderHistory() {
 
   renderSelected();
   renderNumbers();
+  reveal();
 }
 
 function renderSelected() {
@@ -321,6 +336,8 @@ function openReader(id, push = true) {
   const x = byId.get(id);
   if (!x) return;
   const list = (arr) => (arr || []).map((s) => `<span>${esc(s)}</span>`).join("");
+  $("readerWhere").innerHTML = kicker(x, false);
+  $("readerShare").dataset.share = x.id;
   $("readerBody").innerHTML = `<div class="label">${kicker(x, false)} · ${x.kind === "milestone" ? "Milestone" : isWatching(x) ? "Milestone candidate" : "Signal"}</div>
 <h2 id="readerTitle">${esc(x.title)}</h2>
 <p class="deck">${esc(x.whyCare)}</p>
@@ -336,12 +353,92 @@ ${(x.decisions || []).length ? `<h4>Decisions this affects</h4><div class="chips
 <h4>Sources</h4><ul>${(x.sources || []).map((s) => `<li><a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.name)}</a></li>`).join("")}</ul>
 <div class="linkrow">${shareLinks(x)}</div>`;
   const dlg = $("reader");
-  if (!dlg.open) dlg.showModal();
+  if (!dlg.open) { dlg.showModal(); document.documentElement.classList.add("reading"); }
+  dlg.scrollTop = 0;
+  document.querySelector(".reader-bar").classList.remove("scrolled");
+  $("readerProgress").style.transform = "scaleX(0)";
   if (push) history.replaceState(null, "", location.pathname + location.search + "#item-" + encodeURIComponent(x.id));
 }
 function closeReader() {
   const dlg = $("reader");
   if (dlg.open) dlg.close();
+}
+
+/* ---------- sharing ---------- */
+function itemUrl(id) { return location.origin + location.pathname + "#item-" + encodeURIComponent(id); }
+async function share(id, btn) {
+  const x = byId.get(id);
+  if (!x) return;
+  const url = itemUrl(id);
+  if (navigator.share) {
+    try { await navigator.share({ title: x.title, text: x.whyCare, url }); } catch { /* cancelled */ }
+    return;
+  }
+  try { await navigator.clipboard.writeText(url); } catch { return; }
+  const old = btn.textContent;
+  btn.textContent = "Link copied";
+  setTimeout(() => (btn.textContent = old), 1800);
+}
+
+/* ---------- phone filter sheet ---------- */
+const isPhone = () => window.matchMedia("(max-width: 760px)").matches;
+function setSheet(open) {
+  document.body.classList.toggle("sheet-open", open);
+  $("sheetShade").hidden = !open;
+  $("filterBtn").setAttribute("aria-expanded", String(open));
+  $("stack").open = open && isPhone();
+  if (open) $("sheetDone").focus();
+}
+
+/* ---------- scroll behaviour ---------- */
+const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+let revealer = null;
+function reveal() {
+  if (calm || !("IntersectionObserver" in window)) return;
+  revealer = revealer || new IntersectionObserver((entries) => {
+    for (const e of entries) if (e.isIntersecting) { e.target.classList.add("in"); revealer.unobserve(e.target); }
+  }, { rootMargin: "0px 0px -6% 0px" });
+  document.querySelectorAll(".brief, .notice, .decision, .history-list details, .history-foot, .numbers b").forEach((el) => {
+    if (el.classList.contains("rv")) return;
+    el.classList.add("rv");
+    revealer.observe(el);
+  });
+}
+function scrollBehaviour() {
+  const bar = $("front");
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(([e]) => bar.classList.toggle("stuck", !e.isIntersecting && e.boundingClientRect.top < 0)).observe(document.querySelector(".masthead"));
+    const dockLinks = [...document.querySelectorAll("[data-dock]")];
+    const seen = new Map();
+    const spy = new IntersectionObserver((entries) => {
+      for (const e of entries) seen.set(e.target.id, e.isIntersecting);
+      const order = ["history", "decisions", "notices", "front"];
+      const on = order.find((id) => seen.get(id)) || "front";
+      dockLinks.forEach((a) => a.classList.toggle("on", a.dataset.dock === on));
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    ["front", "notices", "decisions", "history"].forEach((id) => spy.observe(id === "front" ? document.querySelector(".front") : $(id)));
+  }
+  let lastY = window.scrollY;
+  let ticking = false;
+  window.addEventListener("scroll", () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const y = window.scrollY;
+      if (isPhone() && !document.body.classList.contains("sheet-open")) {
+        if (y > lastY + 6 && y > 500) document.body.classList.add("tuck");
+        else if (y < lastY - 6 || y < 500) document.body.classList.remove("tuck");
+      }
+      lastY = y;
+      ticking = false;
+    });
+  }, { passive: true });
+  const dlg = $("reader");
+  dlg.addEventListener("scroll", () => {
+    const max = dlg.scrollHeight - dlg.clientHeight;
+    $("readerProgress").style.transform = `scaleX(${max > 0 ? Math.min(1, dlg.scrollTop / max) : 1})`;
+    document.querySelector(".reader-bar").classList.toggle("scrolled", dlg.scrollTop > 160);
+  }, { passive: true });
 }
 
 /* ---------- events ---------- */
@@ -352,21 +449,25 @@ function rerender() {
   renderFront();
   renderNotices();
   renderDecisions();
+  reveal();
 }
 
 function wire() {
   document.addEventListener("click", (e) => {
-    const t = e.target.closest("[data-section],[data-open],[data-mile],[data-decision],[data-copy],[data-stack],#clearFilters,#clearFilters2,#allBtn,#readerClose");
+    const t = e.target.closest("[data-section],[data-open],[data-mile],[data-decision],[data-copy],[data-share],[data-stack],[data-all],#clearFilters,#clearFilters2,#allBtn,#readerClose,#filterBtn,#sheetDone,#sheetShade");
     if (!t) return;
     if (t.dataset.section) { state.section = t.dataset.section; rerender(); }
     else if (t.dataset.open) openReader(t.dataset.open);
     else if (t.dataset.mile) { state.sel = t.dataset.mile; renderHistory(); if (window.matchMedia("(max-width: 760px)").matches) openReader(t.dataset.mile); }
     else if (t.dataset.decision) { state.decision = state.decision === t.dataset.decision ? null : t.dataset.decision; rerender(); $("front").scrollIntoView({ behavior: "smooth" }); }
+    else if (t.dataset.share) share(t.dataset.share, t);
+    else if (t.id === "filterBtn") setSheet(!document.body.classList.contains("sheet-open"));
+    else if (t.id === "sheetDone" || t.id === "sheetShade") setSheet(false);
     else if (t.dataset.copy) { navigator.clipboard?.writeText(t.dataset.copy).then(() => { t.textContent = "Link copied"; setTimeout(() => (t.textContent = "Copy link"), 1800); }); }
     else if (t.dataset.stack === "clear") { state.stack.clear(); rerender(); }
-    else if (t.dataset.stack === "done") { $("stack").open = false; }
+    else if (t.dataset.stack === "done") { if (document.body.classList.contains("sheet-open")) setSheet(false); else $("stack").open = false; }
     else if (t.id === "clearFilters" || t.id === "clearFilters2") { Object.assign(state, { section: "all", action: false, q: "", decision: null }); state.stack.clear(); $("search").value = ""; $("needsAction").checked = false; rerender(); }
-    else if (t.id === "allBtn") { state.showAll = !state.showAll; renderFront(); if (state.showAll) $("archive").scrollIntoView({ behavior: "smooth" }); }
+    else if (t.id === "allBtn" || t.dataset.all) { state.showAll = !state.showAll; renderFront(); if (state.showAll) $("archive").scrollIntoView({ behavior: "smooth" }); }
     else if (t.id === "readerClose") closeReader();
   });
   $("stackPanel").addEventListener("change", (e) => {
@@ -374,13 +475,18 @@ function wire() {
     if (e.target.checked) state.stack.add(e.target.value); else state.stack.delete(e.target.value);
     writeUrl(); renderTabs(); renderFront(); renderNotices();
     $("stackSummary").textContent = state.stack.size ? [...state.stack].slice(0, 3).join(", ") + (state.stack.size > 3 ? ` +${state.stack.size - 3}` : "") : "all vendors";
+    updateFilterCount();
   });
-  document.addEventListener("click", (e) => { const s = $("stack"); if (s.open && !s.contains(e.target)) s.open = false; });
+  document.addEventListener("click", (e) => { const s = $("stack"); if (s.open && !s.contains(e.target) && !document.body.classList.contains("sheet-open")) s.open = false; });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && document.body.classList.contains("sheet-open")) setSheet(false); });
   $("needsAction").addEventListener("change", (e) => { state.action = e.target.checked; rerender(); });
   let timer;
   $("search").addEventListener("input", (e) => { clearTimeout(timer); timer = setTimeout(() => { state.q = e.target.value.trim(); rerender(); }, 200); });
   $("reader").addEventListener("click", (e) => { if (e.target === $("reader")) closeReader(); });
-  $("reader").addEventListener("close", () => { if (location.hash.startsWith("#item-")) history.replaceState(null, "", location.pathname + location.search); });
+  $("reader").addEventListener("close", () => {
+    document.documentElement.classList.remove("reading");
+    if (location.hash.startsWith("#item-")) history.replaceState(null, "", location.pathname + location.search);
+  });
   window.addEventListener("hashchange", openFromHash);
 }
 function openFromHash() {
@@ -409,6 +515,7 @@ async function start() {
   if (Array.isArray(seen)) { const s = new Set(seen); newIds = new Set(weekItems.filter((x) => !s.has(x.id)).map((x) => x.id)); }
   store.set("radar.seen", DB.updates.map((x) => x.id));
 
+  document.documentElement.classList.toggle("can-share", !!navigator.share);
   readUrl();
   $("search").value = state.q;
   $("needsAction").checked = state.action;
@@ -417,6 +524,7 @@ async function start() {
   renderCorrections();
   renderHistory();
   wire();
+  scrollBehaviour();
   openFromHash();
 }
 start();

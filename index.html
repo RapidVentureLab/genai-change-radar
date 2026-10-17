@@ -11,12 +11,12 @@
 <meta property="og:type" content="website">
 <link rel="alternate" type="application/rss+xml" title="The GenAI Radar" href="feed.xml">
 <link rel="stylesheet" href="assets/fonts/fonts.css">
-<link rel="stylesheet" href="styles.css?v=22">
+<link rel="stylesheet" href="styles.css?v=24">
 </head>
 <body>
 <div class="wrap">
 
-<div class="topline">
+<div class="topline" id="top">
 <span id="today"></span>
 <span class="live" id="scanStatus">Loading today's edition</span>
 <a class="rvl-lockup" href="https://www.rapidventurelab.com/" rel="noopener" aria-label="Rapid Venture Lab"><svg class="rvl-mark" viewBox="0 0 206.35 218.6" aria-hidden="true"><polygon fill="#111111" points="0 41.26 0 79.62 51.49 131.11 0 182.59 0 218.6 2.35 218.6 89.85 131.11 0 41.26"></polygon><polygon fill="#39B54A" points="206.35 1.3 206.35 0 169.29 0 102.99 66.3 36.68 0 0 0 0 1.68 102.99 104.66 206.35 1.3"></polygon><polygon fill="#111111" points="154.86 126.83 206.35 75.33 206.35 36.98 116.5 126.83 206.35 216.67 206.35 178.31 154.86 126.83"></polygon></svg><span>Rapid Venture Lab</span></a>
@@ -39,18 +39,24 @@
 <a href="#history"><div class="num">4</div><div class="what">History</div><div class="desc" id="guideHistory">Milestones since 2022, clickable</div></a>
 </nav>
 
-<div class="sections" id="front" role="region" aria-label="Filters">
+<div class="sections" id="front" role="region" aria-label="Sections and filters">
+<a class="mini-mast" href="#top" aria-hidden="true" tabindex="-1"></a>
 <span class="label">Sections</span>
-<div id="tabs" style="display: contents"></div>
+<div class="tabs" id="tabs"></div>
 <span id="newPill" class="newpill" hidden></span>
 <span class="sep" aria-hidden="true"></span>
+<button type="button" class="filter-btn" id="filterBtn" aria-controls="filters" aria-expanded="false">Filter<span id="filterCount" hidden></span></button>
+<div class="filters" id="filters">
+<div class="sheet-head"><span class="label">Filter the paper</span><button type="button" class="linkbtn" id="sheetDone">Done</button></div>
 <details class="stack" id="stack">
-<summary>My stack: <span id="stackSummary">all vendors</span></summary>
+<summary>My stack<span class="ss">: <span id="stackSummary">all vendors</span></span></summary>
 <div class="stack-panel" id="stackPanel"></div>
 </details>
 <label class="toggle"><input type="checkbox" id="needsAction">Needs action only</label>
 <input type="search" class="search" id="search" placeholder="Search the paper" aria-label="Search the paper">
 </div>
+</div>
+<div class="sheet-shade" id="sheetShade" hidden></div>
 <p class="filter-note" id="filterNote" aria-live="polite" hidden></p>
 
 <main>
@@ -149,13 +155,25 @@
 </footer>
 </div>
 
+<nav class="dock" id="dock" aria-label="Jump to">
+<a href="#front" data-dock="front"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15"/><path d="M7 9h10M7 12.5h10M7 16h6"/></svg>Today</a>
+<a href="#notices" data-dock="notices"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9v4.5l3 2M9 3h6"/></svg>Deadlines<span class="dock-n" id="dockDeadlines" hidden></span></a>
+<a href="#decisions" data-dock="decisions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21v-7M12 14 6 8M12 14l6-6M6 8V4M18 8V4"/></svg>Decisions</a>
+<a href="#history" data-dock="history"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h18"/><circle cx="6" cy="12" r="2"/><circle cx="13" cy="12" r="2.6"/><circle cx="19" cy="12" r="1.6"/></svg>History</a>
+</nav>
+
 <dialog class="reader" id="reader" aria-labelledby="readerTitle">
+<div class="reader-bar">
+<button type="button" class="reader-close" id="readerClose"><span aria-hidden="true">←</span> Back<span class="wide"> to the paper</span></button>
+<span class="reader-where" id="readerWhere"></span>
+<button type="button" class="reader-share" id="readerShare">Share</button>
+<span class="reader-progress" id="readerProgress"></span>
+</div>
 <div class="reader-inner">
-<button type="button" class="reader-close" id="readerClose">Close</button>
 <div id="readerBody"></div>
 </div>
 </dialog>
 
-<script src="app.js?v=22" defer></script>
+<script src="app.js?v=24" defer></script>
 </body>
 </html>
