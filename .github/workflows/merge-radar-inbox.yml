@@ -2,6 +2,7 @@ name: Daily GenAI Change Radar
 
 on:
   push:
+    branches: [main]
     paths:
       - ".github/workflows/merge-radar-inbox.yml"
   schedule:
@@ -34,7 +35,7 @@ jobs:
         shell: bash
         run: |
           DAY="$(TZ=Europe/Berlin date +%F)"
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event_name }}" = "push" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           elif [ -f "inbox/$DAY.json" ]; then
             echo "Today's scan ($DAY) is already done. Skipping."
