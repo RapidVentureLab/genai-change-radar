@@ -86,6 +86,10 @@ python3 -m http.server   # then open http://localhost:8000
 - **Calendar:** `deadlines.ics`, every item with an action deadline. Subscribe to it in Outlook, Google Calendar or Apple Calendar.
 - **Open data:** `updates.json`, the full dataset.
 
+## Licence
+
+The stories and data (`updates.json`, the feeds and the story pages) are licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse them freely, with credit and a link. The code, prompts and design are not licensed for reuse. See [LICENSE.md](LICENSE.md).
+
 ## Data policy
 
 `updates.json` holds public-source technology developments only. No private customer information, personal data, credentials or interview notes.
