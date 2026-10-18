@@ -40,6 +40,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <link>${SITE}</link>
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
+    <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
     <lastBuildDate>${new Date(db.updatedAt || Date.now()).toUTCString()}</lastBuildDate>
 ${rssItems.join("\n")}
   </channel>
