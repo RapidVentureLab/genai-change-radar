@@ -18,7 +18,9 @@ A daily paper on the changes in GenAI that matter for system design. Every item 
 flowchart LR
     A[Vendor changelogs,<br/>docs and blogs] --> B[Research agent<br/>daily]
     B --> C[Editor agent<br/>rewrites to style guide]
-    C --> D{Checks}
+    C --> K[Link check]
+    K --> FC[Fact-check agent<br/>compares with sources]
+    FC --> D{Checks}
     D -- pass --> E[updates.json]
     D -- fail --> H[inbox/held<br/>for review]
     E --> F[Website]
@@ -29,8 +31,9 @@ flowchart LR
 
 1. **Every morning** a GitHub Actions workflow runs a research agent. It reads primary sources (vendor changelogs, documentation, engineering blogs) and writes new items to `inbox/<date>.json`.
 2. **An editor agent** rewrites each item to the [style guide](docs/STYLE.md). A guard script throws away its edits if it changed anything besides wording.
-3. **Checks run.** A style check holds items with banned words, contrast framing or fields over their word limit in `inbox/held/`. Items that pass are merged into `updates.json` and the site rebuilds.
-4. **Once a month** another workflow reopens every milestone source to catch broken links, and reviews milestone candidates. Promotions arrive as a pull request. Nothing enters the history until a person merges it.
+3. **A link check and a fact check run.** Every source link is opened. Then a second agent reads each item's sources and compares every name, number, date and status with what the sources say. Items whose primary source does not open, or with a claim the sources do not support, are held. Each day's verdicts are saved in `inbox/factcheck/`.
+4. **Checks run.** A style check holds items with banned words, contrast framing or fields over their word limit in `inbox/held/`. Items that pass are merged into `updates.json` and the site rebuilds.
+5. **Once a month** another workflow reopens every milestone source to catch broken links, and reviews milestone candidates. Promotions arrive as a pull request. Nothing enters the history until a person merges it.
 
 ### Signals and milestones
 
@@ -45,6 +48,8 @@ The daily agent can only flag a signal as a milestone candidate. Many milestones
 |---|---|---|
 | Research agent finished | Daily | The run fails and GitHub emails the owner |
 | Editor guard | Daily | The rewrite is discarded, the original wording continues |
+| Link check | Daily | The item is held if its primary source, or every source, does not open |
+| Fact check (second agent) | Daily | The item is held if a claim is not supported by its sources. If the agent cannot run, items continue and the audit file records it |
 | Schema check (vendors, decisions, deadlines) | Daily | The item is held in `inbox/held/` |
 | Style check | Daily | The item is held in `inbox/held/` |
 | Dataset verification | Daily | The run fails |
@@ -58,7 +63,7 @@ index.html, app.js, styles.css, assets/   the website (served by GitHub Pages)
 updates.json                              the dataset: every signal and milestone
 feed.xml, deadlines.ics, status.json      RSS feed, deadline calendar and scan status, rebuilt daily
 s/                                        share pages and LinkedIn preview cards, one per story, rebuilt daily
-inbox/                                    daily scan results; held/ for items that failed checks
+inbox/                                    daily scan results; held/ for items that failed checks; factcheck/ for each day's verdicts
 docs/STYLE.md                             writing guide used by the agents and the style check
 docs/MILESTONE_RULES.md                   what counts as a milestone, and how new ones are added
 docs/TAXONOMY.md, docs/taxonomy.json      allowed vendors, decisions and action types for filtering

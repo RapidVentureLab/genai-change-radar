@@ -99,7 +99,7 @@
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-13-langchain-deep-agents-deploy</link>
       <guid isPermaLink="false">2026-10-13-langchain-deep-agents-deploy</guid>
       <pubDate>Tue, 13 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Teams get a middle path between building their own agent runtime and adopting one vendor's managed agent service. What to do: Compare it with self-hosting and with managed services such as Bedrock AgentCore. Test memory export, isolation, approvals and beta reliability before you store production state in it.</description>
+      <description>Teams get a middle path between building their own agent runtime and adopting one vendor's managed agent service. What to do: Compare it with self-hosting and with managed services such as Bedrock AgentCore. Before you store production state in it, test memory export, sandbox isolation, approvals and how reliable the beta is.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>LangChain</category>
     </item>
@@ -188,20 +188,20 @@
       <category>Anthropic</category>
     </item>
     <item>
-      <title>Cross-platform agent governance is becoming a standalone enterprise control layer</title>
+      <title>Dataiku launches Agent Management to govern agents across vendor platforms</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-24-cross-platform-agent-management</link>
       <guid isPermaLink="false">2026-09-24-cross-platform-agent-management</guid>
       <pubDate>Thu, 24 Sep 2026 06:00:00 GMT</pubDate>
-      <description>Enterprises adopting agents across multiple clouds and SaaS platforms need portfolio-level visibility that no single agent platform naturally provides. Governance is moving from controls inside each builder/runtime toward an independent inventory, evaluation and risk layer. What to do: Understand agent inventory, OpenTelemetry-based observability, lifecycle governance, certification, business-value measurement and why multi-vendor agent estates create a control-plane problem.</description>
+      <description>Companies that run agents on several clouds and SaaS platforms need one view of all of them. No single agent platform gives that view. What to do: Learn how agent inventories and OpenTelemetry-based monitoring work, and why running agents from several vendors needs one place to see and control them.</description>
       <category>Production &amp; Business</category>
       <category>Other</category>
     </item>
     <item>
-      <title>Enterprise AI is shifting from seat licensing toward measured agent work</title>
+      <title>Microsoft describes an AI operating model with separate economics for agent work</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-23-microsoft-ai-work-system-economics</link>
       <guid isPermaLink="false">2026-09-23-microsoft-ai-work-system-economics</guid>
       <pubDate>Wed, 23 Sep 2026 06:00:00 GMT</pubDate>
-      <description>As agents perform variable amounts of work, a flat per-user software price no longer describes the full economics. Architecture and product teams increasingly need to measure cost and quality per completed task or workflow, while keeping models portable and agents governed. What to do: Understand cost per successful task, model routing, agent evaluation loops, centralized governance and the difference between predictable human-seat pricing and variable autonomous-work consumption.</description>
+      <description>Agents do variable amounts of work, so a flat price per user no longer covers the cost. Teams need to measure cost and quality per finished task or workflow. What to do: Track cost per successful task. Learn how model routing and agent test loops work, and how seat pricing differs from paying for agent work by use.</description>
       <category>Production &amp; Business</category>
       <category>Microsoft</category>
     </item>
@@ -224,16 +224,16 @@
       <category>OpenAI</category>
     </item>
     <item>
-      <title>Agent security is moving from app security to actor-level control</title>
+      <title>Each agent needs its own identity, permissions and audit trail</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-18-agent-security-controls</link>
       <guid isPermaLink="false">2026-09-18-agent-security-controls</guid>
       <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
-      <description>An agent with access to enterprise systems behaves more like a software actor than a chatbot. It needs its own operating controls. What to do: Least privilege, credential isolation, agent identity, sandboxing and approval gates.</description>
+      <description>An agent with access to company systems acts like a software user. It needs its own operating controls. What to do: Give each agent its own credentials with the fewest permissions it needs. Run it in a sandbox, log what it does and require approval for risky actions.</description>
       <category>Production &amp; Business</category>
       <category>Google Cloud</category>
     </item>
     <item>
-      <title>Agent runtimes are becoming more elastic for long-running and bursty agents</title>
+      <title>AWS AgentCore Runtime V2 starts agents faster and frees idle memory</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-18-agentcore-runtime-v2</link>
       <guid isPermaLink="false">2026-09-18-agentcore-runtime-v2</guid>
       <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
@@ -242,7 +242,7 @@
       <category>AWS</category>
     </item>
     <item>
-      <title>Inference-aware routing is becoming a managed production primitive</title>
+      <title>AWS HyperPod Inference Gateway routes LLM requests by cache and queue state</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-18-hyperpod-inference-gateway</link>
       <guid isPermaLink="false">2026-09-18-hyperpod-inference-gateway</guid>
       <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
@@ -251,11 +251,11 @@
       <category>AWS</category>
     </item>
     <item>
-      <title>Long-running agent reliability is becoming the real bottleneck</title>
+      <title>Microsoft Research shows agents get less reliable on longer tasks</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-18-long-running-agent-reliability</link>
       <guid isPermaLink="false">2026-09-18-long-running-agent-reliability</guid>
       <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
-      <description>For enterprise architecture, the question is moving from whether an agent can do one task to whether it can complete a long workflow safely and repeatedly. What to do: Long-horizon reliability, persistent state, retries, recovery, verification and human escalation.</description>
+      <description>The question for enterprise teams moves from whether an agent can do one task to whether it can finish a long workflow safely, again and again. What to do: Keep agent state outside the model. Add retries, recovery points and checks between steps, and hand the run to a person when it goes wrong.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>Microsoft</category>
     </item>
@@ -269,11 +269,11 @@
       <category>OpenAI</category>
     </item>
     <item>
-      <title>Business data, analysis, dashboards, and action are converging into one agent workflow</title>
+      <title>OpenAI's data agent combines company data, analysis and dashboards in one workflow</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-10-data-agent</link>
       <guid isPermaLink="false">2026-09-10-data-agent</guid>
       <pubDate>Thu, 10 Sep 2026 06:00:00 GMT</pubDate>
-      <description>It packages retrieval, business context, analysis, and reporting into a simpler experience for non-specialists. What to do: The architectural issues move to data permissions, metric definitions, provenance, freshness, and auditability.</description>
+      <description>People without analyst skills can get from a question to a shareable analysis themselves. What to do: Before you connect such an agent, check data permissions, shared metric definitions, where each number comes from, how fresh it is and how you audit it.</description>
       <category>Data &amp; Knowledge</category>
       <category>OpenAI</category>
     </item>
@@ -287,20 +287,20 @@
       <category>OpenAI</category>
     </item>
     <item>
-      <title>Managed agent runtimes continue to reduce custom harness work</title>
+      <title>More providers package agent runtimes as managed services</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-10-managed-agent-runtimes</link>
       <guid isPermaLink="false">2026-09-10-managed-agent-runtimes</guid>
       <pubDate>Thu, 10 Sep 2026 06:00:00 GMT</pubDate>
-      <description>The underlying patterns already existed, but lower implementation friction changes build-versus-buy decisions. What to do: Agent harness means state, context, tools, execution, retries, permissions, memory and observability.</description>
+      <description>Teams could already build these pieces. Managed versions cut the work, which changes the build or buy decision. What to do: List what your agent harness does today: state, context, tools, execution, retries, permissions, memory and monitoring. Check which parts a managed runtime covers.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>OpenAI</category>
     </item>
     <item>
-      <title>Automated research moved from aspiration to an internal working milestone</title>
+      <title>OpenAI says it now has an automated research intern under human supervision</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-06-automated-research</link>
       <guid isPermaLink="false">2026-09-06-automated-research</guid>
       <pubDate>Sun, 06 Sep 2026 06:00:00 GMT</pubDate>
-      <description>Automating parts of AI research itself is a directional signal toward agents that improve the speed of capability and alignment research. What to do: Watch research automation because it can accelerate both model progress and the need for alignment and governance.</description>
+      <description>If AI speeds up AI research, new model capabilities may arrive faster, and so may the need for alignment and safety work. What to do: Expect model releases to keep speeding up. Plan for model changes as a regular event in your architecture.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>OpenAI</category>
     </item>
@@ -314,7 +314,7 @@
       <category>OpenAI</category>
     </item>
     <item>
-      <title>Teams start to evaluate the path an agent takes as well as its answer</title>
+      <title>Teams now check the path an agent takes as well as its answer</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-01-enterprise-evals</link>
       <guid isPermaLink="false">2026-09-01-enterprise-evals</guid>
       <pubDate>Tue, 01 Sep 2026 06:00:00 GMT</pubDate>
@@ -323,11 +323,11 @@
       <category>Microsoft</category>
     </item>
     <item>
-      <title>Enterprise AI is moving from assistance toward execution inside real workflows</title>
+      <title>OpenAI examples show agents doing multi-step work inside company workflows</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-01-workflow-execution</link>
       <guid isPermaLink="false">2026-09-01-workflow-execution</guid>
       <pubDate>Tue, 01 Sep 2026 06:00:00 GMT</pubDate>
-      <description>The important application shift is not a better chatbot. It is delegation of substantive parts of a business process. What to do: Start workflow design with task boundaries, data, tools, approvals, failure handling, and measurable outcome.</description>
+      <description>The change that matters is delegation. Companies hand agents real parts of a business process. What to do: Start each agent workflow by defining the task boundary, the data and tools it needs, who approves what, what happens on failure and how you measure success.</description>
       <category>Application &amp; Workflow</category>
       <category>OpenAI</category>
     </item>
@@ -368,11 +368,11 @@
       <category>Google</category>
     </item>
     <item>
-      <title>Enterprise agent building, governance, and scale became a single platform concern</title>
+      <title>Google Cloud brings agent building, governance and scale into one platform</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-04-24-gemini-agent-platform</link>
       <guid isPermaLink="false">2026-04-24-gemini-agent-platform</guid>
       <pubDate>Fri, 24 Apr 2026 06:00:00 GMT</pubDate>
-      <description>Agent infrastructure is becoming a first-class cloud platform category rather than a collection of disconnected components. What to do: Compare integrated agent platforms on portability, observability, governance, cost, and ecosystem fit.</description>
+      <description>Cloud providers now sell agent infrastructure as one platform, so teams can buy it whole. What to do: Compare agent platforms on how easily you can move off them, what you can see and control, what they cost and how well they fit your stack.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>Google Cloud</category>
       <category>Google</category>

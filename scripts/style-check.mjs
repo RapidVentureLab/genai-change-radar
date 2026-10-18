@@ -85,7 +85,7 @@ function checkItem(item) {
 
   if (typeof item.title === "string") {
     const t = words(item.title);
-    const first = (t[0] || "").toLowerCase().replace(/[^a-z-]/g, "");
+    const first = (t[0] || "").toLowerCase().replace(/[^a-z0-9-]/g, "");
     if (GENERIC_STARTS.has(first)) warnings.push(`title: starts with "${t[0]}". Start with the actor`);
     const early = t.slice(1, 6).map((w) => w.toLowerCase().replace(/[^a-z]/g, ""));
     const hasVerb = early.some((w) => w === "now" || (/^[a-z]{3,}s$/.test(w) && !/(ss|us|is|ics)$/.test(w)));
