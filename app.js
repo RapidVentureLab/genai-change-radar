@@ -42,7 +42,7 @@ const daysBetween = (a, b) => Math.round((new Date(b + "T12:00:00Z") - new Date(
 
 /* ---------- helpers ---------- */
 const layerShort = (x) => (LAYER[x.layer] || {}).short || x.layer;
-const leadVendor = (x) => (x.vendors || []).find((v) => !TOPIC_VENDORS.has(v)) || (x.vendors || [])[0] || "";
+const leadVendor = (x) => (x.vendors || []).find((v) => !TOPIC_VENDORS.has(v)) || (x.vendors || []).find((v) => v !== "Other") || "";
 const actionLabel = (x) => (x.action ? ((TAX.actionTypes.find((a) => a.id === x.action.type) || {}).label || "Action") : "");
 const decisionLabel = (id) => ((TAX.decisions.find((d) => d.id === id) || {}).label || id);
 const isWatching = (x) => x.candidate && x.candidate.status === "watching";

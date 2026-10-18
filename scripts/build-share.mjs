@@ -15,6 +15,7 @@ import os from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { createHash } from "node:crypto";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const BASE = "https://rapidventurelab.github.io/genai-change-radar/";
@@ -29,7 +30,7 @@ const TOPICS = new Set(["Open models", "Open standards", "Other"]);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const fmt = (d) => new Date(d + "T12:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
 const actionLabel = (x) => (x.action ? (tax.actionTypes.find((a) => a.id === x.action.type) || {}).label || "Action" : "");
-const vendor = (x) => (x.vendors || []).find((v) => !TOPICS.has(v)) || (x.vendors || [])[0] || "";
+const vendor = (x) => (x.vendors || []).find((v) => !TOPICS.has(v)) || (x.vendors || []).find((v) => v !== "Other") || "";
 const todo = (x) => (x.action && x.action.what) || x.learn || "";
 const storyUrl = (x) => `${BASE}#item-${encodeURIComponent(x.id)}`;
 
@@ -179,7 +180,13 @@ async function openChrome(bin) {
       const { data } = await send("Page.captureScreenshot", { format: "png", clip: { x: 0, y: 0, width: 1200, height: 627, scale: 1 } });
       fs.writeFileSync(outPng, Buffer.from(data, "base64"));
     },
-    close() { try { ws.close(); } catch {} proc.kill(); fs.rmSync(profile, { recursive: true, force: true }); },
+    async close() {
+      try { ws.close(); } catch {}
+      const exited = new Promise((r) => proc.once("exit", r));
+      proc.kill();
+      await Promise.race([exited, new Promise((r) => setTimeout(r, 3000))]);
+      try { fs.rmSync(profile, { recursive: true, force: true }); } catch { /* Chrome may still hold files; the OS cleans temp */ }
+    },
   };
 }
 
@@ -193,6 +200,13 @@ let removed = 0;
 for (const f of fs.readdirSync(outDir)) if (f.endsWith(".html") && !ids.has(f.slice(0, -5))) { fs.unlinkSync(path.join(outDir, f)); removed++; }
 for (const f of fs.readdirSync(imgDir)) if (f.endsWith(".png") && !ids.has(f.slice(0, -4))) { fs.unlinkSync(path.join(imgDir, f)); removed++; }
 
+// A card is redrawn when anything shown on it changes. manifest.json keeps a hash per story.
+const manifestFile = path.join(imgDir, "manifest.json");
+const manifest = fs.existsSync(manifestFile) ? JSON.parse(fs.readFileSync(manifestFile, "utf8")) : {};
+// Bump CARD_VERSION when the card design changes, so every card is redrawn once.
+const CARD_VERSION = 2;
+const cardHash = (x) => createHash("sha1").update(JSON.stringify([CARD_VERSION, x.title, x.whyCare, todo(x), x.date, x.kind, x.layer, x.vendors, x.action, (x.sources || []).length, NAME])).digest("hex").slice(0, 12);
+for (const id of Object.keys(manifest)) if (!ids.has(id)) delete manifest[id];
 let drawn = 0, failed = 0;
 const bin = args.has("--no-images") ? null : findChrome();
 if (!bin && !args.has("--no-images")) console.warn("No Chrome found. Share pages will use the general preview image.");
@@ -201,16 +215,18 @@ const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "share-"));
 try {
   for (const x of db.updates) {
     const png = path.join(imgDir, `${x.id}.png`);
-    if (browser && (args.has("--force") || !fs.existsSync(png))) {
+    const h = cardHash(x);
+    if (browser && (args.has("--force") || !fs.existsSync(png) || manifest[x.id] !== h)) {
       const html = path.join(tmp, `${x.id}.html`);
       fs.writeFileSync(html, cardHtml(x));
-      try { await browser.shoot("file://" + html, png); drawn++; }
+      try { await browser.shoot("file://" + html, png); manifest[x.id] = h; drawn++; }
       catch (err) { failed++; console.warn(`Could not draw ${x.id}: ${err.message}`); }
     }
     fs.writeFileSync(path.join(outDir, `${x.id}.html`), pageHtml(x, fs.existsSync(png)));
   }
 } finally {
-  if (browser) browser.close();
+  fs.writeFileSync(manifestFile, JSON.stringify(manifest, null, 2) + "\n");
+  if (browser) await browser.close();
   fs.rmSync(tmp, { recursive: true, force: true });
 }
 console.log(JSON.stringify({ pages: db.updates.length, imagesDrawn: drawn, imagesFailed: failed, removed }));
