@@ -95,6 +95,31 @@ jobs:
           copilot -p "$PROMPT" -s --no-ask-user --allow-tool='write' || echo "Editor pass did not finish. Keeping the research agent's wording."
           node scripts/guard-editor-pass.mjs "$RUNNER_TEMP/inbox-before-editor.json" "$RADAR_INBOX"
 
+      - name: Link check (hold items whose sources do not open)
+        if: steps.guard.outputs.run == 'true'
+        shell: bash
+        run: node scripts/check-item-links.mjs "$RADAR_INBOX" --hold
+
+      - name: Fact check (a second model compares each item with its sources)
+        if: steps.guard.outputs.run == 'true'
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          echo "FACTCHECK_OUTPUT=$RUNNER_TEMP/factcheck.json" >> "$GITHUB_ENV"
+          export FACTCHECK_OUTPUT="$RUNNER_TEMP/factcheck.json"
+          if [ "$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.env.RADAR_INBOX,"utf8")).updates.length)')" = "0" ]; then
+            echo "No items to check."
+            exit 0
+          fi
+          PROMPT="$(cat .github/prompts/factcheck.md)"
+          copilot -p "$PROMPT" -s --no-ask-user --allow-tool='write,url' --allow-all-urls || echo "Fact check agent did not finish."
+
+      - name: Apply fact check (hold unsupported items)
+        if: steps.guard.outputs.run == 'true'
+        shell: bash
+        run: node scripts/fact-check-apply.mjs "$RADAR_INBOX" "$FACTCHECK_OUTPUT" --hold
+
       - name: Schema check (hold items with bad tags or dates)
         if: steps.guard.outputs.run == 'true'
         shell: bash
@@ -128,6 +153,7 @@ jobs:
           git add "$RADAR_INBOX" updates.json feed.xml deadlines.ics status.json
           if [ -d s ]; then git add s; fi
           if [ -d inbox/held ]; then git add inbox/held; fi
+          if [ -d inbox/factcheck ]; then git add inbox/factcheck; fi
           if git diff --cached --quiet; then
             echo "No change to commit."
             exit 0

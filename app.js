@@ -97,7 +97,9 @@ function renderTop() {
   $("today").textContent = new Date().toLocaleDateString("en-GB", { weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "Europe/Berlin" });
   const last = (STATUS && STATUS.lastScan) || DB.updatedAt;
   const when = last ? new Date(last).toLocaleString("en-GB", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit", timeZone: "Europe/Berlin" }) : "unknown";
-  const pub = STATUS ? ` · ${STATUS.publishedLastScan} new · ${STATUS.heldLastScan} held` : "";
+  const fc = STATUS && STATUS.factCheck;
+  const fcText = fc && fc.ran && fc.checked ? ` · ${fc.supported} of ${fc.checked} confirmed by fact check` : "";
+  const pub = STATUS ? ` · ${STATUS.publishedLastScan} new · ${STATUS.heldLastScan} held${fcText}` : "";
   $("scanStatus").textContent = `Last scan ${when}${pub}`;
   const ms = DB.updates.filter((x) => x.kind === "milestone").length;
   $("guideHistory").textContent = `${ms} milestones since 2022, clickable`;
@@ -252,7 +254,7 @@ function renderCorrections() {
   const held = (STATUS && STATUS.held) || [];
   $("corrections").innerHTML = held.length
     ? `<p>These items failed our checks and are held for review:</p><ul>${held.slice(0, 5).map((h) => `<li>${esc(h.title)} <span class="ui" style="font-size: 14px">(${esc((h.reasons || [])[0] || "check failed")})</span></li>`).join("")}</ul>`
-    : `<p>None in the latest scan. Items that fail our checks are held for review and listed here.</p>`;
+    : `<p>None in the latest scan. Every new item goes through a link check, a fact check against its sources, and style and data checks. Items that fail are held for review and listed here.</p>`;
 }
 
 /* ---------- history ---------- */

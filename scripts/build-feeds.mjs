@@ -96,7 +96,14 @@ const lastScanDay = (db.updatedAt || "").slice(0, 10);
 const inboxToday = path.join(root, "inbox", `${lastScanDay}.json`);
 const publishedToday = fs.existsSync(inboxToday) ? (JSON.parse(fs.readFileSync(inboxToday, "utf8")).updates || []).length : 0;
 const heldToday = held.filter((h) => h.day === lastScanDay).length;
-const status = { lastScan: db.updatedAt, publishedLastScan: publishedToday, heldLastScan: heldToday, held: held.slice(0, 10) };
+const fcFile = path.join(root, "inbox", "factcheck", `${lastScanDay}.json`);
+let factCheck = null;
+if (fs.existsSync(fcFile)) {
+  const fc = JSON.parse(fs.readFileSync(fcFile, "utf8"));
+  const n = (k) => (fc.items || []).filter((i) => i.verdict === k).length;
+  factCheck = { ran: !!fc.ran, checked: (fc.items || []).length, supported: n("supported"), unsupported: n("unsupported"), unverifiable: n("unverifiable") };
+}
+const status = { lastScan: db.updatedAt, publishedLastScan: publishedToday, heldLastScan: heldToday, factCheck, held: held.slice(0, 10) };
 fs.writeFileSync(path.join(root, "status.json"), JSON.stringify(status, null, 2) + "\n");
 
 console.log(JSON.stringify({ rssItems: rssItems.length, deadlines: deadlines.length, held: held.length, publishedLastScan: publishedToday }));
