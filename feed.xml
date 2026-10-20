@@ -6,7 +6,26 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Mon, 19 Oct 2026 09:55:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 20 Oct 2026 09:26:48 GMT</lastBuildDate>
+    <item>
+      <title>Google Cloud includes Antigravity in Gemini Enterprise subscriptions</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-20-google-antigravity-enterprise</link>
+      <guid isPermaLink="false">2026-10-20-google-antigravity-enterprise</guid>
+      <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
+      <description>You can give coding teams an agent across their preferred editors while using Gemini Enterprise for identity, spend and governance controls. Check which extensions are generally available before rollout. What to do: Check license eligibility and preview status for each IDE. Set spend caps, sandbox and MCP policies, and audit settings before you roll it out.</description>
+      <category>Application &amp; Workflow</category>
+      <category>Google</category>
+      <category>Google Cloud</category>
+    </item>
+    <item>
+      <title>AWS releases TorchNeuron 2.33.0 for Trainium as a public beta</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-20-torchneuron</link>
+      <guid isPermaLink="false">2026-10-20-torchneuron</guid>
+      <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
+      <description>You can run standard PyTorch training and inference code on Trainium, which gives teams a new deployment option alongside GPUs and hosted model APIs. What to do: Check supported models, operators and Ubuntu versions before moving workloads. Test the public beta, and confirm your environment supports Ubuntu 26.04, the target for current wheels.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
     <item>
       <title>GitHub enforces license policy on new dependencies, including those added by agents</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-16-github-open-source-license-compliance-ga</link>
@@ -451,25 +470,6 @@
       <pubDate>Fri, 16 May 2025 06:00:00 GMT</pubDate>
       <description>Coding agents moved off the developer's machine and into managed cloud sandboxes. What to do: Decide which repositories and secrets a cloud agent may access. Track the cost and quality of agent work.</description>
       <category>Application &amp; Workflow</category>
-      <category>OpenAI</category>
-    </item>
-    <item>
-      <title>Google announces A2A, a protocol for agents to work with other agents</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-04-09-a2a</link>
-      <guid isPermaLink="false">2025-04-09-a2a</guid>
-      <pubDate>Wed, 09 Apr 2025 06:00:00 GMT</pubDate>
-      <description>Agent-to-agent interoperability became a stated industry goal. Standards still need adoption before teams can rely on them. What to do: Track which vendors support A2A. Adopt it when your partners or customers need cross-vendor agents.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>Google</category>
-      <category>Open standards</category>
-    </item>
-    <item>
-      <title>OpenAI launches the Responses API, built-in tools and an Agents SDK</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-03-11-responses-agents</link>
-      <guid isPermaLink="false">2025-03-11-responses-agents</guid>
-      <pubDate>Tue, 11 Mar 2025 06:00:00 GMT</pubDate>
-      <description>Teams could buy core agent infrastructure as a managed service and write less orchestration code. What to do: Decide which parts of the agent harness to buy and which to build. Check what you can export or move later.</description>
-      <category>Agent &amp; Infrastructure</category>
       <category>OpenAI</category>
     </item>
   </channel>

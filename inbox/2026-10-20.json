@@ -1,0 +1,101 @@
+{
+  "scannedAt": "2026-10-20T11:26:48+02:00",
+  "updates": [
+    {
+      "id": "2026-10-20-google-antigravity-enterprise",
+      "date": "2026-10-20",
+      "layer": "Application & Workflow",
+      "kind": "signal",
+      "changeType": "enterprise agent distribution",
+      "impact": "Packaging / distribution",
+      "title": "Google Cloud includes Antigravity in Gemini Enterprise subscriptions",
+      "whatChanged": "Google Cloud made Google Antigravity available in eligible Gemini Enterprise subscriptions on 20 October. Admins can control project spend, pooled quotas, overages, sandboxing, browser and MCP access, and audit logging. IDE extensions bring Antigravity to VS Code, Visual Studio, JetBrains, and Zed; some integrations remain in preview.",
+      "whyCare": "You can give coding teams an agent across their preferred editors while using Gemini Enterprise for identity, spend and governance controls. Check which extensions are generally available before rollout.",
+      "before": "Teams managed Antigravity separately from Gemini Enterprise subscriptions, including its tools and admin controls.",
+      "after": "Eligible Gemini Enterprise subscriptions now include Antigravity, along with pooled quotas, project spend caps, usage metrics, audit logs and policy controls across supported surfaces.",
+      "learn": "Check license eligibility and preview status for each IDE. Set spend caps, sandbox and MCP policies, and audit settings before you roll it out.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Google Cloud - Expanding Google Antigravity for enterprise customers",
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/expanding-google-antigravity-for-enterprise-customers"
+        },
+        {
+          "name": "Google Antigravity - Antigravity IDE Extensions",
+          "url": "https://antigravity.google/blog/antigravity-ide-extensions"
+        }
+      ],
+      "architectureImplication": "Google Cloud now offers Antigravity as a managed coding-agent option within Gemini Enterprise. Compare its license scope, IDE coverage, identity controls, audit collection and quota behavior with your stack.",
+      "tradeoffs": [
+        "Cost",
+        "Control",
+        "Portability",
+        "Security"
+      ],
+      "vendors": [
+        "Google",
+        "Google Cloud"
+      ],
+      "decisions": [
+        "build-vs-buy",
+        "identity-and-permissions",
+        "security-and-guardrails"
+      ]
+    },
+    {
+      "id": "2026-10-20-torchneuron",
+      "date": "2026-10-20",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "native pytorch backend",
+      "impact": "Packaging / distribution",
+      "title": "AWS releases TorchNeuron 2.33.0 for Trainium as a public beta",
+      "whatChanged": "AWS released TorchNeuron 2.33.0 as a public beta on 20 October for Trainium2 and Trainium3. TorchNeuron registers Trainium as a native PyTorch device and supports eager execution, torch.compile, standard distributed APIs and custom kernels through NKI. Hugging Face recommends Transformers, Diffusers, Accelerate, PEFT and TRL directly on Trainium.",
+      "whyCare": "You can run standard PyTorch training and inference code on Trainium, which gives teams a new deployment option alongside GPUs and hosted model APIs.",
+      "before": "Teams ran PyTorch XLA with Optimum Neuron, which maintained Neuron-specific model code and trainers.",
+      "after": "TorchNeuron exposes Trainium through PyTorch's native device backend, where standard models can use eager execution, torch.compile and distributed APIs on Trainium2 and Trainium3.",
+      "learn": "Check supported models, operators and Ubuntu versions before moving workloads. Test the public beta, and confirm your environment supports Ubuntu 26.04, the target for current wheels.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "PyTorch Blog - Introducing TorchNeuron: Native PyTorch backend for AWS Trainium",
+          "url": "https://pytorch.org/blog/introducing-torchneuron-native-pytorch-backend-for-aws-trainium/"
+        },
+        {
+          "name": "AWS Neuron - TorchNeuron 2.33.0 release notes",
+          "url": "https://github.com/aws-neuron/torch-neuronx/releases"
+        },
+        {
+          "name": "Hugging Face Blog - TorchNeuron: running HF models on AWS Trainium is easier than ever",
+          "url": "https://huggingface.co/blog/hf-torchneuron"
+        },
+        {
+          "name": "AWS Neuron documentation - What is TorchNeuron?",
+          "url": "https://awsdocs-neuron.readthedocs-hosted.com/en/latest/torch/about-pytorch-neuron.html"
+        }
+      ],
+      "architectureImplication": "TorchNeuron lets standard PyTorch APIs run on Trainium. Compare framework coverage, compilation behavior, hardware availability and total serving cost before moving workloads.",
+      "tradeoffs": [
+        "Compatibility",
+        "Cost",
+        "Complexity",
+        "Reliability"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "deployment"
+      ]
+    }
+  ]
+}
