@@ -106,14 +106,21 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          echo "FACTCHECK_OUTPUT=$RUNNER_TEMP/factcheck.json" >> "$GITHUB_ENV"
-          export FACTCHECK_OUTPUT="$RUNNER_TEMP/factcheck.json"
+          # The agent can only write inside the project folder, so the verdicts go there (git-ignored).
+          mkdir -p .factcheck
+          echo "FACTCHECK_OUTPUT=$GITHUB_WORKSPACE/.factcheck/verdicts.json" >> "$GITHUB_ENV"
+          export FACTCHECK_OUTPUT="$GITHUB_WORKSPACE/.factcheck/verdicts.json"
           if [ "$(node -e 'console.log(JSON.parse(require("fs").readFileSync(process.env.RADAR_INBOX,"utf8")).updates.length)')" = "0" ]; then
             echo "No items to check."
             exit 0
           fi
-          PROMPT="$(cat .github/prompts/factcheck.md)"
+          PROMPT="$(cat .github/prompts/factcheck.md)
+
+          File paths for this run:
+          RADAR_INBOX (read only): ${RADAR_INBOX}
+          FACTCHECK_OUTPUT (write your verdicts here): ${FACTCHECK_OUTPUT}"
           copilot -p "$PROMPT" -s --no-ask-user --allow-tool='write,url' --allow-all-urls || echo "Fact check agent did not finish."
+          if [ -f "$FACTCHECK_OUTPUT" ]; then echo "Verdicts written."; else echo "::warning::The fact check agent wrote no verdicts file."; fi
 
       - name: Apply fact check (hold unsupported items)
         if: steps.guard.outputs.run == 'true'
