@@ -1,0 +1,27 @@
+{
+  "ran": true,
+  "checkedAt": "2026-10-21T09:25:00+00:00",
+  "items": [
+    {
+      "id": "2026-10-20-mistral-voxtral-3",
+      "title": "Mistral launches Voxtral 3 for real-time voice agents",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://mistral.ai/news/voxtral-3/",
+        "https://docs.mistral.ai/studio/audio/overview"
+      ],
+      "problems": []
+    },
+    {
+      "id": "2026-10-20-google-meta-torchtpu",
+      "title": "Google and Meta introduce TorchTPU as a native PyTorch backend",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://pytorch.org/blog/introducing-torchtpu/",
+        "https://huggingface.co/blog/hf-torchtpu",
+        "https://github.com/google-pytorch/torch_tpu"
+      ],
+      "problems": []
+    }
+  ]
+}

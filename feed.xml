@@ -6,7 +6,7 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Tue, 20 Oct 2026 09:26:48 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 21 Oct 2026 09:23:12 GMT</lastBuildDate>
     <item>
       <title>Google Cloud includes Antigravity in Gemini Enterprise subscriptions</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-20-google-antigravity-enterprise</link>
@@ -16,6 +16,25 @@
       <category>Application &amp; Workflow</category>
       <category>Google</category>
       <category>Google Cloud</category>
+    </item>
+    <item>
+      <title>Google and Meta introduce TorchTPU as a native PyTorch backend</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-20-google-meta-torchtpu</link>
+      <guid isPermaLink="false">2026-10-20-google-meta-torchtpu</guid>
+      <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
+      <description>TorchTPU lets PyTorch teams evaluate TPU deployments in PyTorch. Since it remains in active development, check operator coverage and workload performance. What to do: Test your models, distributed patterns, supported operations, and compile behavior on TorchTPU. Compare its performance and total cost with PyTorch/XLA, GPUs, and AWS TorchNeuron.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Google</category>
+      <category>Meta</category>
+    </item>
+    <item>
+      <title>Mistral launches Voxtral 3 for real-time voice agents</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-20-mistral-voxtral-3</link>
+      <guid isPermaLink="false">2026-10-20-mistral-voxtral-3</guid>
+      <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
+      <description>You can build spoken agents without wiring separate transcription, reasoning, tool-use, and speech services. Mistral offers an EU-hosted API and self-deployment, giving you choices for audio processing and control. What to do: Compare latency, language coverage, transcription quality, deployment needs and cost with OpenAI's real-time audio offerings and separate speech stacks. Test audio retention and tool-action controls before using Voxtral in customer workflows.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Other</category>
     </item>
     <item>
       <title>AWS releases TorchNeuron 2.33.0 for Trainium as a public beta</title>
@@ -453,24 +472,6 @@
       <description>Model providers must now document their models, which gives teams more information when they choose one. What to do: Ask model vendors for their AI Act documentation. Use it in your model selection and risk records.</description>
       <category>Production &amp; Business</category>
       <category>EU regulation</category>
-    </item>
-    <item>
-      <title>OpenAI adds remote MCP servers and background mode to the Responses API</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-05-21-managed-mcp-background</link>
-      <guid isPermaLink="false">2025-05-21-managed-mcp-background</guid>
-      <pubDate>Wed, 21 May 2025 06:00:00 GMT</pubDate>
-      <description>Managed runtimes now handle more of the connections and long-running execution that agents need. What to do: Check what the managed runtime lets you see, export and secure. Decide how much lock-in you accept for the convenience.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>OpenAI</category>
-    </item>
-    <item>
-      <title>OpenAI launches Codex, a cloud coding agent that works on tasks in parallel</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-05-16-openai-codex-cloud-agent</link>
-      <guid isPermaLink="false">2025-05-16-openai-codex-cloud-agent</guid>
-      <pubDate>Fri, 16 May 2025 06:00:00 GMT</pubDate>
-      <description>Coding agents moved off the developer's machine and into managed cloud sandboxes. What to do: Decide which repositories and secrets a cloud agent may access. Track the cost and quality of agent work.</description>
-      <category>Application &amp; Workflow</category>
-      <category>OpenAI</category>
     </item>
   </channel>
 </rss>

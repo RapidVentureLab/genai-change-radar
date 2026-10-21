@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-10-20T11:26:48+02:00",
+  "updatedAt": "2026-10-21T11:23:12+02:00",
   "mentalModel": {
     "layers": [
       {
@@ -2998,6 +2998,101 @@
       ],
       "decisions": [
         "deployment"
+      ]
+    },
+    {
+      "id": "2026-10-20-mistral-voxtral-3",
+      "date": "2026-10-20",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "real-time voice agent stack",
+      "impact": "Packaging / distribution",
+      "title": "Mistral launches Voxtral 3 for real-time voice agents",
+      "whatChanged": "On 20 October, Mistral launched Voxtral 3, a voice-agent SDK that streams speech recognition, model reasoning, tool calls, and speech synthesis in one pipeline. Teams can use Mistral's EU-hosted API or deploy the models on their own infrastructure.",
+      "whyCare": "You can build spoken agents without wiring separate transcription, reasoning, tool-use, and speech services. Mistral offers an EU-hosted API and self-deployment, giving you choices for audio processing and control.",
+      "before": "Teams connected speech recognition, reasoning, tools, and speech synthesis as separate stages.",
+      "after": "Voxtral 3 combines listening, reasoning, tool calling, and speaking in a real-time pipeline. Teams can use hosted or self-deployed models.",
+      "learn": "Compare latency, language coverage, transcription quality, deployment needs and cost with OpenAI's real-time audio offerings and separate speech stacks. Test audio retention and tool-action controls before using Voxtral in customer workflows.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Mistral - Voxtral 3",
+          "url": "https://mistral.ai/news/voxtral-3/"
+        },
+        {
+          "name": "Mistral documentation - Audio overview",
+          "url": "https://docs.mistral.ai/studio/audio/overview"
+        }
+      ],
+      "architectureImplication": "Design the workflow around streaming audio, turn detection, tool permissions, and retention policy. Compare the integrated pipeline with separately replaceable speech and language services before you commit to it.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost",
+        "Control",
+        "Portability"
+      ],
+      "vendors": [
+        "Other"
+      ],
+      "decisions": [
+        "agent-vs-workflow",
+        "deployment",
+        "build-vs-buy"
+      ]
+    },
+    {
+      "id": "2026-10-20-google-meta-torchtpu",
+      "date": "2026-10-20",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "native pytorch tpu backend",
+      "impact": "Packaging / distribution",
+      "title": "Google and Meta introduce TorchTPU as a native PyTorch backend",
+      "whatChanged": "On 20 October, Google and Meta introduced TorchTPU, an open-source PyTorch backend for Google TPUs. It runs eager and torch.compile workloads and supports distributed training. The project reports that 5,000 popular Hugging Face models run out of the box.",
+      "whyCare": "TorchTPU lets PyTorch teams evaluate TPU deployments in PyTorch. Since it remains in active development, check operator coverage and workload performance.",
+      "before": "PyTorch teams ran TPU workloads through PyTorch/XLA or other accelerator-specific integrations.",
+      "after": "TorchTPU exposes TPUs as a PyTorch device and integrates with torch.compile, vLLM, SGLang, TorchTitan, and Ray.",
+      "learn": "Test your models, distributed patterns, supported operations, and compile behavior on TorchTPU. Compare its performance and total cost with PyTorch/XLA, GPUs, and AWS TorchNeuron.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "PyTorch Blog - Introducing TorchTPU",
+          "url": "https://pytorch.org/blog/introducing-torchtpu/"
+        },
+        {
+          "name": "Hugging Face - TorchTPU: TPUs, Natively",
+          "url": "https://huggingface.co/blog/hf-torchtpu"
+        },
+        {
+          "name": "Google and Meta - TorchTPU project",
+          "url": "https://github.com/google-pytorch/torch_tpu"
+        }
+      ],
+      "architectureImplication": "Evaluate TPU as a first-class PyTorch deployment target. Keep backend and hardware-specific tuning behind an interface. TorchTPU is in active development, so a simple device change does not guarantee peak performance.",
+      "tradeoffs": [
+        "Compatibility",
+        "Cost",
+        "Control",
+        "Complexity",
+        "Performance"
+      ],
+      "vendors": [
+        "Google",
+        "Meta"
+      ],
+      "decisions": [
+        "deployment",
+        "cost-and-routing"
       ]
     }
   ],
