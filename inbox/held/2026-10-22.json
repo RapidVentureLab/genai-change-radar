@@ -1,0 +1,103 @@
+{
+  "updates": [
+    {
+      "id": "2026-10-21-openai-models-google-cloud",
+      "date": "2026-10-21",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "cross-cloud model availability",
+      "impact": "Packaging / distribution",
+      "title": "Google Cloud adds OpenAI models to Model Garden",
+      "whatChanged": "On 21 October, Google Cloud opened a private preview of GPT-6 Astra, GPT-6.1 Sol, and GPT-6 Luna in Model Garden. Selected enterprise customers can call the models through Google Cloud APIs. Local Codex CLI and Desktop can use the Gemini platform for inference. Google says requests stay within the customer's data perimeter and are not used to train models.",
+      "whyCare": "You can test OpenAI models with Google Cloud identity, audit, and network controls. You can route usage through Cloud Marketplace and existing commitments, then compare preview access and controls with direct OpenAI API and other cloud model catalogs.",
+      "before": "Teams that used OpenAI's API managed inference separately from Google Cloud's model catalog, billing, and controls.",
+      "after": "Selected enterprises can call OpenAI models from Model Garden, route Codex CLI and Desktop through Gemini, and manage usage through Google Cloud Marketplace.",
+      "learn": "Test API compatibility, latency, model controls, billing, and data boundaries against your current endpoint. Confirm preview eligibility and check for policy or audit gaps before routing production workloads.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Google Cloud - Google Cloud brings OpenAI models to customers",
+          "url": "https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers"
+        },
+        {
+          "name": "OpenAI - OpenAI models are coming to Google Cloud",
+          "url": "https://openai.com/index/openai-models-google-cloud"
+        }
+      ],
+      "architectureImplication": "Route selected OpenAI workloads through Google Cloud if its billing, identity, network perimeter, and audit controls fit your platform. Keep endpoints replaceable because this private preview adds provider choice without a common interface.",
+      "tradeoffs": [
+        "Portability",
+        "Cost",
+        "Control",
+        "Availability"
+      ],
+      "vendors": [
+        "Google Cloud",
+        "OpenAI"
+      ],
+      "decisions": [
+        "model-selection",
+        "cost-and-routing",
+        "deployment"
+      ],
+      "heldReasons": [
+        "Fact check: The item dates the announcement to 21 October, but the readable Google Cloud source does not state an announcement date.",
+        "Fact check: The before field says teams managed OpenAI inference separately from Google's catalog, billing, and controls, but the source does not describe that prior arrangement."
+      ]
+    },
+    {
+      "id": "2026-10-21-ibm-granite-speech-5",
+      "date": "2026-10-21",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "open multilingual speech models",
+      "impact": "Incremental",
+      "title": "IBM updates Granite Speech models for multilingual, on-device transcription",
+      "whatChanged": "On 21 October, IBM released Granite Speech 5.0 2B and updated its 470M Turbo CTC and 4.1 2B Plus models. The 2B model adds language-ID prompts, keyword biasing for up to 2,000 terms, and long-form translation. Turbo CTC adds six languages and reaches 19,870 RTFx, about 1.6 times its August release, in IBM's tests.",
+      "whyCare": "You can serve these open-weight models locally with Transformers, vLLM, llama.cpp, or mlx-audio for multilingual transcription. Test accuracy and latency on your audio before replacing a managed speech API.",
+      "before": "Teams could run open speech models for local transcription, but these releases add multilingual, keyword-biased, and long-form options.",
+      "after": "Teams can run the 2B and 470M variants through common runtimes, with keyword lists and multilingual support. The 470M model targets high-throughput or on-device use.",
+      "learn": "Compare the models with your current speech service on representative languages, noisy audio, latency, and hardware. Test keyword biasing and long-form translation before moving a transcription workflow.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "IBM Granite on Hugging Face - Granite Speech 5.0",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5"
+        },
+        {
+          "name": "IBM Granite Speech 5.0 2B model",
+          "url": "https://huggingface.co/ibm-granite/granite-speech-5.0-2b"
+        }
+      ],
+      "architectureImplication": "Teams can process speech inside their infrastructure and choose model size based on latency and accuracy needs. Keep transcription and reasoning separate when the application needs different controls or vendors.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost",
+        "Control",
+        "Complexity"
+      ],
+      "vendors": [
+        "IBM",
+        "Open models"
+      ],
+      "decisions": [
+        "model-selection",
+        "hosted-vs-open",
+        "deployment"
+      ],
+      "heldReasons": [
+        "Fact check: The item says IBM released Granite Speech 5.0 2B on 21 October, but its model card gives the release date as 20 October; the blog announcement was published on 21 October.",
+        "Fact check: The after field says both the 2B and 470M variants run through common runtimes, but these sources document runtime support only for the 2B model."
+      ]
+    }
+  ]
+}

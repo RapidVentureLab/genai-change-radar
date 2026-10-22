@@ -1,13 +1,30 @@
 {
-  "lastScan": "2026-10-21T11:23:12+02:00",
-  "publishedLastScan": 2,
-  "heldLastScan": 0,
+  "lastScan": "2026-10-22T11:26:00+02:00",
+  "publishedLastScan": 0,
+  "heldLastScan": 2,
   "factCheck": {
     "ran": true,
     "checked": 2,
-    "supported": 2,
-    "unsupported": 0,
+    "supported": 0,
+    "unsupported": 2,
     "unverifiable": 0
   },
-  "held": []
+  "held": [
+    {
+      "day": "2026-10-22",
+      "title": "Google Cloud adds OpenAI models to Model Garden",
+      "reasons": [
+        "Fact check: The item dates the announcement to 21 October, but the readable Google Cloud source does not state an announcement date.",
+        "Fact check: The before field says teams managed OpenAI inference separately from Google's catalog, billing, and controls, but the source does not describe that prior arrangement."
+      ]
+    },
+    {
+      "day": "2026-10-22",
+      "title": "IBM updates Granite Speech models for multilingual, on-device transcription",
+      "reasons": [
+        "Fact check: The item says IBM released Granite Speech 5.0 2B on 21 October, but its model card gives the release date as 20 October; the blog announcement was published on 21 October.",
+        "Fact check: The after field says both the 2B and 470M variants run through common runtimes, but these sources document runtime support only for the 2B model."
+      ]
+    }
+  ]
 }
