@@ -1,0 +1,49 @@
+{
+  "scannedAt": "2026-10-23T11:20:55+02:00",
+  "updates": [
+    {
+      "id": "2026-10-22-aws-sagemaker-training-sessions",
+      "date": "2026-10-22",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "serverless custom training",
+      "impact": "Incremental",
+      "title": "AWS makes SageMaker AI training sessions generally available",
+      "whatChanged": "AWS made SageMaker AI training sessions generally available on 22 October. Stateful, serverless GPU sessions expose sampling, gradient and optimizer calls for custom supervised fine-tuning or reinforcement-learning loops. AWS manages GPU allocation, distributed execution, fault recovery and checkpoints for four supported models.",
+      "whyCare": "You can run custom loss functions, reward signals and multi-turn reinforcement-learning loops without operating GPU clusters. Check supported models and Regions before moving an experiment.",
+      "before": "Teams used predefined SageMaker customization recipes or managed their own GPU clusters for custom training loops.",
+      "after": "Teams can compose stateful SageMaker AI session calls for sampling, gradient updates and optimization. AWS allocates GPUs and manages distributed execution, fault recovery and checkpoints.",
+      "learn": "Check supported models and Regions. Compare per-token charges with GPU job costs. Test recovery, checkpointing and model quality on your reward loop.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - Announcing new ways to customize models with SageMaker AI, without managing GPUs",
+          "url": "https://aws.amazon.com/blogs/machine-learning/announcing-new-ways-to-customize-models-with-sagemaker-ai-without-managing-gpus/"
+        },
+        {
+          "name": "AWS SageMaker AI - Training session APIs",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/customizing-models-training-sessions.html"
+        }
+      ],
+      "architectureImplication": "Keep reward logic, evaluation and loop control in your code. Call SageMaker AI for GPU-backed sampling and weight updates. Validate data movement, session quotas and cost against self-managed training jobs.",
+      "tradeoffs": [
+        "Cost",
+        "Control",
+        "Portability",
+        "Complexity"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "managed-vs-custom-runtime",
+        "deployment",
+        "cost-and-routing"
+      ]
+    }
+  ]
+}

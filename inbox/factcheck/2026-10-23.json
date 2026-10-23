@@ -1,0 +1,16 @@
+{
+  "ran": true,
+  "checkedAt": "2026-10-23T09:22:18+00:00",
+  "items": [
+    {
+      "id": "2026-10-22-aws-sagemaker-training-sessions",
+      "title": "AWS makes SageMaker AI training sessions generally available",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/announcing-new-ways-to-customize-models-with-sagemaker-ai-without-managing-gpus/",
+        "https://docs.aws.amazon.com/sagemaker/latest/dg/customizing-models-training-sessions.html"
+      ],
+      "problems": []
+    }
+  ]
+}
