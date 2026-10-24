@@ -72,5 +72,6 @@
   "2026-10-20-torchneuron": "58162807e2a4",
   "2026-10-20-mistral-voxtral-3": "97dadedfdaaa",
   "2026-10-20-google-meta-torchtpu": "23a04d813680",
-  "2026-10-22-aws-sagemaker-training-sessions": "d4c417a4d093"
+  "2026-10-22-aws-sagemaker-training-sessions": "d4c417a4d093",
+  "2026-10-23-github-copilot-client-usage-metrics": "3d94ead51999"
 }

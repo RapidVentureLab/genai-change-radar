@@ -1,0 +1,15 @@
+{
+  "ran": true,
+  "checkedAt": "2026-10-24T08:54:20+00:00",
+  "items": [
+    {
+      "id": "2026-10-23-github-copilot-client-usage-metrics",
+      "title": "GitHub adds client-level Copilot usage metrics",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-10-23-usage-metrics-api-adds-usage-from-tools-like-opencode/"
+      ],
+      "problems": []
+    }
+  ]
+}
