@@ -1,0 +1,48 @@
+{
+  "updates": [
+    {
+      "id": "2026-10-23-aws-bedrock-web-search-controls",
+      "date": "2026-10-23",
+      "layer": "Data & Knowledge",
+      "kind": "signal",
+      "changeType": "web search controls",
+      "impact": "Incremental",
+      "title": "AWS adds domain and location controls to Bedrock Web Search",
+      "whatChanged": "AWS adds two optional controls to Amazon Bedrock Web Search on 23 October. The `web_search` tool accepts up to 100 allowed or blocked domains and optional user-location parameters in existing OpenAI Responses API requests. The controls are available in three commercial US Regions and AWS GovCloud (US-West).",
+      "whyCare": "You can constrain grounded answers to approved domains and tailor location-sensitive searches without a separate search connector. Check regional availability and page-fetch permissions before you rely on results.",
+      "before": "Bedrock Web Search could ground Responses API answers, but it had no domain filters or user-location controls.",
+      "after": "`web_search` accepts up to 100 allowed or blocked domains and optional user-location parameters in four supported AWS Regions.",
+      "learn": "Test allowlists and blocklists against your source policy. Check region support and set IAM permissions and `external_web_access` to match your fetch requirements.",
+      "cloudPrimitives": [
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - Web Search on Amazon Bedrock now supports domain filtering and user location controls",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/bedrock-web-search-domain-user-location/"
+        },
+        {
+          "name": "Amazon Bedrock User Guide - Web Search",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/web-search.html"
+        }
+      ],
+      "architectureImplication": "Use Bedrock Web Search when its indexed sources and four US Regions fit your requirements. Keep a separate search connector for other regions or custom retrieval behavior, and set fetch permissions to match your data boundary.",
+      "tradeoffs": [
+        "Source coverage",
+        "Regional availability",
+        "Retrieval control"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "build-vs-buy",
+        "security-and-guardrails"
+      ],
+      "heldReasons": [
+        "Fact check: The item says the change was announced on 23 October 2026 | Neither source states the announcement day; the AWS URL identifies only October."
+      ]
+    }
+  ]
+}

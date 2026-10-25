@@ -1,15 +1,22 @@
 {
-  "lastScan": "2026-10-24T10:52:42+02:00",
-  "publishedLastScan": 1,
-  "heldLastScan": 0,
+  "lastScan": "2026-10-25T10:09:28+01:00",
+  "publishedLastScan": 0,
+  "heldLastScan": 1,
   "factCheck": {
     "ran": true,
     "checked": 1,
-    "supported": 1,
-    "unsupported": 0,
+    "supported": 0,
+    "unsupported": 1,
     "unverifiable": 0
   },
   "held": [
+    {
+      "day": "2026-10-25",
+      "title": "AWS adds domain and location controls to Bedrock Web Search",
+      "reasons": [
+        "Fact check: The item says the change was announced on 23 October 2026 | Neither source states the announcement day; the AWS URL identifies only October."
+      ]
+    },
     {
       "day": "2026-10-22",
       "title": "Google Cloud adds OpenAI models to Model Garden",

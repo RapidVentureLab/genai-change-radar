@@ -1,0 +1,18 @@
+{
+  "ran": true,
+  "checkedAt": "2026-10-25T09:10:50+00:00",
+  "items": [
+    {
+      "id": "2026-10-23-aws-bedrock-web-search-controls",
+      "title": "AWS adds domain and location controls to Bedrock Web Search",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/10/bedrock-web-search-domain-user-location/",
+        "https://docs.aws.amazon.com/bedrock/latest/userguide/web-search.html"
+      ],
+      "problems": [
+        "The item says the change was announced on 23 October 2026 | Neither source states the announcement day; the AWS URL identifies only October."
+      ]
+    }
+  ]
+}
