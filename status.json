@@ -1,14 +1,8 @@
 {
-  "lastScan": "2026-10-25T10:09:28+01:00",
+  "lastScan": "2026-10-26T11:04:55+01:00",
   "publishedLastScan": 0,
-  "heldLastScan": 1,
-  "factCheck": {
-    "ran": true,
-    "checked": 1,
-    "supported": 0,
-    "unsupported": 1,
-    "unverifiable": 0
-  },
+  "heldLastScan": 0,
+  "factCheck": null,
   "held": [
     {
       "day": "2026-10-25",
