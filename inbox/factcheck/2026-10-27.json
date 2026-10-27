@@ -1,0 +1,28 @@
+{
+  "ran": true,
+  "checkedAt": "2026-10-27T09:52:39+00:00",
+  "items": [
+    {
+      "id": "2026-10-26-openai-gpt-6-1-terra",
+      "title": "OpenAI releases GPT-6.1 Terra, a lower-cost long-context model",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-6-1-terra-on-amazon-bedrock/",
+        "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot"
+      ],
+      "problems": [
+        "The item says OpenAI released GPT-6.1 Terra on 26 October, but neither readable source dates OpenAI's release; AWS says it announced Bedrock general availability.",
+        "The item says teams could previously use GPT-6.1 Sol and Luna and had no Terra tier, but neither readable source mentions Luna or establishes that prior state."
+      ]
+    },
+    {
+      "id": "2026-10-26-github-copilot-assisted-permissions-ga",
+      "title": "GitHub makes assisted permissions generally available across Copilot",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available"
+      ],
+      "problems": []
+    }
+  ]
+}

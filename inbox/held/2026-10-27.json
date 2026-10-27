@@ -1,0 +1,55 @@
+{
+  "updates": [
+    {
+      "id": "2026-10-26-openai-gpt-6-1-terra",
+      "date": "2026-10-26",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "lower-cost model tier",
+      "impact": "Incremental",
+      "title": "OpenAI releases GPT-6.1 Terra, a lower-cost long-context model",
+      "whatChanged": "OpenAI released GPT-6.1 Terra on 26 October. AWS made it generally available on Bedrock, and GitHub added it across Copilot plans and clients. AWS lists a one-million-token input window and token prices at least 50% below GPT-6.1 Sol and GPT-5.6 Terra.",
+      "whyCare": "Teams can route routine agentic work to a model that AWS says costs at least 50% less than Sol and has a million-token input window. Compare task cost and latency with current hosted and open alternatives.",
+      "before": "Teams could use GPT-6.1 Sol and Luna. They had no Terra tier for long-context, everyday agentic work.",
+      "after": "Bedrock users can call Terra directly. Copilot users can select it across supported clients. AWS lists token prices at least 50% below Sol and GPT-5.6 Terra.",
+      "learn": "Compare Terra with Sol and your current open-model alternative on coding and multimodal tasks. Measure cost per completed task, latency and error rates.",
+      "cloudPrimitives": [
+        "Amazon Bedrock",
+        "GitHub Copilot"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - Introducing GPT-6.1 Terra",
+          "url": "https://openai.com/index/introducing-gpt-6-1-terra"
+        },
+        {
+          "name": "AWS What's New - OpenAI GPT-6.1 Terra on Amazon Bedrock",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/openai-gpt-6-1-terra-on-amazon-bedrock/"
+        },
+        {
+          "name": "GitHub Changelog - GPT-6.1 Terra in GitHub Copilot",
+          "url": "https://github.blog/changelog/2026-10-26-gpt-6-1-terra-in-github-copilot"
+        }
+      ],
+      "architectureImplication": "Add Terra as an option for routine agentic coding. Compare quality, latency and total usage cost with Sol and existing alternatives. Manage model access and billing separately in Bedrock and Copilot.",
+      "tradeoffs": [
+        "Cost",
+        "Latency",
+        "Model choice"
+      ],
+      "vendors": [
+        "OpenAI",
+        "AWS",
+        "GitHub"
+      ],
+      "decisions": [
+        "model-selection",
+        "cost-and-routing"
+      ],
+      "heldReasons": [
+        "Fact check: The item says OpenAI released GPT-6.1 Terra on 26 October, but neither readable source dates OpenAI's release; AWS says it announced Bedrock general availability.",
+        "Fact check: The item says teams could previously use GPT-6.1 Sol and Luna and had no Terra tier, but neither readable source mentions Luna or establishes that prior state."
+      ]
+    }
+  ]
+}

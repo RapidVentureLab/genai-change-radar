@@ -1,9 +1,23 @@
 {
-  "lastScan": "2026-10-26T11:04:55+01:00",
-  "publishedLastScan": 0,
-  "heldLastScan": 0,
-  "factCheck": null,
+  "lastScan": "2026-10-27T10:51:07+01:00",
+  "publishedLastScan": 1,
+  "heldLastScan": 1,
+  "factCheck": {
+    "ran": true,
+    "checked": 2,
+    "supported": 1,
+    "unsupported": 1,
+    "unverifiable": 0
+  },
   "held": [
+    {
+      "day": "2026-10-27",
+      "title": "OpenAI releases GPT-6.1 Terra, a lower-cost long-context model",
+      "reasons": [
+        "Fact check: The item says OpenAI released GPT-6.1 Terra on 26 October, but neither readable source dates OpenAI's release; AWS says it announced Bedrock general availability.",
+        "Fact check: The item says teams could previously use GPT-6.1 Sol and Luna and had no Terra tier, but neither readable source mentions Luna or establishes that prior state."
+      ]
+    },
     {
       "day": "2026-10-25",
       "title": "AWS adds domain and location controls to Bedrock Web Search",

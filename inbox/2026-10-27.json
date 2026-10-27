@@ -1,0 +1,44 @@
+{
+  "scannedAt": "2026-10-27T10:51:07+01:00",
+  "updates": [
+    {
+      "id": "2026-10-26-github-copilot-assisted-permissions-ga",
+      "date": "2026-10-26",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "model-assisted permission checks",
+      "impact": "Incremental",
+      "title": "GitHub makes assisted permissions generally available across Copilot",
+      "whatChanged": "GitHub made assisted permissions generally available in Copilot CLI, the Copilot app and VS Code. A model evaluates command, file-path and URL requests. It lets requests it judges clearly safe proceed, while users must approve others. Enterprise admins can set defaults, block Allow All or disable assisted mode.",
+      "whyCare": "You can reduce routine approval prompts while keeping human review for requests the model does not classify as clearly safe. Admins can keep assisted mode available while blocking Allow All.",
+      "before": "Assisted permissions were not generally available. Developers could use manual approval or Allow All.",
+      "after": "Copilot now evaluates requested commands, file access and URL opens. It runs requests it judges clearly safe and asks for approval on others.",
+      "learn": "Pilot assisted mode on representative developer tasks. Review which requests proceed without approval. Set an enterprise default and decide whether policy allows Allow All.",
+      "cloudPrimitives": [
+        "Security",
+        "Policy",
+        "GitHub Copilot"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Copilot assisted permissions generally available",
+          "url": "https://github.blog/changelog/2026-10-26-github-copilot-assisted-permissions-generally-available"
+        }
+      ],
+      "architectureImplication": "Pilot assisted permissions on representative developer tasks and validate which operations proceed without review. Keep policy controls and sandboxing alongside the model's decision.",
+      "tradeoffs": [
+        "Approval latency",
+        "Security",
+        "Control"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "identity-and-permissions",
+        "human-approval",
+        "security-and-guardrails"
+      ]
+    }
+  ]
+}
