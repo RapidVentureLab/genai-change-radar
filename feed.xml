@@ -6,7 +6,16 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Tue, 27 Oct 2026 09:51:07 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 10:33:54 GMT</lastBuildDate>
+    <item>
+      <title>GitHub lets organization apps authenticate Copilot SDK agents</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-27-github-copilot-sdk-server-auth</link>
+      <guid isPermaLink="false">2026-10-27-github-copilot-sdk-server-auth</guid>
+      <pubDate>Tue, 27 Oct 2026 06:00:00 GMT</pubDate>
+      <description>You can run Copilot SDK services without a human account token. Your organization can apply its model policies and spend controls, while app-level usage reports show attribution and owners can revoke access. What to do: Test app-owned identity in a non-production service. Scope the GitHub App to the needed organization, rotate one-hour installation tokens, and verify usage reporting and revocation.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>GitHub</category>
+    </item>
     <item>
       <title>GitHub makes assisted permissions generally available across Copilot</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-26-github-copilot-assisted-permissions-ga</link>
@@ -461,16 +470,6 @@
       <description>Key agent standards moved under neutral governance, which lowers the risk of building on them. What to do: Prefer standards with neutral governance for long-lived integrations. Track the foundation's specification releases.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>Open standards</category>
-    </item>
-    <item>
-      <title>Anthropic adds context editing and a memory tool for long-running agents</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-09-29-platform-context-management</link>
-      <guid isPermaLink="false">2025-09-29-platform-context-management</guid>
-      <pubDate>Mon, 29 Sep 2025 06:00:00 GMT</pubDate>
-      <description>Agents can now run far longer than one context window because the platform manages what stays in context. What to do: Test how your agent behaves when old context is cleared or compacted. Decide what must go to durable memory.</description>
-      <category>Data &amp; Knowledge</category>
-      <category>Anthropic</category>
-      <category>OpenAI</category>
     </item>
   </channel>
 </rss>

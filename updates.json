@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-10-27T10:51:07+01:00",
+  "updatedAt": "2026-10-28T11:33:54+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -3213,6 +3213,48 @@
         "identity-and-permissions",
         "human-approval",
         "security-and-guardrails"
+      ]
+    },
+    {
+      "id": "2026-10-27-github-copilot-sdk-server-auth",
+      "date": "2026-10-27",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "workload identity",
+      "impact": "Incremental",
+      "title": "GitHub lets organization apps authenticate Copilot SDK agents",
+      "whatChanged": "GitHub added public-preview server-to-server authentication for the Copilot SDK on 27 October. Organization-installed GitHub Apps can use short-lived installation tokens without a signed-in user. GitHub attributes usage to the organization and bills it there. The organization applies its model policies, budgets and spending controls. Owners can audit app usage and revoke access.",
+      "whyCare": "You can run Copilot SDK services without a human account token. Your organization can apply its model policies and spend controls, while app-level usage reports show attribution and owners can revoke access.",
+      "before": "Services and agents relied on a signed-in user's credentials, tying authentication and usage to people. GitHub Actions already offered a built-in GITHUB_TOKEN route.",
+      "after": "An organization can grant a GitHub App the read-only Copilot Requests permission, then pass its one-hour installation token to the SDK. GitHub attributes usage to the app's organization.",
+      "learn": "Test app-owned identity in a non-production service. Scope the GitHub App to the needed organization, rotate one-hour installation tokens, and verify usage reporting and revocation.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - GitHub Copilot supports server-to-server authentication",
+          "url": "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication"
+        },
+        {
+          "name": "GitHub Docs - Server-to-server authentication",
+          "url": "https://docs.github.com/copilot/how-tos/copilot-sdk/auth/server-to-server-tokens"
+        }
+      ],
+      "architectureImplication": "Give persistent SDK services a GitHub App installation identity. Scope installations so organization policies, budgets and audit logs govern usage.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Cost"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "identity-and-permissions",
+        "cost-and-routing"
       ]
     }
   ],

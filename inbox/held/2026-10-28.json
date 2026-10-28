@@ -1,0 +1,48 @@
+{
+  "updates": [
+    {
+      "id": "2026-10-27-aws-ecs-gpu-sharing-mps",
+      "date": "2026-10-27",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "gpu sharing",
+      "impact": "Packaging / distribution",
+      "title": "AWS lets ECS tasks share NVIDIA GPUs through MPS",
+      "whatChanged": "AWS added NVIDIA Multi-Process Service (MPS) GPU sharing to Amazon ECS on 27 October. Multiple tasks can share one GPU with configured memory caps and optional compute ceilings. ECS places tasks by available memory and monitors MPS health on Managed Instances. The feature runs on ECS Managed Instances and EC2 in commercial and GovCloud Regions.",
+      "whyCare": "Teams can consolidate small-model inference, embeddings and multi-model serving on underused GPUs. MPS shares GPUs at the software level; compare it with dedicated GPUs or hardware partitions when workloads need stronger isolation.",
+      "before": "ECS assigned GPUs to tasks without MPS-based sharing. Light inference and embedding workloads could leave GPU capacity idle.",
+      "after": "ECS can place multiple containers or tasks on one GPU according to requested memory. Optional compute ceilings limit use but do not reserve compute.",
+      "learn": "Measure utilization and failure behavior before pooling workloads. Keep fault-sensitive services on dedicated GPUs or hardware partitions, because MPS shares a CUDA context.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - Amazon ECS now supports GPU sharing with NVIDIA MPS",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ecs-gpu-sharing-nvidia-mps/"
+        },
+        {
+          "name": "Amazon ECS documentation - Share GPUs on Amazon ECS",
+          "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu-sharing.html"
+        }
+      ],
+      "architectureImplication": "Use MPS to consolidate compatible inference and embedding workloads on underused GPUs. Keep fault-sensitive or tenant-isolated workloads on dedicated GPUs or hardware partitions. ECS places tasks by memory and treats compute settings as ceilings.",
+      "tradeoffs": [
+        "Cost",
+        "Isolation",
+        "Reliability"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "deployment",
+        "cost-and-routing"
+      ],
+      "heldReasons": [
+        "Fact check: The item says AWS announced this on 27 October; the What's New page gives no day in its text, and its URL specifies only October 2026."
+      ]
+    }
+  ]
+}

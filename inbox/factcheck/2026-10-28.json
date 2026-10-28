@@ -1,0 +1,28 @@
+{
+  "ran": true,
+  "checkedAt": "2026-10-28T10:36:02+00:00",
+  "items": [
+    {
+      "id": "2026-10-27-github-copilot-sdk-server-auth",
+      "title": "GitHub lets organization apps authenticate Copilot SDK agents",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-10-27-github-copilot-supports-server-to-server-authentication",
+        "https://docs.github.com/copilot/how-tos/copilot-sdk/auth/server-to-server-tokens"
+      ],
+      "problems": []
+    },
+    {
+      "id": "2026-10-27-aws-ecs-gpu-sharing-mps",
+      "title": "AWS lets ECS tasks share NVIDIA GPUs through MPS",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/10/amazon-ecs-gpu-sharing-nvidia-mps/",
+        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu-sharing.html"
+      ],
+      "problems": [
+        "The item says AWS announced this on 27 October; the What's New page gives no day in its text, and its URL specifies only October 2026."
+      ]
+    }
+  ]
+}

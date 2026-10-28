@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-10-27T10:51:07+01:00",
+  "lastScan": "2026-10-28T11:33:54+01:00",
   "publishedLastScan": 1,
   "heldLastScan": 1,
   "factCheck": {
@@ -10,6 +10,13 @@
     "unverifiable": 0
   },
   "held": [
+    {
+      "day": "2026-10-28",
+      "title": "AWS lets ECS tasks share NVIDIA GPUs through MPS",
+      "reasons": [
+        "Fact check: The item says AWS announced this on 27 October; the What's New page gives no day in its text, and its URL specifies only October 2026."
+      ]
+    },
     {
       "day": "2026-10-27",
       "title": "OpenAI releases GPT-6.1 Terra, a lower-cost long-context model",

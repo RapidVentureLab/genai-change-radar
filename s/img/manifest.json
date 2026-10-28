@@ -74,5 +74,6 @@
   "2026-10-20-google-meta-torchtpu": "23a04d813680",
   "2026-10-22-aws-sagemaker-training-sessions": "d4c417a4d093",
   "2026-10-23-github-copilot-client-usage-metrics": "3d94ead51999",
-  "2026-10-26-github-copilot-assisted-permissions-ga": "6ce152f18215"
+  "2026-10-26-github-copilot-assisted-permissions-ga": "6ce152f18215",
+  "2026-10-27-github-copilot-sdk-server-auth": "f17039ce0f65"
 }
