@@ -1,0 +1,17 @@
+{
+  "ran": true,
+  "checkedAt": "2026-10-29T10:56:45+00:00",
+  "items": [
+    {
+      "id": "2026-10-28-aws-lambda-durable-execution-telemetry",
+      "title": "AWS Lambda exports durable-run telemetry and adds an MCP query server",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/10/lambda-durable-telemetry/",
+        "https://aws.amazon.com/blogs/compute/observing-aws-lambda-durable-functions-with-the-durable-execution-telemetry-exporter/",
+        "https://docs.aws.amazon.com/durable-execution/sdk-reference/observability/telemetry/mcp/"
+      ],
+      "problems": []
+    }
+  ]
+}

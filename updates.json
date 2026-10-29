@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-10-28T11:33:54+01:00",
+  "updatedAt": "2026-10-29T11:55:17+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -3255,6 +3255,56 @@
       "decisions": [
         "identity-and-permissions",
         "cost-and-routing"
+      ]
+    },
+    {
+      "id": "2026-10-28-aws-lambda-durable-execution-telemetry",
+      "date": "2026-10-28",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "execution telemetry",
+      "impact": "Packaging / distribution",
+      "title": "AWS Lambda exports durable-run telemetry and adds an MCP query server",
+      "whatChanged": "AWS released the open-source Durable Execution Telemetry Exporter and a companion MCP server on 28 October. The exporter records each durable run's status, steps, waits, retries, timing, input and output, then sends a JSON record to one or more of 13 destinations. The MCP server queries TypeScript, Python and Java records read-only.",
+      "whyCare": "You can query a durable workflow across Lambda invocations without joining invocation logs and traces by hand. An MCP client can inspect records without writing queries for each data store.",
+      "before": "Lambda stored logs per invocation, splitting a durable run across streams. Teams had to aggregate records to analyze failures across runs.",
+      "after": "The exporter emits one structured record per execution and routes it to selected stores. An MCP server lets agents query supported records read-only.",
+      "learn": "Choose a destination and retention plan for run records. Redact inputs and outputs before export. Give the MCP server read-only AWS credentials.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security",
+        "Networking"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - Lambda durable telemetry",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/lambda-durable-telemetry/"
+        },
+        {
+          "name": "AWS Compute Blog - Observing AWS Lambda durable functions with the Durable Execution Telemetry Exporter",
+          "url": "https://aws.amazon.com/blogs/compute/observing-aws-lambda-durable-functions-with-the-durable-execution-telemetry-exporter/"
+        },
+        {
+          "name": "AWS Documentation - Durable Execution Telemetry MCP server",
+          "url": "https://docs.aws.amazon.com/durable-execution/sdk-reference/observability/telemetry/mcp/"
+        }
+      ],
+      "architectureImplication": "Treat run telemetry as a separate data product. Route records to stores that match your retention and query needs. Scope MCP access to read-only credentials.",
+      "tradeoffs": [
+        "Security",
+        "Cost",
+        "Complexity",
+        "Control"
+      ],
+      "vendors": [
+        "AWS",
+        "Open standards"
+      ],
+      "decisions": [
+        "observability-and-evals",
+        "integration-standards",
+        "security-and-guardrails"
       ]
     }
   ],

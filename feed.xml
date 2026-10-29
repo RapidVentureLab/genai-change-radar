@@ -6,7 +6,17 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Wed, 28 Oct 2026 10:33:54 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Oct 2026 10:55:17 GMT</lastBuildDate>
+    <item>
+      <title>AWS Lambda exports durable-run telemetry and adds an MCP query server</title>
+      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-28-aws-lambda-durable-execution-telemetry</link>
+      <guid isPermaLink="false">2026-10-28-aws-lambda-durable-execution-telemetry</guid>
+      <pubDate>Wed, 28 Oct 2026 06:00:00 GMT</pubDate>
+      <description>You can query a durable workflow across Lambda invocations without joining invocation logs and traces by hand. An MCP client can inspect records without writing queries for each data store. What to do: Choose a destination and retention plan for run records. Redact inputs and outputs before export. Give the MCP server read-only AWS credentials.</description>
+      <category>Production &amp; Business</category>
+      <category>AWS</category>
+      <category>Open standards</category>
+    </item>
     <item>
       <title>GitHub lets organization apps authenticate Copilot SDK agents</title>
       <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-27-github-copilot-sdk-server-auth</link>
@@ -460,15 +470,6 @@
       <category>Agent &amp; Infrastructure</category>
       <category>Anthropic</category>
       <category>OpenAI</category>
-      <category>Open standards</category>
-    </item>
-    <item>
-      <title>Linux Foundation forms the Agentic AI Foundation for MCP, goose and AGENTS.md</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-12-09-agentic-ai-foundation</link>
-      <guid isPermaLink="false">2025-12-09-agentic-ai-foundation</guid>
-      <pubDate>Tue, 09 Dec 2025 06:00:00 GMT</pubDate>
-      <description>Key agent standards moved under neutral governance, which lowers the risk of building on them. What to do: Prefer standards with neutral governance for long-lived integrations. Track the foundation's specification releases.</description>
-      <category>Agent &amp; Infrastructure</category>
       <category>Open standards</category>
     </item>
   </channel>
