@@ -43,7 +43,8 @@ for (const x of items) {
   const v = byId.get(x.id);
   const verdict = v && ["supported", "unsupported", "unverifiable"].includes(v.verdict) ? v.verdict : "unverifiable";
   const problems = (v && Array.isArray(v.problems) ? v.problems : []).map(String).filter(Boolean);
-  audit.push({ id: x.id, title: x.title, verdict, sourcesRead: (v && v.sourcesRead) || [], problems });
+  const notes = (v && Array.isArray(v.notes) ? v.notes : []).map(String).filter(Boolean);
+  audit.push({ id: x.id, title: x.title, verdict, sourcesRead: (v && v.sourcesRead) || [], problems, notes });
   if (verdict === "unsupported") failed.push({ x, reasons: problems.length ? problems.map((p) => `Fact check: ${p}`) : ["Fact check: a claim is not supported by the sources"] });
 }
 fs.writeFileSync(auditFile, JSON.stringify({ ran: true, checkedAt: verdicts.checkedAt, items: audit }, null, 2) + "\n");
@@ -53,6 +54,7 @@ const lines = [`Fact check: ${items.length} items. ${count("supported")} support
 for (const a of audit) {
   lines.push(`${a.verdict.padEnd(13)} ${a.id}`);
   for (const p of a.problems) lines.push(`              ${p}`);
+  for (const n of a.notes) lines.push(`              note: ${n}`);
 }
 const report = lines.join("\n");
 console.log(report);
