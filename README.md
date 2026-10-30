@@ -2,7 +2,7 @@
 
 A daily paper on the changes in GenAI that matter for system design. Every item says what changed, why it matters, and what to do about it.
 
-**Live:** https://rapidventurelab.github.io/genai-change-radar/
+**Live:** https://thedailymodel.rapidventurelab.com/
 
 ## Who it is for
 

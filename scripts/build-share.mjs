@@ -18,7 +18,7 @@ import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const BASE = "https://rapidventurelab.github.io/genai-change-radar/";
+const BASE = "https://thedailymodel.rapidventurelab.com/";
 const NAME = "The Daily Model";
 const args = new Set(process.argv.slice(2));
 
@@ -112,6 +112,9 @@ function pageHtml(x, hasImage) {
 <meta property="og:image:height" content="627">
 <meta property="article:published_time" content="${esc(x.date)}">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
 <link rel="stylesheet" href="../assets/fonts/fonts.css">
 <style>
 body{margin:0;background:#F3EFE4;color:#161616;font:18px/1.55 "Source Serif 4",Georgia,serif}
