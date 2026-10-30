@@ -6,7 +6,16 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Thu, 29 Oct 2026 10:55:17 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 10:53:42 GMT</lastBuildDate>
+    <item>
+      <title>AWS starts SageMaker jobs from SOCI-indexed images in seconds</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-29-aws-sagemaker-soci-images</link>
+      <guid isPermaLink="false">2026-10-29-aws-sagemaker-soci-images</guid>
+      <pubDate>Thu, 29 Oct 2026 06:00:00 GMT</pubDate>
+      <description>Large container pulls can leave paid accelerators idle before work starts. You can use pre-indexed AWS Deep Learning Containers or index your ECR image with open-source tools. Job definitions stay the same. What to do: Benchmark large images on actual jobs. Index images in ECR with supported tools or use AWS's pre-indexed -soci tags. Test workloads that read many image files before training.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
     <item>
       <title>AWS Lambda exports durable-run telemetry and adds an MCP query server</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-28-aws-lambda-durable-execution-telemetry</link>
@@ -460,17 +469,6 @@
       <category>Agent &amp; Infrastructure</category>
       <category>Google Cloud</category>
       <category>Google</category>
-    </item>
-    <item>
-      <title>Anthropic publishes Agent Skills as an open standard</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2025-12-18-agent-skills-open-standard</link>
-      <guid isPermaLink="false">2025-12-18-agent-skills-open-standard</guid>
-      <pubDate>Thu, 18 Dec 2025 06:00:00 GMT</pubDate>
-      <description>Teams can package instructions, scripts and resources for agents once and use them across vendors. What to do: Package repeated agent procedures as skills. Keep them in version control like code.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>Anthropic</category>
-      <category>OpenAI</category>
-      <category>Open standards</category>
     </item>
   </channel>
 </rss>

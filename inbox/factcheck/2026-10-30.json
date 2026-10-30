@@ -1,0 +1,53 @@
+{
+  "ran": true,
+  "checkedAt": "2026-10-30T10:57:00+00:00",
+  "items": [
+    {
+      "id": "2026-10-29-aws-sagemaker-soci-images",
+      "title": "AWS starts SageMaker jobs from SOCI-indexed images in seconds",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-ai-soci-images-training/",
+        "https://docs.aws.amazon.com/sagemaker/latest/dg/train-soci-indexed-images.html",
+        "https://aws.amazon.com/blogs/machine-learning/announcing-soci-indexed-images-for-faster-sagemaker-ai-jobs/"
+      ],
+      "problems": [],
+      "notes": [
+        "Sources identify October 2026 or say the feature is available today, but do not print the announcement day."
+      ]
+    },
+    {
+      "id": "2026-10-29-aws-step-functions-agentcore-connector",
+      "title": "AWS exposes Step Functions workflows as tools for AI agents",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/10/step-functions-workflows-ai-agent-tools/",
+        "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connector-step-functions.html"
+      ],
+      "problems": [
+        "Before: Teams wrote Lambda adapters or MCP servers to expose Step Functions; the sources say these are no longer needed but do not establish what teams previously did or had to do.",
+        "Before: Teams encoded business sequences in agents; the sources do not say this was the prior approach.",
+        "WhyCare: Step Functions preserves execution history without qualification; the documentation specifies execution history for Standard workflows, not Express workflows."
+      ],
+      "notes": [
+        "The announcement source says the capability is available today and its URL identifies October 2026, but neither source prints the announcement day."
+      ]
+    },
+    {
+      "id": "2026-10-29-langchain-managed-deep-agents-v010",
+      "title": "LangChain adds browser use and async subagents to Managed Deep Agents",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://www.langchain.com/blog/managed-deep-agents-browser-use-and-asynchronous-subagents",
+        "https://docs.langchain.com/langsmith/python/managed-deep-agents-browser-use",
+        "https://docs.langchain.com/langsmith/python/managed-deep-agents-subagents"
+      ],
+      "problems": [
+        "Before: Teams needed a separate browser service to use JavaScript-driven websites without APIs; the sources describe the new managed browser but do not establish this prior requirement."
+      ],
+      "notes": [
+        "The release post says v0.10 is out and in public beta today, but does not print the announcement day."
+      ]
+    }
+  ]
+}

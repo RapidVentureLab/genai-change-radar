@@ -1,15 +1,31 @@
 {
-  "lastScan": "2026-10-29T11:55:17+01:00",
+  "lastScan": "2026-10-30T11:53:42+01:00",
   "publishedLastScan": 1,
-  "heldLastScan": 0,
+  "heldLastScan": 2,
   "factCheck": {
     "ran": true,
-    "checked": 1,
+    "checked": 3,
     "supported": 1,
-    "unsupported": 0,
+    "unsupported": 2,
     "unverifiable": 0
   },
   "held": [
+    {
+      "day": "2026-10-30",
+      "title": "AWS exposes Step Functions workflows as tools for AI agents",
+      "reasons": [
+        "Fact check: Before: Teams wrote Lambda adapters or MCP servers to expose Step Functions; the sources say these are no longer needed but do not establish what teams previously did or had to do.",
+        "Fact check: Before: Teams encoded business sequences in agents; the sources do not say this was the prior approach.",
+        "Fact check: WhyCare: Step Functions preserves execution history without qualification; the documentation specifies execution history for Standard workflows, not Express workflows."
+      ]
+    },
+    {
+      "day": "2026-10-30",
+      "title": "LangChain adds browser use and async subagents to Managed Deep Agents",
+      "reasons": [
+        "Fact check: Before: Teams needed a separate browser service to use JavaScript-driven websites without APIs; the sources describe the new managed browser but do not establish this prior requirement."
+      ]
+    },
     {
       "day": "2026-10-28",
       "title": "AWS lets ECS tasks share NVIDIA GPUs through MPS",

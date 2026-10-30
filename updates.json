@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-10-29T11:55:17+01:00",
+  "updatedAt": "2026-10-30T11:53:42+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -3305,6 +3305,52 @@
         "observability-and-evals",
         "integration-standards",
         "security-and-guardrails"
+      ]
+    },
+    {
+      "id": "2026-10-29-aws-sagemaker-soci-images",
+      "date": "2026-10-29",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "lazy-loaded container images",
+      "impact": "Incremental",
+      "title": "AWS starts SageMaker jobs from SOCI-indexed images in seconds",
+      "whatChanged": "Amazon SageMaker AI added SOCI-indexed images for training and processing jobs on 29 October. SageMaker streams required files first, then fetches the rest while code runs. AWS says this cuts GPU idle time during image pulls by up to 90%. Jobs without an index still download the full image.",
+      "whyCare": "Large container pulls can leave paid accelerators idle before work starts. You can use pre-indexed AWS Deep Learning Containers or index your ECR image with open-source tools. Job definitions stay the same.",
+      "before": "SageMaker downloaded the complete image before running a job. Large deep-learning images could add minutes to each run.",
+      "after": "SageMaker checks for a SOCI index, starts the container with required files, then streams the rest. Unindexed images still require full downloads.",
+      "learn": "Benchmark large images on actual jobs. Index images in ECR with supported tools or use AWS's pre-indexed -soci tags. Test workloads that read many image files before training.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Networking"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - SageMaker AI supports SOCI-indexed images",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/sagemaker-ai-soci-images-training/"
+        },
+        {
+          "name": "AWS Documentation - Speed up training job startup with SOCI-indexed images",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-soci-indexed-images.html"
+        },
+        {
+          "name": "AWS Machine Learning Blog - Announcing SOCI-indexed images for faster SageMaker AI jobs",
+          "url": "https://aws.amazon.com/blogs/machine-learning/announcing-soci-indexed-images-for-faster-sagemaker-ai-jobs/"
+        }
+      ],
+      "architectureImplication": "Add indexes to image artifacts without changing job definitions. Compare SOCI with full pulls. Watch for jobs that read most image files before startup, when savings shrink.",
+      "tradeoffs": [
+        "Cost",
+        "Latency",
+        "Complexity"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "deployment",
+        "cost-and-routing"
       ]
     }
   ],

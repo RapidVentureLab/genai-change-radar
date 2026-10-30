@@ -76,5 +76,6 @@
   "2026-10-23-github-copilot-client-usage-metrics": "3d94ead51999",
   "2026-10-26-github-copilot-assisted-permissions-ga": "6ce152f18215",
   "2026-10-27-github-copilot-sdk-server-auth": "f17039ce0f65",
-  "2026-10-28-aws-lambda-durable-execution-telemetry": "bf76d144653d"
+  "2026-10-28-aws-lambda-durable-execution-telemetry": "bf76d144653d",
+  "2026-10-29-aws-sagemaker-soci-images": "75fee82a9a02"
 }

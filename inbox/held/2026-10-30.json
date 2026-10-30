@@ -1,0 +1,109 @@
+{
+  "updates": [
+    {
+      "id": "2026-10-29-aws-step-functions-agentcore-connector",
+      "date": "2026-10-29",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "workflow connector",
+      "impact": "Packaging / distribution",
+      "title": "AWS exposes Step Functions workflows as tools for AI agents",
+      "whatChanged": "AWS added a built-in Step Functions connector to Amazon Bedrock AgentCore Gateway on 29 October. Agents can call existing Standard and Express workflows through MCP. The gateway creates tool schemas and authenticates with its service role. The connector is available wherever AgentCore Gateway is available.",
+      "whyCare": "You can keep business steps in a defined workflow and let agents choose when to run it. Step Functions preserves step order and execution history, reducing custom tool wrappers.",
+      "before": "Teams wrote a Lambda adapter or MCP server to expose Step Functions to agents, or encoded the business sequence in the agent.",
+      "after": "A gateway target exposes selected Step Functions operations as MCP tools. The agent starts or inspects runs while the state machine controls the sequence.",
+      "learn": "Expose a low-risk workflow through a gateway target. Pin state machines, scope the gateway role, and test which operations agents can call. Treat task tokens as secrets.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security",
+        "Networking"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - Step Functions workflows as AI agent tools",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/step-functions-workflows-ai-agent-tools/"
+        },
+        {
+          "name": "AWS Documentation - Step Functions as an AgentCore Gateway connector target",
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connector-step-functions.html"
+        }
+      ],
+      "architectureImplication": "Keep approved sequences in Step Functions and give agents scoped gateway operations. Compare the built-in connector with custom MCP servers when workflows need unsupported operations.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Complexity"
+      ],
+      "vendors": [
+        "AWS",
+        "Open standards"
+      ],
+      "decisions": [
+        "agent-vs-workflow",
+        "integration-standards",
+        "identity-and-permissions"
+      ],
+      "heldReasons": [
+        "Fact check: Before: Teams wrote Lambda adapters or MCP servers to expose Step Functions; the sources say these are no longer needed but do not establish what teams previously did or had to do.",
+        "Fact check: Before: Teams encoded business sequences in agents; the sources do not say this was the prior approach.",
+        "Fact check: WhyCare: Step Functions preserves execution history without qualification; the documentation specifies execution history for Standard workflows, not Express workflows."
+      ]
+    },
+    {
+      "id": "2026-10-29-langchain-managed-deep-agents-v010",
+      "date": "2026-10-29",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "managed browser and async delegation",
+      "impact": "Incremental",
+      "title": "LangChain adds browser use and async subagents to Managed Deep Agents",
+      "whatChanged": "LangChain released Managed Deep Agents v0.10 in public beta on 29 October. LangSmith now runs an isolated remote browser for each thread or signed-in user, with browser tools and human handoff for login. Async subagents run in the background. The release removes connectors.mcp() and the sandbox scope option.",
+      "whyCare": "You can add website interaction and background delegation without operating a separate browser service. Thread scope isolates cookies; user scope shares a person's login across threads.",
+      "before": "Managed Deep Agents ran subagents inline. Teams needed a separate browser service to use JavaScript-driven websites without APIs.",
+      "after": "Managed agents can browse pages, hand control to a person for login, and keep working while async subagents run.",
+      "learn": "Test browser scope with nonproduction accounts. Keep thread scope for isolation. Review shared login state and tool permissions. Move MCP configuration to tools/mcp and remove sandbox scope before upgrading.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security",
+        "Networking",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "LangChain - Managed Deep Agents v0.10 adds browser use and asynchronous subagents",
+          "url": "https://www.langchain.com/blog/managed-deep-agents-browser-use-and-asynchronous-subagents"
+        },
+        {
+          "name": "LangChain Documentation - Managed Deep Agents browser use",
+          "url": "https://docs.langchain.com/langsmith/python/managed-deep-agents-browser-use"
+        },
+        {
+          "name": "LangChain Documentation - Managed Deep Agents subagents",
+          "url": "https://docs.langchain.com/langsmith/python/managed-deep-agents-subagents"
+        }
+      ],
+      "architectureImplication": "Compare LangSmith's managed browser with Browserbase or self-hosted Playwright on network access, identity, persistence and handoff. Treat user-scoped logins as shared credentials.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Complexity",
+        "Cost"
+      ],
+      "vendors": [
+        "LangChain"
+      ],
+      "decisions": [
+        "managed-vs-custom-agent-runtime",
+        "identity-and-permissions",
+        "human-approval"
+      ],
+      "action": {
+        "type": "breaking-change",
+        "what": "Move MCP configuration to tools/mcp and remove the sandbox scope option before upgrading to v0.10."
+      },
+      "heldReasons": [
+        "Fact check: Before: Teams needed a separate browser service to use JavaScript-driven websites without APIs; the sources describe the new managed browser but do not establish this prior requirement."
+      ]
+    }
+  ]
+}
