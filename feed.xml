@@ -2,14 +2,14 @@
 <rss version="2.0">
   <channel>
     <title>The Daily Model</title>
-    <link>https://rapidventurelab.github.io/genai-change-radar/</link>
+    <link>https://thedailymodel.rapidventurelab.com/</link>
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
     <lastBuildDate>Thu, 29 Oct 2026 10:55:17 GMT</lastBuildDate>
     <item>
       <title>AWS Lambda exports durable-run telemetry and adds an MCP query server</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-28-aws-lambda-durable-execution-telemetry</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-28-aws-lambda-durable-execution-telemetry</link>
       <guid isPermaLink="false">2026-10-28-aws-lambda-durable-execution-telemetry</guid>
       <pubDate>Wed, 28 Oct 2026 06:00:00 GMT</pubDate>
       <description>You can query a durable workflow across Lambda invocations without joining invocation logs and traces by hand. An MCP client can inspect records without writing queries for each data store. What to do: Choose a destination and retention plan for run records. Redact inputs and outputs before export. Give the MCP server read-only AWS credentials.</description>
@@ -19,7 +19,7 @@
     </item>
     <item>
       <title>GitHub lets organization apps authenticate Copilot SDK agents</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-27-github-copilot-sdk-server-auth</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-27-github-copilot-sdk-server-auth</link>
       <guid isPermaLink="false">2026-10-27-github-copilot-sdk-server-auth</guid>
       <pubDate>Tue, 27 Oct 2026 06:00:00 GMT</pubDate>
       <description>You can run Copilot SDK services without a human account token. Your organization can apply its model policies and spend controls, while app-level usage reports show attribution and owners can revoke access. What to do: Test app-owned identity in a non-production service. Scope the GitHub App to the needed organization, rotate one-hour installation tokens, and verify usage reporting and revocation.</description>
@@ -28,7 +28,7 @@
     </item>
     <item>
       <title>GitHub makes assisted permissions generally available across Copilot</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-26-github-copilot-assisted-permissions-ga</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-26-github-copilot-assisted-permissions-ga</link>
       <guid isPermaLink="false">2026-10-26-github-copilot-assisted-permissions-ga</guid>
       <pubDate>Mon, 26 Oct 2026 06:00:00 GMT</pubDate>
       <description>You can reduce routine approval prompts while keeping human review for requests the model does not classify as clearly safe. Admins can keep assisted mode available while blocking Allow All. What to do: Pilot assisted mode on representative developer tasks. Review which requests proceed without approval. Set an enterprise default and decide whether policy allows Allow All.</description>
@@ -37,7 +37,7 @@
     </item>
     <item>
       <title>GitHub adds client-level Copilot usage metrics</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-23-github-copilot-client-usage-metrics</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-23-github-copilot-client-usage-metrics</link>
       <guid isPermaLink="false">2026-10-23-github-copilot-client-usage-metrics</guid>
       <pubDate>Fri, 23 Oct 2026 06:00:00 GMT</pubDate>
       <description>You can compare Copilot model use across IDEs and external tools, then use request and token counts to guide support and governance. Client labels reflect integration IDs, so verify them against your own identity and endpoint telemetry. What to do: Enable the Copilot usage metrics policy. Compare client labels with your own telemetry before using them for attribution or governance.</description>
@@ -46,7 +46,7 @@
     </item>
     <item>
       <title>AWS makes SageMaker AI training sessions generally available</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-22-aws-sagemaker-training-sessions</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-22-aws-sagemaker-training-sessions</link>
       <guid isPermaLink="false">2026-10-22-aws-sagemaker-training-sessions</guid>
       <pubDate>Thu, 22 Oct 2026 06:00:00 GMT</pubDate>
       <description>You can run custom loss functions, reward signals and multi-turn reinforcement-learning loops without operating GPU clusters. Check supported models and Regions before moving an experiment. What to do: Check supported models and Regions. Compare per-token charges with GPU job costs. Test recovery, checkpointing and model quality on your reward loop.</description>
@@ -55,7 +55,7 @@
     </item>
     <item>
       <title>Google Cloud includes Antigravity in Gemini Enterprise subscriptions</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-20-google-antigravity-enterprise</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-20-google-antigravity-enterprise</link>
       <guid isPermaLink="false">2026-10-20-google-antigravity-enterprise</guid>
       <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
       <description>You can give coding teams an agent across their preferred editors while using Gemini Enterprise for identity, spend and governance controls. Check which extensions are generally available before rollout. What to do: Check license eligibility and preview status for each IDE. Set spend caps, sandbox and MCP policies, and audit settings before you roll it out.</description>
@@ -65,7 +65,7 @@
     </item>
     <item>
       <title>Google and Meta introduce TorchTPU as a native PyTorch backend</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-20-google-meta-torchtpu</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-20-google-meta-torchtpu</link>
       <guid isPermaLink="false">2026-10-20-google-meta-torchtpu</guid>
       <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
       <description>TorchTPU lets PyTorch teams evaluate TPU deployments in PyTorch. Since it remains in active development, check operator coverage and workload performance. What to do: Test your models, distributed patterns, supported operations, and compile behavior on TorchTPU. Compare its performance and total cost with PyTorch/XLA, GPUs, and AWS TorchNeuron.</description>
@@ -75,7 +75,7 @@
     </item>
     <item>
       <title>Mistral launches Voxtral 3 for real-time voice agents</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-20-mistral-voxtral-3</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-20-mistral-voxtral-3</link>
       <guid isPermaLink="false">2026-10-20-mistral-voxtral-3</guid>
       <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
       <description>You can build spoken agents without wiring separate transcription, reasoning, tool-use, and speech services. Mistral offers an EU-hosted API and self-deployment, giving you choices for audio processing and control. What to do: Compare latency, language coverage, transcription quality, deployment needs and cost with OpenAI's real-time audio offerings and separate speech stacks. Test audio retention and tool-action controls before using Voxtral in customer workflows.</description>
@@ -84,7 +84,7 @@
     </item>
     <item>
       <title>AWS releases TorchNeuron 2.33.0 for Trainium as a public beta</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-20-torchneuron</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-20-torchneuron</link>
       <guid isPermaLink="false">2026-10-20-torchneuron</guid>
       <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
       <description>You can run standard PyTorch training and inference code on Trainium, which gives teams a new deployment option alongside GPUs and hosted model APIs. What to do: Check supported models, operators and Ubuntu versions before moving workloads. Test the public beta, and confirm your environment supports Ubuntu 26.04, the target for current wheels.</description>
@@ -93,7 +93,7 @@
     </item>
     <item>
       <title>GitHub enforces license policy on new dependencies, including those added by agents</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-16-github-open-source-license-compliance-ga</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-16-github-open-source-license-compliance-ga</link>
       <guid isPermaLink="false">2026-10-16-github-open-source-license-compliance-ga</guid>
       <pubDate>Fri, 16 Oct 2026 06:00:00 GMT</pubDate>
       <description>Coding agents add dependencies quickly, so license checks need to happen when they choose a package and again at merge. What to do: Connect your coding agents to the package check. Keep the required merge check as the final gate.</description>
@@ -102,7 +102,7 @@
     </item>
     <item>
       <title>Reflection releases Beam, an open coding model you can run on AWS</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-16-reflection-beam-open-model-aws</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-16-reflection-beam-open-model-aws</link>
       <guid isPermaLink="false">2026-10-16-reflection-beam-open-model-aws</guid>
       <pubDate>Fri, 16 Oct 2026 06:00:00 GMT</pubDate>
       <description>You can now run a coding model for agents inside your own AWS account, under a license that allows commercial use. What to do: Test Beam on your own agent tasks before you trust its benchmarks. Plan memory for all 501B parameters. Check which regions offer it.</description>
@@ -113,7 +113,7 @@
     </item>
     <item>
       <title>GitHub retires three Copilot models on 16 November 2026</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-15-github-copilot-model-deprecations</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-15-github-copilot-model-deprecations</link>
       <guid isPermaLink="false">2026-10-15-github-copilot-model-deprecations</guid>
       <pubDate>Thu, 15 Oct 2026 06:00:00 GMT</pubDate>
       <description>Teams using these models have a fixed migration deadline and need to test the replacements first. What to do: List where you use these models. Test the replacements on real tasks and check your model policies before the deadline.</description>
@@ -124,7 +124,7 @@
     </item>
     <item>
       <title>GitHub lets Copilot span repositories in Slack and Teams</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-15-github-copilot-multi-repo-slack-teams</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-15-github-copilot-multi-repo-slack-teams</link>
       <guid isPermaLink="false">2026-10-15-github-copilot-multi-repo-slack-teams</guid>
       <pubDate>Thu, 15 Oct 2026 06:00:00 GMT</pubDate>
       <description>Teams that coordinate work across services can handle cross-repository tasks in one chat, with repository permissions and pull request review still in place. What to do: Test cross-repository tasks in representative Slack and Teams workflows. Review which repositories your users can access and preserve human review before merging agent-generated changes.</description>
@@ -133,7 +133,7 @@
     </item>
     <item>
       <title>IBM combines chat, decisions, and speech in Granite-Switch-4.1</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-15-ibm-granite-switch-4-1</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-15-ibm-granite-switch-4-1</link>
       <guid isPermaLink="false">2026-10-15-ibm-granite-switch-4-1</guid>
       <pubDate>Thu, 15 Oct 2026 06:00:00 GMT</pubDate>
       <description>You can serve chat, transcription and specialised decisions from one endpoint, with less extra GPU memory. Compare it with separate specialist models first. What to do: Compare Granite Switch with separate speech and decision models on accuracy, latency, throughput and GPU memory.</description>
@@ -142,7 +142,7 @@
     </item>
     <item>
       <title>AWS adds Meta Muse Spark Open to SageMaker JumpStart for in-account deployment</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-15-sagemaker-muse-spark-open</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-15-sagemaker-muse-spark-open</link>
       <guid isPermaLink="false">2026-10-15-sagemaker-muse-spark-open</guid>
       <pubDate>Thu, 15 Oct 2026 06:00:00 GMT</pubDate>
       <description>Teams can test a large open-weight model on private code and media without sending data to a third-party API. What to do: Benchmark both variants on your tasks. Check the license, quotas and cost, since the endpoint bills on large GPU instances while active.</description>
@@ -153,7 +153,7 @@
     </item>
     <item>
       <title>GitHub Copilot HydraFusion drafts and reviews with several models per task</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-14-github-hydrafusion</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-14-github-hydrafusion</link>
       <guid isPermaLink="false">2026-10-14-github-hydrafusion</guid>
       <pubDate>Wed, 14 Oct 2026 06:00:00 GMT</pubDate>
       <description>Teams get draft-and-review patterns without building their own harness, though multi-pass work costs more credits and time. What to do: Compare it with single-model use on real coding tasks. Track accepted changes, regressions, latency and credits. Keep it out of critical workflows while in preview.</description>
@@ -162,7 +162,7 @@
     </item>
     <item>
       <title>AWS Agent Registry now checks agent metadata against a schema</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-13-agent-registry-custom-metadata</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-13-agent-registry-custom-metadata</link>
       <guid isPermaLink="false">2026-10-13-agent-registry-custom-metadata</guid>
       <pubDate>Tue, 13 Oct 2026 06:00:00 GMT</pubDate>
       <description>Teams with many agents and tools can record owners and review status in the catalog itself, in a consistent form. What to do: Start with a small shared schema for owner, classification and lifecycle status. Keep access control and approvals in their own systems.</description>
@@ -171,7 +171,7 @@
     </item>
     <item>
       <title>Google releases Gemini 4 Argon, a frontier model for complex reasoning</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-13-gemini-4-argon</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-13-gemini-4-argon</link>
       <guid isPermaLink="false">2026-10-13-gemini-4-argon</guid>
       <pubDate>Tue, 13 Oct 2026 06:00:00 GMT</pubDate>
       <description>Teams building vision-driven automation or robotics get a new model to test. The benchmark and robot demonstration are Google's own results. What to do: Test it on your own video, spatial and action tasks. Compare quality, latency, cost and controls with the models you use now.</description>
@@ -180,7 +180,7 @@
     </item>
     <item>
       <title>LangChain offers a self-hostable way to deploy long-running agents on any model</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-13-langchain-deep-agents-deploy</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-13-langchain-deep-agents-deploy</link>
       <guid isPermaLink="false">2026-10-13-langchain-deep-agents-deploy</guid>
       <pubDate>Tue, 13 Oct 2026 06:00:00 GMT</pubDate>
       <description>Teams get a middle path between building their own agent runtime and adopting one vendor's managed agent service. What to do: Compare it with self-hosting and with managed services such as Bedrock AgentCore. Before you store production state in it, test memory export, sandbox isolation, approvals and how reliable the beta is.</description>
@@ -189,7 +189,7 @@
     </item>
     <item>
       <title>AWS AgentCore now charges for short-term memory by data volume</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-12-agentcore-stm-pricing</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-12-agentcore-stm-pricing</link>
       <guid isPermaLink="false">2026-10-12-agentcore-stm-pricing</guid>
       <pubDate>Mon, 12 Oct 2026 06:00:00 GMT</pubDate>
       <description>Agent memory cost now depends on payload size, retrieval volume and retention, so event counts alone no longer predict it. What to do: Recalculate memory costs with your real payload sizes, retrieval rates and retention times. Compare total cost with other memory options.</description>
@@ -198,7 +198,7 @@
     </item>
     <item>
       <title>GitHub adds identity attribution and per-category telemetry controls to Copilot</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-12-copilot-telemetry-controls</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-12-copilot-telemetry-controls</link>
       <guid isPermaLink="false">2026-10-12-copilot-telemetry-controls</guid>
       <pubDate>Mon, 12 Oct 2026 06:00:00 GMT</pubDate>
       <description>Enterprises can link agent activity to users and devices without collecting conversation content. What to do: Collect the minimum data you need. Content capture can include source code, tool data and local paths.</description>
@@ -207,7 +207,7 @@
     </item>
     <item>
       <title>AWS launches Lambda Web Functions for HTTP servers and streaming AI endpoints</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-12-lambda-web-functions</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-12-lambda-web-functions</link>
       <guid isPermaLink="false">2026-10-12-lambda-web-functions</guid>
       <pubDate>Mon, 12 Oct 2026 06:00:00 GMT</pubDate>
       <description>Teams can deploy an HTTP server without rewriting it as an event handler, and pay less for CPU while waiting on I/O. What to do: Compare it with event-driven functions and containers on concurrency, memory cost, runtime and Region limits.</description>
@@ -216,7 +216,7 @@
     </item>
     <item>
       <title>GitHub adds managed model defaults and MCP startup controls to Copilot for JetBrains</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-10-copilot-jetbrains-agent-controls</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-10-copilot-jetbrains-agent-controls</link>
       <guid isPermaLink="false">2026-10-10-copilot-jetbrains-agent-controls</guid>
       <pubDate>Sat, 10 Oct 2026 06:00:00 GMT</pubDate>
       <description>Administrators get a consistent starting model, and developers control when tools become active. Neither setting restricts which models or MCP tools are allowed. What to do: Use model allowlists or a gateway where you must restrict models. Keep MCP permissions and least privilege separate from startup settings.</description>
@@ -225,7 +225,7 @@
     </item>
     <item>
       <title>Ai2 replaces GPU priorities with time budgets and preemption contracts</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-09-ai2-gpu-time-budget-scheduler</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-09-ai2-gpu-time-budget-scheduler</link>
       <guid isPermaLink="false">2026-10-09-ai2-gpu-time-budget-scheduler</guid>
       <pubDate>Fri, 09 Oct 2026 06:00:00 GMT</pubDate>
       <description>Scarce GPUs tempt teams to hold capacity and inflate priorities. Budgets align use with company priorities and let idle capacity be borrowed. What to do: Budget GPU time per team. Pair fair share with checkpointing, preemption rules and visible usage data.</description>
@@ -234,7 +234,7 @@
     </item>
     <item>
       <title>GitHub makes local sandboxing generally available for Copilot coding agents</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-09-copilot-local-sandbox-ga</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-09-copilot-local-sandbox-ga</link>
       <guid isPermaLink="false">2026-10-09-copilot-local-sandbox-ga</guid>
       <pubDate>Fri, 09 Oct 2026 06:00:00 GMT</pubDate>
       <description>Coding agents run commands with the developer's privileges. A built-in sandbox makes limiting that access simpler. What to do: Test the sandbox's file, network and credential limits on each operating system. Use cloud sandboxes where you need stronger isolation.</description>
@@ -243,7 +243,7 @@
     </item>
     <item>
       <title>Postman shows how it limits tools and context for its production agent</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-09-postman-agent-mode-production-patterns</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-09-postman-agent-mode-production-patterns</link>
       <guid isPermaLink="false">2026-10-09-postman-agent-mode-production-patterns</guid>
       <pubDate>Fri, 09 Oct 2026 06:00:00 GMT</pubDate>
       <description>Past a point, more tools and prompt text make agents less reliable. Shaping context and limiting actions keeps them working. What to do: Count your tool catalog as part of the context budget. Select tools per task and keep approval for important writes.</description>
@@ -253,7 +253,7 @@
     </item>
     <item>
       <title>Google announces a Gemini agent with its own identity for workplace tasks</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-08-google-gemini-work-agent</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-08-google-gemini-work-agent</link>
       <guid isPermaLink="false">2026-10-08-google-gemini-work-agent</guid>
       <pubDate>Thu, 08 Oct 2026 06:00:00 GMT</pubDate>
       <description>Agent identity, permissions, audit and cost limits now come packaged in a workplace suite. What to do: Test agent-owned identity and user-delegated access on one bounded workflow. Check audit trails and spend limits.</description>
@@ -263,7 +263,7 @@
     </item>
     <item>
       <title>GitHub brings Claude Haiku 5.5 to all Copilot plans and surfaces</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-10-07-claude-haiku-55-copilot</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-07-claude-haiku-55-copilot</link>
       <guid isPermaLink="false">2026-10-07-claude-haiku-55-copilot</guid>
       <pubDate>Wed, 07 Oct 2026 06:00:00 GMT</pubDate>
       <description>Teams get a small, fast model for high-volume subtasks inside their existing coding tools. What to do: Test it on your coding and subagent tasks. Compare success rate, latency, retries and cost per finished task.</description>
@@ -273,7 +273,7 @@
     </item>
     <item>
       <title>Dataiku launches Agent Management to govern agents across vendor platforms</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-24-cross-platform-agent-management</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-24-cross-platform-agent-management</link>
       <guid isPermaLink="false">2026-09-24-cross-platform-agent-management</guid>
       <pubDate>Thu, 24 Sep 2026 06:00:00 GMT</pubDate>
       <description>Companies that run agents on several clouds and SaaS platforms need one view of all of them. No single agent platform gives that view. What to do: Learn how agent inventories and OpenTelemetry-based monitoring work, and why running agents from several vendors needs one place to see and control them.</description>
@@ -282,7 +282,7 @@
     </item>
     <item>
       <title>Microsoft describes an AI operating model with separate economics for agent work</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-23-microsoft-ai-work-system-economics</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-23-microsoft-ai-work-system-economics</link>
       <guid isPermaLink="false">2026-09-23-microsoft-ai-work-system-economics</guid>
       <pubDate>Wed, 23 Sep 2026 06:00:00 GMT</pubDate>
       <description>Agents do variable amounts of work, so a flat price per user no longer covers the cost. Teams need to measure cost and quality per finished task or workflow. What to do: Track cost per successful task. Learn how model routing and agent test loops work, and how seat pricing differs from paying for agent work by use.</description>
@@ -291,7 +291,7 @@
     </item>
     <item>
       <title>Anthropic releases Claude Opus 5.5 at lower prices than Opus 5</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-22-claude-opus-55-agent-economics</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-22-claude-opus-55-agent-economics</link>
       <guid isPermaLink="false">2026-09-22-claude-opus-55-agent-economics</guid>
       <pubDate>Tue, 22 Sep 2026 06:00:00 GMT</pubDate>
       <description>Agents that reread cached context often may cost less to run. Upgrades need testing because several thinking and tool-use behaviours changed. What to do: Measure total agent cost and cache hit rate on your own tasks. Run migration tests for thinking and tool-use behaviour.</description>
@@ -300,7 +300,7 @@
     </item>
     <item>
       <title>OpenAI releases GPT-6 Sol and Luna as lower-cost model tiers</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-22-gpt-6-sol-luna-cost-capability</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-22-gpt-6-sol-luna-cost-capability</link>
       <guid isPermaLink="false">2026-09-22-gpt-6-sol-luna-cost-capability</guid>
       <pubDate>Tue, 22 Sep 2026 06:00:00 GMT</pubDate>
       <description>More reasoning, coding and agent subtasks may become affordable at high volume. Compare task success, latency and total cost with retries included. What to do: Build task-specific evaluations. Route by accuracy, latency, cache hit rate, retries and cost per successful task.</description>
@@ -309,7 +309,7 @@
     </item>
     <item>
       <title>Each agent needs its own identity, permissions and audit trail</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-18-agent-security-controls</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-18-agent-security-controls</link>
       <guid isPermaLink="false">2026-09-18-agent-security-controls</guid>
       <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
       <description>An agent with access to company systems acts like a software user. It needs its own operating controls. What to do: Give each agent its own credentials with the fewest permissions it needs. Run it in a sandbox, log what it does and require approval for risky actions.</description>
@@ -318,7 +318,7 @@
     </item>
     <item>
       <title>AWS AgentCore Runtime V2 starts agents faster and frees idle memory</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-18-agentcore-runtime-v2</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-18-agentcore-runtime-v2</link>
       <guid isPermaLink="false">2026-09-18-agentcore-runtime-v2</guid>
       <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
       <description>Production agents increasingly need isolated compute that can sit idle, resume quickly, run for long periods, and avoid paying for peak memory throughout a session. What to do: Separate the agent harness from the agent runtime. The harness manages reasoning, tools and context; the runtime provides compute, isolation, state and lifecycle.</description>
@@ -327,7 +327,7 @@
     </item>
     <item>
       <title>AWS HyperPod Inference Gateway routes LLM requests by cache and queue state</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-18-hyperpod-inference-gateway</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-18-hyperpod-inference-gateway</link>
       <guid isPermaLink="false">2026-09-18-hyperpod-inference-gateway</guid>
       <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
       <description>LLM replicas are not interchangeable in the way ordinary stateless web servers are. Cache state, queues and loaded adapters can materially change latency and GPU efficiency. What to do: Understand KV cache, prefix caching, time-to-first-token, prefill versus decode, LoRA adapters and inference-aware routing. These increasingly determine self-hosted model economics.</description>
@@ -336,7 +336,7 @@
     </item>
     <item>
       <title>Microsoft Research shows agents get less reliable on longer tasks</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-18-long-running-agent-reliability</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-18-long-running-agent-reliability</link>
       <guid isPermaLink="false">2026-09-18-long-running-agent-reliability</guid>
       <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
       <description>The question for enterprise teams moves from whether an agent can do one task to whether it can finish a long workflow safely, again and again. What to do: Keep agent state outside the model. Add retries, recovery points and checks between steps, and hand the run to a person when it goes wrong.</description>
@@ -345,7 +345,7 @@
     </item>
     <item>
       <title>Research finds AI use adds new recurring tasks to people's jobs</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-16-work-expansion</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-16-work-expansion</link>
       <guid isPermaLink="false">2026-09-16-work-expansion</guid>
       <pubDate>Wed, 16 Sep 2026 06:00:00 GMT</pubDate>
       <description>AI may change what jobs include as well as how fast people work. What to do: Measure changes in tasks and roles alongside time saved.</description>
@@ -354,7 +354,7 @@
     </item>
     <item>
       <title>OpenAI's data agent combines company data, analysis and dashboards in one workflow</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-10-data-agent</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-10-data-agent</link>
       <guid isPermaLink="false">2026-09-10-data-agent</guid>
       <pubDate>Thu, 10 Sep 2026 06:00:00 GMT</pubDate>
       <description>People without analyst skills can get from a question to a shareable analysis themselves. What to do: Before you connect such an agent, check data permissions, shared metric definitions, where each number comes from, how fresh it is and how you audit it.</description>
@@ -363,7 +363,7 @@
     </item>
     <item>
       <title>OpenAI launches ChatGPT for financial services with premium market data</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-10-financial-services</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-10-financial-services</link>
       <guid isPermaLink="false">2026-09-10-financial-services</guid>
       <pubDate>Thu, 10 Sep 2026 06:00:00 GMT</pubDate>
       <description>AI products are becoming industry-specific, with data rights and workflows built in. What to do: When you compare vertical AI products, check data rights, workflow fit and governance as closely as the model.</description>
@@ -372,7 +372,7 @@
     </item>
     <item>
       <title>More providers package agent runtimes as managed services</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-10-managed-agent-runtimes</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-10-managed-agent-runtimes</link>
       <guid isPermaLink="false">2026-09-10-managed-agent-runtimes</guid>
       <pubDate>Thu, 10 Sep 2026 06:00:00 GMT</pubDate>
       <description>Teams could already build these pieces. Managed versions cut the work, which changes the build or buy decision. What to do: List what your agent harness does today: state, context, tools, execution, retries, permissions, memory and monitoring. Check which parts a managed runtime covers.</description>
@@ -381,7 +381,7 @@
     </item>
     <item>
       <title>OpenAI says it now has an automated research intern under human supervision</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-06-automated-research</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-06-automated-research</link>
       <guid isPermaLink="false">2026-09-06-automated-research</guid>
       <pubDate>Sun, 06 Sep 2026 06:00:00 GMT</pubDate>
       <description>If AI speeds up AI research, new model capabilities may arrive faster, and so may the need for alignment and safety work. What to do: Expect model releases to keep speeding up. Plan for model changes as a regular event in your architecture.</description>
@@ -390,7 +390,7 @@
     </item>
     <item>
       <title>OpenAI releases GPT-6 Astra with gains in computer use, science and cyber</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-03-gpt6-astra</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-03-gpt6-astra</link>
       <guid isPermaLink="false">2026-09-03-gpt6-astra</guid>
       <pubDate>Thu, 03 Sep 2026 06:00:00 GMT</pubDate>
       <description>Frontier models now operate software and carry out complex professional tasks as well as answering questions. What to do: Test it on your own tool-using tasks. Treat vendor benchmark results as claims until you reproduce them.</description>
@@ -399,7 +399,7 @@
     </item>
     <item>
       <title>Teams now check the path an agent takes as well as its answer</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-01-enterprise-evals</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-01-enterprise-evals</link>
       <guid isPermaLink="false">2026-09-01-enterprise-evals</guid>
       <pubDate>Tue, 01 Sep 2026 06:00:00 GMT</pubDate>
       <description>A correct-looking answer can come from an unsafe path. This matters once agents take actions. What to do: Add trajectory checks to your evaluations. Keep audit logs and use human review for risky actions.</description>
@@ -408,7 +408,7 @@
     </item>
     <item>
       <title>OpenAI examples show agents doing multi-step work inside company workflows</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-09-01-workflow-execution</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-01-workflow-execution</link>
       <guid isPermaLink="false">2026-09-01-workflow-execution</guid>
       <pubDate>Tue, 01 Sep 2026 06:00:00 GMT</pubDate>
       <description>The change that matters is delegation. Companies hand agents real parts of a business process. What to do: Start each agent workflow by defining the task boundary, the data and tools it needs, who approves what, what happens on failure and how you measure success.</description>
@@ -417,7 +417,7 @@
     </item>
     <item>
       <title>EU AI Act transparency rules start to apply</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-08-02-eu-ai-act-transparency</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-08-02-eu-ai-act-transparency</link>
       <guid isPermaLink="false">2026-08-02-eu-ai-act-transparency</guid>
       <pubDate>Sun, 02 Aug 2026 06:00:00 GMT</pubDate>
       <description>Customer-facing AI in the EU now needs disclosure and content labelling built in. What to do: Check every customer-facing AI feature for disclosure. Add labels or metadata to generated media.</description>
@@ -426,7 +426,7 @@
     </item>
     <item>
       <title>OpenAI moves safety evaluation from single actions to whole trajectories</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-07-20-long-horizon-safety</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-07-20-long-horizon-safety</link>
       <guid isPermaLink="false">2026-07-20-long-horizon-safety</guid>
       <pubDate>Mon, 20 Jul 2026 06:00:00 GMT</pubDate>
       <description>Once systems act over long periods, checking single outputs misses what the sequence of actions is working toward. What to do: Add trajectory monitoring, long-horizon evaluations, approval points and recovery steps to agent designs.</description>
@@ -435,7 +435,7 @@
     </item>
     <item>
       <title>Anthropic releases Claude Fable 5, built for long and complex tasks</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-06-09-fable5</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-06-09-fable5</link>
       <guid isPermaLink="false">2026-06-09-fable5</guid>
       <pubDate>Tue, 09 Jun 2026 06:00:00 GMT</pubDate>
       <description>How long and complex a task a model can finish is becoming a main way to compare models. What to do: Test models on how long and how complex a task they finish reliably. Use your own tasks.</description>
@@ -444,7 +444,7 @@
     </item>
     <item>
       <title>Google announces Gemini Spark, a persistent agent across Workspace apps</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-05-19-gemini-spark</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-05-19-gemini-spark</link>
       <guid isPermaLink="false">2026-05-19-gemini-spark</guid>
       <pubDate>Tue, 19 May 2026 06:00:00 GMT</pubDate>
       <description>AI at work is moving from a chat tool next to the work to an agent inside the software people already use. What to do: Define what users may delegate, which actions need approval and what context the agent may see.</description>
@@ -453,7 +453,7 @@
     </item>
     <item>
       <title>Google Cloud brings agent building, governance and scale into one platform</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2026-04-24-gemini-agent-platform</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-04-24-gemini-agent-platform</link>
       <guid isPermaLink="false">2026-04-24-gemini-agent-platform</guid>
       <pubDate>Fri, 24 Apr 2026 06:00:00 GMT</pubDate>
       <description>Cloud providers now sell agent infrastructure as one platform, so teams can buy it whole. What to do: Compare agent platforms on how easily you can move off them, what you can see and control, what they cost and how well they fit your stack.</description>
@@ -463,7 +463,7 @@
     </item>
     <item>
       <title>Anthropic publishes Agent Skills as an open standard</title>
-      <link>https://rapidventurelab.github.io/genai-change-radar/#item-2025-12-18-agent-skills-open-standard</link>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2025-12-18-agent-skills-open-standard</link>
       <guid isPermaLink="false">2025-12-18-agent-skills-open-standard</guid>
       <pubDate>Thu, 18 Dec 2025 06:00:00 GMT</pubDate>
       <description>Teams can package instructions, scripts and resources for agents once and use them across vendors. What to do: Package repeated agent procedures as skills. Keep them in version control like code.</description>

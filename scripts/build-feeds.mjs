@@ -11,7 +11,7 @@ import path from "node:path";
 const root = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const args = process.argv.slice(2);
 const siteArg = args.indexOf("--site");
-const SITE = (siteArg >= 0 ? args[siteArg + 1] : "https://rapidventurelab.github.io/genai-change-radar/").replace(/\/?$/, "/");
+const SITE = (siteArg >= 0 ? args[siteArg + 1] : "https://thedailymodel.rapidventurelab.com/").replace(/\/?$/, "/");
 const NAME = "The Daily Model";
 
 const db = JSON.parse(fs.readFileSync(path.join(root, "updates.json"), "utf8"));

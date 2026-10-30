@@ -8,7 +8,7 @@ This covers `updates.json`, `feed.xml`, `deadlines.ics`, the story pages in `s/`
 
 You may copy, share and adapt them for any purpose, including commercial use, as long as you give credit. Please credit them like this:
 
-> Source: The Daily Model by Haris Rehman (Rapid Venture Lab), https://rapidventurelab.github.io/genai-change-radar/
+> Source: The Daily Model by Haris Rehman (Rapid Venture Lab), https://thedailymodel.rapidventurelab.com/
 
 Quotes inside a story belong to their original sources and follow those sources' terms.
 
