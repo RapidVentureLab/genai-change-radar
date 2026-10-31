@@ -6,7 +6,7 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Fri, 30 Oct 2026 10:53:42 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 31 Oct 2026 10:21:27 GMT</lastBuildDate>
     <item>
       <title>AWS starts SageMaker jobs from SOCI-indexed images in seconds</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-29-aws-sagemaker-soci-images</link>
@@ -15,6 +15,15 @@
       <description>Large container pulls can leave paid accelerators idle before work starts. You can use pre-indexed AWS Deep Learning Containers or index your ECR image with open-source tools. Job definitions stay the same. What to do: Benchmark large images on actual jobs. Index images in ECR with supported tools or use AWS's pre-indexed -soci tags. Test workloads that read many image files before training.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>AWS</category>
+    </item>
+    <item>
+      <title>LangChain adds browser use and asynchronous subagents to Managed Deep Agents</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-29-langchain-managed-deep-agents-v010</link>
+      <guid isPermaLink="false">2026-10-29-langchain-managed-deep-agents-v010</guid>
+      <pubDate>Thu, 29 Oct 2026 06:00:00 GMT</pubDate>
+      <description>You can support tasks on sites without APIs and long-running parallel work in one managed runtime. Session-scoped login reuse and human handoff add identity and security considerations. What to do: Use APIs where they cover the task. Test browser scope, login reuse and handoff before enabling production actions. Check trace visibility and async task completion and cancellation.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>LangChain</category>
     </item>
     <item>
       <title>AWS Lambda exports durable-run telemetry and adds an MCP query server</title>
@@ -458,16 +467,6 @@
       <pubDate>Tue, 19 May 2026 06:00:00 GMT</pubDate>
       <description>AI at work is moving from a chat tool next to the work to an agent inside the software people already use. What to do: Define what users may delegate, which actions need approval and what context the agent may see.</description>
       <category>Application &amp; Workflow</category>
-      <category>Google</category>
-    </item>
-    <item>
-      <title>Google Cloud brings agent building, governance and scale into one platform</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-04-24-gemini-agent-platform</link>
-      <guid isPermaLink="false">2026-04-24-gemini-agent-platform</guid>
-      <pubDate>Fri, 24 Apr 2026 06:00:00 GMT</pubDate>
-      <description>Cloud providers now sell agent infrastructure as one platform, so teams can buy it whole. What to do: Compare agent platforms on how easily you can move off them, what you can see and control, what they cost and how well they fit your stack.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>Google Cloud</category>
       <category>Google</category>
     </item>
   </channel>

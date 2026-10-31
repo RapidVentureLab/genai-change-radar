@@ -1,0 +1,49 @@
+{
+  "updates": [
+    {
+      "id": "2026-10-31-google-cloud-spend-caps-ga",
+      "date": "2026-10-31",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "programmable spend enforcement",
+      "impact": "Incremental",
+      "title": "Google Cloud makes spend caps generally available",
+      "whatChanged": "Google Cloud made spend caps in Cloud Billing Budgets generally available on 31 October. Its API can set, update, or remove caps across eligible services. For AI services, caps use estimated live costs and can trigger within minutes. Caps reset monthly unless administrators keep manual control.",
+      "whyCare": "You can apply enforced limits to eligible services across projects through policy or provisioning code. A cap can pause pay-as-you-go requests when it triggers, so test the effect on production availability.",
+      "before": "Teams used spend caps in preview, managed them manually, and lacked live cost reports and an API to manage caps across projects.",
+      "after": "Teams can manage caps through the Budgets API, inspect estimated live costs, and let enforced caps reset monthly or retain manual overrides.",
+      "learn": "Test cap behavior on non-production projects. Verify which services are eligible and how caps affect pay-as-you-go requests. Decide whether monthly resets fit your approval controls.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Google Cloud Blog - Google Cloud spend caps now generally available",
+          "url": "https://cloud.google.com/blog/topics/cost-management/google-cloud-spend-caps-now-generally-available"
+        },
+        {
+          "name": "Google Cloud documentation - Use the Budget API for spend cap budgets",
+          "url": "https://docs.cloud.google.com/billing/docs/how-to/budget-api-spend-cap"
+        }
+      ],
+      "architectureImplication": "Add caps to project provisioning, but account for the service pause when usage reaches its limit. Compare hard-stop policies with the budget alerts and actions in your other cloud accounts.",
+      "tradeoffs": [
+        "Cost",
+        "Reliability",
+        "Control"
+      ],
+      "vendors": [
+        "Google Cloud"
+      ],
+      "decisions": [
+        "cost-and-routing",
+        "deployment",
+        "security-and-guardrails"
+      ],
+      "heldReasons": [
+        "Fact check: The item says limits can be applied through policy; the sources describe API-based programmatic setup but do not state policy support."
+      ]
+    }
+  ]
+}

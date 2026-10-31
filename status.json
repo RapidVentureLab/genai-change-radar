@@ -1,15 +1,22 @@
 {
-  "lastScan": "2026-10-30T11:53:42+01:00",
+  "lastScan": "2026-10-31T11:21:27+01:00",
   "publishedLastScan": 1,
-  "heldLastScan": 2,
+  "heldLastScan": 1,
   "factCheck": {
     "ran": true,
-    "checked": 3,
+    "checked": 2,
     "supported": 1,
-    "unsupported": 2,
+    "unsupported": 1,
     "unverifiable": 0
   },
   "held": [
+    {
+      "day": "2026-10-31",
+      "title": "Google Cloud makes spend caps generally available",
+      "reasons": [
+        "Fact check: The item says limits can be applied through policy; the sources describe API-based programmatic setup but do not state policy support."
+      ]
+    },
     {
       "day": "2026-10-30",
       "title": "AWS exposes Step Functions workflows as tools for AI agents",

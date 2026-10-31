@@ -1,0 +1,35 @@
+{
+  "ran": true,
+  "checkedAt": "2026-10-31T10:25:30+00:00",
+  "items": [
+    {
+      "id": "2026-10-31-google-cloud-spend-caps-ga",
+      "title": "Google Cloud makes spend caps generally available",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://cloud.google.com/blog/topics/cost-management/google-cloud-spend-caps-now-generally-available",
+        "https://docs.cloud.google.com/billing/docs/how-to/budget-api-spend-cap"
+      ],
+      "problems": [
+        "The item says limits can be applied through policy; the sources describe API-based programmatic setup but do not state policy support."
+      ],
+      "notes": [
+        "The item has no action object, so there is no action type, what, or by date to verify."
+      ]
+    },
+    {
+      "id": "2026-10-29-langchain-managed-deep-agents-v010",
+      "title": "LangChain adds browser use and asynchronous subagents to Managed Deep Agents",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://www.langchain.com/blog/managed-deep-agents-browser-use-and-asynchronous-subagents",
+        "https://docs.langchain.com/langsmith/python/managed-deep-agents-browser-use",
+        "https://docs.langchain.com/langsmith/python/managed-deep-agents-subagents"
+      ],
+      "problems": [],
+      "notes": [
+        "The item has no action object, so there is no action type, what, or by date to verify."
+      ]
+    }
+  ]
+}

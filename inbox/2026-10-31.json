@@ -1,0 +1,55 @@
+{
+  "scannedAt": "2026-10-31T11:21:27+01:00",
+  "updates": [
+    {
+      "id": "2026-10-29-langchain-managed-deep-agents-v010",
+      "date": "2026-10-29",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "managed browser and async agents",
+      "impact": "Incremental",
+      "title": "LangChain adds browser use and asynchronous subagents to Managed Deep Agents",
+      "whatChanged": "LangChain released Managed Deep Agents v0.10 on 29 October with managed browser tools and asynchronous subagents. Browsers run in LangSmith sandboxes, use thread- or user-scoped sessions, and support handoff for sign-in. Background subagents run while the agent continues its conversation. Managed Deep Agents remains in public beta.",
+      "whyCare": "You can support tasks on sites without APIs and long-running parallel work in one managed runtime. Session-scoped login reuse and human handoff add identity and security considerations.",
+      "before": "Managed Deep Agents subagents waited inline, and agents lacked a managed browser for sites without APIs.",
+      "after": "Agents can browse with isolated conversation sessions or verified user-scoped logins, request human control for sign-in, and run subagents in the background while continuing the conversation.",
+      "learn": "Use APIs where they cover the task. Test browser scope, login reuse and handoff before enabling production actions. Check trace visibility and async task completion and cancellation.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "LangChain - Managed Deep Agents v0.10: Browser use and asynchronous subagents",
+          "url": "https://www.langchain.com/blog/managed-deep-agents-browser-use-and-asynchronous-subagents"
+        },
+        {
+          "name": "LangChain documentation - Browser use",
+          "url": "https://docs.langchain.com/langsmith/python/managed-deep-agents-browser-use"
+        },
+        {
+          "name": "LangChain documentation - Subagents",
+          "url": "https://docs.langchain.com/langsmith/python/managed-deep-agents-subagents"
+        }
+      ],
+      "architectureImplication": "Managed browser controls reduce runtime work but widen the action surface. Compare LangChain's sandbox and session controls with options such as Amazon Bedrock AgentCore Browser before choosing a managed runtime.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Reliability",
+        "Complexity",
+        "Portability"
+      ],
+      "vendors": [
+        "LangChain"
+      ],
+      "decisions": [
+        "managed-vs-custom-runtime",
+        "identity-and-permissions",
+        "agent-vs-workflow"
+      ]
+    }
+  ]
+}
