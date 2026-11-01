@@ -6,7 +6,17 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Sat, 31 Oct 2026 10:21:27 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 01 Nov 2026 11:17:11 GMT</lastBuildDate>
+    <item>
+      <title>AWS adds OpenAI GPT-5.6 Terra and Luna to Bedrock in GovCloud</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-30-aws-bedrock-openai-govcloud</link>
+      <guid isPermaLink="false">2026-10-30-aws-bedrock-openai-govcloud</guid>
+      <pubDate>Fri, 30 Oct 2026 06:00:00 GMT</pubDate>
+      <description>GovCloud teams can use OpenAI's API formats with Bedrock's account-level logging, metrics and billing controls. Cross-region routing adds capacity and redundancy while maintaining US data sovereignty. What to do: Compare Bedrock-hosted GPT with direct OpenAI APIs and other Bedrock models. Test API compatibility, cross-region data controls, logging and spend attribution before moving regulated workloads.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+      <category>OpenAI</category>
+    </item>
     <item>
       <title>AWS starts SageMaker jobs from SOCI-indexed images in seconds</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-29-aws-sagemaker-soci-images</link>
@@ -459,15 +469,6 @@
       <description>How long and complex a task a model can finish is becoming a main way to compare models. What to do: Test models on how long and how complex a task they finish reliably. Use your own tasks.</description>
       <category>Model</category>
       <category>Anthropic</category>
-    </item>
-    <item>
-      <title>Google announces Gemini Spark, a persistent agent across Workspace apps</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-05-19-gemini-spark</link>
-      <guid isPermaLink="false">2026-05-19-gemini-spark</guid>
-      <pubDate>Tue, 19 May 2026 06:00:00 GMT</pubDate>
-      <description>AI at work is moving from a chat tool next to the work to an agent inside the software people already use. What to do: Define what users may delegate, which actions need approval and what context the agent may see.</description>
-      <category>Application &amp; Workflow</category>
-      <category>Google</category>
     </item>
   </channel>
 </rss>

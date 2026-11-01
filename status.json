@@ -1,5 +1,5 @@
 {
-  "lastScan": "2026-10-31T11:21:27+01:00",
+  "lastScan": "2026-11-01T12:17:11+01:00",
   "publishedLastScan": 1,
   "heldLastScan": 1,
   "factCheck": {
@@ -10,6 +10,13 @@
     "unverifiable": 0
   },
   "held": [
+    {
+      "day": "2026-11-01",
+      "title": "AWS offers OpenAI Daybreak Red in GovCloud (US-East) to eligible customers",
+      "reasons": [
+        "Fact check: The item says AWS account-team approval is an access gate | The sources require OpenAI enrollment and say to contact the AWS account team to request or enable access after approval, but do not say the AWS team itself approves eligibility."
+      ]
+    },
     {
       "day": "2026-10-31",
       "title": "Google Cloud makes spend caps generally available",

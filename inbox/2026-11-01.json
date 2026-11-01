@@ -1,0 +1,51 @@
+{
+  "scannedAt": "2026-11-01T12:17:11+01:00",
+  "updates": [
+    {
+      "id": "2026-10-30-aws-bedrock-openai-govcloud",
+      "date": "2026-10-30",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "govcloud model availability",
+      "impact": "Packaging / distribution",
+      "title": "AWS adds OpenAI GPT-5.6 Terra and Luna to Bedrock in GovCloud",
+      "whatChanged": "On 30 October, Amazon Bedrock added OpenAI GPT-5.6 Terra and Luna to bedrock-runtime in AWS GovCloud (US). Teams can call them through the Responses, Chat Completions and Converse APIs. Cross-Region Inference routes requests across both GovCloud regions. Bedrock provides invocation logs, CloudWatch metrics and per-model cost records.",
+      "whyCare": "GovCloud teams can use OpenAI's API formats with Bedrock's account-level logging, metrics and billing controls. Cross-region routing adds capacity and redundancy while maintaining US data sovereignty.",
+      "before": "GovCloud teams could not call OpenAI GPT-5.6 models through Bedrock runtime APIs or route requests across GovCloud regions.",
+      "after": "Teams can invoke GPT-5.6 Terra and Luna through the Responses, Chat Completions and Converse APIs on bedrock-runtime. They can route requests across both GovCloud regions with model-level logs, CloudWatch metrics and cost reporting.",
+      "learn": "Compare Bedrock-hosted GPT with direct OpenAI APIs and other Bedrock models. Test API compatibility, cross-region data controls, logging and spend attribution before moving regulated workloads.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - Amazon Bedrock OpenAI models in GovCloud",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/bedrock-openai-runtime-govcloud/"
+        },
+        {
+          "name": "Amazon Bedrock User Guide - OpenAI model cards",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards-openai.html"
+        }
+      ],
+      "architectureImplication": "Keep API contracts separate from runtime placement. Validate cross-region routing, data residency and telemetry in GovCloud. Compare those controls with direct OpenAI deployment and other Bedrock models.",
+      "tradeoffs": [
+        "Security",
+        "Portability",
+        "Cost",
+        "Reliability"
+      ],
+      "vendors": [
+        "AWS",
+        "OpenAI"
+      ],
+      "decisions": [
+        "deployment",
+        "integration-standards",
+        "security-and-guardrails"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "updates": [
+    {
+      "id": "2026-10-30-aws-openai-daybreak-red-govcloud",
+      "date": "2026-10-30",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "govcloud cyber model availability",
+      "impact": "Packaging / distribution",
+      "title": "AWS offers OpenAI Daybreak Red in GovCloud (US-East) to eligible customers",
+      "whatChanged": "On 30 October, AWS made OpenAI Daybreak Red, also called GPT-5.6 Cyber, available to eligible customers on Amazon Bedrock in AWS GovCloud (US-East). OpenAI's Trusted Access for Cyber enrollment and AWS account-team approval gate access. AWS says inference data is not used to train models.",
+      "whyCare": "Security teams can run a model built for defensive vulnerability work with Bedrock's identity and data controls. Only approved customers can access it.",
+      "before": "Before this launch, AWS had not listed Daybreak Red as available in GovCloud.",
+      "after": "Eligible customers can request Daybreak Red in GovCloud (US-East) after OpenAI's Trusted Access for Cyber enrollment and AWS account-team approval.",
+      "learn": "Confirm Trusted Access for Cyber eligibility and AWS's approval path. Check automated abuse-detection retention and the zero-data-retention request path before sending sensitive inputs. Evaluate the model only on authorized defensive tasks.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - OpenAI Daybreak Red in GovCloud",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/openai-daybreak-red-govcloud-east/"
+        },
+        {
+          "name": "AWS Machine Learning Blog - Daybreak Red and Daybreak Blue on Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock/"
+        }
+      ],
+      "architectureImplication": "Treat Daybreak Red as a separately gated option for defensive cyber workflows. Compare its access checks, Bedrock isolation and retention terms with approved hosted models and self-hosted open weights.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Access",
+        "Reliability"
+      ],
+      "vendors": [
+        "AWS",
+        "OpenAI"
+      ],
+      "decisions": [
+        "security-and-guardrails",
+        "deployment",
+        "model-selection"
+      ],
+      "heldReasons": [
+        "Fact check: The item says AWS account-team approval is an access gate | The sources require OpenAI enrollment and say to contact the AWS account team to request or enable access after approval, but do not say the AWS team itself approves eligibility."
+      ]
+    }
+  ]
+}

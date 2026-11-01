@@ -1,0 +1,34 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-01T11:20:00+00:00",
+  "items": [
+    {
+      "id": "2026-10-30-aws-bedrock-openai-govcloud",
+      "title": "AWS adds OpenAI GPT-5.6 Terra and Luna to Bedrock in GovCloud",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/10/bedrock-openai-runtime-govcloud/",
+        "https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards-openai.html"
+      ],
+      "problems": [],
+      "notes": [
+        "The announcement URL gives October 2026 but no day; no source states a different date."
+      ]
+    },
+    {
+      "id": "2026-10-30-aws-openai-daybreak-red-govcloud",
+      "title": "AWS offers OpenAI Daybreak Red in GovCloud (US-East) to eligible customers",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/10/openai-daybreak-red-govcloud-east/",
+        "https://aws.amazon.com/blogs/machine-learning/accelerate-cyber-defense-with-openai-and-aws-daybreak-red-daybreak-blue-now-available-to-eligible-customers-on-amazon-bedrock/"
+      ],
+      "problems": [
+        "The item says AWS account-team approval is an access gate | The sources require OpenAI enrollment and say to contact the AWS account team to request or enable access after approval, but do not say the AWS team itself approves eligibility."
+      ],
+      "notes": [
+        "The GovCloud announcement URL gives October 2026 but no day; the blog's August 11 publication concerns Bedrock availability in Ohio, not the GovCloud change."
+      ]
+    }
+  ]
+}
