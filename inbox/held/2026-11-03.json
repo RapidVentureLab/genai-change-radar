@@ -1,0 +1,102 @@
+{
+  "updates": [
+    {
+      "id": "2026-11-02-mistral-large-4-open-weights",
+      "date": "2026-11-02",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "open-weight model release",
+      "impact": "Step-change",
+      "title": "Mistral releases Mistral Large 4 weights for self-hosting",
+      "whatChanged": "Mistral released weights for Mistral Large 4 on 2 November after a public preview. The multimodal model has 1T parameters with 49B active per token, and a 1M-token context. Its modified MIT license allows commercial use; model-as-a-service operators need a separate license. Mistral API pricing is $0.70 per million input tokens and $2.10 per million output tokens.",
+      "whyCare": "You can run a large multimodal model on infrastructure you control, but you will take on its serving footprint, operational work, and license limits.",
+      "before": "Teams could call Mistral Large 4 through hosted services during preview, but they could not download its weights for private deployment.",
+      "after": "Teams can download and customize the weights, run them with vLLM or SGLang, or use Mistral's API and managed endpoints.",
+      "learn": "Benchmark model quality, latency, hardware use, and total cost against hosted models and other open weights. Check the license before offering the model as a service.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Mistral - Mistral Large 4 weights announcement",
+          "url": "https://mistral.ai/news/mistral-large-4-oss/"
+        },
+        {
+          "name": "Hugging Face - Mistral Large 4 model card",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B"
+        }
+      ],
+      "architectureImplication": "Treat self-hosted weights, managed endpoints, and model-as-a-service rights as separate deployment choices. Test hardware and serving-stack support, then compare operating costs with hosted APIs.",
+      "tradeoffs": [
+        "Cost",
+        "Control",
+        "Complexity",
+        "Portability"
+      ],
+      "vendors": [
+        "Other",
+        "Open models"
+      ],
+      "decisions": [
+        "hosted-vs-open",
+        "deployment",
+        "cost-and-routing"
+      ],
+      "heldReasons": [
+        "Fact check: The item says teams could call the model through hosted services during preview, but neither source says preview access included hosted inference."
+      ]
+    },
+    {
+      "id": "2026-11-02-aws-connect-mcp-tools",
+      "date": "2026-11-02",
+      "layer": "Application & Workflow",
+      "kind": "signal",
+      "changeType": "MCP workflow integration",
+      "impact": "Packaging / distribution",
+      "title": "AWS adds MCP tools to Amazon Connect Customer flows",
+      "whatChanged": "On 2 November, AWS added an External Tool block to Amazon Connect Customer flows. The block invokes MCP tools through Amazon Bedrock AgentCore Gateway in synchronous or asynchronous mode. AWS lists nine Regions, and tool results are limited to 32 KB.",
+      "whyCare": "Teams can reuse MCP integrations in agentic and deterministic customer-service flows and cut custom Lambda code. They still need gateway access, tool permissions, and failure paths.",
+      "before": "Connect Customer flows called external tools through custom Lambda functions, while teams used MCP tools in agentic experiences.",
+      "after": "Amazon Connect Customer flows can invoke an MCP tool through AgentCore Gateway and use its result to route contacts.",
+      "learn": "Connect only scoped MCP servers through AgentCore Gateway. Test synchronous timeouts, asynchronous completion, retries, and result-size limits before routing live customer contacts.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - Amazon Connect Customer supports MCP tools in flows",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/connect-flows-mcp-tools/"
+        },
+        {
+          "name": "AWS Documentation - External Tool flow block",
+          "url": "https://docs.aws.amazon.com/connect/latest/adminguide/external-tool.html"
+        }
+      ],
+      "architectureImplication": "Expose reusable tools through AgentCore Gateway, then reference them from deterministic contact flows and agents. Keep identity, tool permissions, timeouts, retries, and failure branches explicit before sending customer data through them.",
+      "tradeoffs": [
+        "Security",
+        "Reliability",
+        "Complexity",
+        "Control"
+      ],
+      "vendors": [
+        "AWS",
+        "Open standards"
+      ],
+      "decisions": [
+        "integration-standards",
+        "agent-vs-workflow",
+        "build-vs-buy"
+      ],
+      "heldReasons": [
+        "Fact check: The item dates the announcement to 2 November, but the AWS What's New URL places it in October 2026."
+      ]
+    }
+  ]
+}
