@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-03T12:58:10+01:00",
+  "updatedAt": "2026-11-04T13:09:09+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -3447,6 +3447,135 @@
         "deployment",
         "integration-standards",
         "security-and-guardrails"
+      ]
+    },
+    {
+      "id": "2026-11-03-microsoft-mcp-gateway",
+      "date": "2026-11-03",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "managed MCP ingress",
+      "impact": "Incremental",
+      "title": "Microsoft adds a native MCP gateway to Application Gateway for Containers",
+      "whatChanged": "Microsoft added a preview MCPRoute resource to Application Gateway for Containers on 3 November. It routes Model Context Protocol servers through stable hostnames and paths, with centralized TLS, JWT validation and Web Application Firewall support.",
+      "whyCare": "You can expose MCP servers through existing Azure ingress controls without adding a separate MCP-aware gateway. The preview could reduce custom routing work; test it against your current MCP and gateway policies.",
+      "before": "Application Gateway for Containers had no MCP-specific route for publishing servers.",
+      "after": "Platform teams can use MCPRoute to publish MCP servers with stable hostnames, paths, TLS, JWT validation and Web Application Firewall support.",
+      "learn": "Test MCPRoute with your authentication and WAF policies. Check preview limits before routing production traffic.",
+      "cloudPrimitives": [
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft Azure Updates - MCP gateway for Application Gateway for Containers",
+          "url": "https://azure.microsoft.com/updates?id=576388"
+        },
+        {
+          "name": "Microsoft Azure Updates - JWT validation for Application Gateway for Containers",
+          "url": "https://azure.microsoft.com/updates?id=576382"
+        }
+      ],
+      "architectureImplication": "Route MCP traffic through the shared ingress layer and apply gateway authentication and WAF policies before requests reach server backends. Compare this design with standalone MCP gateways and custom proxies.",
+      "tradeoffs": [
+        "Control",
+        "Portability",
+        "Security"
+      ],
+      "vendors": [
+        "Microsoft",
+        "Open standards"
+      ],
+      "decisions": [
+        "integration-standards",
+        "security-and-guardrails",
+        "deployment"
+      ]
+    },
+    {
+      "id": "2026-11-03-aws-workspaces-agent-desktops",
+      "date": "2026-11-03",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "agent desktop support",
+      "impact": "Incremental",
+      "title": "AWS adds Linux and Windows 11 desktops for AI agents",
+      "whatChanged": "AWS added Linux and Windows 11 cloud desktops to WorkSpaces for AI agents on 3 November, alongside Windows Server. The new desktops retain network isolation, IAM access and the same security and compliance controls.",
+      "whyCare": "Teams can give GUI and development agents an OS-specific desktop without operating their own desktop fleet. WorkSpaces keeps those agents inside the existing IAM and network controls.",
+      "before": "WorkSpaces for AI agents supported Windows Server desktops.",
+      "after": "Agents can run on Linux, Windows 11 or Windows Server desktops with WorkSpaces network isolation, IAM access and compliance controls.",
+      "learn": "Match the desktop OS to each workflow. Test agent permissions, Linux root access and network reach before moving desktop tasks into production.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - WorkSpaces for AI agents adds Linux and Windows 11",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/workspaces-ai-agents-linux-windows-11/"
+        }
+      ],
+      "architectureImplication": "Choose cloud desktops for agents that need OS-specific tools or graphical applications. Apply IAM and network controls to each agent, and account for Linux's full root access.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Reliability"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "deployment",
+        "identity-and-permissions",
+        "managed-vs-custom-runtime"
+      ]
+    },
+    {
+      "id": "2026-11-03-langchain-langsmith-byoc-multicloud",
+      "date": "2026-11-03",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "multi-cloud deployment",
+      "impact": "Incremental",
+      "title": "LangChain expands LangSmith BYOC to Azure and Google Cloud",
+      "whatChanged": "LangChain expanded LangSmith BYOC beyond AWS on 3 November. AWS remains generally available, while Azure and Google Cloud enter beta. LangChain operates the control plane and manages data-plane services inside each customer's cloud account.",
+      "whyCare": "Teams can keep traces, prompts, datasets and agent deployments in their cloud account while LangChain manages platform operations. Google Cloud data planes can run in any region, but LangSmith manages them from a US control plane.",
+      "before": "LangSmith BYOC ran on AWS; teams in Azure or Google Cloud needed self-hosting or LangSmith Cloud.",
+      "after": "Teams can use BYOC on AWS (GA), Azure (beta) or Google Cloud (beta), with traces, evaluations and deployments in their own cloud account.",
+      "learn": "Map traces, prompts, secrets and deployment data to the right cloud boundary. Compare BYOC operations and control-plane data with self-hosting before choosing a beta cloud.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "LangChain - LangSmith BYOC is now available on AWS, Azure, and Google Cloud",
+          "url": "https://www.langchain.com/blog/langsmith-byoc-aws-gc-azure"
+        },
+        {
+          "name": "LangChain docs - BYOC architecture",
+          "url": "https://docs.langchain.com/langsmith/byoc-architecture"
+        }
+      ],
+      "architectureImplication": "Keep the control plane under LangChain's management and the data plane in your cloud account. Check residency requirements across both, then compare managed upgrades with the operational control of self-hosting.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Portability"
+      ],
+      "vendors": [
+        "LangChain",
+        "AWS",
+        "Microsoft",
+        "Google Cloud"
+      ],
+      "decisions": [
+        "build-vs-buy",
+        "deployment",
+        "observability-and-evals"
       ]
     }
   ],

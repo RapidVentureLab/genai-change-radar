@@ -1,15 +1,22 @@
 {
-  "lastScan": "2026-11-03T12:58:10+01:00",
-  "publishedLastScan": 0,
-  "heldLastScan": 2,
+  "lastScan": "2026-11-04T13:09:09+01:00",
+  "publishedLastScan": 3,
+  "heldLastScan": 1,
   "factCheck": {
     "ran": true,
-    "checked": 2,
-    "supported": 0,
-    "unsupported": 2,
+    "checked": 4,
+    "supported": 3,
+    "unsupported": 1,
     "unverifiable": 0
   },
   "held": [
+    {
+      "day": "2026-11-04",
+      "title": "GitHub separates BYOK usage in Copilot reports",
+      "reasons": [
+        "Fact check: The item dates the announcement November 4; the GitHub changelog identifies it as November 3, published at 16:32 -08:00."
+      ]
+    },
     {
       "day": "2026-11-03",
       "title": "Mistral releases Mistral Large 4 weights for self-hosting",
@@ -74,14 +81,6 @@
       "title": "AWS adds domain and location controls to Bedrock Web Search",
       "reasons": [
         "Fact check: The item says the change was announced on 23 October 2026 | Neither source states the announcement day; the AWS URL identifies only October."
-      ]
-    },
-    {
-      "day": "2026-10-22",
-      "title": "Google Cloud adds OpenAI models to Model Garden",
-      "reasons": [
-        "Fact check: The item dates the announcement to 21 October, but the readable Google Cloud source does not state an announcement date.",
-        "Fact check: The before field says teams managed OpenAI inference separately from Google's catalog, billing, and controls, but the source does not describe that prior arrangement."
       ]
     }
   ]

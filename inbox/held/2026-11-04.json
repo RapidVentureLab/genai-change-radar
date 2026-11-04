@@ -1,0 +1,49 @@
+{
+  "updates": [
+    {
+      "id": "2026-11-04-github-copilot-byok-usage-metrics",
+      "date": "2026-11-04",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "byok usage reporting",
+      "impact": "Incremental",
+      "title": "GitHub separates BYOK usage in Copilot reports",
+      "whatChanged": "GitHub added local BYOK usage fields and enterprise custom-model flags to Copilot usage metrics on 4 November. Reports now separate these requests at user and aggregate levels in 1-day and 28-day views. Local BYOK fields rely on client telemetry and may undercount.",
+      "whyCare": "You can separate Copilot-hosted usage from local provider keys, local models and enterprise custom models, then check activity against policy. Local BYOK counts can miss requests when client telemetry is disabled.",
+      "before": "Copilot reports included BYOK in broader client totals, which could mix local or custom-model use with GitHub-hosted models.",
+      "after": "Reports identify local BYOK activity and flag enterprise custom-model requests, with user-level and aggregate counts across 1-day and 28-day views.",
+      "learn": "Update Copilot dashboards to separate local BYOK and enterprise custom-model use. Check telemetry coverage and token-count gaps before comparing costs or enforcing policy.",
+      "cloudPrimitives": [
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - BYOK and enterprise custom models in the Copilot usage API",
+          "url": "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api/"
+        },
+        {
+          "name": "GitHub Docs - Copilot usage metrics API",
+          "url": "https://docs.github.com/rest/copilot/copilot-usage-metrics"
+        }
+      ],
+      "architectureImplication": "Use Copilot usage records as a multi-provider cost and policy feed. Join user-level BYOK metrics to approved-provider inventories, and account for the local telemetry blind spot.",
+      "tradeoffs": [
+        "Cost",
+        "Control",
+        "Security"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "cost-and-routing",
+        "observability-and-evals",
+        "security-and-guardrails"
+      ],
+      "heldReasons": [
+        "Fact check: The item dates the announcement November 4; the GitHub changelog identifies it as November 3, published at 16:32 -08:00."
+      ]
+    }
+  ]
+}

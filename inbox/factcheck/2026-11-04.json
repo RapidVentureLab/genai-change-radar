@@ -1,0 +1,55 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-04T12:11:14+00:00",
+  "items": [
+    {
+      "id": "2026-11-03-microsoft-mcp-gateway",
+      "title": "Microsoft adds a native MCP gateway to Application Gateway for Containers",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://azure.microsoft.com/updates?id=576388",
+        "https://azure.microsoft.com/updates?id=576382"
+      ],
+      "problems": [],
+      "notes": []
+    },
+    {
+      "id": "2026-11-03-aws-workspaces-agent-desktops",
+      "title": "AWS adds Linux and Windows 11 desktops for AI agents",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/11/workspaces-ai-agents-linux-windows-11/"
+      ],
+      "problems": [],
+      "notes": [
+        "The announcement text omits the day; its URL identifies November 2026 only."
+      ]
+    },
+    {
+      "id": "2026-11-03-langchain-langsmith-byoc-multicloud",
+      "title": "LangChain expands LangSmith BYOC to Azure and Google Cloud",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://www.langchain.com/blog/langsmith-byoc-aws-gc-azure",
+        "https://docs.langchain.com/langsmith/byoc-architecture"
+      ],
+      "problems": [],
+      "notes": [
+        "The announcement does not state its publication day."
+      ]
+    },
+    {
+      "id": "2026-11-04-github-copilot-byok-usage-metrics",
+      "title": "GitHub separates BYOK usage in Copilot reports",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api/",
+        "https://docs.github.com/rest/copilot/copilot-usage-metrics"
+      ],
+      "problems": [
+        "The item dates the announcement November 4; the GitHub changelog identifies it as November 3, published at 16:32 -08:00."
+      ],
+      "notes": []
+    }
+  ]
+}

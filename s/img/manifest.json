@@ -79,5 +79,8 @@
   "2026-10-28-aws-lambda-durable-execution-telemetry": "bf76d144653d",
   "2026-10-29-aws-sagemaker-soci-images": "75fee82a9a02",
   "2026-10-29-langchain-managed-deep-agents-v010": "ccbe44cc10e9",
-  "2026-10-30-aws-bedrock-openai-govcloud": "15dbd5224ff9"
+  "2026-10-30-aws-bedrock-openai-govcloud": "15dbd5224ff9",
+  "2026-11-03-microsoft-mcp-gateway": "50e0d4f3b290",
+  "2026-11-03-aws-workspaces-agent-desktops": "97a4a6cd0512",
+  "2026-11-03-langchain-langsmith-byoc-multicloud": "83375f6a7d2a"
 }

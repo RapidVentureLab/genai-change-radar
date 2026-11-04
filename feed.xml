@@ -6,7 +6,38 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Tue, 03 Nov 2026 11:58:10 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 12:09:09 GMT</lastBuildDate>
+    <item>
+      <title>AWS adds Linux and Windows 11 desktops for AI agents</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-03-aws-workspaces-agent-desktops</link>
+      <guid isPermaLink="false">2026-11-03-aws-workspaces-agent-desktops</guid>
+      <pubDate>Tue, 03 Nov 2026 06:00:00 GMT</pubDate>
+      <description>Teams can give GUI and development agents an OS-specific desktop without operating their own desktop fleet. WorkSpaces keeps those agents inside the existing IAM and network controls. What to do: Match the desktop OS to each workflow. Test agent permissions, Linux root access and network reach before moving desktop tasks into production.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>LangChain expands LangSmith BYOC to Azure and Google Cloud</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-03-langchain-langsmith-byoc-multicloud</link>
+      <guid isPermaLink="false">2026-11-03-langchain-langsmith-byoc-multicloud</guid>
+      <pubDate>Tue, 03 Nov 2026 06:00:00 GMT</pubDate>
+      <description>Teams can keep traces, prompts, datasets and agent deployments in their cloud account while LangChain manages platform operations. Google Cloud data planes can run in any region, but LangSmith manages them from a US control plane. What to do: Map traces, prompts, secrets and deployment data to the right cloud boundary. Compare BYOC operations and control-plane data with self-hosting before choosing a beta cloud.</description>
+      <category>Production &amp; Business</category>
+      <category>LangChain</category>
+      <category>AWS</category>
+      <category>Microsoft</category>
+      <category>Google Cloud</category>
+    </item>
+    <item>
+      <title>Microsoft adds a native MCP gateway to Application Gateway for Containers</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-03-microsoft-mcp-gateway</link>
+      <guid isPermaLink="false">2026-11-03-microsoft-mcp-gateway</guid>
+      <pubDate>Tue, 03 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can expose MCP servers through existing Azure ingress controls without adding a separate MCP-aware gateway. The preview could reduce custom routing work; test it against your current MCP and gateway policies. What to do: Test MCPRoute with your authentication and WAF policies. Check preview limits before routing production traffic.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Microsoft</category>
+      <category>Open standards</category>
+    </item>
     <item>
       <title>AWS adds OpenAI GPT-5.6 Terra and Luna to Bedrock in GovCloud</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-30-aws-bedrock-openai-govcloud</link>
@@ -442,33 +473,6 @@
       <description>The change that matters is delegation. Companies hand agents real parts of a business process. What to do: Start each agent workflow by defining the task boundary, the data and tools it needs, who approves what, what happens on failure and how you measure success.</description>
       <category>Application &amp; Workflow</category>
       <category>OpenAI</category>
-    </item>
-    <item>
-      <title>EU AI Act transparency rules start to apply</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-08-02-eu-ai-act-transparency</link>
-      <guid isPermaLink="false">2026-08-02-eu-ai-act-transparency</guid>
-      <pubDate>Sun, 02 Aug 2026 06:00:00 GMT</pubDate>
-      <description>Customer-facing AI in the EU now needs disclosure and content labelling built in. What to do: Check every customer-facing AI feature for disclosure. Add labels or metadata to generated media.</description>
-      <category>Production &amp; Business</category>
-      <category>EU regulation</category>
-    </item>
-    <item>
-      <title>OpenAI moves safety evaluation from single actions to whole trajectories</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-07-20-long-horizon-safety</link>
-      <guid isPermaLink="false">2026-07-20-long-horizon-safety</guid>
-      <pubDate>Mon, 20 Jul 2026 06:00:00 GMT</pubDate>
-      <description>Once systems act over long periods, checking single outputs misses what the sequence of actions is working toward. What to do: Add trajectory monitoring, long-horizon evaluations, approval points and recovery steps to agent designs.</description>
-      <category>Production &amp; Business</category>
-      <category>OpenAI</category>
-    </item>
-    <item>
-      <title>Anthropic releases Claude Fable 5, built for long and complex tasks</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-06-09-fable5</link>
-      <guid isPermaLink="false">2026-06-09-fable5</guid>
-      <pubDate>Tue, 09 Jun 2026 06:00:00 GMT</pubDate>
-      <description>How long and complex a task a model can finish is becoming a main way to compare models. What to do: Test models on how long and how complex a task they finish reliably. Use your own tasks.</description>
-      <category>Model</category>
-      <category>Anthropic</category>
     </item>
   </channel>
 </rss>
