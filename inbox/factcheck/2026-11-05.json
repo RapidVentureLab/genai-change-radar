@@ -1,0 +1,19 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-05T12:21:14+00:00",
+  "items": [
+    {
+      "id": "2026-11-04-aws-quick-smart-approvals",
+      "title": "AWS adds Smart Approvals to Amazon Quick",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/smart-approvals-in-amazon-quick-human-oversight-where-it-matters/",
+        "https://docs.aws.amazon.com/quick/latest/userguide/smart-approvals.html"
+      ],
+      "problems": [],
+      "notes": [
+        "The sources do not print the announcement day; the blog's embedded figure URL is dated 2026/11/04, and the user guide is undated."
+      ]
+    }
+  ]
+}

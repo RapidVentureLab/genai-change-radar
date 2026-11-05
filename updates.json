@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-04T13:09:09+01:00",
+  "updatedAt": "2026-11-05T13:20:02+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -3577,6 +3577,54 @@
         "deployment",
         "observability-and-evals"
       ]
+    },
+    {
+      "id": "2026-11-04-aws-quick-smart-approvals",
+      "date": "2026-11-04",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "classifier-based action review",
+      "impact": "Incremental",
+      "title": "AWS adds Smart Approvals to Amazon Quick",
+      "whatChanged": "AWS added Smart Approvals to Amazon Quick on 4 November. A classifier reviews actions marked Ask each time against the request and conversation. It auto-approves low-risk actions and sends consequential actions or review failures to a person. Quick logs activity in CloudTrail. Smart Approvals is on by default in desktop and mobile apps. The web version does not support it.",
+      "whyCare": "Your Quick agents can finish routine multi-step tasks without repeated approval prompts, while connector policies still reserve consequential actions for a person. The classifier can err, so keep mandatory approvals in policy and audit a pilot.",
+      "before": "Quick sent actions marked Ask each time to the user for approval. That could interrupt routine steps in multi-action workflows.",
+      "after": "Quick now reviews eligible actions against the request and context, approves low-risk actions for their exact parameters, and returns consequential actions or review failures to a person.",
+      "learn": "Pilot Smart Approvals with a defined workflow. Require human review through connector permissions for actions that must never be auto-approved. Audit sample approvals in CloudTrail before expanding access.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - Smart Approvals in Amazon Quick: Human oversight where it matters",
+          "url": "https://aws.amazon.com/blogs/machine-learning/smart-approvals-in-amazon-quick-human-oversight-where-it-matters/"
+        },
+        {
+          "name": "Amazon Quick User Guide - Smart Approvals",
+          "url": "https://docs.aws.amazon.com/quick/latest/userguide/smart-approvals.html"
+        }
+      ],
+      "architectureImplication": "Keep authorization in existing connector and account policies, then use the classifier only to decide which eligible actions still need a person. Preserve explicit approval rules for sensitive actions and correlate Quick events with destination-system logs.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Reliability",
+        "Usability"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "human-approval",
+        "identity-and-permissions",
+        "security-and-guardrails"
+      ],
+      "action": {
+        "type": "security",
+        "what": "Confirm connector permissions and audit logging before piloting Smart Approvals."
+      }
     }
   ],
   "overallDirection": {

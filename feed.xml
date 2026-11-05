@@ -6,7 +6,16 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Wed, 04 Nov 2026 12:09:09 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 12:20:02 GMT</lastBuildDate>
+    <item>
+      <title>AWS adds Smart Approvals to Amazon Quick</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-04-aws-quick-smart-approvals</link>
+      <guid isPermaLink="false">2026-11-04-aws-quick-smart-approvals</guid>
+      <pubDate>Wed, 04 Nov 2026 06:00:00 GMT</pubDate>
+      <description>Your Quick agents can finish routine multi-step tasks without repeated approval prompts, while connector policies still reserve consequential actions for a person. The classifier can err, so keep mandatory approvals in policy and audit a pilot. What to do: Pilot Smart Approvals with a defined workflow. Require human review through connector permissions for actions that must never be auto-approved. Audit sample approvals in CloudTrail before expanding access.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
     <item>
       <title>AWS adds Linux and Windows 11 desktops for AI agents</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-03-aws-workspaces-agent-desktops</link>
@@ -464,15 +473,6 @@
       <description>A correct-looking answer can come from an unsafe path. This matters once agents take actions. What to do: Add trajectory checks to your evaluations. Keep audit logs and use human review for risky actions.</description>
       <category>Production &amp; Business</category>
       <category>Microsoft</category>
-    </item>
-    <item>
-      <title>OpenAI examples show agents doing multi-step work inside company workflows</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-01-workflow-execution</link>
-      <guid isPermaLink="false">2026-09-01-workflow-execution</guid>
-      <pubDate>Tue, 01 Sep 2026 06:00:00 GMT</pubDate>
-      <description>The change that matters is delegation. Companies hand agents real parts of a business process. What to do: Start each agent workflow by defining the task boundary, the data and tools it needs, who approves what, what happens on failure and how you measure success.</description>
-      <category>Application &amp; Workflow</category>
-      <category>OpenAI</category>
     </item>
   </channel>
 </rss>
