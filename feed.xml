@@ -6,7 +6,44 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Thu, 05 Nov 2026 12:20:02 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 12:07:00 GMT</lastBuildDate>
+    <item>
+      <title>AWS adds cited Web Answer to AgentCore Gateway</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-05-aws-agentcore-web-answer</link>
+      <guid isPermaLink="false">2026-11-05-aws-agentcore-web-answer</guid>
+      <pubDate>Thu, 05 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can avoid maintaining a separate search, retrieval, synthesis and citation pipeline for current-web questions. Keep Web Search when your agent needs raw ranked results and your own synthesis logic. What to do: Compare cited answer quality, freshness, latency and cost with your search pipeline. Set domain filters and test citation coverage before exposing results to users.</description>
+      <category>Data &amp; Knowledge</category>
+      <category>AWS</category>
+      <category>Open standards</category>
+    </item>
+    <item>
+      <title>GitHub adds Copilot code review outcomes to its usage API</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-05-github-copilot-review-metrics</link>
+      <guid isPermaLink="false">2026-11-05-github-copilot-review-metrics</guid>
+      <pubDate>Thu, 05 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can track whether developers act on Copilot's review feedback and compare comment types and customizations. Treat these as measures of feedback uptake; they do not prove that code quality improved. What to do: Calculate addressed rates alongside human change requests. Review the merge-day counting and access rules before comparing repositories.</description>
+      <category>Production &amp; Business</category>
+      <category>GitHub</category>
+    </item>
+    <item>
+      <title>LangChain adds async subagents to Deep Agents</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-05-langchain-async-subagents</link>
+      <guid isPermaLink="false">2026-11-05-langchain-async-subagents</guid>
+      <pubDate>Thu, 05 Nov 2026 06:00:00 GMT</pubDate>
+      <description>Your supervisor can stay responsive while agents handle long tasks in parallel. You can steer or cancel work mid-run, but you must manage concurrency, task state and approval paths. What to do: Prototype async tasks with realistic runtimes. Test notifications, cancellation, approval waits and failure handling before you use them in production.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>LangChain</category>
+    </item>
+    <item>
+      <title>Mistral expands Studio with managed agents, workflows and apps</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-05-mistral-studio-managed-agents</link>
+      <guid isPermaLink="false">2026-11-05-mistral-studio-managed-agents</guid>
+      <pubDate>Thu, 05 Nov 2026 06:00:00 GMT</pubDate>
+      <description>Studio brings agents, workflows and apps into one build-and-run platform with deployment choices. Compare that bundle with AgentCore, LangSmith and Temporal-based deployments against your data and operations needs. What to do: Test a workflow and managed agent against your data boundaries. Compare Studio's preview limits, execution model and operational controls with AgentCore, LangSmith BYOC and Temporal before you standardize.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Other</category>
+    </item>
     <item>
       <title>AWS adds Smart Approvals to Amazon Quick</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-04-aws-quick-smart-approvals</link>
@@ -437,42 +474,6 @@
       <description>AI products are becoming industry-specific, with data rights and workflows built in. What to do: When you compare vertical AI products, check data rights, workflow fit and governance as closely as the model.</description>
       <category>Application &amp; Workflow</category>
       <category>OpenAI</category>
-    </item>
-    <item>
-      <title>More providers package agent runtimes as managed services</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-10-managed-agent-runtimes</link>
-      <guid isPermaLink="false">2026-09-10-managed-agent-runtimes</guid>
-      <pubDate>Thu, 10 Sep 2026 06:00:00 GMT</pubDate>
-      <description>Teams could already build these pieces. Managed versions cut the work, which changes the build or buy decision. What to do: List what your agent harness does today: state, context, tools, execution, retries, permissions, memory and monitoring. Check which parts a managed runtime covers.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>OpenAI</category>
-    </item>
-    <item>
-      <title>OpenAI says it now has an automated research intern under human supervision</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-06-automated-research</link>
-      <guid isPermaLink="false">2026-09-06-automated-research</guid>
-      <pubDate>Sun, 06 Sep 2026 06:00:00 GMT</pubDate>
-      <description>If AI speeds up AI research, new model capabilities may arrive faster, and so may the need for alignment and safety work. What to do: Expect model releases to keep speeding up. Plan for model changes as a regular event in your architecture.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>OpenAI</category>
-    </item>
-    <item>
-      <title>OpenAI releases GPT-6 Astra with gains in computer use, science and cyber</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-03-gpt6-astra</link>
-      <guid isPermaLink="false">2026-09-03-gpt6-astra</guid>
-      <pubDate>Thu, 03 Sep 2026 06:00:00 GMT</pubDate>
-      <description>Frontier models now operate software and carry out complex professional tasks as well as answering questions. What to do: Test it on your own tool-using tasks. Treat vendor benchmark results as claims until you reproduce them.</description>
-      <category>Model</category>
-      <category>OpenAI</category>
-    </item>
-    <item>
-      <title>Teams now check the path an agent takes as well as its answer</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-01-enterprise-evals</link>
-      <guid isPermaLink="false">2026-09-01-enterprise-evals</guid>
-      <pubDate>Tue, 01 Sep 2026 06:00:00 GMT</pubDate>
-      <description>A correct-looking answer can come from an unsafe path. This matters once agents take actions. What to do: Add trajectory checks to your evaluations. Keep audit logs and use human review for risky actions.</description>
-      <category>Production &amp; Business</category>
-      <category>Microsoft</category>
     </item>
   </channel>
 </rss>

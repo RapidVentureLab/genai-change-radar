@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-05T13:20:02+01:00",
+  "updatedAt": "2026-11-06T13:07:00+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -3625,6 +3625,179 @@
         "type": "security",
         "what": "Confirm connector permissions and audit logging before piloting Smart Approvals."
       }
+    },
+    {
+      "id": "2026-11-05-langchain-async-subagents",
+      "date": "2026-11-05",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "asynchronous subagents",
+      "impact": "Incremental",
+      "title": "LangChain adds async subagents to Deep Agents",
+      "whatChanged": "LangChain released asynchronous subagents for Deep Agents on 5 November. A supervisor can start background agents, continue talking to users, then check, update or cancel tasks. Python, JavaScript and Managed Deep Agents support the feature; task-completion notifications remain in beta.",
+      "whyCare": "Your supervisor can stay responsive while agents handle long tasks in parallel. You can steer or cancel work mid-run, but you must manage concurrency, task state and approval paths.",
+      "before": "Deep Agents ran subagents synchronously, so the supervisor waited for their results before continuing.",
+      "after": "Deep Agents can launch background subagents and let the supervisor handle new user input while work runs.",
+      "learn": "Prototype async tasks with realistic runtimes. Test notifications, cancellation, approval waits and failure handling before you use them in production.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "LangChain - Agents Are Going Async",
+          "url": "https://blog.langchain.com/agents-are-going-async/"
+        },
+        {
+          "name": "LangChain Docs - Async subagents",
+          "url": "https://docs.langchain.com/oss/python/deepagents/async-subagents"
+        }
+      ],
+      "architectureImplication": "Keep the user-facing supervisor separate from background workers, and define ownership, state, cancellation and approval behavior for each task. Compare this design with asynchronous tool calls and queue-backed job systems.",
+      "tradeoffs": [
+        "Reliability",
+        "Usability",
+        "Control",
+        "Security"
+      ],
+      "vendors": [
+        "LangChain"
+      ],
+      "decisions": [
+        "agent-vs-workflow",
+        "managed-vs-custom-runtime",
+        "state-and-memory"
+      ]
+    },
+    {
+      "id": "2026-11-05-mistral-studio-managed-agents",
+      "date": "2026-11-05",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "integrated agent platform",
+      "impact": "Incremental",
+      "title": "Mistral expands Studio with managed agents, workflows and apps",
+      "whatChanged": "Mistral expanded Studio on 5 November with managed agents and apps, event-triggered workflows, enterprise context, observability and evaluations. Teams can deploy the platform in Mistral's cloud, their cloud, a VPC or on-premises. Managed Agents and Workflows are in preview.",
+      "whyCare": "Studio brings agents, workflows and apps into one build-and-run platform with deployment choices. Compare that bundle with AgentCore, LangSmith and Temporal-based deployments against your data and operations needs.",
+      "before": "Mistral had introduced Workflows in public preview, but its Studio update had not yet announced managed agents and apps.",
+      "after": "Studio offers managed agents and apps plus updated workflows, with Mistral-hosted, customer-cloud, VPC or on-premises options.",
+      "learn": "Test a workflow and managed agent against your data boundaries. Compare Studio's preview limits, execution model and operational controls with AgentCore, LangSmith BYOC and Temporal before you standardize.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Mistral - Le Chonk brings the brains. Studio puts it to work.",
+          "url": "https://mistral.ai/news/build-with-studio/"
+        },
+        {
+          "name": "Mistral Docs - Managed Agents",
+          "url": "https://docs.mistral.ai/studio/agents/overview"
+        },
+        {
+          "name": "Mistral Docs - Workflows",
+          "url": "https://docs.mistral.ai/studio/workflows/overview"
+        }
+      ],
+      "architectureImplication": "Treat Studio as an integrated build-and-run option, but map the agent harness, workflow orchestrator, model, state and traces to their actual execution locations. Compare deployment and data boundaries with AgentCore, LangSmith BYOC and Temporal-backed stacks.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Portability",
+        "Cost"
+      ],
+      "vendors": [
+        "Other"
+      ],
+      "decisions": [
+        "build-vs-buy",
+        "deployment",
+        "managed-vs-custom-runtime"
+      ]
+    },
+    {
+      "id": "2026-11-05-aws-agentcore-web-answer",
+      "date": "2026-11-05",
+      "layer": "Data & Knowledge",
+      "kind": "signal",
+      "changeType": "managed web retrieval",
+      "impact": "Packaging / distribution",
+      "title": "AWS adds cited Web Answer to AgentCore Gateway",
+      "whatChanged": "AWS made Web Answer generally available for Amazon Bedrock AgentCore on 5 November. The managed connector returns a synthesized answer tied to current web sources through one MCP tool call. Administrators can set domain filters; agents can narrow them and specify a date range or country.",
+      "whyCare": "You can avoid maintaining a separate search, retrieval, synthesis and citation pipeline for current-web questions. Keep Web Search when your agent needs raw ranked results and your own synthesis logic.",
+      "before": "AgentCore Web Search returned ranked results; teams built retrieval, answer synthesis and citations in their own agent code.",
+      "after": "AgentCore Gateway can call Web Answer through MCP and return a cited answer, while Web Search continues to return raw results.",
+      "learn": "Compare cited answer quality, freshness, latency and cost with your search pipeline. Set domain filters and test citation coverage before exposing results to users.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - Getting started with Web Answer on Amazon Bedrock AgentCore",
+          "url": "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/"
+        }
+      ],
+      "architectureImplication": "Use Web Answer for factual web lookups inside an agent; keep raw search for workflows that need control over evidence selection and synthesis. Compare this managed connector with custom retrieval and third-party web-search APIs.",
+      "tradeoffs": [
+        "Reliability",
+        "Control",
+        "Cost",
+        "Security"
+      ],
+      "vendors": [
+        "AWS",
+        "Open standards"
+      ],
+      "decisions": [
+        "rag-vs-long-context",
+        "managed-vs-custom-runtime",
+        "integration-standards"
+      ]
+    },
+    {
+      "id": "2026-11-05-github-copilot-review-metrics",
+      "date": "2026-11-05",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "code review outcome metrics",
+      "impact": "Incremental",
+      "title": "GitHub adds Copilot code review outcomes to its usage API",
+      "whatChanged": "GitHub added repository-level Copilot code review metrics to enterprise and organization usage reports on 5 November. New fields count evaluated and addressed comments, break them down by severity and customization, and count merged pull requests with no later human change request.",
+      "whyCare": "You can track whether developers act on Copilot's review feedback and compare comment types and customizations. Treat these as measures of feedback uptake; they do not prove that code quality improved.",
+      "before": "Copilot usage reports counted review activity and applied suggestions, but did not show how developers acted on all review comments.",
+      "after": "Enterprise and organization reports show addressed comments, review dimensions and merged pull requests with no later human change request.",
+      "learn": "Calculate addressed rates alongside human change requests. Review the merge-day counting and access rules before comparing repositories.",
+      "cloudPrimitives": [
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Usage metrics API adds code review details and addressed rate",
+          "url": "https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate"
+        },
+        {
+          "name": "GitHub Docs - Copilot usage metrics API",
+          "url": "https://docs.github.com/rest/copilot/copilot-usage-metrics"
+        }
+      ],
+      "architectureImplication": "Add these fields to Copilot program dashboards to assess feedback uptake by repository, severity and customization. Keep uptake measures separate from defect rates because an addressed comment does not show whether the code improved.",
+      "tradeoffs": [
+        "Observability",
+        "Control",
+        "Reliability"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "observability-and-evals"
+      ]
     }
   ],
   "overallDirection": {

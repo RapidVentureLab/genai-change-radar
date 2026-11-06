@@ -1,0 +1,52 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-06T12:08:06+00:00",
+  "items": [
+    {
+      "id": "2026-11-05-langchain-async-subagents",
+      "title": "LangChain adds async subagents to Deep Agents",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://blog.langchain.com/agents-are-going-async/",
+        "https://docs.langchain.com/oss/python/deepagents/async-subagents"
+      ],
+      "problems": [],
+      "notes": []
+    },
+    {
+      "id": "2026-11-05-mistral-studio-managed-agents",
+      "title": "Mistral expands Studio with managed agents, workflows and apps",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://mistral.ai/news/build-with-studio/",
+        "https://docs.mistral.ai/studio/agents/overview",
+        "https://docs.mistral.ai/studio/workflows/overview"
+      ],
+      "problems": [],
+      "notes": [
+        "The announcement page says “Today” but does not print a calendar date; the sources do not contradict 5 November 2026."
+      ]
+    },
+    {
+      "id": "2026-11-05-aws-agentcore-web-answer",
+      "title": "AWS adds cited Web Answer to AgentCore Gateway",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/"
+      ],
+      "problems": [],
+      "notes": []
+    },
+    {
+      "id": "2026-11-05-github-copilot-review-metrics",
+      "title": "GitHub adds Copilot code review outcomes to its usage API",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-05-usage-metrics-api-adds-code-review-details-and-addressed-rate",
+        "https://docs.github.com/rest/copilot/copilot-usage-metrics"
+      ],
+      "problems": [],
+      "notes": []
+    }
+  ]
+}
