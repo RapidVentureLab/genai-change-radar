@@ -87,5 +87,7 @@
   "2026-11-05-langchain-async-subagents": "da9c27e20315",
   "2026-11-05-mistral-studio-managed-agents": "3ad6bb50ba01",
   "2026-11-05-aws-agentcore-web-answer": "db4b4fb44b0c",
-  "2026-11-05-github-copilot-review-metrics": "c1624ef796b5"
+  "2026-11-05-github-copilot-review-metrics": "c1624ef796b5",
+  "2026-11-06-aws-sagemaker-mig-partitioning": "2aa5e102af4d",
+  "2026-11-06-github-copilot-review-settings-api": "435864bab2eb"
 }

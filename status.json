@@ -1,11 +1,11 @@
 {
-  "lastScan": "2026-11-06T13:07:00+01:00",
-  "publishedLastScan": 4,
+  "lastScan": "2026-11-07T12:00:36+01:00",
+  "publishedLastScan": 2,
   "heldLastScan": 0,
   "factCheck": {
     "ran": true,
-    "checked": 4,
-    "supported": 4,
+    "checked": 2,
+    "supported": 2,
     "unsupported": 0,
     "unverifiable": 0
   },

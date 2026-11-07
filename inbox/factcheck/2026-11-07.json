@@ -1,0 +1,27 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-07T11:04:19+00:00",
+  "items": [
+    {
+      "id": "2026-11-06-aws-sagemaker-mig-partitioning",
+      "title": "AWS adds GPU partitioning to SageMaker inference",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/"
+      ],
+      "problems": [],
+      "notes": []
+    },
+    {
+      "id": "2026-11-06-github-copilot-review-settings-api",
+      "title": "GitHub exposes Copilot code review settings through APIs",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates",
+        "https://docs.github.com/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review#configuring-copilot-code-review-with-the-api"
+      ],
+      "problems": [],
+      "notes": []
+    }
+  ]
+}

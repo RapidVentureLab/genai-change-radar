@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-06T13:07:00+01:00",
+  "updatedAt": "2026-11-07T12:00:36+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -3797,6 +3797,87 @@
       ],
       "decisions": [
         "observability-and-evals"
+      ]
+    },
+    {
+      "id": "2026-11-06-aws-sagemaker-mig-partitioning",
+      "date": "2026-11-06",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "managed GPU partitioning",
+      "impact": "Packaging / distribution",
+      "title": "AWS adds GPU partitioning to SageMaker inference",
+      "whatChanged": "On 6 November, AWS added NVIDIA Multi-Instance GPU (MIG) partitioning to Amazon SageMaker AI inference components. Teams can assign each model an isolated GPU partition and fit several models on one GPU. They choose partition profiles when provisioning endpoints; single-model endpoints do not support partitioning.",
+      "whyCare": "You can consolidate smaller inference workloads with hardware isolation and fixed resources, instead of paying for underused full GPUs or operating MIG on Kubernetes. Compare supported GPU profiles, model memory needs and endpoint limits before moving workloads.",
+      "before": "Teams that needed MIG for several models on a GPU had to manage it on Kubernetes; managed SageMaker endpoints allocated whole GPUs.",
+      "after": "SageMaker AI can allocate hardware-isolated MIG partitions to inference components when it provisions a supported endpoint.",
+      "learn": "Test your workload against supported GPU profiles and endpoint limits. Compare partitioned inference components with multi-model endpoints and self-managed Kubernetes. Measure latency and cost before moving production traffic.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - SageMaker Inference now supports Multi-Instance GPU",
+          "url": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/"
+        }
+      ],
+      "architectureImplication": "Use managed partitioned endpoints for models that fit supported MIG profiles, and retain whole-GPU endpoints when a model spans devices or uses unsupported endpoint types. Compare with SageMaker multi-model endpoints, which share GPUs without equivalent partition isolation, and self-managed Kubernetes MIG.",
+      "tradeoffs": [
+        "Utilization",
+        "Isolation",
+        "Cost",
+        "Latency"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "deployment",
+        "cost-and-routing",
+        "managed-vs-custom-runtime"
+      ]
+    },
+    {
+      "id": "2026-11-06-github-copilot-review-settings-api",
+      "date": "2026-11-06",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "code review policy APIs",
+      "impact": "Incremental",
+      "title": "GitHub exposes Copilot code review settings through APIs",
+      "whatChanged": "On 6 November, GitHub added REST and GraphQL APIs for Copilot code review settings at enterprise, organization and repository levels. Admins can manage review access, default effort, runner configuration, custom instructions and MCP-tool use by role. APIs can also identify Copilot reviews and report review effort and comment sources.",
+      "whyCare": "You can manage code review policy alongside repository provisioning and trace which tools or instructions shaped a review. Enterprise and organization settings endpoints do not support GitHub Apps or fine-grained personal access tokens.",
+      "before": "Administrators could manage code review settings in GitHub, but could not use these APIs to automate policy across enterprise, organization and repository scopes.",
+      "after": "Administrators can use REST and GraphQL endpoints to manage eligible settings at each scope and inspect attribution fields for reviews and comments.",
+      "learn": "Automate a test policy at repository scope first. Check the role and token requirements for each endpoint, then verify review effort and source attribution in your reporting.",
+      "cloudPrimitives": [
+        "Security",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Copilot code review: API management and review overview updates",
+          "url": "https://github.blog/changelog/2026-11-06-copilot-code-review-api-management-and-review-overview-updates"
+        },
+        {
+          "name": "GitHub Docs - Configure Copilot code review with the API",
+          "url": "https://docs.github.com/copilot/how-tos/copilot-on-github/set-up-copilot/configure-code-review#configuring-copilot-code-review-with-the-api"
+        }
+      ],
+      "architectureImplication": "Use the API to manage review policy and runner configuration alongside repository provisioning, but use supported credentials for enterprise and organization endpoints. Use attribution fields to make generated reviews and their MCP or instruction sources auditable.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Administration"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "identity-and-permissions",
+        "security-and-guardrails",
+        "integration-standards"
       ]
     }
   ],

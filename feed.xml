@@ -6,7 +6,25 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Fri, 06 Nov 2026 12:07:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 11:00:36 GMT</lastBuildDate>
+    <item>
+      <title>AWS adds GPU partitioning to SageMaker inference</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-06-aws-sagemaker-mig-partitioning</link>
+      <guid isPermaLink="false">2026-11-06-aws-sagemaker-mig-partitioning</guid>
+      <pubDate>Fri, 06 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can consolidate smaller inference workloads with hardware isolation and fixed resources, instead of paying for underused full GPUs or operating MIG on Kubernetes. Compare supported GPU profiles, model memory needs and endpoint limits before moving workloads. What to do: Test your workload against supported GPU profiles and endpoint limits. Compare partitioned inference components with multi-model endpoints and self-managed Kubernetes. Measure latency and cost before moving production traffic.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>GitHub exposes Copilot code review settings through APIs</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-06-github-copilot-review-settings-api</link>
+      <guid isPermaLink="false">2026-11-06-github-copilot-review-settings-api</guid>
+      <pubDate>Fri, 06 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can manage code review policy alongside repository provisioning and trace which tools or instructions shaped a review. Enterprise and organization settings endpoints do not support GitHub Apps or fine-grained personal access tokens. What to do: Automate a test policy at repository scope first. Check the role and token requirements for each endpoint, then verify review effort and source attribution in your reporting.</description>
+      <category>Production &amp; Business</category>
+      <category>GitHub</category>
+    </item>
     <item>
       <title>AWS adds cited Web Answer to AgentCore Gateway</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-05-aws-agentcore-web-answer</link>
@@ -454,24 +472,6 @@
       <guid isPermaLink="false">2026-09-16-work-expansion</guid>
       <pubDate>Wed, 16 Sep 2026 06:00:00 GMT</pubDate>
       <description>AI may change what jobs include as well as how fast people work. What to do: Measure changes in tasks and roles alongside time saved.</description>
-      <category>Application &amp; Workflow</category>
-      <category>OpenAI</category>
-    </item>
-    <item>
-      <title>OpenAI's data agent combines company data, analysis and dashboards in one workflow</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-10-data-agent</link>
-      <guid isPermaLink="false">2026-09-10-data-agent</guid>
-      <pubDate>Thu, 10 Sep 2026 06:00:00 GMT</pubDate>
-      <description>People without analyst skills can get from a question to a shareable analysis themselves. What to do: Before you connect such an agent, check data permissions, shared metric definitions, where each number comes from, how fresh it is and how you audit it.</description>
-      <category>Data &amp; Knowledge</category>
-      <category>OpenAI</category>
-    </item>
-    <item>
-      <title>OpenAI launches ChatGPT for financial services with premium market data</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-10-financial-services</link>
-      <guid isPermaLink="false">2026-09-10-financial-services</guid>
-      <pubDate>Thu, 10 Sep 2026 06:00:00 GMT</pubDate>
-      <description>AI products are becoming industry-specific, with data rights and workflows built in. What to do: When you compare vertical AI products, check data rights, workflow fit and governance as closely as the model.</description>
       <category>Application &amp; Workflow</category>
       <category>OpenAI</category>
     </item>
