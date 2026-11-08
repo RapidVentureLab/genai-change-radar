@@ -1,0 +1,16 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-08T11:18:46+00:00",
+  "items": [
+    {
+      "id": "2026-11-06-github-copilot-slack-teams-ga",
+      "title": "GitHub makes Copilot in Slack and Teams generally available",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available/"
+      ],
+      "problems": [],
+      "notes": []
+    }
+  ]
+}

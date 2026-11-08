@@ -1,0 +1,42 @@
+{
+  "scannedAt": "2026-11-08T12:17:00+01:00",
+  "updates": [
+    {
+      "id": "2026-11-06-github-copilot-slack-teams-ga",
+      "date": "2026-11-06",
+      "layer": "Application & Workflow",
+      "kind": "signal",
+      "changeType": "chat-based coding agent availability",
+      "impact": "Packaging / distribution",
+      "title": "GitHub makes Copilot in Slack and Teams generally available",
+      "whatChanged": "On 6 November, GitHub made @GitHub in Slack and Teams generally available. Users can ask @GitHub to investigate bugs, create issues, implement changes, and open pull requests from a conversation. In Teams, Canvas lets users review implementation plans, code changes, and previews alongside chat. Issues and pull requests identify the Slack or Teams user who started them.",
+      "whyCare": "You can move from a Slack or Teams discussion to a coding session without changing tools. Teams Canvas lets teammates review plans and changes together. Treat general availability as an adoption option; keep pull-request review in place.",
+      "before": "The Slack and Teams integration was not generally available. Teams had no Canvas flow to review plans and changes in Teams conversations.",
+      "after": "Users can ask @GitHub in Slack or Teams to investigate bugs, create issues, implement changes, and open pull requests. In Teams, users can review plans, code changes, and previews in Canvas alongside chat.",
+      "learn": "Pilot @GitHub with one team. Check repository selection and review permissions before allowing it to create pull requests from a conversation. Confirm that issues and pull requests identify the Slack or Teams user who started them.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - @GitHub in Slack and Teams is generally available and more",
+          "url": "https://github.blog/changelog/2026-11-06-github-copilot-in-slack-and-teams-is-generally-available/"
+        }
+      ],
+      "architectureImplication": "Use Slack and Teams as managed entry points for GitHub coding-agent work. Keep repository-scoped access and normal pull-request checks in place. Use Canvas when teammates need to review plans, code changes, and previews together.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Human review"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "build-vs-buy"
+      ]
+    }
+  ]
+}

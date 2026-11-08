@@ -6,7 +6,7 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Sat, 07 Nov 2026 11:00:36 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 11:17:00 GMT</lastBuildDate>
     <item>
       <title>AWS adds GPU partitioning to SageMaker inference</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-06-aws-sagemaker-mig-partitioning</link>
@@ -23,6 +23,15 @@
       <pubDate>Fri, 06 Nov 2026 06:00:00 GMT</pubDate>
       <description>You can manage code review policy alongside repository provisioning and trace which tools or instructions shaped a review. Enterprise and organization settings endpoints do not support GitHub Apps or fine-grained personal access tokens. What to do: Automate a test policy at repository scope first. Check the role and token requirements for each endpoint, then verify review effort and source attribution in your reporting.</description>
       <category>Production &amp; Business</category>
+      <category>GitHub</category>
+    </item>
+    <item>
+      <title>GitHub makes Copilot in Slack and Teams generally available</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-06-github-copilot-slack-teams-ga</link>
+      <guid isPermaLink="false">2026-11-06-github-copilot-slack-teams-ga</guid>
+      <pubDate>Fri, 06 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can move from a Slack or Teams discussion to a coding session without changing tools. Teams Canvas lets teammates review plans and changes together. Treat general availability as an adoption option; keep pull-request review in place. What to do: Pilot @GitHub with one team. Check repository selection and review permissions before allowing it to create pull requests from a conversation. Confirm that issues and pull requests identify the Slack or Teams user who started them.</description>
+      <category>Application &amp; Workflow</category>
       <category>GitHub</category>
     </item>
     <item>
@@ -465,15 +474,6 @@
       <description>The question for enterprise teams moves from whether an agent can do one task to whether it can finish a long workflow safely, again and again. What to do: Keep agent state outside the model. Add retries, recovery points and checks between steps, and hand the run to a person when it goes wrong.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>Microsoft</category>
-    </item>
-    <item>
-      <title>Research finds AI use adds new recurring tasks to people's jobs</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-16-work-expansion</link>
-      <guid isPermaLink="false">2026-09-16-work-expansion</guid>
-      <pubDate>Wed, 16 Sep 2026 06:00:00 GMT</pubDate>
-      <description>AI may change what jobs include as well as how fast people work. What to do: Measure changes in tasks and roles alongside time saved.</description>
-      <category>Application &amp; Workflow</category>
-      <category>OpenAI</category>
     </item>
   </channel>
 </rss>
