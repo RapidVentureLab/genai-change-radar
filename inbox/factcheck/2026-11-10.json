@@ -1,0 +1,28 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-10T12:39:40.661+00:00",
+  "items": [
+    {
+      "id": "2026-11-09-claude-fable-mythos-52",
+      "title": "Anthropic releases Claude Fable 5.2 and Claude Mythos 5.2",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+        "https://platform.claude.com/docs/en/models/overview"
+      ],
+      "problems": [],
+      "notes": []
+    },
+    {
+      "id": "2026-11-09-bedrock-single-shot-retrieval",
+      "title": "AWS adds single-shot and passage-only retrieval to Bedrock Knowledge Bases",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/single-shot-and-agentic-retrieval-with-amazon-bedrock-managed-knowledge-base/",
+        "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-retrieve.html"
+      ],
+      "problems": [],
+      "notes": []
+    }
+  ]
+}

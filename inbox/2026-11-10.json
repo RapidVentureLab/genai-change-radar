@@ -1,0 +1,91 @@
+{
+  "scannedAt": "2026-11-10T13:38:00+01:00",
+  "updates": [
+    {
+      "id": "2026-11-09-claude-fable-mythos-52",
+      "date": "2026-11-09",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "model upgrade",
+      "impact": "Incremental",
+      "title": "Anthropic releases Claude Fable 5.2 and Claude Mythos 5.2",
+      "whatChanged": "Anthropic released Claude Fable 5.2 and Claude Mythos 5.2 on 9 November. Fable shares a base model with Mythos and adds cyber and biology safeguards for use. Organizations can apply for Mythos through verification programs. Anthropic says output runs up to 30% faster than with 5.1. Fable 5.2 costs $8 per million input tokens and $40 per million output tokens.",
+      "whyCare": "The release adds a high-capability model for harder technical work and a separate access path for sensitive domains. Compare its speed, cost, and safeguards with your current model before routing high-stakes tasks.",
+      "before": "Claude Fable 5.1 and Mythos 5.1 were the previous generation. Teams had no 5.2 option for demanding technical work.",
+      "after": "Fable 5.2 is available with cyber and biology safeguards. Organizations can apply for Mythos 5.2 through Anthropic's Cyber or Life Sciences Verification Programs.",
+      "learn": "Test Fable 5.2 on your technical workloads before rerouting traffic. Compare completed-task cost and latency with Opus 5.5 or open models. Apply for Mythos if your organization needs its sensitive-domain capabilities.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Anthropic - Claude Fable 5.2 and Mythos 5.2",
+          "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+        },
+        {
+          "name": "Anthropic - Models overview",
+          "url": "https://platform.claude.com/docs/en/models/overview"
+        }
+      ],
+      "architectureImplication": "Route demanding technical work to Fable only after task-level evaluation. Keep Mythos behind Anthropic's verification controls for cyber or biomedical research, and compare model cost with Opus 5.5, hosted alternatives, and open models.",
+      "tradeoffs": [
+        "Cost",
+        "Latency",
+        "Safety controls"
+      ],
+      "vendors": [
+        "Anthropic"
+      ],
+      "decisions": [
+        "model-selection",
+        "cost-and-routing",
+        "security-and-guardrails"
+      ]
+    },
+    {
+      "id": "2026-11-09-bedrock-single-shot-retrieval",
+      "date": "2026-11-09",
+      "layer": "Data & Knowledge",
+      "kind": "signal",
+      "changeType": "retrieval modes",
+      "impact": "Incremental",
+      "title": "AWS adds single-shot and passage-only retrieval to Bedrock Knowledge Bases",
+      "whatChanged": "AWS expanded Amazon Bedrock Managed Knowledge Base's AgenticRetrieveStream API on 9 November. Setting maxAgentIteration to 0 returns passages without a foundation-model call; 1 runs one retrieval and generates an answer; 2–5 retain agentic retrieval with iterative planning.",
+      "whyCare": "You can set retrieval effort per request: return source passages, answer a direct question with one retrieval, or keep iterative search for complex questions. This can cut model calls and latency on simple queries while preserving multi-step retrieval for harder ones.",
+      "before": "Teams could use the separate Retrieve API for passage-only access, but AgenticRetrieveStream did not offer single-shot RAG.",
+      "after": "One AgenticRetrieveStream request can return passages only at maxAgentIteration=0, run single-shot RAG at 1, or keep agentic retrieval at 2–5.",
+      "learn": "Route direct questions to one iteration and passage-only workflows to zero. Test the iteration cap on multi-part queries, then compare latency, model calls, and answer quality with your existing retrieval path.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - Single-shot and agentic retrieval with Amazon Bedrock Managed Knowledge Base",
+          "url": "https://aws.amazon.com/blogs/machine-learning/single-shot-and-agentic-retrieval-with-amazon-bedrock-managed-knowledge-base/"
+        },
+        {
+          "name": "AWS documentation - Query a knowledge base and retrieve data",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-retrieve.html"
+        }
+      ],
+      "architectureImplication": "Applications can use one managed API for passage retrieval, basic RAG, and multi-step RAG. Keep custom orchestration or the separate Retrieve API where you need different model, ranking, filtering, or serving controls.",
+      "tradeoffs": [
+        "Latency",
+        "Cost",
+        "Retrieval quality"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "rag-vs-long-context",
+        "agent-vs-workflow",
+        "cost-and-routing"
+      ]
+    }
+  ]
+}

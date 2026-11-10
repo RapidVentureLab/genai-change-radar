@@ -6,7 +6,25 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Mon, 09 Nov 2026 12:49:04 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 12:38:00 GMT</lastBuildDate>
+    <item>
+      <title>AWS adds single-shot and passage-only retrieval to Bedrock Knowledge Bases</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-09-bedrock-single-shot-retrieval</link>
+      <guid isPermaLink="false">2026-11-09-bedrock-single-shot-retrieval</guid>
+      <pubDate>Mon, 09 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can set retrieval effort per request: return source passages, answer a direct question with one retrieval, or keep iterative search for complex questions. This can cut model calls and latency on simple queries while preserving multi-step retrieval for harder ones. What to do: Route direct questions to one iteration and passage-only workflows to zero. Test the iteration cap on multi-part queries, then compare latency, model calls, and answer quality with your existing retrieval path.</description>
+      <category>Data &amp; Knowledge</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>Anthropic releases Claude Fable 5.2 and Claude Mythos 5.2</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-09-claude-fable-mythos-52</link>
+      <guid isPermaLink="false">2026-11-09-claude-fable-mythos-52</guid>
+      <pubDate>Mon, 09 Nov 2026 06:00:00 GMT</pubDate>
+      <description>The release adds a high-capability model for harder technical work and a separate access path for sensitive domains. Compare its speed, cost, and safeguards with your current model before routing high-stakes tasks. What to do: Test Fable 5.2 on your technical workloads before rerouting traffic. Compare completed-task cost and latency with Opus 5.5 or open models. Apply for Mythos if your organization needs its sensitive-domain capabilities.</description>
+      <category>Model</category>
+      <category>Anthropic</category>
+    </item>
     <item>
       <title>AWS adds GPU partitioning to SageMaker inference</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-06-aws-sagemaker-mig-partitioning</link>
@@ -456,24 +474,6 @@
       <description>Production agents increasingly need isolated compute that can sit idle, resume quickly, run for long periods, and avoid paying for peak memory throughout a session. What to do: Separate the agent harness from the agent runtime. The harness manages reasoning, tools and context; the runtime provides compute, isolation, state and lifecycle.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>AWS</category>
-    </item>
-    <item>
-      <title>AWS HyperPod Inference Gateway routes LLM requests by cache and queue state</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-18-hyperpod-inference-gateway</link>
-      <guid isPermaLink="false">2026-09-18-hyperpod-inference-gateway</guid>
-      <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
-      <description>LLM replicas are not interchangeable in the way ordinary stateless web servers are. Cache state, queues and loaded adapters can materially change latency and GPU efficiency. What to do: Understand KV cache, prefix caching, time-to-first-token, prefill versus decode, LoRA adapters and inference-aware routing. These increasingly determine self-hosted model economics.</description>
-      <category>Production &amp; Business</category>
-      <category>AWS</category>
-    </item>
-    <item>
-      <title>Microsoft Research shows agents get less reliable on longer tasks</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-18-long-running-agent-reliability</link>
-      <guid isPermaLink="false">2026-09-18-long-running-agent-reliability</guid>
-      <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
-      <description>The question for enterprise teams moves from whether an agent can do one task to whether it can finish a long workflow safely, again and again. What to do: Keep agent state outside the model. Add retries, recovery points and checks between steps, and hand the run to a person when it goes wrong.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>Microsoft</category>
     </item>
   </channel>
 </rss>
