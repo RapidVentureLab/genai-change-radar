@@ -1,0 +1,98 @@
+{
+  "updates": [
+    {
+      "id": "2026-11-10-gemini-4-carbon-availability",
+      "date": "2026-11-10",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "frontier model availability",
+      "impact": "Incremental",
+      "title": "Google and GitHub make Gemini 4 Carbon available to developers and GitHub Copilot",
+      "whatChanged": "Google released Gemini 4 Carbon on 10 November for the paid Gemini API tier and Android Studio. GitHub made it generally available in Copilot across IDEs, CLI, web, mobile and its coding agent. Copilot Enterprise and Business administrators can control access through model policies. Copilot usage is charged at Google's list rates.",
+      "whyCare": "You can test Google's model for long-horizon coding and security in an existing API or Copilot workflow. Compare task quality and per-task cost with models in your stack before enabling it broadly.",
+      "before": "Google had not released Gemini 4 Carbon for API use. Copilot users could not select it.",
+      "after": "Developers can call Gemini 4 Carbon through Google's paid API tier or select it in Copilot. Copilot administrators can manage access, and usage follows Google's list pricing.",
+      "learn": "Test Carbon on coding and security tasks. Check API and Copilot costs. Review Copilot model policies before enabling it for enterprise users.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Google AI Blog - Gemini 4 Carbon is now available for developers",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/"
+        },
+        {
+          "name": "GitHub Changelog - Gemini 4 Carbon in GitHub Copilot",
+          "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot"
+        }
+      ],
+      "architectureImplication": "Keep the model endpoint separate from agent orchestration. Route workloads to Carbon only when evaluations justify API or Copilot usage costs.",
+      "tradeoffs": [
+        "Cost",
+        "Model governance",
+        "Vendor dependence"
+      ],
+      "vendors": [
+        "Google",
+        "GitHub"
+      ],
+      "decisions": [
+        "model-selection",
+        "cost-and-routing"
+      ],
+      "heldReasons": [
+        "Fact check: Before says Copilot users could not select Gemini 4 Carbon. The changelog establishes general availability, but does not say whether any users had access before then."
+      ]
+    },
+    {
+      "id": "2026-11-10-bedrock-kimi-k31-pro-highspeed",
+      "date": "2026-11-10",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "model availability",
+      "impact": "Packaging / distribution",
+      "title": "AWS adds Kimi K3.1 Pro Highspeed to Amazon Bedrock",
+      "whatChanged": "AWS added Kimi K3.1 Pro Highspeed to Amazon Bedrock on 10 November. The open-weight model has a 1-million-token context window and supports tool calling, structured output, configurable reasoning and image input. It supports Bedrock's Chat Completions, Responses and Converse APIs, global and US/India inference profiles, Flex at half Standard price, and explicit prompt caching.",
+      "whyCare": "You can test an open-weight model through Bedrock while keeping inference inside the AWS data boundary. Regional profiles, prompt caching and Flex give you choices for residency, latency and cost.",
+      "before": "Bedrock offered Kimi K3. Teams could access Kimi K3.1 through Moonshot's own services.",
+      "after": "Bedrock now offers Kimi K3.1 Pro Highspeed through its APIs and regional profiles. You can use Flex service and explicit prompt caching.",
+      "learn": "Compare it with Kimi K3 and Bedrock alternatives for task accuracy, latency and end-to-end cost. Verify that profile routing meets residency rules. Benchmark Flex before shifting traffic.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - Introducing Kimi K3.1 Pro on Amazon Bedrock",
+          "url": "https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock/"
+        },
+        {
+          "name": "Moonshot AI - Introducing Kimi K3.1 Pro",
+          "url": "https://www.kimi.ai/blog/kimi-k3-1-pro"
+        }
+      ],
+      "architectureImplication": "Keep the Bedrock API and AWS identity path while changing the model ID. Use US or India profiles for regional processing. Measure Flex latency and prompt-cache hit rates against Standard.",
+      "tradeoffs": [
+        "Latency",
+        "Cost",
+        "Data residency"
+      ],
+      "vendors": [
+        "AWS",
+        "Open models"
+      ],
+      "decisions": [
+        "model-selection",
+        "deployment",
+        "cost-and-routing"
+      ],
+      "heldReasons": [
+        "Fact check: whyCare presents keeping inference inside AWS's data boundary as an established fact. The AWS post makes this claim as AWS's own assurance, which the item does not attribute."
+      ]
+    }
+  ]
+}

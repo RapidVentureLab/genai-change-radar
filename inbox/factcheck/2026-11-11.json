@@ -1,0 +1,32 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-11T11:55:47+00:00",
+  "items": [
+    {
+      "id": "2026-11-10-gemini-4-carbon-availability",
+      "title": "Google and GitHub make Gemini 4 Carbon available to developers and GitHub Copilot",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-4-carbon-developers/",
+        "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot"
+      ],
+      "problems": [
+        "Before says Copilot users could not select Gemini 4 Carbon. The changelog establishes general availability, but does not say whether any users had access before then."
+      ],
+      "notes": []
+    },
+    {
+      "id": "2026-11-10-bedrock-kimi-k31-pro-highspeed",
+      "title": "AWS adds Kimi K3.1 Pro Highspeed to Amazon Bedrock",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock/",
+        "https://www.kimi.ai/blog/kimi-k3-1-pro"
+      ],
+      "problems": [
+        "whyCare presents keeping inference inside AWS's data boundary as an established fact. The AWS post makes this claim as AWS's own assurance, which the item does not attribute."
+      ],
+      "notes": []
+    }
+  ]
+}
