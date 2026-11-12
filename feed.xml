@@ -6,7 +6,16 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Wed, 11 Nov 2026 11:52:30 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 12:40:33 GMT</lastBuildDate>
+    <item>
+      <title>Google adds Gemini Decisions API for multimodal routing and checks</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-11-google-gemini-decisions-api</link>
+      <guid isPermaLink="false">2026-11-11-google-gemini-decisions-api</guid>
+      <pubDate>Wed, 11 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can replace separate classifier calls or generated-text parsing for bounded choices, and route low-confidence results to review. IBM Granite-Switch already offers a decision adapter, so test both against your own data before changing a control path. What to do: Compare Gemini Decision 1 with rules, existing classifiers and Granite-Switch on labeled examples. Measure calibration, latency, cost and human-review rates. Keep deterministic policy checks for decisions that need fixed outcomes.</description>
+      <category>Model</category>
+      <category>Google</category>
+    </item>
     <item>
       <title>AWS adds single-shot and passage-only retrieval to Bedrock Knowledge Bases</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-09-bedrock-single-shot-retrieval</link>
@@ -465,15 +474,6 @@
       <description>An agent with access to company systems acts like a software user. It needs its own operating controls. What to do: Give each agent its own credentials with the fewest permissions it needs. Run it in a sandbox, log what it does and require approval for risky actions.</description>
       <category>Production &amp; Business</category>
       <category>Google Cloud</category>
-    </item>
-    <item>
-      <title>AWS AgentCore Runtime V2 starts agents faster and frees idle memory</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-18-agentcore-runtime-v2</link>
-      <guid isPermaLink="false">2026-09-18-agentcore-runtime-v2</guid>
-      <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
-      <description>Production agents increasingly need isolated compute that can sit idle, resume quickly, run for long periods, and avoid paying for peak memory throughout a session. What to do: Separate the agent harness from the agent runtime. The harness manages reasoning, tools and context; the runtime provides compute, isolation, state and lifecycle.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>AWS</category>
     </item>
   </channel>
 </rss>

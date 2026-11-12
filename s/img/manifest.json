@@ -92,5 +92,6 @@
   "2026-11-06-github-copilot-review-settings-api": "435864bab2eb",
   "2026-11-06-github-copilot-slack-teams-ga": "99f7b7205695",
   "2026-11-09-claude-fable-mythos-52": "d9952cf8e9d0",
-  "2026-11-09-bedrock-single-shot-retrieval": "2a4b7e0b0fee"
+  "2026-11-09-bedrock-single-shot-retrieval": "2a4b7e0b0fee",
+  "2026-11-11-google-gemini-decisions-api": "0fefb1d7f692"
 }

@@ -1,0 +1,53 @@
+{
+  "scannedAt": "2026-11-12T13:40:33+01:00",
+  "updates": [
+    {
+      "id": "2026-11-11-google-gemini-decisions-api",
+      "date": "2026-11-11",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "multimodal decision api",
+      "impact": "Step-change",
+      "title": "Google adds Gemini Decisions API for multimodal routing and checks",
+      "whatChanged": "Google introduced Gemini Decision 1 and the Gemini Decisions API on 11 November through the Gemini API. Gemini Decision 1 scores up to 1,000 yes/no, multiple-choice and rubric questions against shared text, image, audio, video or PDF input, and returns probabilities and confidence without output tokens. The quickstart uses API v1beta. Google lists $0.10 per million input tokens.",
+      "whyCare": "You can replace separate classifier calls or generated-text parsing for bounded choices, and route low-confidence results to review. IBM Granite-Switch already offers a decision adapter, so test both against your own data before changing a control path.",
+      "before": "Teams used generated text and parsing, standalone classifiers or hand-written rules for bounded decisions.",
+      "after": "Teams can score many typed questions against one multimodal input and receive option probabilities and confidence from one request.",
+      "learn": "Compare Gemini Decision 1 with rules, existing classifiers and Granite-Switch on labeled examples. Measure calibration, latency, cost and human-review rates. Keep deterministic policy checks for decisions that need fixed outcomes.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Google - Gemini Decisions API: Fast, calibrated multimodal decisions",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/"
+        },
+        {
+          "name": "Google AI Studio - Decisions API documentation",
+          "url": "https://aistudio.google.com/docs/decisions-api"
+        },
+        {
+          "name": "IBM Granite on Hugging Face - Granite Switch 4.1: Chat, Decisions, and Speech from One Endpoint",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1"
+        }
+      ],
+      "architectureImplication": "Use a bounded-choice API for routing, policy checks and context grading, then send low-confidence results to a fallback or reviewer. Keep policy enforcement outside the model.",
+      "tradeoffs": [
+        "Accuracy",
+        "Latency",
+        "Cost",
+        "Reliability",
+        "Control"
+      ],
+      "vendors": [
+        "Google"
+      ],
+      "decisions": [
+        "model-selection",
+        "cost-and-routing",
+        "observability-and-evals"
+      ]
+    }
+  ]
+}

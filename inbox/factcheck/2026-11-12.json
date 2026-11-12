@@ -1,0 +1,20 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-12T12:41:56.473+00:00",
+  "items": [
+    {
+      "id": "2026-11-11-google-gemini-decisions-api",
+      "title": "Google adds Gemini Decisions API for multimodal routing and checks",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+        "https://aistudio.google.com/docs/decisions-api",
+        "https://huggingface.co/blog/ibm-granite/granite-switch-4-1"
+      ],
+      "problems": [],
+      "notes": [
+        "The item has no action/by-date field, and the sources did not state a deadline."
+      ]
+    }
+  ]
+}
