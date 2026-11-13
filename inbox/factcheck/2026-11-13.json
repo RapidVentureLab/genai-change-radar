@@ -1,0 +1,29 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-13T12:12:48.272+00:00",
+  "items": [
+    {
+      "id": "2026-11-12-aws-sglang-neuron-preview",
+      "title": "AWS offers SGLang on Trainium in public preview",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron/",
+        "https://github.com/sgl-project/sglang-neuron"
+      ],
+      "problems": [],
+      "notes": []
+    },
+    {
+      "id": "2026-11-12-ibm-llmon-granite-preview",
+      "title": "IBM releases experimental LLMON models for Granite 4.1",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite",
+        "https://huggingface.co/ibm-granite/granite-4.1-3b-llmon-preview",
+        "https://github.com/generative-computing/llmon"
+      ],
+      "problems": [],
+      "notes": []
+    }
+  ]
+}

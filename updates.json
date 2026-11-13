@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-12T13:40:33+01:00",
+  "updatedAt": "2026-11-13T13:10:55+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -4049,6 +4049,96 @@
         "model-selection",
         "cost-and-routing",
         "observability-and-evals"
+      ]
+    },
+    {
+      "id": "2026-11-12-aws-sglang-neuron-preview",
+      "date": "2026-11-12",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "open serving runtime",
+      "impact": "Packaging / distribution",
+      "title": "AWS offers SGLang on Trainium in public preview",
+      "whatChanged": "AWS and RadixArk announced SGLang-Neuron on 12 November. It is in public preview in an AWS Deep Learning Container, runs SGLang on Trainium through native PyTorch, keeps SGLang's launcher and APIs, and supports aggregated or disaggregated inference and reinforcement-learning rollouts on documented Trainium configurations.",
+      "whyCare": "Teams can test the SGLang scheduler and APIs on AWS accelerators, adding a path beyond GPU-based SGLang deployments. The public preview and limited supported configurations require workload-level validation before production use.",
+      "before": "Teams could use Neuron-supported serving paths on Trainium, while SGLang deployments ran on its other supported platforms.",
+      "after": "Teams can run SGLang's launcher, scheduler and APIs on compatible Trainium instances through an out-of-tree plugin and AWS container.",
+      "learn": "Test supported models and instance types against your current serving stack. Measure throughput, latency, compilation time and operational effort before shifting production traffic.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - Deploy frontier AI models on AWS Trainium with SGLang-Neuron",
+          "url": "https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron/"
+        },
+        {
+          "name": "SGLang-Neuron - Project README",
+          "url": "https://github.com/sgl-project/sglang-neuron"
+        }
+      ],
+      "architectureImplication": "SGLang's server interface now spans a Trainium backend, but the preview adds plugin, model-coverage and hardware-specific validation to the serving path.",
+      "tradeoffs": [
+        "Compatibility",
+        "Control",
+        "Performance",
+        "Reliability"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "deployment",
+        "hosted-vs-open"
+      ]
+    },
+    {
+      "id": "2026-11-12-ibm-llmon-granite-preview",
+      "date": "2026-11-12",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "structured prompt format",
+      "impact": "Incremental",
+      "title": "IBM releases experimental LLMON models for Granite 4.1",
+      "whatChanged": "IBM published LLMON (LLM Object Notation), an open markup toolkit, on 12 November, along with experimental Granite 4.1 3B and 8B preview models. The chat template marks instructions, data, requirements and tool results as addressable blocks, then names the instruction and inputs in an execution block. IBM reports lower attack success on OPI, ASB and StruQ benchmarks.",
+      "whyCare": "You can evaluate a model format that explicitly marks which prompt parts are instructions and which are untrusted input. IBM reports gains on static injection tests, but the models are experimental and the learned behavior is not a security guarantee.",
+      "before": "Chat templates serialize instructions, retrieved text and tool output into context, where models infer how to treat each span.",
+      "after": "LLMON marks prompt parts as typed blocks and links the instruction, its inputs and the requested output in an execution block.",
+      "learn": "Evaluate the preview on your own prompt-injection cases and task data. Keep tool permissions and deterministic policy checks outside the model; IBM says LLMON behavior is learned and calls the models experimental.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "IBM Granite on Hugging Face - LLMON: An LLM-Native Markup Language, now in Granite 4.1 3B and 8B",
+          "url": "https://huggingface.co/blog/ibm-granite/llmon-an-llm-native-markup-language-now-in-granite"
+        },
+        {
+          "name": "IBM Granite - Granite 4.1 3B LLMON preview model card",
+          "url": "https://huggingface.co/ibm-granite/granite-4.1-3b-llmon-preview"
+        },
+        {
+          "name": "Generative Computing - LLMON project",
+          "url": "https://github.com/generative-computing/llmon"
+        }
+      ],
+      "architectureImplication": "LLMON ties an explicit instruction/data representation to models trained for its special tokens and chat template. Teams must validate their model stack and keep access controls independent of model compliance.",
+      "tradeoffs": [
+        "Compatibility",
+        "Control",
+        "Reliability",
+        "Security"
+      ],
+      "vendors": [
+        "IBM",
+        "Open models"
+      ],
+      "decisions": [
+        "model-selection",
+        "hosted-vs-open",
+        "security-and-guardrails"
       ]
     }
   ],

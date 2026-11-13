@@ -6,7 +6,26 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Thu, 12 Nov 2026 12:40:33 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 12:10:55 GMT</lastBuildDate>
+    <item>
+      <title>AWS offers SGLang on Trainium in public preview</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-12-aws-sglang-neuron-preview</link>
+      <guid isPermaLink="false">2026-11-12-aws-sglang-neuron-preview</guid>
+      <pubDate>Thu, 12 Nov 2026 06:00:00 GMT</pubDate>
+      <description>Teams can test the SGLang scheduler and APIs on AWS accelerators, adding a path beyond GPU-based SGLang deployments. The public preview and limited supported configurations require workload-level validation before production use. What to do: Test supported models and instance types against your current serving stack. Measure throughput, latency, compilation time and operational effort before shifting production traffic.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>IBM releases experimental LLMON models for Granite 4.1</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-12-ibm-llmon-granite-preview</link>
+      <guid isPermaLink="false">2026-11-12-ibm-llmon-granite-preview</guid>
+      <pubDate>Thu, 12 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can evaluate a model format that explicitly marks which prompt parts are instructions and which are untrusted input. IBM reports gains on static injection tests, but the models are experimental and the learned behavior is not a security guarantee. What to do: Evaluate the preview on your own prompt-injection cases and task data. Keep tool permissions and deterministic policy checks outside the model; IBM says LLMON behavior is learned and calls the models experimental.</description>
+      <category>Model</category>
+      <category>IBM</category>
+      <category>Open models</category>
+    </item>
     <item>
       <title>Google adds Gemini Decisions API for multimodal routing and checks</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-11-google-gemini-decisions-api</link>
@@ -456,24 +475,6 @@
       <description>Agents that reread cached context often may cost less to run. Upgrades need testing because several thinking and tool-use behaviours changed. What to do: Measure total agent cost and cache hit rate on your own tasks. Run migration tests for thinking and tool-use behaviour.</description>
       <category>Model</category>
       <category>Anthropic</category>
-    </item>
-    <item>
-      <title>OpenAI releases GPT-6 Sol and Luna as lower-cost model tiers</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-22-gpt-6-sol-luna-cost-capability</link>
-      <guid isPermaLink="false">2026-09-22-gpt-6-sol-luna-cost-capability</guid>
-      <pubDate>Tue, 22 Sep 2026 06:00:00 GMT</pubDate>
-      <description>More reasoning, coding and agent subtasks may become affordable at high volume. Compare task success, latency and total cost with retries included. What to do: Build task-specific evaluations. Route by accuracy, latency, cache hit rate, retries and cost per successful task.</description>
-      <category>Model</category>
-      <category>OpenAI</category>
-    </item>
-    <item>
-      <title>Each agent needs its own identity, permissions and audit trail</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-18-agent-security-controls</link>
-      <guid isPermaLink="false">2026-09-18-agent-security-controls</guid>
-      <pubDate>Fri, 18 Sep 2026 06:00:00 GMT</pubDate>
-      <description>An agent with access to company systems acts like a software user. It needs its own operating controls. What to do: Give each agent its own credentials with the fewest permissions it needs. Run it in a sandbox, log what it does and require approval for risky actions.</description>
-      <category>Production &amp; Business</category>
-      <category>Google Cloud</category>
     </item>
   </channel>
 </rss>
