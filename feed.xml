@@ -6,7 +6,34 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Fri, 13 Nov 2026 12:10:55 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 11:28:18 GMT</lastBuildDate>
+    <item>
+      <title>GitHub adds REST API controls for repository AI Scan</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-13-github-ai-scan-repository-api</link>
+      <guid isPermaLink="false">2026-11-13-github-ai-scan-repository-api</guid>
+      <pubDate>Fri, 13 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can manage repository-scan eligibility through scripts or infrastructure as code instead of changing each setting by hand. The API controls access to the feature; users still start scans, and each scan uses AI credits. What to do: Test the preview endpoints in a staging organization. Check enterprise policies, repository opt-outs, and credit budgets before automating rollout.</description>
+      <category>Production &amp; Business</category>
+      <category>GitHub</category>
+    </item>
+    <item>
+      <title>GitHub brings GHES repositories into the Copilot app</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-13-github-copilot-app-ghes</link>
+      <guid isPermaLink="false">2026-11-13-github-copilot-app-ghes</guid>
+      <pubDate>Fri, 13 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can offer a Copilot app workflow for GHES repositories. The separate GitHub.com or GHE.com sign-in and the lack of cloud sessions still limit which work can run through the app. What to do: Check whether your GHES users need the app, and test repository, issue, and pull-request workflows. Keep cloud sessions out of the rollout plan.</description>
+      <category>Application &amp; Workflow</category>
+      <category>GitHub</category>
+    </item>
+    <item>
+      <title>ggml-org versions llama.cpp 1.0 and defines its API compatibility policy</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-13-llama-cpp-v1</link>
+      <guid isPermaLink="false">2026-11-13-llama-cpp-v1</guid>
+      <pubDate>Fri, 13 Nov 2026 06:00:00 GMT</pubDate>
+      <description>If you embed llama.cpp, explicit versioning lets you assess when updates may break your build and set upgrade policy. It improves dependency planning, but it does not promise ABI compatibility across major versions. What to do: Pin the 1.0.0 release in your build and test future major-version updates as breaking changes. Check backend and model support against your deployment targets.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Other</category>
+    </item>
     <item>
       <title>AWS offers SGLang on Trainium in public preview</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-12-aws-sglang-neuron-preview</link>
@@ -447,33 +474,6 @@
       <description>Teams get a small, fast model for high-volume subtasks inside their existing coding tools. What to do: Test it on your coding and subagent tasks. Compare success rate, latency, retries and cost per finished task.</description>
       <category>Model</category>
       <category>GitHub</category>
-      <category>Anthropic</category>
-    </item>
-    <item>
-      <title>Dataiku launches Agent Management to govern agents across vendor platforms</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-24-cross-platform-agent-management</link>
-      <guid isPermaLink="false">2026-09-24-cross-platform-agent-management</guid>
-      <pubDate>Thu, 24 Sep 2026 06:00:00 GMT</pubDate>
-      <description>Companies that run agents on several clouds and SaaS platforms need one view of all of them. No single agent platform gives that view. What to do: Learn how agent inventories and OpenTelemetry-based monitoring work, and why running agents from several vendors needs one place to see and control them.</description>
-      <category>Production &amp; Business</category>
-      <category>Other</category>
-    </item>
-    <item>
-      <title>Microsoft describes an AI operating model with separate economics for agent work</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-23-microsoft-ai-work-system-economics</link>
-      <guid isPermaLink="false">2026-09-23-microsoft-ai-work-system-economics</guid>
-      <pubDate>Wed, 23 Sep 2026 06:00:00 GMT</pubDate>
-      <description>Agents do variable amounts of work, so a flat price per user no longer covers the cost. Teams need to measure cost and quality per finished task or workflow. What to do: Track cost per successful task. Learn how model routing and agent test loops work, and how seat pricing differs from paying for agent work by use.</description>
-      <category>Production &amp; Business</category>
-      <category>Microsoft</category>
-    </item>
-    <item>
-      <title>Anthropic releases Claude Opus 5.5 at lower prices than Opus 5</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-09-22-claude-opus-55-agent-economics</link>
-      <guid isPermaLink="false">2026-09-22-claude-opus-55-agent-economics</guid>
-      <pubDate>Tue, 22 Sep 2026 06:00:00 GMT</pubDate>
-      <description>Agents that reread cached context often may cost less to run. Upgrades need testing because several thinking and tool-use behaviours changed. What to do: Measure total agent cost and cache hit rate on your own tasks. Run migration tests for thinking and tool-use behaviour.</description>
-      <category>Model</category>
       <category>Anthropic</category>
     </item>
   </channel>

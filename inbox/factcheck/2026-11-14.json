@@ -1,0 +1,39 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-14T11:30:08.383+00:00",
+  "items": [
+    {
+      "id": "2026-11-13-github-copilot-app-ghes",
+      "title": "GitHub brings GHES repositories into the Copilot app",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app",
+        "https://docs.github.com/enterprise-server@latest/copilot/copilot-on-ghes/sign-in-on-copilot-app"
+      ],
+      "problems": [],
+      "notes": []
+    },
+    {
+      "id": "2026-11-13-github-ai-scan-repository-api",
+      "title": "GitHub adds REST API controls for repository AI Scan",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api",
+        "https://docs.github.com/rest/code-scanning/code-scanning#update-the-ai-scan-setting-for-an-organization"
+      ],
+      "problems": [],
+      "notes": []
+    },
+    {
+      "id": "2026-11-13-llama-cpp-v1",
+      "title": "ggml-org versions llama.cpp 1.0 and defines its API compatibility policy",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://huggingface.co/blog/ggml-org/llama-cpp-v1",
+        "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0"
+      ],
+      "problems": [],
+      "notes": []
+    }
+  ]
+}

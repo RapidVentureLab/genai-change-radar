@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-13T13:10:55+01:00",
+  "updatedAt": "2026-11-14T12:28:18+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -4139,6 +4139,127 @@
         "model-selection",
         "hosted-vs-open",
         "security-and-guardrails"
+      ]
+    },
+    {
+      "id": "2026-11-13-github-copilot-app-ghes",
+      "date": "2026-11-13",
+      "layer": "Application & Workflow",
+      "kind": "signal",
+      "changeType": "enterprise repository access",
+      "impact": "Packaging / distribution",
+      "title": "GitHub brings GHES repositories into the Copilot app",
+      "whatChanged": "GitHub made GHES support generally available in the Copilot app on 13 November, after an opt-in preview. Users can access remote repositories, issues, and pull requests. They sign in with GitHub.com or GHE.com; cloud sessions are unavailable for GHES.",
+      "whyCare": "You can offer a Copilot app workflow for GHES repositories. The separate GitHub.com or GHE.com sign-in and the lack of cloud sessions still limit which work can run through the app.",
+      "before": "GHES repository, issue, and pull request access in the Copilot app was an opt-in preview.",
+      "after": "GHES repository, issue, and pull request access is generally available in the Copilot app, but cloud sessions remain unavailable.",
+      "learn": "Check whether your GHES users need the app, and test repository, issue, and pull-request workflows. Keep cloud sessions out of the rollout plan.",
+      "cloudPrimitives": [
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - GitHub Enterprise Server support in the GitHub Copilot app",
+          "url": "https://github.blog/changelog/2026-11-13-github-enterprise-server-support-in-the-github-copilot-app"
+        },
+        {
+          "name": "GitHub Docs - Signing in to GitHub Enterprise Server in the GitHub Copilot app",
+          "url": "https://docs.github.com/enterprise-server@latest/copilot/copilot-on-ghes/sign-in-on-copilot-app"
+        }
+      ],
+      "architectureImplication": "The Copilot app can now support repository workflows on GHES. Teams still need a separate cloud Copilot account and another path for cloud-agent tasks.",
+      "tradeoffs": [
+        "Control",
+        "Compatibility",
+        "Security"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "deployment",
+        "identity-and-permissions"
+      ]
+    },
+    {
+      "id": "2026-11-13-github-ai-scan-repository-api",
+      "date": "2026-11-13",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "security policy automation",
+      "impact": "Incremental",
+      "title": "GitHub adds REST API controls for repository AI Scan",
+      "whatChanged": "GitHub added a repository_scan setting to its AI Scan enablement endpoints on 13 November, in public preview. Organization and repository owners can read or update it by REST API. Enterprise policy can block enablement; turning it on does not start a scan, and scans consume AI credits.",
+      "whyCare": "You can manage repository-scan eligibility through scripts or infrastructure as code instead of changing each setting by hand. The API controls access to the feature; users still start scans, and each scan uses AI credits.",
+      "before": "Administrators could enable AI Scan for pull requests through the API, but they could not manage repository scanning the same way.",
+      "after": "Organizations and repositories can set repository AI Scan eligibility through the API, with enterprise policy as the upper-level control.",
+      "learn": "Test the preview endpoints in a staging organization. Check enterprise policies, repository opt-outs, and credit budgets before automating rollout.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Manage AI Scan for repositories using the REST API",
+          "url": "https://github.blog/changelog/2026-11-13-manage-ai-scan-for-repositories-using-the-rest-api"
+        },
+        {
+          "name": "GitHub Docs - REST API endpoints for code scanning",
+          "url": "https://docs.github.com/rest/code-scanning/code-scanning#update-the-ai-scan-setting-for-an-organization"
+        }
+      ],
+      "architectureImplication": "Teams can manage AI Scan eligibility through organization and repository APIs while keeping enterprise policy as the top-level control. Scans remain user-initiated and consume AI credits.",
+      "tradeoffs": [
+        "Control",
+        "Security",
+        "Cost"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "security-and-guardrails"
+      ]
+    },
+    {
+      "id": "2026-11-13-llama-cpp-v1",
+      "date": "2026-11-13",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "local inference runtime",
+      "impact": "Packaging / distribution",
+      "title": "ggml-org versions llama.cpp 1.0 and defines its API compatibility policy",
+      "whatChanged": "ggml-org released llama.cpp and ggml 1.0.0 on 13 November. The project now uses major versions for breaking public C API and ABI changes, minor versions for backward-compatible features and backend or model updates, and patch versions for fixes. The release also adds inference, model-support, and serving features.",
+      "whyCare": "If you embed llama.cpp, explicit versioning lets you assess when updates may break your build and set upgrade policy. It improves dependency planning, but it does not promise ABI compatibility across major versions.",
+      "before": "The project had no published semantic-version policy for public C API and ABI changes.",
+      "after": "The project reserves major bumps for breaking public C API changes and defines minor and patch release rules.",
+      "learn": "Pin the 1.0.0 release in your build and test future major-version updates as breaking changes. Check backend and model support against your deployment targets.",
+      "cloudPrimitives": [
+        "Compute"
+      ],
+      "sources": [
+        {
+          "name": "ggml-org on Hugging Face - llama.cpp v1.0.0: A stronger foundation for the local AI ecosystem",
+          "url": "https://huggingface.co/blog/ggml-org/llama-cpp-v1"
+        },
+        {
+          "name": "llama.cpp - v1.0.0 release",
+          "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v1.0.0"
+        }
+      ],
+      "architectureImplication": "Teams embedding llama.cpp can use major, minor, and patch rules to scope compatibility checks. They still need to validate model and backend support for each deployment target.",
+      "tradeoffs": [
+        "Control",
+        "Compatibility",
+        "Performance"
+      ],
+      "vendors": [
+        "Other"
+      ],
+      "decisions": [
+        "deployment",
+        "hosted-vs-open"
       ]
     }
   ],

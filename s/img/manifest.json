@@ -95,5 +95,8 @@
   "2026-11-09-bedrock-single-shot-retrieval": "2a4b7e0b0fee",
   "2026-11-11-google-gemini-decisions-api": "0fefb1d7f692",
   "2026-11-12-aws-sglang-neuron-preview": "13a2ced7259f",
-  "2026-11-12-ibm-llmon-granite-preview": "fa28dbbabd74"
+  "2026-11-12-ibm-llmon-granite-preview": "fa28dbbabd74",
+  "2026-11-13-github-copilot-app-ghes": "b7feca6963ff",
+  "2026-11-13-github-ai-scan-repository-api": "f1c67e92f74c",
+  "2026-11-13-llama-cpp-v1": "c20a8cc344e1"
 }
