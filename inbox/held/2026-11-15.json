@@ -1,0 +1,104 @@
+{
+  "updates": [
+    {
+      "id": "2026-11-13-google-cloud-agent-observability-bigquery",
+      "date": "2026-11-13",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "agent observability and governance",
+      "impact": "Incremental",
+      "title": "Google Cloud sends agent telemetry to BigQuery for governance",
+      "whatChanged": "Google Cloud now sends first-party agent telemetry plus optional custom-agent traces, metrics, and transcripts to customer-owned BigQuery tables. BigQuery and Looker dashboards track usage, cost, and evaluation results. Conversation logging is generally available; daily token quotas and some eval tools stay in preview.",
+      "whyCare": "Teams can study agent latency, token use, and, when allowed, conversation content with warehouse data. Review access and retention before you log prompts and answers; Google skips transcripts for data with row- or column-level security or masking.",
+      "before": "Teams had no shared BigQuery path for first-party and custom-agent telemetry, logs, and evaluation results.",
+      "after": "First-party and custom-agent telemetry can land in BigQuery with opted-in transcripts, token use, and evaluation results.",
+      "learn": "Compare the BigQuery path with your current agent-analytics stack before you instrument agents twice. Set access and retention for log tables. Use byte-scan caps and preview token quotas to bound spend.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Google Cloud Blog - New AI agent observability and governance across BigQuery and Looker",
+          "url": "https://cloud.google.com/blog/products/data-analytics/enterprise-ai-agent-observability-with-bigquery-and-looker"
+        },
+        {
+          "name": "Google Cloud Docs - Conversation logging overview",
+          "url": "https://cloud.google.com/bigquery/docs/conversation-logging-overview"
+        }
+      ],
+      "architectureImplication": "BigQuery can act as the customer-owned analytics store for first-party and instrumented third-party agent traces, opted-in transcripts, and cost data. Keep transcript logs behind separate IAM and retention controls and plan for preview limits.",
+      "tradeoffs": [
+        "Privacy",
+        "Cost",
+        "Control",
+        "Compatibility"
+      ],
+      "vendors": [
+        "Google Cloud"
+      ],
+      "decisions": [
+        "observability-and-evals",
+        "security-and-guardrails",
+        "cost-and-routing"
+      ],
+      "heldReasons": [
+        "Fact check: The item says custom-agent transcripts can be sent to BigQuery. | The sources describe custom-agent traces and telemetry, but only describe transcript logging for first-party conversational analytics agents.",
+        "Fact check: The item says teams previously had no shared BigQuery path for first-party and custom-agent telemetry, logs, and evaluation results. | The sources announce the new framework but do not establish that teams previously lacked such a path."
+      ]
+    },
+    {
+      "id": "2026-11-13-github-copilot-december-model-deprecations",
+      "date": "2026-11-13",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "model lifecycle and migration",
+      "impact": "Incremental",
+      "title": "GitHub retires six Copilot models on 14 December",
+      "whatChanged": "GitHub says Copilot will retire Claude Fable 5, Claude Haiku 4.5, Gemini 3.8 Flash, Gemini 4 Argon, Grok 4.6, and Kimi K3 on 14 December. It recommends replacements for five models; Kimi's alternative is pending. Default model policies enable suggested replacements unless admins override them.",
+      "whyCare": "Teams that use these models need to test replacements and update model policies before the deadline. GitHub has not named a successor for Kimi K3, which may affect continuity for teams that rely on it.",
+      "before": "Copilot users could choose these models in supported experiences, subject to plan and model policies.",
+      "after": "On 14 December, Copilot will retire the six models across chat, inline edits, ask and agent modes, and code completions. Default policies enable suggested replacements unless admins override them.",
+      "learn": "Inventory Copilot model policies and workflows that use these models. Test replacements before 14 December, and plan a fallback for Kimi K3 because GitHub has not named its successor.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Upcoming deprecation of selected GitHub Copilot models in December",
+          "url": "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december"
+        },
+        {
+          "name": "GitHub Docs - Supported AI models in GitHub Copilot",
+          "url": "https://docs.github.com/copilot/reference/ai-models/supported-models"
+        }
+      ],
+      "architectureImplication": "Treat hosted models as versioned dependencies. Keep tests ready so you can switch models before a vendor retires one, and validate a fallback when GitHub has not announced a successor.",
+      "tradeoffs": [
+        "Compatibility",
+        "Accuracy",
+        "Control",
+        "Reliability"
+      ],
+      "vendors": [
+        "GitHub",
+        "Anthropic",
+        "Google"
+      ],
+      "decisions": [
+        "model-selection"
+      ],
+      "action": {
+        "type": "retirement",
+        "by": "2026-12-14",
+        "what": "Test replacement models and update Copilot model policies before deprecation."
+      },
+      "heldReasons": [
+        "Fact check: The item says all six models will be retired without exception. | The source exempts Claude Haiku 4.5 for individual subscribers on annual plans.",
+        "Fact check: The item presents automatic enablement of replacement models as universal. | The source limits automatic enablement to Enterprise and Business customers and notes that admins can turn off the global default or disable a model."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-15T11:58:39+00:00",
+  "items": [
+    {
+      "id": "2026-11-13-google-cloud-agent-observability-bigquery",
+      "title": "Google Cloud sends agent telemetry to BigQuery for governance",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://cloud.google.com/blog/products/data-analytics/enterprise-ai-agent-observability-with-bigquery-and-looker",
+        "https://cloud.google.com/bigquery/docs/conversation-logging-overview"
+      ],
+      "problems": [
+        "The item says custom-agent transcripts can be sent to BigQuery. | The sources describe custom-agent traces and telemetry, but only describe transcript logging for first-party conversational analytics agents.",
+        "The item says teams previously had no shared BigQuery path for first-party and custom-agent telemetry, logs, and evaluation results. | The sources announce the new framework but do not establish that teams previously lacked such a path."
+      ],
+      "notes": []
+    },
+    {
+      "id": "2026-11-13-github-copilot-december-model-deprecations",
+      "title": "GitHub retires six Copilot models on 14 December",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-13-upcoming-deprecation-of-selected-github-copilot-models-in-december",
+        "https://docs.github.com/copilot/reference/ai-models/supported-models"
+      ],
+      "problems": [
+        "The item says all six models will be retired without exception. | The source exempts Claude Haiku 4.5 for individual subscribers on annual plans.",
+        "The item presents automatic enablement of replacement models as universal. | The source limits automatic enablement to Enterprise and Business customers and notes that admins can turn off the global default or disable a model."
+      ],
+      "notes": []
+    }
+  ]
+}
