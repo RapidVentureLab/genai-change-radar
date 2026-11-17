@@ -98,5 +98,8 @@
   "2026-11-12-ibm-llmon-granite-preview": "fa28dbbabd74",
   "2026-11-13-github-copilot-app-ghes": "b7feca6963ff",
   "2026-11-13-github-ai-scan-repository-api": "f1c67e92f74c",
-  "2026-11-13-llama-cpp-v1": "c20a8cc344e1"
+  "2026-11-13-llama-cpp-v1": "c20a8cc344e1",
+  "2026-11-16-aws-bedrock-agentcore-retrieval-memory": "6dc6b6da86d7",
+  "2026-11-16-vscode-local-harness-retirement": "ae7ba5afd18a",
+  "2026-11-16-github-copilot-customization-source-controls": "443ae80e3f53"
 }

@@ -6,7 +6,35 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Mon, 16 Nov 2026 12:41:42 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 13:19:24 GMT</lastBuildDate>
+    <item>
+      <title>AWS connects AgentCore memory to Bedrock managed retrieval</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-16-aws-bedrock-agentcore-retrieval-memory</link>
+      <guid isPermaLink="false">2026-11-16-aws-bedrock-agentcore-retrieval-memory</guid>
+      <pubDate>Mon, 16 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can combine long-term personalization with document-level authorization without building each orchestration step yourself. You still need a verified, stable user identity and IAM conditions that scope memory access. What to do: Prototype with stable user IDs, inspect traces for memory access, and scope IAM policies to the actor and namespace. Check the same-account and Region requirements before replacing your memory pipeline.</description>
+      <category>Data &amp; Knowledge</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>GitHub lets enterprises restrict Copilot customization sources</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-16-github-copilot-customization-source-controls</link>
+      <guid isPermaLink="false">2026-11-16-github-copilot-customization-source-controls</guid>
+      <pubDate>Mon, 16 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can keep MCP servers and executable extensions available while restricting where teams obtain them. Pair plugin-only controls with marketplace allowlists, because the new setting alone does not approve plugin sources. What to do: Review the customization categories your teams use. Set plugin-only controls for the sources you want to govern, then pair them with marketplace restrictions when you need an allowlist.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>GitHub</category>
+    </item>
+    <item>
+      <title>VS Code retires its Local harness in February 2027</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-16-vscode-local-harness-retirement</link>
+      <guid isPermaLink="false">2026-11-16-vscode-local-harness-retirement</guid>
+      <pubDate>Mon, 16 Nov 2026 06:00:00 GMT</pubDate>
+      <description>Teams that depend on the Local harness must validate workflows and customizations before removal. The Copilot harness can enforce managed permissions and sandbox restrictions, but admins must configure those controls separately. What to do: Test each workflow, permission policy, sandbox setting, and customization in the Copilot harness before February 2027. Plan to migrate customizations yourself because VS Code does not convert all of them.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Microsoft</category>
+      <category>GitHub</category>
+    </item>
     <item>
       <title>GitHub adds REST API controls for repository AI Scan</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-13-github-ai-scan-repository-api</link>
@@ -445,36 +473,6 @@
       <description>Coding agents run commands with the developer's privileges. A built-in sandbox makes limiting that access simpler. What to do: Test the sandbox's file, network and credential limits on each operating system. Use cloud sandboxes where you need stronger isolation.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>GitHub</category>
-    </item>
-    <item>
-      <title>Postman shows how it limits tools and context for its production agent</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-09-postman-agent-mode-production-patterns</link>
-      <guid isPermaLink="false">2026-10-09-postman-agent-mode-production-patterns</guid>
-      <pubDate>Fri, 09 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Past a point, more tools and prompt text make agents less reliable. Shaping context and limiting actions keeps them working. What to do: Count your tool catalog as part of the context budget. Select tools per task and keep approval for important writes.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>AWS</category>
-      <category>Other</category>
-    </item>
-    <item>
-      <title>Google announces a Gemini agent with its own identity for workplace tasks</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-08-google-gemini-work-agent</link>
-      <guid isPermaLink="false">2026-10-08-google-gemini-work-agent</guid>
-      <pubDate>Thu, 08 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Agent identity, permissions, audit and cost limits now come packaged in a workplace suite. What to do: Test agent-owned identity and user-delegated access on one bounded workflow. Check audit trails and spend limits.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>Google</category>
-      <category>Google Cloud</category>
-    </item>
-    <item>
-      <title>GitHub brings Claude Haiku 5.5 to all Copilot plans and surfaces</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-07-claude-haiku-55-copilot</link>
-      <guid isPermaLink="false">2026-10-07-claude-haiku-55-copilot</guid>
-      <pubDate>Wed, 07 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Teams get a small, fast model for high-volume subtasks inside their existing coding tools. What to do: Test it on your coding and subagent tasks. Compare success rate, latency, retries and cost per finished task.</description>
-      <category>Model</category>
-      <category>GitHub</category>
-      <category>Anthropic</category>
     </item>
   </channel>
 </rss>

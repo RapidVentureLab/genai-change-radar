@@ -1,0 +1,39 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-17T13:41:18+00:00",
+  "items": [
+    {
+      "id": "2026-11-16-aws-bedrock-agentcore-retrieval-memory",
+      "title": "AWS connects AgentCore memory to Bedrock managed retrieval",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/build-memory-aware-ai-agents-with-agentic-retrieve-on-amazon-bedrock-managed-knowledge-base/",
+        "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-agentic-retrieve.html#kb-agentic-retrieve-memory"
+      ],
+      "problems": [],
+      "notes": []
+    },
+    {
+      "id": "2026-11-16-vscode-local-harness-retirement",
+      "title": "VS Code retires its Local harness in February 2027",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027/",
+        "https://code.visualstudio.com/docs/agents/run/move-to-copilot"
+      ],
+      "problems": [],
+      "notes": []
+    },
+    {
+      "id": "2026-11-16-github-copilot-customization-source-controls",
+      "title": "GitHub lets enterprises restrict Copilot customization sources",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from/",
+        "https://docs.github.com/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/use-managed-settings/manage-plugin-marketplaces-and-plugins"
+      ],
+      "problems": [],
+      "notes": []
+    }
+  ]
+}

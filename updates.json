@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-16T13:41:42+01:00",
+  "updatedAt": "2026-11-17T14:19:24+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -4260,6 +4260,137 @@
       "decisions": [
         "deployment",
         "hosted-vs-open"
+      ]
+    },
+    {
+      "id": "2026-11-16-aws-bedrock-agentcore-retrieval-memory",
+      "date": "2026-11-16",
+      "layer": "Data & Knowledge",
+      "kind": "signal",
+      "changeType": "managed retrieval and memory",
+      "impact": "Incremental",
+      "title": "AWS connects AgentCore memory to Bedrock managed retrieval",
+      "whatChanged": "AWS adds AgentCore memory support to Amazon Bedrock Managed Knowledge Base agentic retrieval. An AgenticRetrieveStream request can restore and persist session history, retrieve long-term user facts, and filter documents with userContext. AWS's sample scopes memory through IAM conditions tied to the authenticated user's ID.",
+      "whyCare": "You can combine long-term personalization with document-level authorization without building each orchestration step yourself. You still need a verified, stable user identity and IAM conditions that scope memory access.",
+      "before": "Applications had to restore conversations, extract and retrieve user facts, and apply document permissions around a knowledge-base search.",
+      "after": "Managed Knowledge Base can bind AgentCore short- and long-term memory to agentic retrieval. It restores and saves sessions and uses userContext for document ACLs; IAM conditions still need to enforce per-user memory access.",
+      "learn": "Prototype with stable user IDs, inspect traces for memory access, and scope IAM policies to the actor and namespace. Check the same-account and Region requirements before replacing your memory pipeline.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - Build memory-aware AI agents with Agentic Retrieve",
+          "url": "https://aws.amazon.com/blogs/machine-learning/build-memory-aware-ai-agents-with-agentic-retrieve-on-amazon-bedrock-managed-knowledge-base/"
+        },
+        {
+          "name": "Amazon Bedrock User Guide - Use AgentCore Memory with agentic retrieval",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-agentic-retrieve.html#kb-agentic-retrieve-memory"
+        }
+      ],
+      "architectureImplication": "You can remove application-owned session restore, memory retrieval, and persistence while keeping identity mapping and IAM scoping in your backend. This requires a managed knowledge base, and the memory and knowledge base must share an AWS account and Region.",
+      "tradeoffs": [
+        "Control",
+        "Security",
+        "Complexity"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "rag-vs-long-context",
+        "state-and-memory",
+        "identity-and-permissions"
+      ]
+    },
+    {
+      "id": "2026-11-16-vscode-local-harness-retirement",
+      "date": "2026-11-16",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "agent runtime retirement",
+      "impact": "Incremental",
+      "title": "VS Code retires its Local harness in February 2027",
+      "whatChanged": "VS Code 1.146 deprecates the Local harness and plans to remove it in February 2027. The Copilot harness handles new sessions by default and shares its runtime with Copilot CLI and the Copilot app. Agent files stay on your machine, but admins must configure managed permissions and sandbox controls separately.",
+      "whyCare": "Teams that depend on the Local harness must validate workflows and customizations before removal. The Copilot harness can enforce managed permissions and sandbox restrictions, but admins must configure those controls separately.",
+      "before": "VS Code offered the Local harness for agent sessions; that harness could not enforce managed runtime permissions or sandbox restrictions.",
+      "after": "New VS Code sessions default to the Copilot harness, which shares its runtime with Copilot CLI and the Copilot app. VS Code plans to remove the Local harness in February 2027.",
+      "learn": "Test each workflow, permission policy, sandbox setting, and customization in the Copilot harness before February 2027. Plan to migrate customizations yourself because VS Code does not convert all of them.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - VS Code retires the Local harness in February 2027",
+          "url": "https://github.blog/changelog/2026-11-16-vs-code-retires-the-local-harness-in-february-2027/"
+        },
+        {
+          "name": "Visual Studio Code - Move to the Copilot harness",
+          "url": "https://code.visualstudio.com/docs/agents/run/move-to-copilot"
+        }
+      ],
+      "architectureImplication": "Teams can align editor, CLI, and app sessions on one runtime while keeping execution and files local. They must configure the Copilot harness's permission and sandbox controls explicitly.",
+      "tradeoffs": [
+        "Compatibility",
+        "Control",
+        "Security"
+      ],
+      "vendors": [
+        "Microsoft",
+        "GitHub"
+      ],
+      "decisions": [
+        "managed-vs-custom-runtime",
+        "deployment",
+        "security-and-guardrails"
+      ],
+      "action": {
+        "type": "retirement",
+        "what": "Move remaining workflows to the Copilot harness and test customizations before February 2027."
+      }
+    },
+    {
+      "id": "2026-11-16-github-copilot-customization-source-controls",
+      "date": "2026-11-16",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "customization source controls",
+      "impact": "Incremental",
+      "title": "GitHub lets enterprises restrict Copilot customization sources",
+      "whatChanged": "On 16 November, GitHub adds an Enterprise Cloud managed setting that blocks standalone user and project sources for selected Copilot customization types. Admins can require plugins or managed settings for skills, custom agents, hooks, MCP servers, and executable extensions. Marketplace restrictions need a separate policy.",
+      "whyCare": "You can keep MCP servers and executable extensions available while restricting where teams obtain them. Pair plugin-only controls with marketplace allowlists, because the new setting alone does not approve plugin sources.",
+      "before": "Enterprise policies could restrict marketplaces and manage settings, but users and projects could still supply standalone customizations in those categories.",
+      "after": "Enterprise Cloud admins can block standalone sources for selected customization categories and allow plugin or managed-setting sources. A separate marketplace policy controls which marketplaces may supply plugins.",
+      "learn": "Review the customization categories your teams use. Set plugin-only controls for the sources you want to govern, then pair them with marketplace restrictions when you need an allowlist.",
+      "cloudPrimitives": [
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Control where GitHub Copilot customizations come from",
+          "url": "https://github.blog/changelog/2026-11-16-control-where-github-copilot-customizations-come-from/"
+        },
+        {
+          "name": "GitHub Docs - Manage plugin marketplaces and plugins with enterprise-managed settings",
+          "url": "https://docs.github.com/enterprise-cloud@latest/copilot/how-tos/administer-copilot/manage-for-enterprise/use-managed-settings/manage-plugin-marketplaces-and-plugins"
+        }
+      ],
+      "architectureImplication": "Treat Copilot customization sources as part of your agent tool and extension policy. Separate source eligibility from marketplace approval, then test each approved MCP server and extension under the resulting controls.",
+      "tradeoffs": [
+        "Control",
+        "Security",
+        "Flexibility"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "security-and-guardrails",
+        "integration-standards",
+        "identity-and-permissions"
       ]
     }
   ],
