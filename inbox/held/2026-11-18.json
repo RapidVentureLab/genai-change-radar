@@ -1,0 +1,136 @@
+{
+  "updates": [
+    {
+      "id": "2026-11-17-aws-hyperpod-managed-dynamo",
+      "date": "2026-11-17",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "managed inference runtime",
+      "impact": "Packaging / distribution",
+      "title": "AWS HyperPod Inference adds managed NVIDIA Dynamo deployments",
+      "whatChanged": "AWS added NVIDIA Dynamo support to SageMaker HyperPod Inference on 17 November. The add-on provides multi-node orchestration, disaggregated prefill and decode, KV-aware routing and managed node recovery.",
+      "whyCare": "You can deploy large-model graphs across nodes without assembling the Dynamo operator, scheduler and recovery stack yourself.",
+      "before": "Teams built and operated distributed serving components, pod placement and node recovery for Dynamo on Kubernetes.",
+      "after": "HyperPod packages Dynamo deployment, scheduling, endpoints, health monitoring and node replacement in an add-on.",
+      "learn": "Compare Dynamo on HyperPod with managed inference and existing Kubernetes serving stacks. Validate GPU sizing, KV transfer, autoscaling and endpoint compatibility for your model.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - Managed NVIDIA Dynamo on SageMaker HyperPod",
+          "url": "https://aws.amazon.com/blogs/machine-learning/managed-nvidia-dynamo-on-amazon-sagemaker-hyperpod-inference/"
+        },
+        {
+          "name": "NVIDIA Dynamo - Distributed inference framework",
+          "url": "https://github.com/ai-dynamo/dynamo"
+        }
+      ],
+      "architectureImplication": "Separate model serving from infrastructure orchestration only if your operations team can manage the resulting graph. Evaluate disaggregated serving through throughput and failure-recovery measurements.",
+      "tradeoffs": [
+        "Throughput",
+        "Operational complexity",
+        "Vendor lock-in"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "managed-vs-custom-runtime",
+        "deployment",
+        "cost-and-routing"
+      ],
+      "heldReasons": [
+        "Fact check: Before: Teams built and operated distributed Dynamo serving components, pod placement and node recovery on Kubernetes. | The sources describe the HyperPod add-on and Dynamo as distributed inference software, but do not state that teams previously built those components in this way."
+      ]
+    },
+    {
+      "id": "2026-11-17-github-copilot-evals",
+      "date": "2026-11-17",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "agent evaluation",
+      "impact": "Step-change",
+      "title": "GitHub adds Copilot Evals for skills, agents and MCP tools",
+      "whatChanged": "GitHub launched Copilot Evals in public preview on 17 November. Teams can create repeatable tasks, inspect passed and failed checks and compare runs before and after skills, agents or MCP tools change.",
+      "whyCare": "You can catch regressions in local Copilot customization and evaluate both final results and the agent's tool behavior.",
+      "before": "Copilot users inspected ad hoc results but had no packaged repeat-run workflow for project-specific skills, agents and MCP tools.",
+      "after": "Copilot Evals uses Vally to run approved evals and compare customization changes across repeated results.",
+      "learn": "Create evals from realistic tasks and expected evidence. Rerun them after model, skill or MCP changes and require approval for each run.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - GitHub Copilot Evals is now in public preview",
+          "url": "https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/"
+        }
+      ],
+      "architectureImplication": "Place repeatable agent evaluations beside customization configuration and CI policy. Store task evidence and compare runs across model and tool changes.",
+      "tradeoffs": [
+        "Reliability",
+        "Coverage",
+        "Cost"
+      ],
+      "vendors": [
+        "GitHub",
+        "Microsoft"
+      ],
+      "decisions": [
+        "observability-and-evals",
+        "integration-standards",
+        "security-and-guardrails"
+      ],
+      "heldReasons": [
+        "Fact check: Before: Copilot users had ad hoc results but no packaged repeat-run workflow. | The source describes the new repeatable eval workflow but says nothing explicit about the prior workflow."
+      ]
+    },
+    {
+      "id": "2026-11-17-github-copilot-agent-365-monitoring",
+      "date": "2026-11-17",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "enterprise agent observability",
+      "impact": "Step-change",
+      "title": "GitHub streams Copilot agent activity into Microsoft Agent 365",
+      "whatChanged": "GitHub added audit-log streaming for Copilot agent activity into Microsoft Agent 365 on 17 November. Enterprise Managed Users can see sessions, prompts, responses and tool calls across Copilot clients, then correlate Purview and Defender risk signals.",
+      "whyCare": "You can inspect Copilot activity alongside other Microsoft-managed AI workloads instead of operating separate client audit views.",
+      "before": "GitHub Copilot activity stayed mainly in GitHub audit systems, while Microsoft Agent 365 lacked a single view of Copilot sessions.",
+      "after": "Enterprise Managed Users stream Copilot prompts, responses, tool calls and usage trends to Agent 365 and Microsoft risk products.",
+      "learn": "Confirm retention, access and redaction policies before streaming audit data. Route sessions and risk events through your existing Microsoft security operations.",
+      "cloudPrimitives": [
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Monitor Copilot activity through Microsoft Agent 365",
+          "url": "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365/"
+        }
+      ],
+      "architectureImplication": "Keep Copilot permission grants outside Agent 365, and use it as a control-plane view. Preserve GitHub audit logs and align retention with security monitoring.",
+      "tradeoffs": [
+        "Visibility",
+        "Privacy",
+        "Operational integration"
+      ],
+      "vendors": [
+        "GitHub",
+        "Microsoft"
+      ],
+      "decisions": [
+        "observability-and-evals",
+        "identity-and-permissions",
+        "security-and-guardrails"
+      ],
+      "heldReasons": [
+        "Fact check: Before: GitHub Copilot activity stayed mainly in GitHub audit systems and Microsoft Agent 365 lacked a single view of Copilot sessions. | The source announces the new streaming capability but does not state or confirm the prior audit-system or Agent 365 state."
+      ]
+    }
+  ]
+}

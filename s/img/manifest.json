@@ -101,5 +101,9 @@
   "2026-11-13-llama-cpp-v1": "c20a8cc344e1",
   "2026-11-16-aws-bedrock-agentcore-retrieval-memory": "6dc6b6da86d7",
   "2026-11-16-vscode-local-harness-retirement": "ae7ba5afd18a",
-  "2026-11-16-github-copilot-customization-source-controls": "443ae80e3f53"
+  "2026-11-16-github-copilot-customization-source-controls": "443ae80e3f53",
+  "2026-11-16-huggingface-openrouter-inference-routing": "8914ae959c9e",
+  "2026-11-16-langsmith-agent-lifecycle-platform": "e25652bcfedb",
+  "2026-11-17-langsmith-production-trace-access-controls": "07a2aef7081b",
+  "2026-11-17-aws-sagemaker-kv-aware-routing": "25bdff1192d9"
 }

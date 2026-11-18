@@ -1,0 +1,99 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-18T13:04:06+00:00",
+  "items": [
+    {
+      "id": "2026-11-16-huggingface-openrouter-inference-routing",
+      "title": "Hugging Face routes open-model inference through OpenRouter",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://huggingface.co/blog/openrouter",
+        "https://openrouter.ai/blog/announcements/how-we-rebuilt-provider-routing/"
+      ],
+      "problems": [],
+      "notes": [
+        "The Hugging Face source gives November 16, 2026 as the publication date."
+      ]
+    },
+    {
+      "id": "2026-11-16-langsmith-agent-lifecycle-platform",
+      "title": "LangChain reorganizes LangSmith around registered agent records",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://www.langchain.com/blog/we-rebuilt-langsmith-around-the-agent"
+      ],
+      "problems": [],
+      "notes": [
+        "The source gives November 16, 2026 and describes the current agent record model."
+      ]
+    },
+    {
+      "id": "2026-11-17-langsmith-production-trace-access-controls",
+      "title": "LangSmith adds team and metadata controls for production traces",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://www.langchain.com/blog/protect-sensitive-data-in-your-traces-new-controls-in-langsmith"
+      ],
+      "problems": [],
+      "notes": [
+        "The source gives November 17, 2026 and says the controls are available in Enterprise plans."
+      ]
+    },
+    {
+      "id": "2026-11-17-aws-sagemaker-kv-aware-routing",
+      "title": "AWS SageMaker adds cache-aware routing for real-time endpoints",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-real-time-endpoints-now-support-kv-cache-aware-routing/"
+      ],
+      "problems": [],
+      "notes": [
+        "The AWS source explicitly gives 17 November 2026."
+      ]
+    },
+    {
+      "id": "2026-11-17-aws-hyperpod-managed-dynamo",
+      "title": "AWS HyperPod Inference adds managed NVIDIA Dynamo deployments",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/managed-nvidia-dynamo-on-amazon-sagemaker-hyperpod-inference/",
+        "https://github.com/ai-dynamo/dynamo"
+      ],
+      "problems": [
+        "Before: Teams built and operated distributed Dynamo serving components, pod placement and node recovery on Kubernetes. | The sources describe the HyperPod add-on and Dynamo as distributed inference software, but do not state that teams previously built those components in this way."
+      ],
+      "notes": [
+        "The AWS source explicitly gives 17 November 2026.",
+        "The AWS source supports the managed add-on, disaggregated serving, KV-aware routing and node replacement."
+      ]
+    },
+    {
+      "id": "2026-11-17-github-copilot-evals",
+      "title": "GitHub adds Copilot Evals for skills, agents and MCP tools",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-17-github-copilot-evals-is-now-in-public-preview/"
+      ],
+      "problems": [
+        "Before: Copilot users had ad hoc results but no packaged repeat-run workflow. | The source describes the new repeatable eval workflow but says nothing explicit about the prior workflow."
+      ],
+      "notes": [
+        "The GitHub source explicitly gives November 17, 2026 and confirms public preview availability."
+      ]
+    },
+    {
+      "id": "2026-11-17-github-copilot-agent-365-monitoring",
+      "title": "GitHub streams Copilot agent activity into Microsoft Agent 365",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-17-monitor-github-copilot-activity-through-microsoft-agent-365/"
+      ],
+      "problems": [
+        "Before: GitHub Copilot activity stayed mainly in GitHub audit systems and Microsoft Agent 365 lacked a single view of Copilot sessions. | The source announces the new streaming capability but does not state or confirm the prior audit-system or Agent 365 state."
+      ],
+      "notes": [
+        "The GitHub source explicitly gives November 17, 2026 and confirms Enterprise Managed Users can stream activity."
+      ]
+    }
+  ]
+}

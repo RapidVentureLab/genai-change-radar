@@ -1,0 +1,167 @@
+{
+  "scannedAt": "2026-11-18T14:00:55+01:00",
+  "updates": [
+    {
+      "id": "2026-11-16-huggingface-openrouter-inference-routing",
+      "date": "2026-11-16",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "provider routing",
+      "impact": "Step-change",
+      "title": "Hugging Face routes open-model inference through OpenRouter",
+      "whatChanged": "Hugging Face routes language-model requests in Inference Providers through OpenRouter on 16 November. OpenRouter selects providers from live price, speed and reliability data, retries failed calls and uses prompt-cache-aware routing. Hugging Face removed custom provider-key support for these requests.",
+      "whyCare": "You can route open-weight calls across 80-plus providers with one token and existing APIs. Provider choice moves outside the application, and custom provider billing keys stop working.",
+      "before": "Hugging Face selected a provider for each Inference Providers request and returned that provider's error after a failure.",
+      "after": "OpenRouter selects providers, retries a failed call with another provider and keeps conversations on cache-compatible providers.",
+      "learn": "Move language-model integrations to Hugging Face account billing and remove custom provider keys. Pin or block providers where your data policy requires it.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Hugging Face - Hugging Face and OpenRouter join forces",
+          "url": "https://huggingface.co/blog/openrouter"
+        },
+        {
+          "name": "OpenRouter - Provider routing",
+          "url": "https://openrouter.ai/blog/announcements/how-we-rebuilt-provider-routing/"
+        }
+      ],
+      "architectureImplication": "Treat provider routing as a managed dependency. Set provider allowlists, session identity and usage telemetry where policy or cache continuity matters.",
+      "tradeoffs": [
+        "Cost",
+        "Reliability",
+        "Control"
+      ],
+      "vendors": [
+        "Open models",
+        "Other"
+      ],
+      "decisions": [
+        "cost-and-routing",
+        "hosted-vs-open",
+        "deployment"
+      ],
+      "action": {
+        "type": "breaking-change",
+        "what": "Move language-model integrations to Hugging Face account billing and remove custom provider keys."
+      }
+    },
+    {
+      "id": "2026-11-16-langsmith-agent-lifecycle-platform",
+      "date": "2026-11-16",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "integrated agent platform",
+      "impact": "Step-change",
+      "title": "LangChain reorganizes LangSmith around registered agent records",
+      "whatChanged": "LangChain rebuilt LangSmith around immutable agent records that group environments, traces, deployments and evaluations. LangSmith can register agents on other OTLP-capable platforms and assign an owner, ID and agent type for fleet governance.",
+      "whyCare": "You can inventory agents across frameworks and runtimes, attach owners and compare performance, cost and failures through one data model.",
+      "before": "LangSmith stored traces in flat projects without a durable link between agent identity, environment and lifecycle.",
+      "after": "Registered agent records connect build, run, evaluation and governance across LangSmith and external OTLP agents.",
+      "learn": "Assign owners and stable IDs to production agents. Test agent-type dashboards and OTLP registration before retiring existing observability views.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "LangChain - We rebuilt LangSmith around the agent",
+          "url": "https://www.langchain.com/blog/we-rebuilt-langsmith-around-the-agent"
+        }
+      ],
+      "architectureImplication": "Use stable agent records to join traces, evaluations, deployments and ownership. Keep runtime authorization and model routing separate from observability.",
+      "tradeoffs": [
+        "Governance",
+        "Integration",
+        "Control"
+      ],
+      "vendors": [
+        "LangChain"
+      ],
+      "decisions": [
+        "observability-and-evals",
+        "managed-vs-custom-runtime",
+        "identity-and-permissions"
+      ]
+    },
+    {
+      "id": "2026-11-17-langsmith-production-trace-access-controls",
+      "date": "2026-11-17",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "trace data access control",
+      "impact": "Step-change",
+      "title": "LangSmith adds team and metadata controls for production traces",
+      "whatChanged": "LangSmith added Enterprise controls that hide run inputs and outputs, assign user-group permissions by workspace and enforce trace-level attribute policies from root-run metadata.",
+      "whyCare": "You can keep run trees, latency and cost data while giving support or compliance teams selected input and output access. Administrators can preserve full traces in one store instead of maintaining redacted copies.",
+      "before": "Teams used broad trace access or separate observability stores and duplicate traces to limit sensitive data.",
+      "after": "LangSmith uses RBAC, user groups and metadata-based ABAC to vary trace access by team and customer.",
+      "learn": "Map roles to trace data categories and test metadata policies for support, engineering and compliance. Audit policy changes and output access.",
+      "cloudPrimitives": [
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "LangChain - Protect sensitive data in your traces",
+          "url": "https://www.langchain.com/blog/protect-sensitive-data-in-your-traces-new-controls-in-langsmith"
+        }
+      ],
+      "architectureImplication": "Keep sensitive trace data in one system and enforce least privilege in the observability control plane. Include trace access in incident and audit procedures.",
+      "tradeoffs": [
+        "Privacy",
+        "Debugging",
+        "Operational complexity"
+      ],
+      "vendors": [
+        "LangChain"
+      ],
+      "decisions": [
+        "observability-and-evals",
+        "security-and-guardrails",
+        "identity-and-permissions"
+      ]
+    },
+    {
+      "id": "2026-11-17-aws-sagemaker-kv-aware-routing",
+      "date": "2026-11-17",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "inference routing",
+      "impact": "Step-change",
+      "title": "AWS SageMaker adds cache-aware routing for real-time endpoints",
+      "whatChanged": "Amazon SageMaker AI added KV-aware routing for real-time endpoints on 17 November. Supported containers report cache state, the endpoint indexes cached prompt content and routes new requests to a matching instance that is not too busy.",
+      "whyCare": "SageMaker claims lower time to first token and higher cache reuse for long prompts and multi-turn workloads. You can improve these workloads without client-side sticky routing.",
+      "before": "Prefix-aware routing guessed cache location from the request prefix. It could send a conversation to an instance that had evicted or never held the cache.",
+      "after": "KV-aware routing checks the instance cache index and load. It falls back to load-aware routing when no useful match exists.",
+      "learn": "Benchmark KV-aware routing with your prompt lengths and conversation patterns. Measure tokenization overhead, cache hit rate and time to first token before broad use.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - SageMaker AI adds KV cache-aware routing",
+          "url": "https://aws.amazon.com/blogs/machine-learning/amazon-sagemaker-ai-real-time-endpoints-now-support-kv-cache-aware-routing/"
+        }
+      ],
+      "architectureImplication": "Add cache-aware routing to your inference topology when repeated context creates substantial prefill work. Instrument TTFT, cache hits and routing fallbacks because container support and workload shape govern results.",
+      "tradeoffs": [
+        "Latency",
+        "Throughput",
+        "Cost"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "cost-and-routing",
+        "deployment"
+      ]
+    }
+  ]
+}

@@ -6,7 +6,25 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Tue, 17 Nov 2026 13:19:24 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2026 13:00:55 GMT</lastBuildDate>
+    <item>
+      <title>AWS SageMaker adds cache-aware routing for real-time endpoints</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-17-aws-sagemaker-kv-aware-routing</link>
+      <guid isPermaLink="false">2026-11-17-aws-sagemaker-kv-aware-routing</guid>
+      <pubDate>Tue, 17 Nov 2026 06:00:00 GMT</pubDate>
+      <description>SageMaker claims lower time to first token and higher cache reuse for long prompts and multi-turn workloads. You can improve these workloads without client-side sticky routing. What to do: Benchmark KV-aware routing with your prompt lengths and conversation patterns. Measure tokenization overhead, cache hit rate and time to first token before broad use.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>LangSmith adds team and metadata controls for production traces</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-17-langsmith-production-trace-access-controls</link>
+      <guid isPermaLink="false">2026-11-17-langsmith-production-trace-access-controls</guid>
+      <pubDate>Tue, 17 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can keep run trees, latency and cost data while giving support or compliance teams selected input and output access. Administrators can preserve full traces in one store instead of maintaining redacted copies. What to do: Map roles to trace data categories and test metadata policies for support, engineering and compliance. Audit policy changes and output access.</description>
+      <category>Production &amp; Business</category>
+      <category>LangChain</category>
+    </item>
     <item>
       <title>AWS connects AgentCore memory to Bedrock managed retrieval</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-16-aws-bedrock-agentcore-retrieval-memory</link>
@@ -24,6 +42,25 @@
       <description>You can keep MCP servers and executable extensions available while restricting where teams obtain them. Pair plugin-only controls with marketplace allowlists, because the new setting alone does not approve plugin sources. What to do: Review the customization categories your teams use. Set plugin-only controls for the sources you want to govern, then pair them with marketplace restrictions when you need an allowlist.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>GitHub</category>
+    </item>
+    <item>
+      <title>Hugging Face routes open-model inference through OpenRouter</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-16-huggingface-openrouter-inference-routing</link>
+      <guid isPermaLink="false">2026-11-16-huggingface-openrouter-inference-routing</guid>
+      <pubDate>Mon, 16 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can route open-weight calls across 80-plus providers with one token and existing APIs. Provider choice moves outside the application, and custom provider billing keys stop working. What to do: Move language-model integrations to Hugging Face account billing and remove custom provider keys. Pin or block providers where your data policy requires it.</description>
+      <category>Model</category>
+      <category>Open models</category>
+      <category>Other</category>
+    </item>
+    <item>
+      <title>LangChain reorganizes LangSmith around registered agent records</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-16-langsmith-agent-lifecycle-platform</link>
+      <guid isPermaLink="false">2026-11-16-langsmith-agent-lifecycle-platform</guid>
+      <pubDate>Mon, 16 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can inventory agents across frameworks and runtimes, attach owners and compare performance, cost and failures through one data model. What to do: Assign owners and stable IDs to production agents. Test agent-type dashboards and OTLP registration before retiring existing observability views.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>LangChain</category>
     </item>
     <item>
       <title>VS Code retires its Local harness in February 2027</title>
@@ -436,42 +473,6 @@
       <pubDate>Mon, 12 Oct 2026 06:00:00 GMT</pubDate>
       <description>Enterprises can link agent activity to users and devices without collecting conversation content. What to do: Collect the minimum data you need. Content capture can include source code, tool data and local paths.</description>
       <category>Production &amp; Business</category>
-      <category>GitHub</category>
-    </item>
-    <item>
-      <title>AWS launches Lambda Web Functions for HTTP servers and streaming AI endpoints</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-12-lambda-web-functions</link>
-      <guid isPermaLink="false">2026-10-12-lambda-web-functions</guid>
-      <pubDate>Mon, 12 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Teams can deploy an HTTP server without rewriting it as an event handler, and pay less for CPU while waiting on I/O. What to do: Compare it with event-driven functions and containers on concurrency, memory cost, runtime and Region limits.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>AWS</category>
-    </item>
-    <item>
-      <title>GitHub adds managed model defaults and MCP startup controls to Copilot for JetBrains</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-10-copilot-jetbrains-agent-controls</link>
-      <guid isPermaLink="false">2026-10-10-copilot-jetbrains-agent-controls</guid>
-      <pubDate>Sat, 10 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Administrators get a consistent starting model, and developers control when tools become active. Neither setting restricts which models or MCP tools are allowed. What to do: Use model allowlists or a gateway where you must restrict models. Keep MCP permissions and least privilege separate from startup settings.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>GitHub</category>
-    </item>
-    <item>
-      <title>Ai2 replaces GPU priorities with time budgets and preemption contracts</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-09-ai2-gpu-time-budget-scheduler</link>
-      <guid isPermaLink="false">2026-10-09-ai2-gpu-time-budget-scheduler</guid>
-      <pubDate>Fri, 09 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Scarce GPUs tempt teams to hold capacity and inflate priorities. Budgets align use with company priorities and let idle capacity be borrowed. What to do: Budget GPU time per team. Pair fair share with checkpointing, preemption rules and visible usage data.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>Other</category>
-    </item>
-    <item>
-      <title>GitHub makes local sandboxing generally available for Copilot coding agents</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-09-copilot-local-sandbox-ga</link>
-      <guid isPermaLink="false">2026-10-09-copilot-local-sandbox-ga</guid>
-      <pubDate>Fri, 09 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Coding agents run commands with the developer's privileges. A built-in sandbox makes limiting that access simpler. What to do: Test the sandbox's file, network and credential limits on each operating system. Use cloud sandboxes where you need stronger isolation.</description>
-      <category>Agent &amp; Infrastructure</category>
       <category>GitHub</category>
     </item>
   </channel>

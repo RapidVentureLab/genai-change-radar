@@ -1,15 +1,36 @@
 {
-  "lastScan": "2026-11-17T14:19:24+01:00",
-  "publishedLastScan": 3,
-  "heldLastScan": 0,
+  "lastScan": "2026-11-18T14:00:55+01:00",
+  "publishedLastScan": 4,
+  "heldLastScan": 3,
   "factCheck": {
     "ran": true,
-    "checked": 3,
-    "supported": 3,
-    "unsupported": 0,
+    "checked": 7,
+    "supported": 4,
+    "unsupported": 3,
     "unverifiable": 0
   },
   "held": [
+    {
+      "day": "2026-11-18",
+      "title": "AWS HyperPod Inference adds managed NVIDIA Dynamo deployments",
+      "reasons": [
+        "Fact check: Before: Teams built and operated distributed Dynamo serving components, pod placement and node recovery on Kubernetes. | The sources describe the HyperPod add-on and Dynamo as distributed inference software, but do not state that teams previously built those components in this way."
+      ]
+    },
+    {
+      "day": "2026-11-18",
+      "title": "GitHub adds Copilot Evals for skills, agents and MCP tools",
+      "reasons": [
+        "Fact check: Before: Copilot users had ad hoc results but no packaged repeat-run workflow. | The source describes the new repeatable eval workflow but says nothing explicit about the prior workflow."
+      ]
+    },
+    {
+      "day": "2026-11-18",
+      "title": "GitHub streams Copilot agent activity into Microsoft Agent 365",
+      "reasons": [
+        "Fact check: Before: GitHub Copilot activity stayed mainly in GitHub audit systems and Microsoft Agent 365 lacked a single view of Copilot sessions. | The source announces the new streaming capability but does not state or confirm the prior audit-system or Agent 365 state."
+      ]
+    },
     {
       "day": "2026-11-15",
       "title": "Google Cloud sends agent telemetry to BigQuery for governance",
@@ -59,29 +80,6 @@
       "title": "AWS adds MCP tools to Amazon Connect Customer flows",
       "reasons": [
         "Fact check: The item dates the announcement to 2 November, but the AWS What's New URL places it in October 2026."
-      ]
-    },
-    {
-      "day": "2026-11-01",
-      "title": "AWS offers OpenAI Daybreak Red in GovCloud (US-East) to eligible customers",
-      "reasons": [
-        "Fact check: The item says AWS account-team approval is an access gate | The sources require OpenAI enrollment and say to contact the AWS account team to request or enable access after approval, but do not say the AWS team itself approves eligibility."
-      ]
-    },
-    {
-      "day": "2026-10-31",
-      "title": "Google Cloud makes spend caps generally available",
-      "reasons": [
-        "Fact check: The item says limits can be applied through policy; the sources describe API-based programmatic setup but do not state policy support."
-      ]
-    },
-    {
-      "day": "2026-10-30",
-      "title": "AWS exposes Step Functions workflows as tools for AI agents",
-      "reasons": [
-        "Fact check: Before: Teams wrote Lambda adapters or MCP servers to expose Step Functions; the sources say these are no longer needed but do not establish what teams previously did or had to do.",
-        "Fact check: Before: Teams encoded business sequences in agents; the sources do not say this was the prior approach.",
-        "Fact check: WhyCare: Step Functions preserves execution history without qualification; the documentation specifies execution history for Standard workflows, not Express workflows."
       ]
     }
   ]
