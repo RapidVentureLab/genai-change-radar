@@ -1,0 +1,39 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-19T13:04:19+00:00",
+  "items": [
+    {
+      "id": "2026-11-18-aws-sagemaker-serverless-full-fine-tuning",
+      "title": "AWS adds full fine-tuning to SageMaker AI",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization/",
+        "https://docs.aws.amazon.com/sagemaker/latest/dg/customizing-models-fft.html"
+      ],
+      "problems": [
+        "“Full fine-tuning usually required teams to manage training compute elsewhere.” | Neither source states this prior requirement."
+      ],
+      "notes": []
+    },
+    {
+      "id": "2026-11-18-aws-hyperpod-workload-recovery",
+      "title": "AWS adds HyperPod checks for training failures",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/introducing-workload-recovery-and-expanded-infrastructure-checks-on-amazon-sagemaker-hyperpod/"
+      ],
+      "problems": [],
+      "notes": []
+    },
+    {
+      "id": "2026-11-18-github-copilot-team-customizations",
+      "title": "GitHub lets teams set Copilot plugin defaults",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team"
+      ],
+      "problems": [],
+      "notes": []
+    }
+  ]
+}

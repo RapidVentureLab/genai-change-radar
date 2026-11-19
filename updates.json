@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-18T14:00:55+01:00",
+  "updatedAt": "2026-11-19T14:01:05+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -4553,6 +4553,81 @@
       "decisions": [
         "cost-and-routing",
         "deployment"
+      ]
+    },
+    {
+      "id": "2026-11-18-aws-hyperpod-workload-recovery",
+      "date": "2026-11-18",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "workload recovery",
+      "impact": "Incremental",
+      "title": "AWS adds HyperPod checks for training failures",
+      "whatChanged": "Amazon SageMaker HyperPod added three checks on 18 November: multi-node training validation for EKS clusters, Kubernetes resource monitoring, and hung-job detection for Slurm. The training check detects non-finite loss or timeouts. The other checks report unhealthy cluster components and stalled jobs. Administrators can configure hung-job detection to cancel Slurm jobs for requeueing.",
+      "whyCare": "A node can pass hardware checks while training stalls or produces non-finite loss. These checks find failures sooner, protect cluster time, and reduce manual diagnosis.",
+      "before": "HyperPod node checks detected hardware faults. They did not validate training results or inspect Kubernetes components. EKS and Slurm workloads had different hung-job detection coverage.",
+      "after": "HyperPod validates training on supported EKS GPU clusters, reports Kubernetes failures, and detects stalled Slurm jobs. Administrators can cancel stalled jobs for Slurm requeue.",
+      "learn": "Enable checks for your cluster type and supported hardware. Test cancellation and requeue behavior. Route CloudWatch events to your incident workflow.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - Workload recovery and expanded infrastructure checks on Amazon SageMaker HyperPod",
+          "url": "https://aws.amazon.com/blogs/machine-learning/introducing-workload-recovery-and-expanded-infrastructure-checks-on-amazon-sagemaker-hyperpod/"
+        }
+      ],
+      "architectureImplication": "Add training correctness and job progress to health checks for node status. Include HyperPod checks in provisioning, alerting, and Slurm recovery policies. Supported EKS GPU types and separate features limit coverage.",
+      "tradeoffs": [
+        "Reliability",
+        "Cost",
+        "Complexity"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "deployment",
+        "observability-and-evals"
+      ]
+    },
+    {
+      "id": "2026-11-18-github-copilot-team-customizations",
+      "date": "2026-11-18",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "team customization controls",
+      "impact": "Packaging / distribution",
+      "title": "GitHub lets teams set Copilot plugin defaults",
+      "whatChanged": "GitHub made team customizations generally available for Copilot Business and Enterprise on 18 November. Team maintainers and organization owners can set approved Agent Plugins as defaults for direct team members in VS Code, the Copilot app, and Copilot CLI. Organization and enterprise policies take precedence. Child teams do not inherit defaults.",
+      "whyCare": "You can set common agent tools at team scope without making them organization-wide defaults. Marketplace approval and organization policy still govern team choices.",
+      "before": "Copilot users set plugins individually. Organizations applied policies at a broader scope.",
+      "after": "Team maintainers and organization owners set approved Agent Plugins as defaults for direct team members in supported Copilot clients. Organization and enterprise policies take precedence. Child teams do not inherit defaults.",
+      "learn": "Review approved plugins and marketplace sources before setting team defaults. Test VS Code, the Copilot app, and Copilot CLI. Verify organization and enterprise policy behavior.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Customize GitHub Copilot for your team",
+          "url": "https://github.blog/changelog/2026-11-18-customize-github-copilot-for-your-team"
+        }
+      ],
+      "architectureImplication": "Add team defaults between user choices and organization-wide rules. Administrators retain policy control. Teams govern marketplace and plugin selection as defaults vary by team.",
+      "tradeoffs": [
+        "Governance",
+        "Flexibility",
+        "Security"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "integration-standards",
+        "security-and-guardrails"
       ]
     }
   ],

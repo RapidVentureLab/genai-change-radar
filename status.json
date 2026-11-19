@@ -1,15 +1,22 @@
 {
-  "lastScan": "2026-11-18T14:00:55+01:00",
-  "publishedLastScan": 4,
-  "heldLastScan": 3,
+  "lastScan": "2026-11-19T14:01:05+01:00",
+  "publishedLastScan": 2,
+  "heldLastScan": 1,
   "factCheck": {
     "ran": true,
-    "checked": 7,
-    "supported": 4,
-    "unsupported": 3,
+    "checked": 3,
+    "supported": 2,
+    "unsupported": 1,
     "unverifiable": 0
   },
   "held": [
+    {
+      "day": "2026-11-19",
+      "title": "AWS adds full fine-tuning to SageMaker AI",
+      "reasons": [
+        "Fact check: “Full fine-tuning usually required teams to manage training compute elsewhere.” | Neither source states this prior requirement."
+      ]
+    },
     {
       "day": "2026-11-18",
       "title": "AWS HyperPod Inference adds managed NVIDIA Dynamo deployments",
@@ -73,13 +80,6 @@
       "title": "Mistral releases Mistral Large 4 weights for self-hosting",
       "reasons": [
         "Fact check: The item says teams could call the model through hosted services during preview, but neither source says preview access included hosted inference."
-      ]
-    },
-    {
-      "day": "2026-11-03",
-      "title": "AWS adds MCP tools to Amazon Connect Customer flows",
-      "reasons": [
-        "Fact check: The item dates the announcement to 2 November, but the AWS What's New URL places it in October 2026."
       ]
     }
   ]

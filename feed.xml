@@ -6,7 +6,25 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Wed, 18 Nov 2026 13:00:55 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 13:01:05 GMT</lastBuildDate>
+    <item>
+      <title>AWS adds HyperPod checks for training failures</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-18-aws-hyperpod-workload-recovery</link>
+      <guid isPermaLink="false">2026-11-18-aws-hyperpod-workload-recovery</guid>
+      <pubDate>Wed, 18 Nov 2026 06:00:00 GMT</pubDate>
+      <description>A node can pass hardware checks while training stalls or produces non-finite loss. These checks find failures sooner, protect cluster time, and reduce manual diagnosis. What to do: Enable checks for your cluster type and supported hardware. Test cancellation and requeue behavior. Route CloudWatch events to your incident workflow.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>GitHub lets teams set Copilot plugin defaults</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-18-github-copilot-team-customizations</link>
+      <guid isPermaLink="false">2026-11-18-github-copilot-team-customizations</guid>
+      <pubDate>Wed, 18 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can set common agent tools at team scope without making them organization-wide defaults. Marketplace approval and organization policy still govern team choices. What to do: Review approved plugins and marketplace sources before setting team defaults. Test VS Code, the Copilot app, and Copilot CLI. Verify organization and enterprise policy behavior.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>GitHub</category>
+    </item>
     <item>
       <title>AWS SageMaker adds cache-aware routing for real-time endpoints</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-17-aws-sagemaker-kv-aware-routing</link>
@@ -456,24 +474,6 @@
       <description>Teams get a middle path between building their own agent runtime and adopting one vendor's managed agent service. What to do: Compare it with self-hosting and with managed services such as Bedrock AgentCore. Before you store production state in it, test memory export, sandbox isolation, approvals and how reliable the beta is.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>LangChain</category>
-    </item>
-    <item>
-      <title>AWS AgentCore now charges for short-term memory by data volume</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-12-agentcore-stm-pricing</link>
-      <guid isPermaLink="false">2026-10-12-agentcore-stm-pricing</guid>
-      <pubDate>Mon, 12 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Agent memory cost now depends on payload size, retrieval volume and retention, so event counts alone no longer predict it. What to do: Recalculate memory costs with your real payload sizes, retrieval rates and retention times. Compare total cost with other memory options.</description>
-      <category>Production &amp; Business</category>
-      <category>AWS</category>
-    </item>
-    <item>
-      <title>GitHub adds identity attribution and per-category telemetry controls to Copilot</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-12-copilot-telemetry-controls</link>
-      <guid isPermaLink="false">2026-10-12-copilot-telemetry-controls</guid>
-      <pubDate>Mon, 12 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Enterprises can link agent activity to users and devices without collecting conversation content. What to do: Collect the minimum data you need. Content capture can include source code, tool data and local paths.</description>
-      <category>Production &amp; Business</category>
-      <category>GitHub</category>
     </item>
   </channel>
 </rss>

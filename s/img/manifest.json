@@ -105,5 +105,7 @@
   "2026-11-16-huggingface-openrouter-inference-routing": "8914ae959c9e",
   "2026-11-16-langsmith-agent-lifecycle-platform": "e25652bcfedb",
   "2026-11-17-langsmith-production-trace-access-controls": "07a2aef7081b",
-  "2026-11-17-aws-sagemaker-kv-aware-routing": "25bdff1192d9"
+  "2026-11-17-aws-sagemaker-kv-aware-routing": "25bdff1192d9",
+  "2026-11-18-aws-hyperpod-workload-recovery": "cb2ed7afb47d",
+  "2026-11-18-github-copilot-team-customizations": "625f44813fc9"
 }

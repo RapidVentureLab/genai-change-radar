@@ -1,0 +1,49 @@
+{
+  "updates": [
+    {
+      "id": "2026-11-18-aws-sagemaker-serverless-full-fine-tuning",
+      "date": "2026-11-18",
+      "layer": "Model",
+      "kind": "signal",
+      "changeType": "serverless fine-tuning",
+      "impact": "Packaging / distribution",
+      "title": "AWS adds full fine-tuning to SageMaker AI",
+      "whatChanged": "Amazon SageMaker AI Serverless Model Customization added full fine-tuning on 18 November. It updates all model weights. The service allocates compute and manages checkpoints, so teams avoid GPU provisioning and distributed training cluster configuration. AWS demonstrated the feature with Qwen3-4B.",
+      "whyCare": "You can use full fine-tuning for deeper task adaptation with a large, high-quality dataset. It uses more compute, takes longer, and creates larger artifacts than LoRA.",
+      "before": "SageMaker AI Serverless Model Customization offered LoRA. Full fine-tuning usually required teams to manage training compute elsewhere.",
+      "after": "Teams can run full fine-tuning through the serverless customization service. AWS allocates compute and manages checkpoints, with no GPU provisioning or cluster configuration.",
+      "learn": "Test full fine-tuning against LoRA on held-out tasks. Estimate compute cost and artifact storage. Check supported models and service availability before production tuning.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - Full Fine-Tuning on SageMaker AI Serverless Model Customization",
+          "url": "https://aws.amazon.com/blogs/machine-learning/full-fine-tuning-fft-on-sagemaker-ai-serverless-model-customization/"
+        },
+        {
+          "name": "Amazon SageMaker AI Developer Guide - Full Fine-Tuning",
+          "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/customizing-models-fft.html"
+        }
+      ],
+      "architectureImplication": "Use the managed path when full-weight updates fit your data and quality needs. Budget for more compute, longer training, and larger artifacts. Check model support before replacing LoRA or self-managed training.",
+      "tradeoffs": [
+        "Quality",
+        "Cost",
+        "Control"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "build-vs-buy",
+        "deployment",
+        "model-selection"
+      ],
+      "heldReasons": [
+        "Fact check: “Full fine-tuning usually required teams to manage training compute elsewhere.” | Neither source states this prior requirement."
+      ]
+    }
+  ]
+}
