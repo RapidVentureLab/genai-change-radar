@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-19T14:01:05+01:00",
+  "updatedAt": "2026-11-20T13:53:32+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -4627,6 +4627,139 @@
       ],
       "decisions": [
         "integration-standards",
+        "security-and-guardrails"
+      ]
+    },
+    {
+      "id": "2026-11-19-langsmith-tool-gateway",
+      "date": "2026-11-19",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "managed tool gateway",
+      "impact": "Incremental",
+      "title": "LangChain launches managed gateway for agent tools",
+      "whatChanged": "LangChain launched LangSmith Tool Gateway in public beta. It gives MCP clients one endpoint for registered tools and resolves user or agent credentials. It supports deny or approval policies and tool-call traces. LangSmith Plus and Enterprise offer the beta in selected AWS and Google Cloud regions; teams must contact LangChain for deny policies and audit logs.",
+      "whyCare": "You can centralize tool access and per-user credentials across agents instead of adding authentication and logs to each one. Policy checks and approval gates can limit access, while LangChain retains the tool credentials.",
+      "before": "Teams add tool authentication and call records to each agent or MCP server. Credentials and server-tool access can span separate implementations.",
+      "after": "Agents call a shared MCP URL for selected tools. LangSmith identifies the user, agent or profile, applies deny or approval rules and records tool-call traces.",
+      "learn": "Compare the beta with existing MCP gateways and agent authorization. Test identities, approval flows, tool scope, region support and trace data before routing production calls.",
+      "cloudPrimitives": [
+        "Networking",
+        "Security",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "LangChain - LangSmith Tool Gateway",
+          "url": "https://www.langchain.com/blog/langsmith-tool-gateway"
+        },
+        {
+          "name": "LangChain documentation - Tool Gateway",
+          "url": "https://docs.langchain.com/langsmith/tool-gateway"
+        }
+      ],
+      "architectureImplication": "Place discovery, credential handling and policy checks between agents and MCP servers. Define identity boundaries and fallback behavior because the service runs only in selected LangSmith Cloud regions.",
+      "tradeoffs": [
+        "Security",
+        "Control",
+        "Operational complexity"
+      ],
+      "vendors": [
+        "LangChain"
+      ],
+      "decisions": [
+        "integration-standards",
+        "identity-and-permissions",
+        "security-and-guardrails"
+      ]
+    },
+    {
+      "id": "2026-11-19-aws-marketplace-agentic-payments",
+      "date": "2026-11-19",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "agentic payments",
+      "impact": "Incremental",
+      "title": "AWS adds Marketplace billing for agent purchases",
+      "whatChanged": "AWS added a connector that lets Amazon Bedrock AgentCore agents buy select AWS Marketplace products over x402 and settle each request in USD on the developer's AWS bill. AgentCore Payments checks session budgets. Transactions appear in AWS CloudTrail and Cost Explorer. The Marketplace connector lets agents discover products.",
+      "whyCare": "You can let agents buy paid APIs or data without separate seller credentials or crypto wallets. AWS billing, session limits and Private Marketplace policies keep purchases under existing account controls.",
+      "before": "AgentCore Payments handled paid APIs, MCP servers and web content over x402 or MPP, but Marketplace discovery and AWS-bill settlement were not part of that flow.",
+      "after": "AgentCore Gateway exposes read-only tools to find x402-enabled Marketplace products. AgentCore Payments checks a session budget and charges the linked AWS account. Private Marketplace rules still apply.",
+      "learn": "Test the connector with approved Marketplace products and narrow session budgets. Check seller agreements and CloudTrail records. Check the x402 exact-payment limit and separate roles for session and payment management.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - AWS Marketplace now supports agentic payments with AgentCore",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/marketplace-agentic-payments-agentcore/"
+        },
+        {
+          "name": "AWS Machine Learning Blog - Pay for AWS Marketplace x402 products with AgentCore payments",
+          "url": "https://aws.amazon.com/blogs/machine-learning/enable-ai-agents-to-pay-for-aws-marketplace-x402-products-with-amazon-bedrock-agentcore-payments/"
+        },
+        {
+          "name": "AWS documentation - Process a payment",
+          "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/payments-process-payment.html"
+        }
+      ],
+      "architectureImplication": "The agent uses the Marketplace connector to discover products, then sends x402 payment challenges to AgentCore Payments. AgentCore enforces a session budget and bills the linked AWS account.",
+      "tradeoffs": [
+        "Cost",
+        "Security",
+        "Control"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "cost-and-routing",
+        "integration-standards",
+        "security-and-guardrails"
+      ]
+    },
+    {
+      "id": "2026-11-19-aws-cognito-cimd",
+      "date": "2026-11-19",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "OAuth client onboarding",
+      "impact": "Incremental",
+      "title": "Amazon Cognito accepts client ID metadata for MCP sign-in",
+      "whatChanged": "On 19 November, Amazon Cognito added OAuth client ID metadata document support. External MCP clients identify themselves with an HTTPS metadata URL and use an existing user-pool app client. URL-pattern policies map metadata to that app client. The feature is available on Essentials and Plus plans in all Cognito regions.",
+      "whyCare": "You can onboard supported external MCP and agent clients without one app client per client. URL-pattern policies and OAuth scopes let you control the client metadata Cognito accepts.",
+      "before": "Cognito required a dedicated app client for each external OAuth client or dynamic client registration, so teams created and removed more client records.",
+      "after": "A CIMD policy maps HTTPS URL patterns to an existing app client. Cognito fetches client metadata during sign-in and limits grants to those allowed by the app client and metadata document.",
+      "learn": "Check client compatibility. Cognito supports public CIMD clients with authorization-code or implicit grants. It does not support client-credentials grants. Configure narrow HTTPS URL patterns, then test metadata availability and cache behavior.",
+      "cloudPrimitives": [
+        "Networking",
+        "Security",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - Amazon Cognito now supports client ID metadata documents",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/cognito-client-id-metadata-documents/"
+        },
+        {
+          "name": "AWS documentation - Client ID metadata documents",
+          "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-client-id-metadata.html"
+        }
+      ],
+      "architectureImplication": "Treat metadata URLs as part of the authentication trust boundary. Use narrow policy patterns and protect metadata hosting. Plan cache behavior because Cognito fetches and validates external metadata.",
+      "tradeoffs": [
+        "Security",
+        "Interoperability",
+        "Operational complexity"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "integration-standards",
+        "identity-and-permissions",
         "security-and-guardrails"
       ]
     }

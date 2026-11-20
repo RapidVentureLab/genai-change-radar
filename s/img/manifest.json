@@ -107,5 +107,8 @@
   "2026-11-17-langsmith-production-trace-access-controls": "07a2aef7081b",
   "2026-11-17-aws-sagemaker-kv-aware-routing": "25bdff1192d9",
   "2026-11-18-aws-hyperpod-workload-recovery": "cb2ed7afb47d",
-  "2026-11-18-github-copilot-team-customizations": "625f44813fc9"
+  "2026-11-18-github-copilot-team-customizations": "625f44813fc9",
+  "2026-11-19-langsmith-tool-gateway": "9f3706c83002",
+  "2026-11-19-aws-marketplace-agentic-payments": "20df87296f43",
+  "2026-11-19-aws-cognito-cimd": "c2fcf3564d80"
 }

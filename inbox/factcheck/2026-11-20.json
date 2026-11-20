@@ -1,0 +1,46 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-20T12:55:36+00:00",
+  "items": [
+    {
+      "id": "2026-11-19-langsmith-tool-gateway",
+      "title": "LangChain launches managed gateway for agent tools",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://www.langchain.com/blog/langsmith-tool-gateway",
+        "https://docs.langchain.com/langsmith/tool-gateway"
+      ],
+      "problems": [],
+      "notes": [
+        "The source blog gives the announcement date as November 19, 2026."
+      ]
+    },
+    {
+      "id": "2026-11-19-aws-marketplace-agentic-payments",
+      "title": "AWS adds Marketplace billing for agent purchases",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/11/marketplace-agentic-payments-agentcore/",
+        "https://aws.amazon.com/blogs/machine-learning/enable-ai-agents-to-pay-for-aws-marketplace-x402-products-with-amazon-bedrock-agentcore-payments/",
+        "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/payments-process-payment.html"
+      ],
+      "problems": [],
+      "notes": [
+        "The AWS launch sources give the announcement date as November 19, 2026."
+      ]
+    },
+    {
+      "id": "2026-11-19-aws-cognito-cimd",
+      "title": "Amazon Cognito accepts client ID metadata for MCP sign-in",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/11/cognito-client-id-metadata-documents/",
+        "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-client-id-metadata.html"
+      ],
+      "problems": [],
+      "notes": [
+        "The source launch page gives the announcement date as November 19, 2026."
+      ]
+    }
+  ]
+}

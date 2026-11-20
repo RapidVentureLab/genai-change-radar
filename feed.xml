@@ -6,7 +6,34 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Thu, 19 Nov 2026 13:01:05 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 12:53:32 GMT</lastBuildDate>
+    <item>
+      <title>Amazon Cognito accepts client ID metadata for MCP sign-in</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-19-aws-cognito-cimd</link>
+      <guid isPermaLink="false">2026-11-19-aws-cognito-cimd</guid>
+      <pubDate>Thu, 19 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can onboard supported external MCP and agent clients without one app client per client. URL-pattern policies and OAuth scopes let you control the client metadata Cognito accepts. What to do: Check client compatibility. Cognito supports public CIMD clients with authorization-code or implicit grants. It does not support client-credentials grants. Configure narrow HTTPS URL patterns, then test metadata availability and cache behavior.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>AWS adds Marketplace billing for agent purchases</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-19-aws-marketplace-agentic-payments</link>
+      <guid isPermaLink="false">2026-11-19-aws-marketplace-agentic-payments</guid>
+      <pubDate>Thu, 19 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can let agents buy paid APIs or data without separate seller credentials or crypto wallets. AWS billing, session limits and Private Marketplace policies keep purchases under existing account controls. What to do: Test the connector with approved Marketplace products and narrow session budgets. Check seller agreements and CloudTrail records. Check the x402 exact-payment limit and separate roles for session and payment management.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>LangChain launches managed gateway for agent tools</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-19-langsmith-tool-gateway</link>
+      <guid isPermaLink="false">2026-11-19-langsmith-tool-gateway</guid>
+      <pubDate>Thu, 19 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can centralize tool access and per-user credentials across agents instead of adding authentication and logs to each one. Policy checks and approval gates can limit access, while LangChain retains the tool credentials. What to do: Compare the beta with existing MCP gateways and agent authorization. Test identities, approval flows, tool scope, region support and trace data before routing production calls.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>LangChain</category>
+    </item>
     <item>
       <title>AWS adds HyperPod checks for training failures</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-18-aws-hyperpod-workload-recovery</link>
@@ -447,33 +474,6 @@
       <description>Teams get draft-and-review patterns without building their own harness, though multi-pass work costs more credits and time. What to do: Compare it with single-model use on real coding tasks. Track accepted changes, regressions, latency and credits. Keep it out of critical workflows while in preview.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>GitHub</category>
-    </item>
-    <item>
-      <title>AWS Agent Registry now checks agent metadata against a schema</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-13-agent-registry-custom-metadata</link>
-      <guid isPermaLink="false">2026-10-13-agent-registry-custom-metadata</guid>
-      <pubDate>Tue, 13 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Teams with many agents and tools can record owners and review status in the catalog itself, in a consistent form. What to do: Start with a small shared schema for owner, classification and lifecycle status. Keep access control and approvals in their own systems.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>AWS</category>
-    </item>
-    <item>
-      <title>Google releases Gemini 4 Argon, a frontier model for complex reasoning</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-13-gemini-4-argon</link>
-      <guid isPermaLink="false">2026-10-13-gemini-4-argon</guid>
-      <pubDate>Tue, 13 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Teams building vision-driven automation or robotics get a new model to test. The benchmark and robot demonstration are Google's own results. What to do: Test it on your own video, spatial and action tasks. Compare quality, latency, cost and controls with the models you use now.</description>
-      <category>Model</category>
-      <category>Google</category>
-    </item>
-    <item>
-      <title>LangChain offers a self-hostable way to deploy long-running agents on any model</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-13-langchain-deep-agents-deploy</link>
-      <guid isPermaLink="false">2026-10-13-langchain-deep-agents-deploy</guid>
-      <pubDate>Tue, 13 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Teams get a middle path between building their own agent runtime and adopting one vendor's managed agent service. What to do: Compare it with self-hosting and with managed services such as Bedrock AgentCore. Before you store production state in it, test memory export, sandbox isolation, approvals and how reliable the beta is.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>LangChain</category>
     </item>
   </channel>
 </rss>
