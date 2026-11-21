@@ -110,5 +110,9 @@
   "2026-11-18-github-copilot-team-customizations": "625f44813fc9",
   "2026-11-19-langsmith-tool-gateway": "9f3706c83002",
   "2026-11-19-aws-marketplace-agentic-payments": "20df87296f43",
-  "2026-11-19-aws-cognito-cimd": "c2fcf3564d80"
+  "2026-11-19-aws-cognito-cimd": "c2fcf3564d80",
+  "2026-11-20-aws-automated-internet-firewall": "18f3ef177b05",
+  "2026-11-21-microsoft-foundry-governance-guidance": "ebda1566f1f1",
+  "2026-11-20-microsoft-foundry-multi-turn-evaluation": "9895d9661419",
+  "2026-11-20-github-ghes-ai-secret-detection": "8e7ccf962e1f"
 }

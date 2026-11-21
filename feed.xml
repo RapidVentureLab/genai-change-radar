@@ -6,7 +6,43 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Fri, 20 Nov 2026 12:53:32 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 21 Nov 2026 13:15:00 GMT</lastBuildDate>
+    <item>
+      <title>Microsoft adds governance policy guidance to Foundry agents</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-21-microsoft-foundry-governance-guidance</link>
+      <guid isPermaLink="false">2026-11-21-microsoft-foundry-governance-guidance</guid>
+      <pubDate>Sat, 21 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can catch policy mismatches during agent design instead of after deployment. Guidance can improve consistency across Foundry Canvas and VS Code, but it does not replace organization-level policy enforcement. What to do: Compare the surfaced guidance with your existing agent policy. Test whether warnings reach the right developer and deployment roles before you rely on them.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>Microsoft</category>
+    </item>
+    <item>
+      <title>AWS centralizes Internet firewall controls across VPC fleets</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-20-aws-automated-internet-firewall</link>
+      <guid isPermaLink="false">2026-11-20-aws-automated-internet-firewall</guid>
+      <pubDate>Fri, 20 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can close VPC route gaps and spread one security policy across an AWS environment. Built-in NAT and AWS managed threat rules simplify rollout, but you must validate rule compatibility before broad enforcement. What to do: Test the automated mode in a bounded VPC scope. Inventory custom rules, logging destinations, egress costs and public-network dependencies before you widen coverage.</description>
+      <category>Production &amp; Business</category>
+      <category>AWS</category>
+    </item>
+    <item>
+      <title>GitHub adds air-gapped AI secret detection to GHES</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-20-github-ghes-ai-secret-detection</link>
+      <guid isPermaLink="false">2026-11-20-github-ghes-ai-secret-detection</guid>
+      <pubDate>Fri, 20 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can extend secret detection to air-gapped and restricted GHES environments that cannot send code or content to a hosted model. The model runs in public preview and the release is a release candidate. What to do: Trial GHES 3.23 in a representative appliance environment. Measure false positives, CPU impact and detection coverage before you roll the preview into production.</description>
+      <category>Production &amp; Business</category>
+      <category>GitHub</category>
+    </item>
+    <item>
+      <title>Microsoft adds multi-turn evaluation to Foundry</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-20-microsoft-foundry-multi-turn-evaluation</link>
+      <guid isPermaLink="false">2026-11-20-microsoft-foundry-multi-turn-evaluation</guid>
+      <pubDate>Fri, 20 Nov 2026 06:00:00 GMT</pubDate>
+      <description>A correct response can still lead to a poor conversation or repeated tool failure across turns. Conversation-level evaluation helps you find that drift before production release. What to do: Build multi-turn test suites with tool calls and failure branches. Compare conversation-level scores with end-task success and human review.</description>
+      <category>Production &amp; Business</category>
+      <category>Microsoft</category>
+    </item>
     <item>
       <title>Amazon Cognito accepts client ID metadata for MCP sign-in</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-19-aws-cognito-cimd</link>
@@ -436,44 +472,6 @@
       <category>GitHub</category>
       <category>Anthropic</category>
       <category>OpenAI</category>
-    </item>
-    <item>
-      <title>GitHub lets Copilot span repositories in Slack and Teams</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-15-github-copilot-multi-repo-slack-teams</link>
-      <guid isPermaLink="false">2026-10-15-github-copilot-multi-repo-slack-teams</guid>
-      <pubDate>Thu, 15 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Teams that coordinate work across services can handle cross-repository tasks in one chat, with repository permissions and pull request review still in place. What to do: Test cross-repository tasks in representative Slack and Teams workflows. Review which repositories your users can access and preserve human review before merging agent-generated changes.</description>
-      <category>Application &amp; Workflow</category>
-      <category>GitHub</category>
-    </item>
-    <item>
-      <title>IBM combines chat, decisions, and speech in Granite-Switch-4.1</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-15-ibm-granite-switch-4-1</link>
-      <guid isPermaLink="false">2026-10-15-ibm-granite-switch-4-1</guid>
-      <pubDate>Thu, 15 Oct 2026 06:00:00 GMT</pubDate>
-      <description>You can serve chat, transcription and specialised decisions from one endpoint, with less extra GPU memory. Compare it with separate specialist models first. What to do: Compare Granite Switch with separate speech and decision models on accuracy, latency, throughput and GPU memory.</description>
-      <category>Model</category>
-      <category>IBM</category>
-    </item>
-    <item>
-      <title>AWS adds Meta Muse Spark Open to SageMaker JumpStart for in-account deployment</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-15-sagemaker-muse-spark-open</link>
-      <guid isPermaLink="false">2026-10-15-sagemaker-muse-spark-open</guid>
-      <pubDate>Thu, 15 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Teams can test a large open-weight model on private code and media without sending data to a third-party API. What to do: Benchmark both variants on your tasks. Check the license, quotas and cost, since the endpoint bills on large GPU instances while active.</description>
-      <category>Model</category>
-      <category>AWS</category>
-      <category>Meta</category>
-      <category>Open models</category>
-    </item>
-    <item>
-      <title>GitHub Copilot HydraFusion drafts and reviews with several models per task</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-14-github-hydrafusion</link>
-      <guid isPermaLink="false">2026-10-14-github-hydrafusion</guid>
-      <pubDate>Wed, 14 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Teams get draft-and-review patterns without building their own harness, though multi-pass work costs more credits and time. What to do: Compare it with single-model use on real coding tasks. Track accepted changes, regressions, latency and credits. Keep it out of critical workflows while in preview.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>GitHub</category>
     </item>
   </channel>
 </rss>

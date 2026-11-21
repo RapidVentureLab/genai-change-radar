@@ -1,0 +1,164 @@
+{
+  "scannedAt": "2026-11-21T14:15:00+01:00",
+  "updates": [
+    {
+      "id": "2026-11-20-aws-automated-internet-firewall",
+      "date": "2026-11-20",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "network security control",
+      "impact": "Step-change",
+      "title": "AWS centralizes Internet firewall controls across VPC fleets",
+      "whatChanged": "AWS Network Firewall added automated Internet firewall mode in public preview on 20 November. It applies centrally managed rules, NAT and logging to every in-scope Internet gateway, including account, organization and future VPC paths. Teams need no per-VPC routing changes.",
+      "whyCare": "You can close VPC route gaps and spread one security policy across an AWS environment. Built-in NAT and AWS managed threat rules simplify rollout, but you must validate rule compatibility before broad enforcement.",
+      "before": "Teams deployed Network Firewall endpoints in each traffic path. They maintained routing and coverage checks across every VPC.",
+      "after": "AWS applies filtering, NAT and logging at in-scope Internet gateways. Administrators can cover selected VPCs, an account or an organization unit.",
+      "learn": "Test the automated mode in a bounded VPC scope. Inventory custom rules, logging destinations, egress costs and public-network dependencies before you widen coverage.",
+      "cloudPrimitives": [
+        "Networking",
+        "Security",
+        "Observability"
+      ],
+      "sources": [
+        {
+          "name": "AWS - Network Firewall introduces automated Internet firewall",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/network-firewall-automated-internet/"
+        }
+      ],
+      "architectureImplication": "Place Internet egress policy at the organization or account control plane. This avoids maintaining firewall endpoints and routes in each VPC.",
+      "tradeoffs": [
+        "Control",
+        "Reliability",
+        "Cost"
+      ],
+      "verified": "2026-11-21",
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "security-and-guardrails",
+        "deployment",
+        "managed-vs-custom-runtime"
+      ]
+    },
+    {
+      "id": "2026-11-21-microsoft-foundry-governance-guidance",
+      "date": "2026-11-21",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "agent policy guidance",
+      "impact": "Incremental",
+      "title": "Microsoft adds governance policy guidance to Foundry agents",
+      "whatChanged": "Microsoft Foundry Canvas and the Foundry Toolkit for Visual Studio Code made governance policy guidance generally available on 21 November. Both experiences show policies for agent types, models, toolboxes and guardrails. They provide warnings and remediation links as developers build agents.",
+      "whyCare": "You can catch policy mismatches during agent design instead of after deployment. Guidance can improve consistency across Foundry Canvas and VS Code, but it does not replace organization-level policy enforcement.",
+      "before": "Teams selected agent models, tools and guardrails without built-in policy guidance at the build surface.",
+      "after": "Foundry Canvas and the VS Code toolkit show relevant policies. They direct developers to warnings and remediation information.",
+      "learn": "Compare the surfaced guidance with your existing agent policy. Test whether warnings reach the right developer and deployment roles before you rely on them.",
+      "cloudPrimitives": [
+        "Security",
+        "Identity",
+        "Developer Tools"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft Azure Updates - Governance policy guidance in Foundry",
+          "url": "https://azure.microsoft.com/updates?id=581463"
+        }
+      ],
+      "architectureImplication": "Treat build-time policy guidance as a developer control. Retain separate authorization and runtime enforcement at the deployment boundary.",
+      "tradeoffs": [
+        "Control",
+        "Developer Experience",
+        "Enforcement"
+      ],
+      "verified": "2026-11-21",
+      "vendors": [
+        "Microsoft"
+      ],
+      "decisions": [
+        "security-and-guardrails",
+        "human-approval",
+        "identity-and-permissions"
+      ]
+    },
+    {
+      "id": "2026-11-20-microsoft-foundry-multi-turn-evaluation",
+      "date": "2026-11-20",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "agent evaluation",
+      "impact": "Incremental",
+      "title": "Microsoft adds multi-turn evaluation to Foundry",
+      "whatChanged": "Microsoft Foundry made multi-turn evaluation available in public preview on 20 November. Teams can assess complete agent conversations against quality standards instead of judging individual responses.",
+      "whyCare": "A correct response can still lead to a poor conversation or repeated tool failure across turns. Conversation-level evaluation helps you find that drift before production release.",
+      "before": "Foundry evaluators assessed individual agent responses in isolation.",
+      "after": "Foundry evaluates a full conversation against configured quality standards.",
+      "learn": "Build multi-turn test suites with tool calls and failure branches. Compare conversation-level scores with end-task success and human review.",
+      "cloudPrimitives": [
+        "Observability",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "Microsoft Azure Updates - Multi-turn evaluation in Microsoft Foundry",
+          "url": "https://azure.microsoft.com/updates?id=581746"
+        }
+      ],
+      "architectureImplication": "Add conversation traces and session-level assertions to the release gate. Keep correctness, tool use and policy behavior visible across turns.",
+      "tradeoffs": [
+        "Evaluation Depth",
+        "Cost",
+        "Latency"
+      ],
+      "verified": "2026-11-21",
+      "vendors": [
+        "Microsoft"
+      ],
+      "decisions": [
+        "observability-and-evals",
+        "human-approval",
+        "agent-vs-workflow"
+      ]
+    },
+    {
+      "id": "2026-11-20-github-ghes-ai-secret-detection",
+      "date": "2026-11-20",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "on-premises secret detection",
+      "impact": "Incremental",
+      "title": "GitHub adds air-gapped AI secret detection to GHES",
+      "whatChanged": "GitHub Enterprise Server 3.23 release candidate added AI secret detection for GitHub Secret Protection on 20 November. A self-contained fine-tuned model runs on appliance CPUs. It can inspect unstructured secrets without a GPU, hosted model or outbound connection.",
+      "whyCare": "You can extend secret detection to air-gapped and restricted GHES environments that cannot send code or content to a hosted model. The model runs in public preview and the release is a release candidate.",
+      "before": "Air-gapped GHES environments relied on repository secret patterns. They could not use an appliance-local AI model for unstructured secret detection.",
+      "after": "The GHES 3.23 release candidate adds a CPU-only fine-tuned model for appliance-local secret scanning.",
+      "learn": "Trial GHES 3.23 in a representative appliance environment. Measure false positives, CPU impact and detection coverage before you roll the preview into production.",
+      "cloudPrimitives": [
+        "Security",
+        "Compute",
+        "Observability"
+      ],
+      "sources": [
+        {
+          "name": "GitHub - GitHub Enterprise Server 3.23 release candidate",
+          "url": "https://github.blog/changelog/2026-11-20-github-enterprise-server-3-23-release-candidate"
+        }
+      ],
+      "architectureImplication": "Air-gapped source-hosting environments can keep secret classification inside the appliance. They also maintain a local evidence trail for security review.",
+      "tradeoffs": [
+        "Control",
+        "Accuracy",
+        "Compute"
+      ],
+      "verified": "2026-11-21",
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "security-and-guardrails",
+        "deployment",
+        "observability-and-evals"
+      ]
+    }
+  ]
+}
