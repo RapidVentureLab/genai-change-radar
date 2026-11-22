@@ -1,0 +1,58 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-22T12:36:20+00:00",
+  "items": [
+    {
+      "id": "2026-11-21-aws-quick-agent-plugins",
+      "title": "AWS Quick packages agents and integrations as plugins",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-plugins-bundle-agents-skills-connectors-flows/"
+      ],
+      "problems": [
+        "More than 100 official plugins are available to browse. | The source says there are more than 100 skills and plugins in total, but it does not state that more than 100 official plugins are available.",
+        "AWS Quick users previously assembled agents, skills, connectors and flows as separate workspace capabilities. | The source describes plugins and the bundle's current use, but says nothing about the previous workspace behavior."
+      ],
+      "notes": [
+        "The source is posted on November 21, 2026, matching the item date."
+      ]
+    },
+    {
+      "id": "2026-11-21-aws-bedrock-localized-web-search",
+      "title": "Amazon Bedrock expands Web Search across languages and countries",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/11/web-search-amazon-bedrock/"
+      ],
+      "problems": [],
+      "notes": [
+        "The source is posted on November 21, 2026, matching the item date.",
+        "The source lists five new languages plus non-US English and says pricing is the same across languages."
+      ]
+    },
+    {
+      "id": "2026-11-20-aws-hyperpod-global-inference-gateway",
+      "title": "AWS routes HyperPod inference across clusters and Regions",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-global-inference-gateway-one-endpoint-across-regions-and-clusters/"
+      ],
+      "problems": [],
+      "notes": [
+        "The source post is dated November 20, 2026, matching the item date."
+      ]
+    },
+    {
+      "id": "2026-11-20-github-security-advisory-role-permissions",
+      "title": "GitHub grants repository roles access to security advisories",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-20-security-advisory-permissions-are-now-generally-available"
+      ],
+      "problems": [],
+      "notes": [
+        "The source is dated November 20, 2026 and says the permissions are now generally available."
+      ]
+    }
+  ]
+}

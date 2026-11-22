@@ -6,7 +6,16 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Sat, 21 Nov 2026 13:15:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 12:33:20 GMT</lastBuildDate>
+    <item>
+      <title>Amazon Bedrock expands Web Search across languages and countries</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-21-aws-bedrock-localized-web-search</link>
+      <guid isPermaLink="false">2026-11-21-aws-bedrock-localized-web-search</guid>
+      <pubDate>Sat, 21 Nov 2026 06:00:00 GMT</pubDate>
+      <description>Multilingual and country-aware agents can ground answers in local sources without maintaining separate search connectors. Country bias can improve relevance, but it can omit useful sources outside that market. What to do: Test local-language queries and country-specific claims. Compare the cited sources with a neutral query and document when teams must override country bias.</description>
+      <category>Data &amp; Knowledge</category>
+      <category>AWS</category>
+    </item>
     <item>
       <title>Microsoft adds governance policy guidance to Foundry agents</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-21-microsoft-foundry-governance-guidance</link>
@@ -26,11 +35,29 @@
       <category>AWS</category>
     </item>
     <item>
+      <title>AWS routes HyperPod inference across clusters and Regions</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-20-aws-hyperpod-global-inference-gateway</link>
+      <guid isPermaLink="false">2026-11-20-aws-hyperpod-global-inference-gateway</guid>
+      <pubDate>Fri, 20 Nov 2026 06:00:00 GMT</pubDate>
+      <description>Teams can reduce endpoint sprawl and manual failover for multi-cluster model capacity. The gateway does not remove model, pod or cluster-level routing inside each HyperPod deployment. What to do: Load-test cluster weighting and Regional failover. Verify IAM policies, PrivateLink reachability and traffic cost before you retire custom routing.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
+    <item>
       <title>GitHub adds air-gapped AI secret detection to GHES</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-20-github-ghes-ai-secret-detection</link>
       <guid isPermaLink="false">2026-11-20-github-ghes-ai-secret-detection</guid>
       <pubDate>Fri, 20 Nov 2026 06:00:00 GMT</pubDate>
       <description>You can extend secret detection to air-gapped and restricted GHES environments that cannot send code or content to a hosted model. The model runs in public preview and the release is a release candidate. What to do: Trial GHES 3.23 in a representative appliance environment. Measure false positives, CPU impact and detection coverage before you roll the preview into production.</description>
+      <category>Production &amp; Business</category>
+      <category>GitHub</category>
+    </item>
+    <item>
+      <title>GitHub grants repository roles access to security advisories</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-20-github-security-advisory-role-permissions</link>
+      <guid isPermaLink="false">2026-11-20-github-security-advisory-role-permissions</guid>
+      <pubDate>Fri, 20 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can separate vulnerability-reporting duties from broad repository administration. Scoped roles reduce accidental exposure, but temporary private fork merges still require an administrator or security manager. What to do: Map advisory duties to the four permissions. Test private report access and temporary fork merging before assigning roles.</description>
       <category>Production &amp; Business</category>
       <category>GitHub</category>
     </item>
@@ -441,37 +468,6 @@
       <description>You can run standard PyTorch training and inference code on Trainium, which gives teams a new deployment option alongside GPUs and hosted model APIs. What to do: Check supported models, operators and Ubuntu versions before moving workloads. Test the public beta, and confirm your environment supports Ubuntu 26.04, the target for current wheels.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>AWS</category>
-    </item>
-    <item>
-      <title>GitHub enforces license policy on new dependencies, including those added by agents</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-16-github-open-source-license-compliance-ga</link>
-      <guid isPermaLink="false">2026-10-16-github-open-source-license-compliance-ga</guid>
-      <pubDate>Fri, 16 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Coding agents add dependencies quickly, so license checks need to happen when they choose a package and again at merge. What to do: Connect your coding agents to the package check. Keep the required merge check as the final gate.</description>
-      <category>Production &amp; Business</category>
-      <category>GitHub</category>
-    </item>
-    <item>
-      <title>Reflection releases Beam, an open coding model you can run on AWS</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-16-reflection-beam-open-model-aws</link>
-      <guid isPermaLink="false">2026-10-16-reflection-beam-open-model-aws</guid>
-      <pubDate>Fri, 16 Oct 2026 06:00:00 GMT</pubDate>
-      <description>You can now run a coding model for agents inside your own AWS account, under a license that allows commercial use. What to do: Test Beam on your own agent tasks before you trust its benchmarks. Plan memory for all 501B parameters. Check which regions offer it.</description>
-      <category>Model</category>
-      <category>AWS</category>
-      <category>Open models</category>
-      <category>Other</category>
-    </item>
-    <item>
-      <title>GitHub retires three Copilot models on 16 November 2026</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-15-github-copilot-model-deprecations</link>
-      <guid isPermaLink="false">2026-10-15-github-copilot-model-deprecations</guid>
-      <pubDate>Thu, 15 Oct 2026 06:00:00 GMT</pubDate>
-      <description>Teams using these models have a fixed migration deadline and need to test the replacements first. What to do: List where you use these models. Test the replacements on real tasks and check your model policies before the deadline.</description>
-      <category>Production &amp; Business</category>
-      <category>GitHub</category>
-      <category>Anthropic</category>
-      <category>OpenAI</category>
     </item>
   </channel>
 </rss>

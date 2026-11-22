@@ -1,0 +1,124 @@
+{
+  "scannedAt": "2026-11-22T13:33:20+01:00",
+  "updates": [
+    {
+      "id": "2026-11-21-aws-bedrock-localized-web-search",
+      "date": "2026-11-21",
+      "layer": "Data & Knowledge",
+      "kind": "signal",
+      "changeType": "search localization",
+      "impact": "Incremental",
+      "title": "Amazon Bedrock expands Web Search across languages and countries",
+      "whatChanged": "Amazon Bedrock now supports Web Search on 21 November in Spanish, French, German, Italian, Japanese and non-US English. An optional ISO country code biases results toward sources from a specified country. AWS applies regional processing and keeps the stated search price.",
+      "whyCare": "Multilingual and country-aware agents can ground answers in local sources without maintaining separate search connectors. Country bias can improve relevance, but it can omit useful sources outside that market.",
+      "before": "Teams used Web Search on Bedrock with fewer language options and could not explicitly bias results by country.",
+      "after": "Agents receive local-language results and can set a country code in supported Bedrock regions.",
+      "learn": "Test local-language queries and country-specific claims. Compare the cited sources with a neutral query and document when teams must override country bias.",
+      "cloudPrimitives": [
+        "Networking",
+        "Storage",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - Web Search on Amazon Bedrock",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/web-search-amazon-bedrock/"
+        }
+      ],
+      "architectureImplication": "Represent language and country as retrieval parameters and provenance metadata. Keep source filtering and answer citation controls in the agent layer.",
+      "tradeoffs": [
+        "Relevance",
+        "Coverage",
+        "Data Residency"
+      ],
+      "verified": "2026-11-22",
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "rag-vs-long-context",
+        "deployment",
+        "security-and-guardrails"
+      ]
+    },
+    {
+      "id": "2026-11-20-aws-hyperpod-global-inference-gateway",
+      "date": "2026-11-20",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "cross-cluster inference routing",
+      "impact": "Step-change",
+      "title": "AWS routes HyperPod inference across clusters and Regions",
+      "whatChanged": "Amazon SageMaker HyperPod introduced the Global Inference Gateway on 20 November. It exposes one managed endpoint across registered HyperPod clusters, routes requests by cluster health and capacity, and fails over across Regions over AWS PrivateLink. Requests use SigV4 and IAM.",
+      "whyCare": "Teams can reduce endpoint sprawl and manual failover for multi-cluster model capacity. The gateway does not remove model, pod or cluster-level routing inside each HyperPod deployment.",
+      "before": "The HyperPod Inference Gateway routed requests inside one cluster. Teams managed traffic across separate clusters and Regions themselves.",
+      "after": "One regional endpoint routes to registered clusters and moves traffic after failures without a client configuration change.",
+      "learn": "Load-test cluster weighting and Regional failover. Verify IAM policies, PrivateLink reachability and traffic cost before you retire custom routing.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - HyperPod Global Inference Gateway",
+          "url": "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-global-inference-gateway-one-endpoint-across-regions-and-clusters/"
+        }
+      ],
+      "architectureImplication": "Add Global Inference Gateway where multi-cluster capacity needs a common endpoint and automatic failover. Keep cluster-level health and model placement visible in operations.",
+      "tradeoffs": [
+        "Reliability",
+        "Cost",
+        "Control"
+      ],
+      "verified": "2026-11-22",
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "managed-vs-custom-runtime",
+        "deployment",
+        "observability-and-evals"
+      ]
+    },
+    {
+      "id": "2026-11-20-github-security-advisory-role-permissions",
+      "date": "2026-11-20",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "security role permissions",
+      "impact": "Incremental",
+      "title": "GitHub grants repository roles access to security advisories",
+      "whatChanged": "GitHub now offers four repository-level security advisory permissions on 20 November for custom repository roles. Organization owners can grant view, manage, accept report, publish and CVE access without repository administration.",
+      "whyCare": "You can separate vulnerability-reporting duties from broad repository administration. Scoped roles reduce accidental exposure, but temporary private fork merges still require an administrator or security manager.",
+      "before": "Teams handled advisories through repository administration or an organization-wide security manager role.",
+      "after": "Custom repository roles can assign specific advisory duties to users or teams on selected repositories.",
+      "learn": "Map advisory duties to the four permissions. Test private report access and temporary fork merging before assigning roles.",
+      "cloudPrimitives": [
+        "Security",
+        "Identity"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Security advisory permissions",
+          "url": "https://github.blog/changelog/2026-11-20-security-advisory-permissions-are-now-generally-available"
+        }
+      ],
+      "architectureImplication": "Use repository-scoped roles for advisory operations and keep administrator approval for sensitive fork merges. Reconcile role permissions with private vulnerability report workflows.",
+      "tradeoffs": [
+        "Least Privilege",
+        "Operations",
+        "Control"
+      ],
+      "verified": "2026-11-22",
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "identity-and-permissions",
+        "security-and-guardrails",
+        "human-approval"
+      ]
+    }
+  ]
+}

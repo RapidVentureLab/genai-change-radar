@@ -1,15 +1,23 @@
 {
-  "lastScan": "2026-11-21T14:15:00+01:00",
-  "publishedLastScan": 4,
-  "heldLastScan": 0,
+  "lastScan": "2026-11-22T13:33:20+01:00",
+  "publishedLastScan": 3,
+  "heldLastScan": 1,
   "factCheck": {
     "ran": true,
     "checked": 4,
-    "supported": 4,
-    "unsupported": 0,
+    "supported": 3,
+    "unsupported": 1,
     "unverifiable": 0
   },
   "held": [
+    {
+      "day": "2026-11-22",
+      "title": "AWS Quick packages agents and integrations as plugins",
+      "reasons": [
+        "Fact check: More than 100 official plugins are available to browse. | The source says there are more than 100 skills and plugins in total, but it does not state that more than 100 official plugins are available.",
+        "Fact check: AWS Quick users previously assembled agents, skills, connectors and flows as separate workspace capabilities. | The source describes plugins and the bundle's current use, but says nothing about the previous workspace behavior."
+      ]
+    },
     {
       "day": "2026-11-19",
       "title": "AWS adds full fine-tuning to SageMaker AI",
@@ -73,13 +81,6 @@
       "title": "GitHub separates BYOK usage in Copilot reports",
       "reasons": [
         "Fact check: The item dates the announcement November 4; the GitHub changelog identifies it as November 3, published at 16:32 -08:00."
-      ]
-    },
-    {
-      "day": "2026-11-03",
-      "title": "Mistral releases Mistral Large 4 weights for self-hosting",
-      "reasons": [
-        "Fact check: The item says teams could call the model through hosted services during preview, but neither source says preview access included hosted inference."
       ]
     }
   ]

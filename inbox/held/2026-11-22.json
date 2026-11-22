@@ -1,0 +1,48 @@
+{
+  "updates": [
+    {
+      "id": "2026-11-21-aws-quick-agent-plugins",
+      "date": "2026-11-21",
+      "layer": "Application & Workflow",
+      "kind": "signal",
+      "changeType": "workflow packaging",
+      "impact": "Packaging / distribution",
+      "title": "AWS Quick packages agents and integrations as plugins",
+      "whatChanged": "AWS Quick now offers plugins on 21 November. Users can browse more than 100 official plugins or describe a job so Quick assembles a custom plugin from agents, skills, connectors and flows. Teams can share custom plugins within their organization.",
+      "whyCare": "You can deploy a repeatable role or task bundle instead of assembling agents and integrations for each team. Compare the plugin package with your current Quick workspace and approval patterns.",
+      "before": "AWS Quick users assembled agents, skills, connectors and flows as separate workspace capabilities.",
+      "after": "Quick can distribute an installable plugin that bundles these capabilities for a task or role.",
+      "learn": "Pilot a plugin on one routine job. Check connector permissions, shared credentials and owner reviews before you distribute it widely.",
+      "cloudPrimitives": [
+        "Compute",
+        "Networking",
+        "Security"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - AWS Quick plugins",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/aws-quick-plugins-bundle-agents-skills-connectors-flows/"
+        }
+      ],
+      "architectureImplication": "Treat plugins as versioned distribution units for agent behavior, integrations and workflow steps. Define ownership and approval at the plugin boundary.",
+      "tradeoffs": [
+        "Reuse",
+        "Governance",
+        "Distribution"
+      ],
+      "verified": "2026-11-22",
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "agent-vs-workflow",
+        "managed-vs-custom-runtime",
+        "build-vs-buy"
+      ],
+      "heldReasons": [
+        "Fact check: More than 100 official plugins are available to browse. | The source says there are more than 100 skills and plugins in total, but it does not state that more than 100 official plugins are available.",
+        "Fact check: AWS Quick users previously assembled agents, skills, connectors and flows as separate workspace capabilities. | The source describes plugins and the bundle's current use, but says nothing about the previous workspace behavior."
+      ]
+    }
+  ]
+}
