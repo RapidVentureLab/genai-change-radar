@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-23T15:32:20+01:00",
+  "updatedAt": "2026-11-24T15:51:20+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -5039,6 +5039,56 @@
         "identity-and-permissions",
         "security-and-guardrails",
         "human-approval"
+      ]
+    },
+    {
+      "id": "2026-11-23-aws-bedrock-trusted-access-programs",
+      "date": "2026-11-23",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "provider data controls",
+      "impact": "Incremental",
+      "title": "Amazon Bedrock adds trusted access controls for Anthropic models",
+      "whatChanged": "Amazon Bedrock made its trusted access program API generally available on 23 November and opened Anthropic's Enterprise Frontier Safeguards (EFS) and Enterprise Data Controls (EDC) in public preview. Eligible customers can enroll by account, organization, or project. EFS stores retained prompts and responses in customer S3 buckets with customer KMS keys. EDC uses Amazon-managed storage.",
+      "whyCare": "EFS lets you retain inputs and outputs in your S3 bucket with your KMS key while AWS runs automated safety monitoring without human access to retained content. Enrollment turns off zero data retention, and both offerings remain previews for eligible customers.",
+      "before": "Teams on Bedrock used zero data retention for covered Claude models where eligible or Amazon-managed retention for up to 30 days. They lacked a common API to discover and enroll in provider access programs.",
+      "after": "The API lists provider programs and manages approvals and enrollment by account, organization, or project. EFS retains content in customer S3 with a customer KMS key. EDC uses Amazon-managed storage. Both offer automated safety monitoring.",
+      "learn": "Check eligibility and review the EFS and EDC terms before enrolling. Compare customer-managed EFS storage with EDC and existing Bedrock zero data retention or aws_review modes. Test IAM and service control policy scopes, then assess retention and review behavior in a pilot.",
+      "cloudPrimitives": [
+        "Security",
+        "Storage",
+        "Identity"
+      ],
+      "sources": [
+        {
+          "name": "AWS Machine Learning Blog - Amazon Bedrock Trusted Access API, EFS, and EDC",
+          "url": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls/"
+        },
+        {
+          "name": "AWS Documentation - Trusted access programs in Amazon Bedrock",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/trusted-access-programs.html"
+        },
+        {
+          "name": "AWS Documentation - Anthropic Enterprise Frontier Safeguards and Enterprise Data Controls",
+          "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/anthropic-efs-enterprise-data-controls.html"
+        }
+      ],
+      "architectureImplication": "Model-provider programs add an account-, organization-, or project-scoped governance layer. Keep approval separate from retention settings, configure each Region, and note that EFS turns off zero data retention.",
+      "tradeoffs": [
+        "Control",
+        "Security",
+        "Compliance",
+        "Data Residency"
+      ],
+      "verified": "2026-11-24",
+      "vendors": [
+        "AWS",
+        "Anthropic"
+      ],
+      "decisions": [
+        "security-and-guardrails",
+        "identity-and-permissions",
+        "compliance"
       ]
     }
   ],

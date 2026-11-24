@@ -1,0 +1,55 @@
+{
+  "updates": [
+    {
+      "id": "2026-11-23-openai-cisco-shirudo",
+      "date": "2026-11-23",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "AI runtime security",
+      "impact": "Incremental",
+      "title": "OpenAI and Cisco release Shirudo for live Linux safeguards",
+      "whatChanged": "OpenAI and Cisco released Shirudo, an open-source Linux runtime, on 23 November. Operators can use signed eBPF shields to block vulnerable code paths without restarting services. Shields need operator approval and signature checks, and TPM-backed change records track changes. OpenAI says a Codex-generated shield blocked a Java4Shell attempt on Elasticsearch in a controlled test.",
+      "whyCare": "You can test temporary, workload-specific mitigations while you validate and deploy patches. Shirudo adds signed, auditable eBPF controls. Compare it with established runtime policy tools such as Cilium Tetragon and your patching process.",
+      "before": "Operators patched vulnerable services or used eBPF tools such as Cilium Tetragon for runtime policy enforcement. They did not have Shirudo's signed shield lifecycle or TPM-backed change records.",
+      "after": "Shirudo lets teams test, approve, and load signed eBPF shields on a running Linux host. The runtime verifies each shield and records protection changes through a TPM, while Linux's eBPF verifier checks programs against kernel safety rules.",
+      "learn": "Review Shirudo's threat model, platform requirements, and signing workflow. Test shield behavior on representative workloads, including failure and rollback cases. Compare its deployment and policy coverage with Tetragon and your patch process.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security",
+        "Observability"
+      ],
+      "sources": [
+        {
+          "name": "OpenAI - OpenAI and Cisco introduce Shirudo",
+          "url": "https://openai.com/index/introducing-shirudo/"
+        },
+        {
+          "name": "Shirudo Documentation - Security platform and deployment model",
+          "url": "https://docs.shirudo.dev/index.html"
+        },
+        {
+          "name": "Cilium Tetragon Documentation",
+          "url": "https://tetragon.io/docs/"
+        }
+      ],
+      "architectureImplication": "Treat AI-generated shields as privileged code. Separate generation from approval, require signed artifacts, and verify host attestation and rollback paths. Use temporary protection as a bridge to permanent patches.",
+      "tradeoffs": [
+        "Control",
+        "Security",
+        "Reliability"
+      ],
+      "verified": "2026-11-24",
+      "vendors": [
+        "OpenAI"
+      ],
+      "decisions": [
+        "security-and-guardrails",
+        "deployment",
+        "human-approval"
+      ],
+      "heldReasons": [
+        "after: 37 words, limit 35"
+      ]
+    }
+  ]
+}

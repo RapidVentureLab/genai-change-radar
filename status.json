@@ -1,9 +1,22 @@
 {
-  "lastScan": "2026-11-23T15:32:20+01:00",
-  "publishedLastScan": 0,
-  "heldLastScan": 0,
-  "factCheck": null,
+  "lastScan": "2026-11-24T15:51:20+01:00",
+  "publishedLastScan": 1,
+  "heldLastScan": 1,
+  "factCheck": {
+    "ran": true,
+    "checked": 2,
+    "supported": 2,
+    "unsupported": 0,
+    "unverifiable": 0
+  },
   "held": [
+    {
+      "day": "2026-11-24",
+      "title": "OpenAI and Cisco release Shirudo for live Linux safeguards",
+      "reasons": [
+        "after: 37 words, limit 35"
+      ]
+    },
     {
       "day": "2026-11-22",
       "title": "AWS Quick packages agents and integrations as plugins",
@@ -68,13 +81,6 @@
       "title": "AWS adds Kimi K3.1 Pro Highspeed to Amazon Bedrock",
       "reasons": [
         "Fact check: whyCare presents keeping inference inside AWS's data boundary as an established fact. The AWS post makes this claim as AWS's own assurance, which the item does not attribute."
-      ]
-    },
-    {
-      "day": "2026-11-04",
-      "title": "GitHub separates BYOK usage in Copilot reports",
-      "reasons": [
-        "Fact check: The item dates the announcement November 4; the GitHub changelog identifies it as November 3, published at 16:32 -08:00."
       ]
     }
   ]

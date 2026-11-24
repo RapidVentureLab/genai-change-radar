@@ -1,0 +1,36 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-24T14:54:14+00:00",
+  "items": [
+    {
+      "id": "2026-11-23-aws-bedrock-trusted-access-programs",
+      "title": "Amazon Bedrock adds trusted access controls for Anthropic models",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls/",
+        "https://docs.aws.amazon.com/bedrock/latest/userguide/trusted-access-programs.html",
+        "https://docs.aws.amazon.com/bedrock/latest/userguide/anthropic-efs-enterprise-data-controls.html"
+      ],
+      "problems": [],
+      "notes": [
+        "The AWS announcement is dated 23 November 2026, matching the item date.",
+        "The AWS documentation says EFS and EDC are in public preview."
+      ]
+    },
+    {
+      "id": "2026-11-23-openai-cisco-shirudo",
+      "title": "OpenAI and Cisco release Shirudo for live Linux safeguards",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://openai.com/index/introducing-shirudo/",
+        "https://docs.shirudo.dev/index.html",
+        "https://tetragon.io/docs/"
+      ],
+      "problems": [],
+      "notes": [
+        "The OpenAI announcement is dated 23 November 2026, matching the item date.",
+        "The Java4Shell result is reported as the result of a controlled test."
+      ]
+    }
+  ]
+}

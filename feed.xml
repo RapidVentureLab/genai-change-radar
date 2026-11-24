@@ -6,7 +6,17 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Mon, 23 Nov 2026 14:32:20 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 24 Nov 2026 14:51:20 GMT</lastBuildDate>
+    <item>
+      <title>Amazon Bedrock adds trusted access controls for Anthropic models</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-23-aws-bedrock-trusted-access-programs</link>
+      <guid isPermaLink="false">2026-11-23-aws-bedrock-trusted-access-programs</guid>
+      <pubDate>Mon, 23 Nov 2026 06:00:00 GMT</pubDate>
+      <description>EFS lets you retain inputs and outputs in your S3 bucket with your KMS key while AWS runs automated safety monitoring without human access to retained content. Enrollment turns off zero data retention, and both offerings remain previews for eligible customers. What to do: Check eligibility and review the EFS and EDC terms before enrolling. Compare customer-managed EFS storage with EDC and existing Bedrock zero data retention or aws_review modes. Test IAM and service control policy scopes, then assess retention and review behavior in a pilot.</description>
+      <category>Production &amp; Business</category>
+      <category>AWS</category>
+      <category>Anthropic</category>
+    </item>
     <item>
       <title>Amazon Bedrock expands Web Search across languages and countries</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-21-aws-bedrock-localized-web-search</link>
@@ -459,15 +469,6 @@
       <description>You can build spoken agents without wiring separate transcription, reasoning, tool-use, and speech services. Mistral offers an EU-hosted API and self-deployment, giving you choices for audio processing and control. What to do: Compare latency, language coverage, transcription quality, deployment needs and cost with OpenAI's real-time audio offerings and separate speech stacks. Test audio retention and tool-action controls before using Voxtral in customer workflows.</description>
       <category>Agent &amp; Infrastructure</category>
       <category>Other</category>
-    </item>
-    <item>
-      <title>AWS releases TorchNeuron 2.33.0 for Trainium as a public beta</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-20-torchneuron</link>
-      <guid isPermaLink="false">2026-10-20-torchneuron</guid>
-      <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
-      <description>You can run standard PyTorch training and inference code on Trainium, which gives teams a new deployment option alongside GPUs and hosted model APIs. What to do: Check supported models, operators and Ubuntu versions before moving workloads. Test the public beta, and confirm your environment supports Ubuntu 26.04, the target for current wheels.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>AWS</category>
     </item>
   </channel>
 </rss>
