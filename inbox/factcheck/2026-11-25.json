@@ -1,0 +1,21 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-25T14:19:43+00:00",
+  "items": [
+    {
+      "id": "2026-11-24-langchain-iso42001-langsmith",
+      "title": "LangChain earns ISO/IEC 42001 certification for LangSmith",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://www.langchain.com/blog/ai-governance-iso-iec-42001-langsmith"
+      ],
+      "problems": [
+        "The item says LangChain had not previously described this certification. | The source does not establish whether LangChain had described the certification before this page.",
+        "The item says LangChain previously used LangSmith traces, evaluations, and agent permissions as governance evidence. | The source says these materials were audit evidence for the certification, but does not establish that they were described or used as governance evidence before that certification."
+      ],
+      "notes": [
+        "The source explicitly dates the announcement November 24, 2026, matching the item date."
+      ]
+    }
+  ]
+}

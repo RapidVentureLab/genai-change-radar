@@ -1,0 +1,46 @@
+{
+  "updates": [
+    {
+      "id": "2026-11-24-langchain-iso42001-langsmith",
+      "date": "2026-11-24",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "ai management certification",
+      "impact": "Incremental",
+      "title": "LangChain earns ISO/IEC 42001 certification for LangSmith",
+      "whatChanged": "LangChain says it earned ISO/IEC 42001 certification for its AI management system. It covers every generally available LangSmith feature that runs inference on a model LangChain manages. LangChain says an accredited external auditor checked the system, and annual surveillance audits will add new AI features to scope.",
+      "whyCare": "The certification gives you independently audited evidence for agent development and monitoring on LangSmith. It does not certify your AI management system, and it does not cover deployments outside the stated scope.",
+      "before": "LangChain had not described ISO/IEC 42001 certification for LangSmith, although it used LangSmith traces, evaluations and agent permissions as governance evidence.",
+      "after": "LangChain reports certification for the management system behind GA LangSmith features that run inference on models LangChain manages. Annual surveillance audits will add new AI features to scope.",
+      "learn": "Check LangChain's certificate and scope before using it in vendor due diligence. Map the covered features and models to your deployment, and keep evidence for systems outside that scope.",
+      "cloudPrimitives": [
+        "Security",
+        "Observability"
+      ],
+      "sources": [
+        {
+          "name": "LangChain - How We Achieved ISO 42001 with LangSmith",
+          "url": "https://www.langchain.com/blog/ai-governance-iso-iec-42001-langsmith"
+        }
+      ],
+      "architectureImplication": "Use the certification as vendor-assurance evidence for LangSmith. Keep identity, approval, evaluation and logging requirements in your own system boundary for models and deployments outside the certified scope.",
+      "tradeoffs": [
+        "Vendor Assurance",
+        "Scope",
+        "Compliance"
+      ],
+      "vendors": [
+        "LangChain"
+      ],
+      "decisions": [
+        "compliance",
+        "build-vs-buy"
+      ],
+      "action": null,
+      "heldReasons": [
+        "Fact check: The item says LangChain had not previously described this certification. | The source does not establish whether LangChain had described the certification before this page.",
+        "Fact check: The item says LangChain previously used LangSmith traces, evaluations, and agent permissions as governance evidence. | The source says these materials were audit evidence for the certification, but does not establish that they were described or used as governance evidence before that certification."
+      ]
+    }
+  ]
+}
