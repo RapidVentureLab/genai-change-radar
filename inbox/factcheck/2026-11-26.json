@@ -1,0 +1,20 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-26T13:54:41+00:00",
+  "items": [
+    {
+      "id": "2026-11-25-copilot-code-review-org-billing",
+      "title": "GitHub defaults Copilot code review billing to organizations on 30 December 2026",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization"
+      ],
+      "problems": [],
+      "notes": [
+        "The source explicitly states November 25, 2026 as the announcement date.",
+        "The source states December 30, 2026 as the change deadline.",
+        "The source also sets Member billing for accounts with a billing lock or no billable customer."
+      ]
+    }
+  ]
+}

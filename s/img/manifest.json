@@ -118,5 +118,6 @@
   "2026-11-21-aws-bedrock-localized-web-search": "09699325aa14",
   "2026-11-20-aws-hyperpod-global-inference-gateway": "d153f39e91b2",
   "2026-11-20-github-security-advisory-role-permissions": "248c701a883f",
-  "2026-11-23-aws-bedrock-trusted-access-programs": "d27b32698428"
+  "2026-11-23-aws-bedrock-trusted-access-programs": "d27b32698428",
+  "2026-11-25-copilot-code-review-org-billing": "98ab93be01ef"
 }

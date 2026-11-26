@@ -6,7 +6,16 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Wed, 25 Nov 2026 14:17:40 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 26 Nov 2026 13:51:45 GMT</lastBuildDate>
+    <item>
+      <title>GitHub defaults Copilot code review billing to organizations on 30 December 2026</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-25-copilot-code-review-org-billing</link>
+      <guid isPermaLink="false">2026-11-25-copilot-code-review-org-billing</guid>
+      <pubDate>Wed, 25 Nov 2026 06:00:00 GMT</pubDate>
+      <description>An unset choice bills the repository-owning organization from 30 December. If AI Credits paid usage is unavailable, GitHub uses Member billing and licensed members’ entitlements cover the reviews. What to do: Check organization billing settings before 30 December. Select Member to use licensed members’ Copilot entitlements for reviews. Budget for AI Credits if your organization pays.</description>
+      <category>Production &amp; Business</category>
+      <category>GitHub</category>
+    </item>
     <item>
       <title>Amazon Bedrock adds trusted access controls for Anthropic models</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-23-aws-bedrock-trusted-access-programs</link>
@@ -460,15 +469,6 @@
       <category>Agent &amp; Infrastructure</category>
       <category>Google</category>
       <category>Meta</category>
-    </item>
-    <item>
-      <title>Mistral launches Voxtral 3 for real-time voice agents</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-20-mistral-voxtral-3</link>
-      <guid isPermaLink="false">2026-10-20-mistral-voxtral-3</guid>
-      <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
-      <description>You can build spoken agents without wiring separate transcription, reasoning, tool-use, and speech services. Mistral offers an EU-hosted API and self-deployment, giving you choices for audio processing and control. What to do: Compare latency, language coverage, transcription quality, deployment needs and cost with OpenAI's real-time audio offerings and separate speech stacks. Test audio retention and tool-action controls before using Voxtral in customer workflows.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>Other</category>
     </item>
   </channel>
 </rss>

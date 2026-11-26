@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-25T15:17:40+01:00",
+  "updatedAt": "2026-11-26T14:51:45+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -5090,6 +5090,45 @@
         "identity-and-permissions",
         "compliance"
       ]
+    },
+    {
+      "id": "2026-11-25-copilot-code-review-org-billing",
+      "date": "2026-11-25",
+      "layer": "Production & Business",
+      "kind": "signal",
+      "changeType": "organization billing default",
+      "impact": "Incremental",
+      "title": "GitHub defaults Copilot code review billing to organizations on 30 December 2026",
+      "whatChanged": "GitHub bills code reviews by members with paid Copilot licenses to the organization that owns the repository on 30 December 2026 when no billing choice is saved. The change applies to organizations and enterprises with Copilot Business or Copilot Enterprise. Organization billing requires AI Credits paid usage; GitHub defaults to Member when it is unavailable.",
+      "whyCare": "An unset choice bills the repository-owning organization from 30 December. If AI Credits paid usage is unavailable, GitHub uses Member billing and licensed members’ entitlements cover the reviews.",
+      "before": "An unset billing choice uses the licensed member’s Copilot entitlement to pay for code reviews.",
+      "after": "On 30 December 2026, an unset choice bills the repository-owning organization if AI Credits paid usage is enabled. Otherwise, GitHub defaults to Member billing.",
+      "learn": "Check organization billing settings before 30 December. Select Member to use licensed members’ Copilot entitlements for reviews. Budget for AI Credits if your organization pays.",
+      "cloudPrimitives": [
+        "Compute"
+      ],
+      "sources": [
+        {
+          "name": "GitHub Changelog - Copilot code review billing will default to the organization",
+          "url": "https://github.blog/changelog/2026-11-25-copilot-code-review-billing-will-default-to-the-organization"
+        }
+      ],
+      "architectureImplication": "Organization billing makes code review an organization-level AI cost when the setting is unset. Add the default to Copilot policy reviews and AI Credits budgets, especially across repositories with different billing owners.",
+      "tradeoffs": [
+        "Cost",
+        "Control"
+      ],
+      "vendors": [
+        "GitHub"
+      ],
+      "decisions": [
+        "cost-and-routing"
+      ],
+      "action": {
+        "type": "pricing",
+        "by": "2026-12-30",
+        "what": "Choose Member billing if you want reviews to use members’ Copilot entitlements."
+      }
     }
   ],
   "overallDirection": {
