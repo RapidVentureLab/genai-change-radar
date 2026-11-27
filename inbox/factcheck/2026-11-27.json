@@ -1,0 +1,33 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-27T13:52:01+00:00",
+  "items": [
+    {
+      "id": "2026-11-25-aws-lambda-durable-microvm",
+      "title": "AWS adds MicroVM orchestration to durable functions",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-microvm/",
+        "https://github.com/aws/aws-durable-execution-sdk-js/tree/main/packages/aws-durable-execution-sdk-js-extensions"
+      ],
+      "problems": [],
+      "notes": [
+        "The AWS page gives November 25, 2026 as the announcement date."
+      ]
+    },
+    {
+      "id": "2026-11-26-nvidia-nemotron-parse-open-data-finetuning",
+      "title": "NVIDIA publishes Nemotron Parse training data and fine-tuning",
+      "verdict": "supported",
+      "sourcesRead": [
+        "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+        "https://github.com/NVIDIA-NeMo/Nemotron/blob/main/docs/nemotron/parse/index.md"
+      ],
+      "problems": [],
+      "notes": [
+        "The Hugging Face page is published November 26, 2026.",
+        "The three dataset sizes are 9.98 million, 1 million, and 7.9 million examples, totaling 18.88 million."
+      ]
+    }
+  ]
+}

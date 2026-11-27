@@ -119,5 +119,7 @@
   "2026-11-20-aws-hyperpod-global-inference-gateway": "d153f39e91b2",
   "2026-11-20-github-security-advisory-role-permissions": "248c701a883f",
   "2026-11-23-aws-bedrock-trusted-access-programs": "d27b32698428",
-  "2026-11-25-copilot-code-review-org-billing": "98ab93be01ef"
+  "2026-11-25-copilot-code-review-org-billing": "98ab93be01ef",
+  "2026-11-25-aws-lambda-durable-microvm": "a4f66c777d9f",
+  "2026-11-26-nvidia-nemotron-parse-open-data-finetuning": "95726165a7ed"
 }

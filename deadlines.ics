@@ -6,7 +6,7 @@ METHOD:PUBLISH
 X-WR-CALNAME:The Daily Model deadlines
 BEGIN:VEVENT
 UID:2026-11-25-copilot-code-review-org-billing@genai-radar
-DTSTAMP:20261126T135518Z
+DTSTAMP:20261127T135232Z
 DTSTART;VALUE=DATE:20261230
 DTEND;VALUE=DATE:20261231
 SUMMARY:Deadline: GitHub defaults Copilot code review billing to organizat
@@ -19,7 +19,7 @@ URL:https://thedailymodel.rapidventurelab.com/#item-2026-11-25-copilot-cod
 END:VEVENT
 BEGIN:VEVENT
 UID:2026-10-15-github-copilot-model-deprecations@genai-radar
-DTSTAMP:20261126T135518Z
+DTSTAMP:20261127T135232Z
 DTSTART;VALUE=DATE:20261116
 DTEND;VALUE=DATE:20261117
 SUMMARY:Deadline: GitHub retires three Copilot models on 16 November 2026

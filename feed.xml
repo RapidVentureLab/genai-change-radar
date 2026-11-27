@@ -6,7 +6,26 @@
     <description>What changed in GenAI, and what it means for the systems you design.</description>
     <language>en</language>
     <copyright>Stories licensed CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Credit The Daily Model with a link.</copyright>
-    <lastBuildDate>Thu, 26 Nov 2026 13:51:45 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2026 13:50:05 GMT</lastBuildDate>
+    <item>
+      <title>NVIDIA publishes Nemotron Parse training data and fine-tuning</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-26-nvidia-nemotron-parse-open-data-finetuning</link>
+      <guid isPermaLink="false">2026-11-26-nvidia-nemotron-parse-open-data-finetuning</guid>
+      <pubDate>Thu, 26 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can adapt Nemotron 3.5 Parse to your chart, table or form layouts without building every training example or training step. You need representative labels, domain-specific correctness checks and GPU capacity. What to do: Inspect the dataset licenses and schemas. Run the recipe on representative pages. Compare extraction accuracy, schema validity and GPU cost with your current parser.</description>
+      <category>Data &amp; Knowledge</category>
+      <category>Other</category>
+      <category>Open models</category>
+    </item>
+    <item>
+      <title>AWS adds MicroVM orchestration to durable functions</title>
+      <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-25-aws-lambda-durable-microvm</link>
+      <guid isPermaLink="false">2026-11-25-aws-lambda-durable-microvm</guid>
+      <pubDate>Wed, 25 Nov 2026 06:00:00 GMT</pubDate>
+      <description>You can isolate untrusted or agent-generated code in MicroVMs and use durable checkpoints and retries. AWS gives teams a managed path to sandbox lifecycle and recovery without a separate job runner. What to do: Prototype with non-production code. Test checkpoint, retry, token refresh, session-state and cleanup behavior. Compare the preview with your current sandbox runner before relying on it.</description>
+      <category>Agent &amp; Infrastructure</category>
+      <category>AWS</category>
+    </item>
     <item>
       <title>GitHub defaults Copilot code review billing to organizations on 30 December 2026</title>
       <link>https://thedailymodel.rapidventurelab.com/#item-2026-11-25-copilot-code-review-org-billing</link>
@@ -449,26 +468,6 @@
       <description>You can run custom loss functions, reward signals and multi-turn reinforcement-learning loops without operating GPU clusters. Check supported models and Regions before moving an experiment. What to do: Check supported models and Regions. Compare per-token charges with GPU job costs. Test recovery, checkpointing and model quality on your reward loop.</description>
       <category>Model</category>
       <category>AWS</category>
-    </item>
-    <item>
-      <title>Google Cloud includes Antigravity in Gemini Enterprise subscriptions</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-20-google-antigravity-enterprise</link>
-      <guid isPermaLink="false">2026-10-20-google-antigravity-enterprise</guid>
-      <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
-      <description>You can give coding teams an agent across their preferred editors while using Gemini Enterprise for identity, spend and governance controls. Check which extensions are generally available before rollout. What to do: Check license eligibility and preview status for each IDE. Set spend caps, sandbox and MCP policies, and audit settings before you roll it out.</description>
-      <category>Application &amp; Workflow</category>
-      <category>Google</category>
-      <category>Google Cloud</category>
-    </item>
-    <item>
-      <title>Google and Meta introduce TorchTPU as a native PyTorch backend</title>
-      <link>https://thedailymodel.rapidventurelab.com/#item-2026-10-20-google-meta-torchtpu</link>
-      <guid isPermaLink="false">2026-10-20-google-meta-torchtpu</guid>
-      <pubDate>Tue, 20 Oct 2026 06:00:00 GMT</pubDate>
-      <description>TorchTPU lets PyTorch teams evaluate TPU deployments in PyTorch. Since it remains in active development, check operator coverage and workload performance. What to do: Test your models, distributed patterns, supported operations, and compile behavior on TorchTPU. Compare its performance and total cost with PyTorch/XLA, GPUs, and AWS TorchNeuron.</description>
-      <category>Agent &amp; Infrastructure</category>
-      <category>Google</category>
-      <category>Meta</category>
     </item>
   </channel>
 </rss>

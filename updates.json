@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "updatedAt": "2026-11-26T14:51:45+01:00",
+  "updatedAt": "2026-11-27T14:50:05+01:00",
   "mentalModel": {
     "layers": [
       {
@@ -5129,6 +5129,91 @@
         "by": "2026-12-30",
         "what": "Choose Member billing if you want reviews to use members’ Copilot entitlements."
       }
+    },
+    {
+      "id": "2026-11-25-aws-lambda-durable-microvm",
+      "date": "2026-11-25",
+      "layer": "Agent & Infrastructure",
+      "kind": "signal",
+      "changeType": "microvm workflow orchestration",
+      "impact": "Incremental",
+      "title": "AWS adds MicroVM orchestration to durable functions",
+      "whatChanged": "AWS launched a developer preview on 25 November that lets Lambda durable functions launch and manage Lambda MicroVM tasks or sessions. Functions checkpoint progress, retry failed tasks, refresh MicroVM tokens and run several MicroVMs in parallel. The extension supports TypeScript and Python in regions that offer both services.",
+      "whyCare": "You can isolate untrusted or agent-generated code in MicroVMs and use durable checkpoints and retries. AWS gives teams a managed path to sandbox lifecycle and recovery without a separate job runner.",
+      "before": "Lambda durable functions managed long-running workflows, and Lambda MicroVMs offered isolated execution. Teams connected the two capabilities themselves.",
+      "after": "A durable function now runs tasks in a MicroVM or session, checkpoints progress and retries work while managing the MicroVM lifecycle.",
+      "learn": "Prototype with non-production code. Test checkpoint, retry, token refresh, session-state and cleanup behavior. Compare the preview with your current sandbox runner before relying on it.",
+      "cloudPrimitives": [
+        "Compute",
+        "Security",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - Lambda durable functions orchestrate MicroVMs",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/lambda-durable-microvm/"
+        },
+        {
+          "name": "AWS Durable Execution SDK for JavaScript - Extensions",
+          "url": "https://github.com/aws/aws-durable-execution-sdk-js/tree/main/packages/aws-durable-execution-sdk-js-extensions"
+        }
+      ],
+      "architectureImplication": "Keep workflow checkpoints distinct from MicroVM session files and memory. Add limits, cleanup and non-production gates around the preview. Test recovery across workflow and sandbox failures.",
+      "tradeoffs": [
+        "Preview risk",
+        "Operational complexity"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "deployment",
+        "managed-vs-custom-runtime",
+        "security-and-guardrails"
+      ]
+    },
+    {
+      "id": "2026-11-26-nvidia-nemotron-parse-open-data-finetuning",
+      "date": "2026-11-26",
+      "layer": "Data & Knowledge",
+      "kind": "signal",
+      "changeType": "adaptation data and recipe",
+      "impact": "Packaging / distribution",
+      "title": "NVIDIA publishes Nemotron Parse training data and fine-tuning",
+      "whatChanged": "NVIDIA published three synthetic datasets with 18.88 million examples and a fine-tuning recipe for Nemotron 3.5 Parse on 26 November. The datasets cover charts, tables and multilingual OCR. The recipe combines supervised fine-tuning and reinforcement learning with verifiable rewards, and it uses dental forms as its worked example.",
+      "whyCare": "You can adapt Nemotron 3.5 Parse to your chart, table or form layouts without building every training example or training step. You need representative labels, domain-specific correctness checks and GPU capacity.",
+      "before": "Teams could use Nemotron 3.5 Parse or build domain-specific examples and a training workflow. NVIDIA had not published these reusable datasets and adaptation steps.",
+      "after": "Teams can use NVIDIA's chart, table and multilingual OCR datasets, then follow the fine-tuning recipe with their image-label pairs and verifier.",
+      "learn": "Inspect the dataset licenses and schemas. Run the recipe on representative pages. Compare extraction accuracy, schema validity and GPU cost with your current parser.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "NVIDIA on Hugging Face - Building on Nemotron 3.5 Parse",
+          "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin"
+        },
+        {
+          "name": "NVIDIA NeMo - Nemotron Parse Model Adaptation and Evaluation",
+          "url": "https://github.com/NVIDIA-NeMo/Nemotron/blob/main/docs/nemotron/parse/index.md"
+        }
+      ],
+      "architectureImplication": "Add domain adaptation between page capture and downstream extraction. Pair representative documents with labels, train against explicit checks and validate the schema after inference. Teams still need application-specific evaluation.",
+      "tradeoffs": [
+        "Data curation",
+        "GPU compute",
+        "Evaluation effort"
+      ],
+      "vendors": [
+        "Other",
+        "Open models"
+      ],
+      "decisions": [
+        "hosted-vs-open",
+        "deployment",
+        "rag-vs-long-context"
+      ]
     }
   ],
   "overallDirection": {
