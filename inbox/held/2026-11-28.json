@@ -1,0 +1,49 @@
+{
+  "updates": [
+    {
+      "id": "2026-11-27-aws-neptune-graph-sessions",
+      "date": "2026-11-27",
+      "layer": "Data & Knowledge",
+      "kind": "signal",
+      "changeType": "session-based graph compute",
+      "impact": "Step-change",
+      "title": "AWS adds Neptune Graph Sessions for agent workloads",
+      "whatChanged": "AWS adds Neptune Graph Sessions on 27 November for Neptune Analytics graphs. The compute mode scales memory and CPU and bills for memory used. Graphs start at 4 or 8 s-NCU, include up to twice that memory headroom, scale to zero after 15 idle minutes, and resume in seconds with data retained.",
+      "whyCare": "You can isolate a GraphRAG conversation or agent task without keeping a provisioned graph at its 16 m-NCU minimum. Compare session compute with shared graph stores or vector-only retrieval for isolation, query, and cost.",
+      "before": "Provisioned Neptune graphs required a 16 m-NCU minimum. Teams kept separate graphs running for conversations or tasks.",
+      "after": "Neptune Graph Sessions start at 4 or 8 s-NCU and adjust memory and CPU automatically. They scale to zero after 15 idle minutes and retain graph data.",
+      "learn": "Prototype with representative GraphRAG or agent queries. Measure memory growth, resume latency, and cost against a shared graph or vector store. Check regional availability and limits in the Neptune Analytics documentation.",
+      "cloudPrimitives": [
+        "Compute",
+        "Storage"
+      ],
+      "sources": [
+        {
+          "name": "AWS What's New - Amazon Neptune introduces Neptune Graph Sessions",
+          "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-neptune-graph-sessions-generally-available"
+        },
+        {
+          "name": "Amazon Neptune Analytics User Guide",
+          "url": "https://docs.aws.amazon.com/neptune-analytics/latest/userguide/gettingStarted.html"
+        }
+      ],
+      "architectureImplication": "Design graph state around tasks and allow for resume delay after idle scale-down. Keep durable shared knowledge separate from per-task graphs. Compare isolation and cost with shared graphs or vector-only retrieval.",
+      "tradeoffs": [
+        "Resume latency",
+        "Graph lifecycle management",
+        "Variable memory cost"
+      ],
+      "vendors": [
+        "AWS"
+      ],
+      "decisions": [
+        "rag-vs-long-context",
+        "state-and-memory",
+        "cost-and-routing"
+      ],
+      "heldReasons": [
+        "Fact check: The item says teams previously kept separate graphs running for conversations or tasks. | The sources say separate graphs fit agentic and per-user workloads, and that provisioned graphs remain available, but they do not say that teams kept such graphs running before this feature."
+      ]
+    }
+  ]
+}

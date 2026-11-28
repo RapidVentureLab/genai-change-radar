@@ -1,15 +1,22 @@
 {
-  "lastScan": "2026-11-27T14:50:05+01:00",
-  "publishedLastScan": 2,
-  "heldLastScan": 0,
+  "lastScan": "2026-11-28T13:57:39+01:00",
+  "publishedLastScan": 0,
+  "heldLastScan": 1,
   "factCheck": {
     "ran": true,
-    "checked": 2,
-    "supported": 2,
-    "unsupported": 0,
+    "checked": 1,
+    "supported": 0,
+    "unsupported": 1,
     "unverifiable": 0
   },
   "held": [
+    {
+      "day": "2026-11-28",
+      "title": "AWS adds Neptune Graph Sessions for agent workloads",
+      "reasons": [
+        "Fact check: The item says teams previously kept separate graphs running for conversations or tasks. | The sources say separate graphs fit agentic and per-user workloads, and that provisioned graphs remain available, but they do not say that teams kept such graphs running before this feature."
+      ]
+    },
     {
       "day": "2026-11-25",
       "title": "LangChain earns ISO/IEC 42001 certification for LangSmith",
@@ -75,13 +82,6 @@
       "reasons": [
         "Fact check: The item says all six models will be retired without exception. | The source exempts Claude Haiku 4.5 for individual subscribers on annual plans.",
         "Fact check: The item presents automatic enablement of replacement models as universal. | The source limits automatic enablement to Enterprise and Business customers and notes that admins can turn off the global default or disable a model."
-      ]
-    },
-    {
-      "day": "2026-11-11",
-      "title": "Google and GitHub make Gemini 4 Carbon available to developers and GitHub Copilot",
-      "reasons": [
-        "Fact check: Before says Copilot users could not select Gemini 4 Carbon. The changelog establishes general availability, but does not say whether any users had access before then."
       ]
     }
   ]

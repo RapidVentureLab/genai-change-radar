@@ -1,0 +1,19 @@
+{
+  "ran": true,
+  "checkedAt": "2026-11-28T12:58:59+00:00",
+  "items": [
+    {
+      "id": "2026-11-27-aws-neptune-graph-sessions",
+      "title": "AWS adds Neptune Graph Sessions for agent workloads",
+      "verdict": "unsupported",
+      "sourcesRead": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-neptune-graph-sessions-generally-available",
+        "https://docs.aws.amazon.com/neptune-analytics/latest/userguide/gettingStarted.html"
+      ],
+      "problems": [
+        "The item says teams previously kept separate graphs running for conversations or tasks. | The sources say separate graphs fit agentic and per-user workloads, and that provisioned graphs remain available, but they do not say that teams kept such graphs running before this feature."
+      ],
+      "notes": []
+    }
+  ]
+}
